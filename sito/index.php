@@ -28,7 +28,7 @@
     </nav>    
    
 	<main id="content">
-        <h2>Il tuo negozio di Fumetti e Gaming a Padova</h2>
+        <h1>Il tuo negozio di Fumetti e Gaming a Padova</h1>
         
         <div id="homeBanner">
             <div>

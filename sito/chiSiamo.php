@@ -14,12 +14,13 @@
     <body>
         <header>
             <!-- Include PHP header file-->
-            <?php include '../includes/header.php'; ?>
+            <?php include 'includes/header.php'; ?>
         </header>
         <nav id="menu">
             <!-- Include PHP menu file-->
-            <?php include '../includes/menu.php'; ?>
+            <?php include 'includes/menu.php'; ?>
         </nav>
+       
         <main>
 
         <h1>Chi siamo</h1>
@@ -27,7 +28,7 @@
         <section class="container">
             <div class="left-half">
                 <article>
-                    <img src="../images/chisiamo1.png" class="image" alt="Storia dell'azienda">
+                    <img src="images/chisiamo1.png" class="image" alt="Storia dell'azienda">
                 </article>
             </div>
 
@@ -80,7 +81,7 @@
 
             <div class="right-half">
                 <article>
-                    <img src="../images/chisiamo2.png" class="image" alt="Luogo dell'azienda">
+                    <img src="images/chisiamo2.png" class="image" alt="Luogo dell'azienda">
                 </article>
             </div>
         </section>
@@ -89,7 +90,7 @@
         <footer>
             <!-- Include PHP footer file-->
             <?php 
-                include ('../includes/footer.php');
+                include ('includes/footer.php');
             ?>
         </footer>
     </body>
