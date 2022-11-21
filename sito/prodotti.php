@@ -28,10 +28,12 @@
     </nav>    
    
 	<main id="content">
+
+        <h1>I Nostri Prodotti</h1>
        
         <?php for($i=0;$i<5;$i++){ ?>
 
-        <h3 class="categoryTitle">Categoria</h3> <a href="categoria.php" title="Vedi tutti {categoria}" class="button">Vedi Tutti</a>
+        <h2 class="categoryTitle">Categoria</h2> <a href="categoria.php" title="Vedi tutti {categoria}" class="button">Vedi Tutti</a>
 
         <div class="productsRow">
 
@@ -39,8 +41,8 @@
 
                 <article>
                     <header>
-                        <img src="http://localhost/PromoTech-Graphics/sito/images/testImg.jpg" alt="Descrizione Immagine" />
-                        <h4>Product Name</h4>
+                        <img src="http://localhost/poptech/sito/images/testImg.jpg" alt="Descrizione Immagine" />
+                        <h3>Product Name</h3>
                     </header>
                     <main>
                         Descrizione Descrizione Descrizione Descrizione Descrizione

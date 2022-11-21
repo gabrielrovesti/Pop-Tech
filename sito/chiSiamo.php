@@ -26,9 +26,9 @@
         <main id="content">
             <h1>Chi siamo</h1>
 
-            <div class="container">
+            <h2>Storia e Dove Siamo</h2>
                 <p>
-                <h2>Storia e Dove Siamo</h2>
+                
                     <img src="images/chisiamo1.png" class="img-left" alt="Storia dell'azienda">  
                         La nostra azienda nasce nel 2001, da un gruppo di amici colleghi di università.
                         Ben presto, si è capito che oltre al comune interesse per l'informatica, c'era molto di più
@@ -53,11 +53,10 @@
                     abbiamo incluso anche un laboratorio di videogiochi, dove poter testare i
                     nostri prodotti prima di metterli in vendita.
                 </p> 
-            </div>
-
-            <div class="container">
-                <p>
+            
                 <h2>Il nostro <span lang="en">staff</span></h2>
+                <p>
+                
                 <img src="images/chisiamo2.png" class="img-right" alt="Staff dell'azienda">  
                 Per noi, il lavoro è un gioco e la passione è il nostro motore.
                 Per questo, abbiamo scelto di lavorare in un ambiente giovane e dinamico,
@@ -126,7 +125,7 @@
                     </li>
 
                 </ul>
-            </div>
+            
 
         </main>
         <?php include ('includes/footer.php');?>

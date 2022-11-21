@@ -29,7 +29,7 @@
    
 	<main id="content">
        
-        <h3>Categoria</h3> 
+        <h1>Categoria</h1> 
 
         <div class="productsRow">
 
@@ -37,8 +37,8 @@
 
                 <article>
                     <header>
-                        <img src="http://localhost/PromoTech-Graphics/sito/images/testImg.jpg" alt="Descrizione Immagine" />
-                        <h4>Product Name</h4>
+                        <img src="http://localhost/poptech/sito/images/testImg.jpg" alt="Descrizione Immagine" />
+                        <h2>Product Name</h2>
                     </header>
                     <main>
                         Descrizione Descrizione Descrizione Descrizione Descrizione

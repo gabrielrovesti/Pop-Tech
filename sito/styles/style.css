@@ -132,19 +132,16 @@ main h2{
     justify-content: center;
 }
   
-.left-half {
-    flex: 1;
-    padding: 1em;
-    flex-wrap: wrap;
-    flex-direction: row;
+.img-left{
+    float:left;
 }
 
-.right-half {
-    flex: 1;
-    padding: 1em;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
+.img-left{
+    float:right;
+}
+
+.clear{
+    clear:both;
 }
 
 .image{
