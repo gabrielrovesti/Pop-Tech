@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
     
-	<title></title>
+	<title>{prodotto} - Pop Tech</title>
 	
     <meta name="description" content="" />
 	<meta name="keywords" content="" />

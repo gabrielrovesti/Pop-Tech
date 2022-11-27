@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
 
 
-    <title>FAQ</title>
+    <title>FAQ - Pop Tech</title>
         <meta name="description" content="FAQ | PopTech">
         <meta name="keywords" content="PopTech, videogiochi, manga, giochi da tavolo, storia">
         <meta name="author" content="PopTech">
@@ -19,41 +19,28 @@
         <link rel="shortcut icon" href="../images/favicon.ico">
 </head>
 <body>
+
+    <a href="#content" class="srOnly">Vai al contenuto</a>
 	
     <?php include "includes/header.php"; ?>
     <?php include "includes/menu.php"; ?>
 
      <nav id="breadcrumbs">
-        <p>Ti trovi in: <span lang="en">Home</span> > <abbr="Frequently Asked Questions"> FAQ</abbr></p> 
+        <p>Ti trovi in: <abbr title="Frequently Asked Questions" lang="en">FAQ</abbr></p> 
     </nav>
 
-
-
-
-
     <main id="content">
-            <h1><abbr="Frequently Asked Questions"> FAQ</abbr></h1>
 
-            <h2>Ogni quanto ricevete prodotti dal Giappone?</h2>
-                <p>
-                    Le spedizioni dall'Asia arrivano ogni 11 del mese.
-                      
-                </p>
+        <h1><abbr title="Frequently Asked Questions" lang="en">FAQ</abbr></h1>
 
-                <h2>Ogni quanto ricevete prodotti dagli Stati Uniti?</h2>
-                <p>
-                    Le spedizioni dagli Stati Uniti arrivano ogni settimana.
-                </p>
-    
-                <h2>Spedite gli ordini in Italia?</h2>
-                <p>
-                    Spediamo con BRT in tutta Italia
-                </p> 
+        <?php for($i=0;$i<5;$i++){ ?>
+            <details>
+                <summary>Details</summary>
+                Something small enough to escape casual notice.
+            </details>
+        <?php } ?>
             
-             <!-- DA CONTINUARE!!!!!-->
-
-
-        </main>
+    </main>
 
 
 

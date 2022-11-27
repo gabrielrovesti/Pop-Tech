@@ -134,10 +134,12 @@ main h2{
   
 .img-left{
     float:left;
+    width: 30%;
 }
 
-.img-left{
+.img-right{
     float:right;
+    width: 30%;
 }
 
 .clear{
@@ -150,4 +152,45 @@ main h2{
     width: 100%;
     height: auto;
     border-radius: 0.5em;
+}
+
+#contatti{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#contatti form label{
+    display: block;
+}
+
+#contatti div, #contatti figure{
+    flex: 33% 0 0;
+}
+
+#contatti figure{
+    margin: 0em;
+}
+
+#contatti img{
+    max-width: 100%;
+}
+
+#prodotto main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#prodotto figure{
+    flex: 33% 0 0;
+    margin: 0em;
+}
+
+#prodotto figure img{
+    max-width: 100%;
+}
+
+#prodotto div{
+    flex: 67% 0 0;
 }

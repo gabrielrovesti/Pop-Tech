@@ -24,7 +24,7 @@
     <?php include "includes/menu.php"; ?>
    
     <nav id="breadcrumbs">
-        <p>Ti trovi in: <span lang="en">Home</span> > {nome categoria}</p> 
+        <p>Ti trovi in: Prodotti > {nome categoria}</p> 
     </nav>    
    
 	<main id="content">

@@ -2,7 +2,7 @@
 <html lang="it">
     <head>
         <meta charset="utf-8">
-        <title>Chi siamo</title>
+        <title>Chi siamo - Pop Tech</title>
         <meta name="description" content="Chi Siamo | PopTech">
         <meta name="keywords" content="PopTech, videogiochi, manga, giochi da tavolo, storia">
         <meta name="author" content="PopTech">
@@ -16,6 +16,9 @@
         <link rel="shortcut icon" href="../images/favicon.ico">
     </head>
     <body>
+
+        <a href="#content" class="srOnly">Vai al contenuto</a>
+
         <?php include "includes/header.php"; ?>
         <?php include "includes/menu.php"; ?>
        
@@ -26,10 +29,12 @@
         <main id="content">
             <h1>Chi siamo</h1>
 
-            <h2>Storia e Dove Siamo</h2>
+            <h2>La nostra Storia</h2>
+
+            <img src="images/chisiamo1.png" class="img-left" alt="Storia dell'azienda">  
                 <p>
                 
-                    <img src="images/chisiamo1.png" class="img-left" alt="Storia dell'azienda">  
+                    
                         La nostra azienda nasce nel 2001, da un gruppo di amici colleghi di università.
                         Ben presto, si è capito che oltre al comune interesse per l'informatica, c'era molto di più
                         che ci univa: la passione per i videogiochi, i manga, i giochi da tavolo e la storia.
@@ -55,9 +60,11 @@
                 </p> 
             
                 <h2>Il nostro <span lang="en">staff</span></h2>
+
+                <img src="images/chisiamo2.png" class="img-right" alt="Staff dell'azienda">  
                 <p>
                 
-                <img src="images/chisiamo2.png" class="img-right" alt="Staff dell'azienda">  
+               
                 Per noi, il lavoro è un gioco e la passione è il nostro motore.
                 Per questo, abbiamo scelto di lavorare in un ambiente giovane e dinamico,
                 dove il contatto con le persone e lo scambio di consigli, opinioni e idee
@@ -75,8 +82,8 @@
                     che soddisfa le esigenze di ogni cliente.
                 </p>
 
-                <h3 style="clear:both; text-align: center;">Staff Amministrativo</h3>
-                <p style="text-align: center">
+            
+                <p>
                 La nostra azienda fonda le proprie radici su 4 persone, che si occupano
                 di ogni aspetto della nostra attività. Siamo il cuore pulsante di PopTech,
                 e siamo sempre pronti a rispondere alle vostre domande.
