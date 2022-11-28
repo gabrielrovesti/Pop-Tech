@@ -9,11 +9,8 @@
 	<meta name="keywords" content="" />
 	<meta name="author" content="" />
     
-    <link rel="stylesheet" href="styles/style.css" media="handheld,screen"  /> 
-    <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 600px), only screen and (max-device-width: 600px)" />
-    <link rel="stylesheet" href="styles/print.css" media="print" />
-
-    <link rel="shortcut icon" type="images/png" href="images/favicon.ico" />
+    <!-- Includi i link ai file di stile CSS e script Javascript -->
+    <?php include "includes/inports.php"; ?>
 
 </head>
 <body id="homePage">
@@ -28,6 +25,7 @@
     </nav>    
    
 	<main id="content">
+        
         <h1>Il tuo negozio di Fumetti e Gaming a Padova</h1>
         
         <div id="homeBanner">
@@ -40,9 +38,7 @@
                     <li><span lang="en">Vintage</span> Italiano</li>
                 </ul>
             </div>
-            <div>
-                image
-            </div>
+            <img src="dd" alt="Immagine banner">
         </div>
 
         <?php for($i=0;$i<2;$i++){ ?>
@@ -55,7 +51,7 @@
 
                 <article>
                     <header>
-                        <img src="http://localhost/PromoTech-Graphics/sito/images/testImg.jpg" alt="Descrizione Immagine" />
+                        <img src="http://localhost/poptech/sito/images/testImg.jpg" alt="Descrizione Immagine" />
                         <h4>Product Name</h4>
                     </header>
                     <main>

@@ -10,7 +10,7 @@
     $nLinks = count($links);
 
     //Togliere dall'url restituito da PHP -- cambierà in base all'hosting (probilmente non sará necessario in fase di consegna)
-    $strToRemove = "/PromoTech-Graphics/sito/";
+    $strToRemove = "/poptech/sito/";
     $currentPage = str_replace($strToRemove,"",$_SERVER['REQUEST_URI']);
 ?>
 
@@ -29,3 +29,4 @@
         <?php } //fine for ?>
     </ul>
 </nav>
+

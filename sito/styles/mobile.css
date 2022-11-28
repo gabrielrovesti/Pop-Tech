@@ -1,0 +1,105 @@
+header#header #mobileMenuButton{
+    display: inline-block;
+    cursor: pointer;
+    align-self: center;
+    margin-right: 0.5em;
+    text-indent: 200%;
+    line-height: 1em;
+    font-size: 2.5em;
+    overflow: hidden;
+    /* TODO cambiare path */
+    background-image: url("/poptech/sito/images/menu.svg"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+    background-color: transparent;
+}
+
+header#header h1{
+    background-position: left;
+    margin-left: 0.1em;
+    font-size: 5em;
+}
+
+nav#menu{
+    opacity: 0;
+    max-height: 1px;
+    overflow-y: hidden;
+    text-align: center;
+    transition: opacity 0.5s ease-out;
+}
+
+nav#menu.show{
+    max-height: 100%;
+    opacity: 1;
+}
+
+
+nav#menu ul li{
+    display: block;
+    margin: 0.5em 0em 0.5em 0em;
+}
+
+
+
+
+main#content h1{
+    margin: 0.0em;
+}
+
+#homePage #homeBanner div{
+    width: 100%;
+}
+
+#homePage #homeBanner img{
+    display: none;
+}
+
+#homePage #homeBanner{
+    text-align: center;
+    background-color: beige;
+}
+
+#homePage #homeBanner ul{
+    list-style: none;
+    padding: 0em;
+}
+
+.productsRow{
+    justify-content: space-between;
+}
+
+.productsRow article{
+    width: 47%;
+    margin-right: 0em;
+}
+
+#contatti div, #contatti figure{
+    flex: 100% 0 0;
+}
+
+#contatti figure{
+    display: none;
+}
+
+#contatti table thead, #contatti table tfoot{
+    display: none;
+}
+
+#contatti table tr, #contatti table th, #contatti table td{
+    display: block;
+}
+
+th[data-title]:before, td[data-title]:before{
+    content: attr(data-title) ":\00A0";
+    font-weight: bold;
+}
+
+#prodotto figure, #prodotto div{
+    flex: 100% 0 0;
+}
+
+#chiSiamo img{
+    width: 100%;
+}

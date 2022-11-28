@@ -9,14 +9,9 @@
         <meta name="keywords" content="PopTech, videogiochi, manga, giochi da tavolo, storia">
         <meta name="author" content="PopTech">
 
-   
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Includi i link ai file di stile CSS e script Javascript -->
+        <?php include "includes/inports.php"; ?>
 
-        <link rel="stylesheet" href="styles/style.css" media="handheld,screen"  /> 
-        <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 600px), only screen and (max-device-width: 600px)" />
-        <link rel="stylesheet" href="styles/print.css" media="print" />
-        
-        <link rel="shortcut icon" href="../images/favicon.ico">
 </head>
 <body>
 
@@ -41,9 +36,6 @@
         <?php } ?>
             
     </main>
-
-
-
 
     <?php include "includes/footer.php"; ?>
 </body>

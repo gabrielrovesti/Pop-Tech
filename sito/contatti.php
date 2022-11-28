@@ -9,14 +9,9 @@
         <meta name="keywords" content="PopTech, videogiochi, manga, giochi da tavolo, storia">
         <meta name="author" content="PopTech">
 
-   
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link rel="stylesheet" href="styles/style.css" media="handheld,screen"  /> 
-        <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 600px), only screen and (max-device-width: 600px)" />
-        <link rel="stylesheet" href="styles/print.css" media="print" />
+        <!-- Includi i link ai file di stile CSS e script Javascript -->
+        <?php include "includes/inports.php"; ?>
         
-        <link rel="shortcut icon" href="../images/favicon.ico">
 </head>
 <body>
 
@@ -93,57 +88,49 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Mattina</th>
-                                <th>Pomeriggio</th>
+                                <th scope="col">Mattina</th>
+                                <th scope="col">Pomeriggio</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th>Lunedì</th>
-                                <td><time>10:00</time> - <time>13:00</time></td>
-                                <td><time>15:00</time> - <time>19:00</time></td>
+                                <th scope="row">Lunedì</th>
+                                <td data-title="Mattina"><time>10:00</time> - <time>13:00</time></td>
+                                <td data-title="Pomeriggio"><time>15:00</time> - <time>19:00</time></td>
                             </tr>
                             <tr>
-                                <th>Martedì</th>
-                                <td><time>9:00</time> - <time>13:00</time></td>
-                                <td><time>15:00</time> - <time>19:00</time></td>
+                                <th scope="row">Martedì</th>
+                                <td data-title="Mattina"><time>9:00</time> - <time>13:00</time></td>
+                                <td data-title="Pomeriggio"><time>15:00</time> - <time>19:00</time></td>
                             </tr>
                             <tr>
-                                <th>Mercoledì</th>
-                                <td><time>9:00</time> - <time>13:00</time></td>
-                                <td><time>15:00</time> - <time>19:00</time></td>
+                                <th scope="row">Mercoledì</th>
+                                <td data-title="Mattina"><time>9:00</time> - <time>13:00</time></td>
+                                <td data-title="Pomeriggio"><time>15:00</time> - <time>19:00</time></td>
                             </tr>
                             <tr>
-                                <th>Giovedì</th>
-                                <td><time>9:00</time> - <time>13:00</time></td>
-                                <td><time>15:00</time> - <time>19:00</time></td>
+                                <th scope="row">Giovedì</th>
+                                <td data-title="Mattina"><time>9:00</time> - <time>13:00</time></td>
+                                <td data-title="Pomeriggio"><time>15:00</time> - <time>19:00</time></td>
                             </tr>
                             <tr>
-                                <th>Venerdì</th>
-                                <td><time>9:00</time> - <time>13:00</time></td>
-                                <td><time>15:00</time> - <time>19:00</time></td>
+                                <th scope="row">Venerdì</th>
+                                <td data-title="Mattina"><time>9:00</time> - <time>13:00</time></td>
+                                <td data-title="Pomeriggio"><time>15:00</time> - <time>19:00</time></td>
                             </tr>
                             <tr>
-                                <th>Sabato</th>
-                                <td><time>9:00</time> - <time>13:00</time></td>
-                                <td>Chiuso</td>
+                                <th scope="row">Sabato</th>
+                                <td data-title="Mattina"><time>9:00</time> - <time>13:00</time></td>
+                                <td data-title="Pomeriggio">Chiuso</td>
                             </tr>
                             <tr>
-                                <th>Domenica</th>
-                                <td colspan="2">Chiuso</td>
+                                <th scope="row">Domenica</th>
+                                <td colspan="2"  data-title="Mattina e Pomeriggio">Chiuso</td>
                             </tr>
 
                         </tbody>
-                        <tfoot>
-
-                        </tfoot>
                     </table>
                 
-                    
-                    
-                   
-        
-                    
                 </div>
                 <figure>
                     <img src="images/chisiamo2.png" class="img-right" alt="Mappa Geografica">

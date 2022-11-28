@@ -1,3 +1,8 @@
+html,body{
+    font-size: 100%;
+    line-height: 1.5em;
+}
+
 body{
     max-width: 1920px;
     margin: auto;
@@ -46,6 +51,10 @@ nav#menu a{
     text-decoration: none;
 }
 
+#mobileMenuButton{
+    display: none;
+}
+
 a{
     text-decoration: underline;
 }
@@ -77,7 +86,7 @@ main{
     flex-direction: row;
 }
 
-#homePage #homeBanner div{
+#homePage #homeBanner div, #homePage #homeBanner img{
     width: 50%;
 }
 
@@ -140,6 +149,10 @@ main h2{
 .img-right{
     float:right;
     width: 30%;
+}
+
+#chiSiamo ul.membristaff{
+    padding: 0em;
 }
 
 .clear{

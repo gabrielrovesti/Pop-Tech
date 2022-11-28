@@ -9,11 +9,8 @@
 	<meta name="keywords" content="" />
 	<meta name="author" content="" />
     
-    <link rel="stylesheet" href="styles/style.css" media="handheld,screen"  /> 
-    <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 600px), only screen and (max-device-width: 600px)" />
-    <link rel="stylesheet" href="styles/print.css" media="print" />
-
-    <link rel="shortcut icon" type="images/png" href="images/favicon.ico" />
+    <!-- Includi i link ai file di stile CSS e script Javascript -->
+    <?php include "includes/inports.php"; ?>
 
 </head>
 <body id="prodotto">
