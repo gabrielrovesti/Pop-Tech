@@ -8,7 +8,7 @@ header#header #mobileMenuButton{
     font-size: 2.5em;
     overflow: hidden;
     /* TODO cambiare path */
-    background-image: url("/poptech/sito/images/menu.svg"); 
+    background-image: url(http://localhost/PopTech/sito/images/menu.svg); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -35,14 +35,10 @@ nav#menu.show{
     opacity: 1;
 }
 
-
 nav#menu ul li{
     display: block;
     margin: 0.5em 0em 0.5em 0em;
 }
-
-
-
 
 main#content h1{
     margin: 0.0em;

@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8" />
     
-	<title></title>
+	<title>Categoria</title>
 	
-    <meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+    <meta name="description" content="Categoria | PopTech">
+    <meta name="keywords" content="">
+    <meta name="author" content="PopTech">
     
     <!-- Includi i link ai file di stile CSS e script Javascript -->
     <?php include "includes/inports.php"; ?>
@@ -34,7 +34,7 @@
 
                 <article>
                     <header>
-                        <img src="http://localhost/poptech/sito/images/testImg.jpg" alt="Descrizione Immagine" />
+                        <img src="http://localhost/poptech/sito/images/testImg.jpg" alt="Descrizione Immagine">
                         <h2>Product Name</h2>
                     </header>
                     <main>

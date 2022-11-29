@@ -58,12 +58,6 @@ nav#menu a{
 a{
     text-decoration: underline;
 }
-a:visited{
-
-}
-a:hover{
-
-}
 
 a.button{
     border: 1px solid black;

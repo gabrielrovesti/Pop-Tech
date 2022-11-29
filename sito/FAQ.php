@@ -1,17 +1,13 @@
-﻿ <!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="it">
 <head>
-    <meta charset="utf-8" />
-
-
+    <meta charset="utf-8">
     <title>FAQ - Pop Tech</title>
         <meta name="description" content="FAQ | PopTech">
         <meta name="keywords" content="PopTech, videogiochi, manga, giochi da tavolo, storia">
         <meta name="author" content="PopTech">
-
         <!-- Includi i link ai file di stile CSS e script Javascript -->
         <?php include "includes/inports.php"; ?>
-
 </head>
 <body>
 
@@ -25,9 +21,7 @@
     </nav>
 
     <main id="content">
-
         <h1><abbr title="Frequently Asked Questions" lang="en">FAQ</abbr></h1>
-
         <?php for($i=0;$i<5;$i++){ ?>
             <details>
                 <summary>Details</summary>

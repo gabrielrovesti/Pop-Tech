@@ -29,14 +29,12 @@
 
             <img src="images/chisiamo1.png" class="img-left" alt="Storia dell'azienda">  
                 <p>
-                
-                    
-                        La nostra azienda nasce nel 2001, da un gruppo di amici colleghi di università.
-                        Ben presto, si è capito che oltre al comune interesse per l'informatica, c'era molto di più
-                        che ci univa: la passione per i videogiochi, i manga, i giochi da tavolo e la storia.
-                        Intuendo le potenzialità di Internet, abbiamo deciso di creare un sito web per condividere
-                        le nostre passioni con il resto del mondo. Così è nata PopTech, che oggi è diventata un
-                        punto di riferimento per gli appassionati del settore, sia in Italia che all'estero.
+                    La nostra azienda nasce nel 2001, da un gruppo di amici colleghi di università.
+                    Ben presto, si è capito che oltre al comune interesse per l'informatica, c'era molto di più
+                    che ci univa: la passione per i videogiochi, i manga, i giochi da tavolo e la storia.
+                    Intuendo le potenzialità di Internet, abbiamo deciso di creare un sito web per condividere
+                    le nostre passioni con il resto del mondo. Così è nata PopTech, che oggi è diventata un
+                    punto di riferimento per gli appassionati del settore, sia in Italia che all'estero.
                 </p>
 
                 <p>
@@ -59,15 +57,13 @@
 
                 <img src="images/chisiamo2.png" class="img-right" alt="Staff dell'azienda">  
                 <p>
-                
-               
-                Per noi, il lavoro è un gioco e la passione è il nostro motore.
-                Per questo, abbiamo scelto di lavorare in un ambiente giovane e dinamico,
-                dove il contatto con le persone e lo scambio di consigli, opinioni e idee
-                è alla base della nostra idea di lavoro.
-                Le persone contano per noi, e per questo abbiamo creato un team di
-                professionisti altamente qualificati, che si occupano di ogni aspetto
-                della nostra attività.
+                    Per noi, il lavoro è un gioco e la passione è il nostro motore.
+                    Per questo, abbiamo scelto di lavorare in un ambiente giovane e dinamico,
+                    dove il contatto con le persone e lo scambio di consigli, opinioni e idee
+                    è alla base della nostra idea di lavoro.
+                    Le persone contano per noi, e per questo abbiamo creato un team di
+                    professionisti altamente qualificati, che si occupano di ogni aspetto
+                    della nostra attività.
                 </p>
 
                 <p>
@@ -78,15 +74,13 @@
                     che soddisfa le esigenze di ogni cliente.
                 </p>
 
-            
                 <p>
-                La nostra azienda fonda le proprie radici su 4 persone, che si occupano
-                di ogni aspetto della nostra attività. Siamo il cuore pulsante di PopTech,
-                e siamo sempre pronti a rispondere alle vostre domande.
+                    La nostra azienda fonda le proprie radici su 4 persone, che si occupano
+                    di ogni aspetto della nostra attività. Siamo il cuore pulsante di PopTech,
+                    e siamo sempre pronti a rispondere alle vostre domande.
                 </p>
 
                 <ul class="membristaff">
-
                     <li class="membro">
                         <img src="images/gabriel.png" alt="">
                         <h3>Gabriel Rovesti</h3>
@@ -126,10 +120,8 @@
                             la parte dei videogiochi, con particolare occhio alle ultime tecnologie.
                         </p>
                     </li>
-
                 </ul>
-            
-
+                
         </main>
         <?php include ('includes/footer.php');?>
     </body>

@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-	<meta charset="utf-8" />
-    
+	<meta charset="utf-8">
 	<title>{prodotto} - Pop Tech</title>
-	
-    <meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+    <meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
     
     <!-- Includi i link ai file di stile CSS e script Javascript -->
     <?php include "includes/inports.php"; ?>
@@ -38,13 +36,11 @@
 
                 <article>
                     <header>
-                        <img src="http://localhost/poptech/sito/images/testImg.jpg" alt="Descrizione Immagine" />
+                        <img src="http://localhost/poptech/sito/images/testImg.jpg" alt="Descrizione Immagine">
                         <h3>Product Name</h3>
                     </header>
-                    <main>
                         Descrizione Descrizione Descrizione Descrizione Descrizione
                         <a href="" class="button" title="Vedi prodotto {nome prodotto}">Scopri di più</a>
-                    </main>
                 </article>
 
             <?php } ?>
