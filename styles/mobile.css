@@ -1,3 +1,5 @@
+/* Mobile Menu Button ========================= */
+
 header#header #mobileMenuButton{
     display: inline-block;
     cursor: pointer;
@@ -7,8 +9,7 @@ header#header #mobileMenuButton{
     line-height: 1em;
     font-size: 2.5em;
     overflow: hidden;
-    /* TODO cambiare path */
-    background-image: url(http://localhost/PopTech/sito/images/menu.svg); 
+    background-image: url(../images/menu.svg); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -16,11 +17,15 @@ header#header #mobileMenuButton{
     background-color: transparent;
 }
 
+/* Header ========================= */
+
 header#header h1{
     background-position: left;
     margin-left: 0.1em;
     font-size: 5em;
 }
+
+/* Menu ========================= */
 
 nav#menu{
     opacity: 0;
@@ -40,9 +45,13 @@ nav#menu ul li{
     margin: 0.5em 0em 0.5em 0em;
 }
 
+/* Main Content ========================= */
+
 main#content h1{
     margin: 0.0em;
 }
+
+/* Home Page ========================= */
 
 #homePage #homeBanner div{
     width: 100%;
@@ -62,6 +71,8 @@ main#content h1{
     padding: 0em;
 }
 
+/* Product list (Home, Prodotti, Categoria  ========================= */
+
 .productsRow{
     justify-content: space-between;
 }
@@ -70,6 +81,8 @@ main#content h1{
     width: 47%;
     margin-right: 0em;
 }
+
+/* Contatti Page ========================= */
 
 #contatti div, #contatti figure{
     flex: 100% 0 0;
@@ -87,14 +100,20 @@ main#content h1{
     display: block;
 }
 
+/* Responsive Table  ========================= */
+
 th[data-title]:before, td[data-title]:before{
     content: attr(data-title) ":\00A0";
     font-weight: bold;
 }
 
+/* Prodotto Page  ========================= */
+
 #prodotto figure, #prodotto div{
     flex: 100% 0 0;
 }
+
+/* Chi Siamo Page ========================= */
 
 #chiSiamo img{
     width: 100%;

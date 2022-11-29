@@ -34,7 +34,7 @@
 
                 <article>
                     <header>
-                        <img src="http://localhost/poptech/sito/images/testImg.jpg" alt="Descrizione Immagine">
+                        <img src="images/testImg.jpg" alt="Descrizione Immagine">
                         <h2>Product Name</h2>
                     </header>
                     <main>

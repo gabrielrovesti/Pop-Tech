@@ -9,6 +9,8 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Header ========================= */
+
 header#header{
     display: flex;
     flex-grow: 0;
@@ -23,12 +25,23 @@ header#header h1{
     overflow:hidden;
     font-size: 10em;
     line-height: 1em;
-    background-image: url(http://localhost/PopTech/sito/images/logo.svg);
+    background-image: url(../images/logo.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     margin:0.2em;
 }
+
+
+
+footer{
+    padding:1em;
+    margin-top:1em;
+    border: 1px solid black;
+}
+
+
+/* Utilities ========================= */
 
 .srOnly{
     position: absolute;
@@ -37,6 +50,8 @@ header#header h1{
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
 }
+
+/* Navigation ========================= */
 
 nav#menu ul{
     margin:0em;
@@ -55,6 +70,8 @@ nav#menu a{
     display: none;
 }
 
+/* Anchor Links ========================= */
+
 a{
     text-decoration: underline;
 }
@@ -65,9 +82,26 @@ a.button{
     display: inline-block;
 }
 
+/* Main Content ========================= */
+
 main{
     padding: 0.5em;
 }
+
+main h1{
+	padding: 0.7em;
+	padding-top: 0.1em;
+	text-align: center;
+	line-height: 1.5em;
+}
+
+main h2{
+	padding-top: 0.7em;
+	padding-bottom: 0.7em;
+}
+
+
+/* Home Page ======================== */
 
 #homePage h2{
     text-align: center;
@@ -84,9 +118,13 @@ main{
     width: 50%;
 }
 
+/* Category ========================= */
+
 .categoryTitle{
     display: inline-block;
 }
+
+/* Product list (Home, Prodotti, Categoria ========================= */
 
 .productsRow{
     display: flex;
@@ -111,55 +149,25 @@ main{
     display: block;
 }
 
-footer{
-    padding:1em;
-    margin-top:1em;
-    border: 1px solid black;
-}
+/* Chi Siamo Page ========================= */
 
-main h1{
-	padding: 0.7em;
-	padding-top: 0.1em;
-	text-align: center;
-	line-height: 1.5em;
-}
-
-main h2{
-	padding-top: 0.7em;
-	padding-bottom: 0.7em;
-}
-
-.container {
-    display: flex;
-    border: 1px solid black;
-    justify-content: center;
-}
-  
-.img-left{
+#chiSiamo .img-left{
     float:left;
     width: 30%;
+    margin-right: 0.5em;
 }
 
-.img-right{
+#chiSiamo .img-right{
     float:right;
     width: 30%;
+    margin-left: 0.5em;
 }
 
 #chiSiamo ul.membristaff{
     padding: 0em;
 }
 
-.clear{
-    clear:both;
-}
-
-.image{
-    position: relative;
-    margin: auto;
-    width: 100%;
-    height: auto;
-    border-radius: 0.5em;
-}
+/* Contatti ========================= */
 
 #contatti{
     display: flex;
@@ -182,6 +190,8 @@ main h2{
 #contatti img{
     max-width: 100%;
 }
+
+/* Prodotto Page ========================= */
 
 #prodotto main{
     display: flex;

@@ -123,7 +123,7 @@
                     </table>
                 </div>
                 <figure>
-                    <img src="images/chisiamo2.png" class="img-right" alt="Mappa Geografica">
+                    <img src="images/chisiamo2.png" alt="Mappa Geografica">
                     <figcaption>Test</figcaption>
                 </figure>
             </div>
