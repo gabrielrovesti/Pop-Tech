@@ -13,7 +13,7 @@
     <a href="#content" class="srOnly">Vai al contenuto</a>
     <?php include "includes/header.php"; ?>
     <?php include "includes/menu.php"; ?>
-    <nav id="breadcrumbs">
+    <nav id="breadcrumbs" aria-label="breadcrumb">
         <p>Ti trovi in: Prodotti > Ryu Gogo <span lang="en">limited Edition</span> 2020</p> 
     </nav>
 

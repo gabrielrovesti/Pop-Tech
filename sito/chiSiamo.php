@@ -8,17 +8,17 @@
         <meta name="author" content="PopTech">
 
         <!-- Includi i link ai file di stile CSS e script Javascript -->
-        <?php include 'includes/inports.php'; ?>
+        <?php include ("includes/inports.php"); ?>
 
     </head>
     <body id="chiSiamo">
 
         <a href="#content" class="srOnly">Vai al contenuto</a>
 
-        <?php include 'includes/header.php'; ?>
-        <?php include 'includes/menu.php'; ?>
+        <?php include ("includes/header.php"); ?>
+        <?php include ("includes/menu.php"); ?>
        
-        <nav id="breadcrumbs">
+        <nav id="breadcrumbs" aria-label="breadcrumb">
         <p>Ti trovi in: Chi siamo</p> 
         </nav>  
 
@@ -30,11 +30,11 @@
             <img src="images/chisiamo1.png" class="img-left" alt="Storia dell'azienda">  
                 <p>
                     La nostra azienda nasce nel 2001, da un gruppo di amici colleghi di università.
-                    Ben presto, si è capito che oltre al comune interesse per l'informatica, c'era molto di più
-                    che ci univa: la passione per i videogiochi, i manga, i giochi da tavolo e la storia.
+                    Ben presto, si è capito che oltre alla comune passione informatica, c'era molto di più
+                    che ci univa: la passione per i videogiochi, i manga e i giochi da tavolo.
                     Intuendo le potenzialità di Internet, abbiamo deciso di creare un sito web per condividere
-                    le nostre passioni con il resto del mondo. Così è nata PopTech, che oggi è diventata un
-                    punto di riferimento per gli appassionati del settore, sia in Italia che all'estero.
+                    le nostre passioni con il resto del mondo. Così è nata PopTech, oggi punto
+                    di riferimento nel settore, sia in Italia che all'estero.
                 </p>
 
                 <p>
@@ -44,13 +44,12 @@
                 </p>
     
                 <p>
-                    Ci troviamo a Padova, in via Trieste 12, in un palazzo storico del 1900.
-                    La nostra sede è situata al primo piano, e si affaccia su una delle vie più
-                    importanti della città, vicino alla stazione e raggiungibile con ogni mezzo.
-                    Nel corso del tempo, abbiamo affrontato diversi
-                    cambiamenti ed espansioni e, a seguito dell'ultima ristrutturazione nel 2015,
-                    abbiamo incluso anche un laboratorio di videogiochi, dove poter testare i
-                    nostri prodotti prima di metterli in vendita.
+                    Ci troviamo a Padova, in via Trieste 12. 
+                    Se vuoi venire a trovarci, la nostra sede è al primo piano di un palazzo di fronte alla stazione.
+                    Nel corso del tempo, abbiamo avuto diversi cambiamenti e la nostra attività
+                    è cresciuta sempre di più; nel 2015, abbiamo deciso di ampliare la nostra sede
+                    con un secondo piano, per poter accogliere sempre più clienti.
+                    Inoltre, abbiamo deciso di aprire una seconda sede a Milano, in viale Monza 12.
                 </p> 
             
                 <h2>Il nostro <span lang="en">staff</span></h2>
@@ -123,6 +122,6 @@
                 </ul>
                 
         </main>
-        <?php include 'includes/footer.php';?>
+        <?php include ("includes/footer.php");?>
     </body>
 </html>
