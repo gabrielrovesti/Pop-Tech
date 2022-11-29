@@ -20,7 +20,7 @@
     <?php include "includes/header.php"; ?>
     <?php include "includes/menu.php"; ?>
    
-    <nav id="breadcrumbs">
+    <nav id="breadcrumbs" aria-label="breadcrumb">
         <p>Ti trovi in: Prodotti > {nome categoria}</p> 
     </nav>    
    
@@ -37,10 +37,8 @@
                         <img src="images/testImg.jpg" alt="Descrizione Immagine">
                         <h2>Product Name</h2>
                     </header>
-                    <main>
                         Descrizione Descrizione Descrizione Descrizione Descrizione
                         <a href="" class="button" title="Vedi prodotto {nome prodotto}">Scopri di più</a>
-                    </main>
                 </article>
 
             <?php } ?>

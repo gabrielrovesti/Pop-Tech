@@ -19,7 +19,7 @@
     <?php include "includes/header.php"; ?>
     <?php include "includes/menu.php"; ?>
 
-     <nav id="breadcrumbs">
+    <nav id="breadcrumbs" aria-label="breadcrumb">
         <p>Ti trovi in: Contatti</p> 
     </nav>
 
