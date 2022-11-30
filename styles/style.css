@@ -27,9 +27,9 @@ header#header h1{
     line-height: 1em;
     background-image: url(../images/logo.svg);
     background-repeat: no-repeat;
-    background-position: left;
-    text-indent: -99999em;
-    font-size: 3em;
+    background-size: contain;
+    background-position: center;
+    margin:0.2em;
 }
 
 header#header h1#titoloh{
