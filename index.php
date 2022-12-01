@@ -43,7 +43,7 @@
 
         <?php for($i=0;$i<2;$i++){ ?>
 
-        <h3 class="categoryTitle">Categoria</h3> <a href="categoria.php" title="Vedi tutti {categoria}" class="button">Vedi Tutti</a>
+        <h2 class="categoryTitle">Categoria</h2> <a href="categoria.php" title="Vedi tutti {categoria}" class="button">Vedi Tutti</a>
 
         <div class="productsRow">
 
@@ -52,7 +52,7 @@
                 <article>
                     <header>
                         <img src="images/testImg.jpg" alt="Descrizione Immagine">
-                        <h4>Product Name</h4>
+                        <h3>Product Name</h3>
                     </header>
                     <main>
                         Descrizione Descrizione Descrizione Descrizione Descrizione
