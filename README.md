@@ -19,7 +19,7 @@ Scaricare la repository via zip o clonare con
 
 `git clone https://github.com/gabrielrovesti/PopTech`
 
-nella cartella poptech nel localhost (di solito hdocs o simile)
+nella cartella poptech nel localhost (solitamente in una cartella chiamata "htdocs" dentro la cartella "xampp")
  
 ### Usare il progetto
 
