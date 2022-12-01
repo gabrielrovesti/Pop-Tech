@@ -4,12 +4,12 @@
     <meta charset="utf-8">
 
     <title>Contatti - Pop Tech</title>
-        <meta name="description" content="Contatti | PopTech">
-        <meta name="keywords" content="PopTech, videogiochi, manga, giochi da tavolo, storia">
-        <meta name="author" content="PopTech">
+    <meta name="description" content="Contatti | PopTech">
+    <meta name="keywords" content="PopTech, videogiochi, negozio videogiochi, gaming, manga, fumetti, giochi da tavolo, indirizzo, telefono, contattaci, contatti">
+    <meta name="author" content="PopTech">
 
-        <!-- Includi i link ai file di stile CSS e script Javascript -->
-        <?php include "includes/inports.php"; ?>
+    <!-- Includi i link ai file di stile CSS e script Javascript -->
+    <?php include "includes/inports.php"; ?>
         
 </head>
 <body>
@@ -19,7 +19,7 @@
     <?php include "includes/header.php"; ?>
     <?php include "includes/menu.php"; ?>
 
-    <nav id="breadcrumbs" aria-label="breadcrumb">
+    <nav id="breadcrumbs" aria-label="Percorso">
         <p>Ti trovi in: Contatti</p> 
     </nav>
 

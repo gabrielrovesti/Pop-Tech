@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Chi siamo - Pop Tech</title>
         <meta name="description" content="Chi Siamo | PopTech">
-        <meta name="keywords" content="PopTech, videogiochi, manga, giochi da tavolo, storia">
+        <meta name="keywords" content="PopTech, videogiochi, negozio videogiochi, manga, fumetti, fumetti comics, giochi da tavolo, storia, personale, staff">
         <meta name="author" content="PopTech">
 
         <!-- Includi i link ai file di stile CSS e script Javascript -->
@@ -18,7 +18,7 @@
         <?php include ("includes/header.php"); ?>
         <?php include ("includes/menu.php"); ?>
        
-        <nav id="breadcrumbs" aria-label="breadcrumb">
+        <nav id="breadcrumbs" aria-label="Percorso">
         <p>Ti trovi in: Chi siamo</p> 
         </nav>  
 

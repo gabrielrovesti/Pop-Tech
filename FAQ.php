@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>FAQ - Pop Tech</title>
-        <meta name="description" content="FAQ | PopTech">
-        <meta name="keywords" content="PopTech, videogiochi, manga, giochi da tavolo, storia">
-        <meta name="author" content="PopTech">
+    <meta name="description" content="Domande Frequenti | PopTech">
+    <meta name="keywords" content="PopTech, videogiochi, negozio videogiochi, gaming, manga, fumetti, giochi da tavolo, faq, domande, tempi consegna">
+    <meta name="author" content="PopTech">
         <!-- Includi i link ai file di stile CSS e script Javascript -->
         <?php include "includes/inports.php"; ?>
 </head>

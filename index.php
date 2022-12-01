@@ -5,9 +5,9 @@
     
 	<title>Pop Tech</title>
 	
-    <meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="">
+    <meta name="description" content="Pagina principale | PopTech">
+    <meta name="keywords" content="PopTech, videogiochi, negozio videogiochi, gaming, manga, fumetti, fumetti comics, giochi da tavolo, magliette personalizzate, giocattoli, negozio di giocattoli">
+    <meta name="author" content="PopTech">
     
     <!-- Includi i link ai file di stile CSS e script Javascript -->
     <?php include "includes/inports.php"; ?>
@@ -20,7 +20,7 @@
     <?php include "includes/header.php"; ?>
     <?php include "includes/menu.php"; ?>
    
-    <nav id="breadcrumbs" aria-label="breadcrumb">
+    <nav id="breadcrumbs" aria-label="Percorso">
         <p>Ti trovi in: <span lang="en">Home</span></p> 
     </nav>    
    

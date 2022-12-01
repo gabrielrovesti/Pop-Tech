@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>{prodotto} - Pop Tech</title>
-    <meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="">
+    <meta name="description" content=" {prodotto} | PopTech">
+    <meta name="keywords" content="PopTech, videogiochi, negozio videogiochi, gaming, manga, fumetti, giochi da tavolo">
+    <meta name="author" content="PopTech">
     <!-- Includi i link ai file di stile CSS e script Javascript -->
     <?php include "includes/inports.php"; ?>
 </head>
@@ -13,7 +13,7 @@
     <a href="#content" class="srOnly">Vai al contenuto</a>
     <?php include "includes/header.php"; ?>
     <?php include "includes/menu.php"; ?>
-    <nav id="breadcrumbs" aria-label="breadcrumb">
+    <nav id="breadcrumbs" aria-label="Percorso">
         <p>Ti trovi in: Prodotti > Ryu Gogo <span lang="en">limited Edition</span> 2020</p> 
     </nav>
 

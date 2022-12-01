@@ -6,7 +6,7 @@
 	<title>Categoria</title>
 	
     <meta name="description" content="Categoria | PopTech">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="PopTech, videogiochi, negozio videogiochi, gaming, manga, fumetti, giochi da tavolo">
     <meta name="author" content="PopTech">
     
     <!-- Includi i link ai file di stile CSS e script Javascript -->
@@ -20,7 +20,7 @@
     <?php include "includes/header.php"; ?>
     <?php include "includes/menu.php"; ?>
    
-    <nav id="breadcrumbs" aria-label="breadcrumb">
+    <nav id="breadcrumbs" aria-label="Percorso">
         <p>Ti trovi in: Prodotti > {nome categoria}</p> 
     </nav>    
    
