@@ -20,7 +20,7 @@
     <?php include "includes/header.php"; ?>
     <?php include "includes/menu.php"; ?>
    
-    <nav id="breadcrumbs" aria-label="Percorso">
+    <nav id="breadcrumbs" aria-label="Percorso" role="navigation">
         <p>Ti trovi in: Prodotti > {nome categoria}</p> 
     </nav>    
    
@@ -32,7 +32,7 @@
 
             <?php for($j=0;$j<20;$j++){ ?>
 
-                <article>
+                <article role="article">
                     <header>
                         <img src="images/testImg.jpg" alt="Descrizione Immagine">
                         <h2>Product Name</h2>
