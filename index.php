@@ -20,7 +20,7 @@
     <?php include "includes/header.php"; ?>
     <?php include "includes/menu.php"; ?>
    
-    <nav id="breadcrumbs" aria-label="Percorso" role="navigation">
+    <nav id="breadcrumbs" aria-label="Percorso">
         <p>Ti trovi in: <span lang="en">Home</span></p> 
     </nav>    
    
@@ -49,7 +49,7 @@
 
             <?php for($j=0;$j<5;$j++){ ?>
 
-                <article role="article">
+                <article>
                     <header>
                         <img src="images/testImg.jpg" alt="Descrizione Immagine">
                         <h3>Product Name</h3>

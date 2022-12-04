@@ -16,7 +16,7 @@
     <?php include "includes/header.php"; ?>
     <?php include "includes/menu.php"; ?>
 
-    <nav id="breadcrumbs" aria-label="breadcrumb" role="navigation">
+    <nav id="breadcrumbs" aria-label="breadcrumb" >
         <p>Ti trovi in: <abbr title="Frequently Asked Questions" lang="en">FAQ</abbr></p> 
     </nav>
 

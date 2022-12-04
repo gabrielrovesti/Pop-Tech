@@ -19,7 +19,7 @@
     <?php include "includes/header.php"; ?>
     <?php include "includes/menu.php"; ?>
 
-    <nav id="breadcrumbs" aria-label="Percorso" role="navigation">
+    <nav id="breadcrumbs" aria-label="Percorso" >
         <p>Ti trovi in: Contatti</p> 
     </nav>
 
@@ -55,8 +55,8 @@
                         <label for="privacypolicy"><input type="checkbox" id="privacypolicy" name="privacy" value="privacy">Accetta la nostra <span lang="en">Privacy Policy</span></label>
 
                         <!-- Bottoni -->
-                        <a href="" class="button" title="Bottone Invia" tabindex=1>Invia</a>
-                        <a href="" class="button" title="Bottone Reset" tabindex=2>Cancella</a>
+                        <button type="submit" href="" class="button">Invia</button>
+                        <button type="reset" class="button">Cancella</button>
                     </form>
                 </div>
                 <div>
@@ -65,14 +65,14 @@
                         Via Gattamelata 123 Padova <abbr title="Padova">PD</abbr>
                     </p>
                     <!-- Bottoni-->
-                    <a href="" class="button" title="Bottone Google Maps" tabindex=3><span lang="en">Google Maps</span></a>            
-                    <a href="" class="button" title="Bottone Apple Maps" tabindex=4><span lang="en">Apple Maps</span></a>
+                    <a href="https://google.com/maps" class="button" target="_blank"><span lang="en">Google Maps</span></a>            
+                    <a href="https://maps.apple.com" class="button" target="_blank"><span lang="en">Apple Maps</span></a>
 
                     <h2>Chiamaci</h2>
-                    <a href="tel:+39049123456" tabindex=5>049 123456</a>
+                    <a href="tel:+39049123456">049 123456</a>
 
                     <h2>Scrivici</h2>
-                    <a href="mailto:info@comics.it" tabindex=6>info@comics.it</a>
+                    <a href="mailto:info@comics.it">info@comics.it</a>
 
                     <h2>Orari</h2>
                     
@@ -80,43 +80,43 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th id="p1" scope="col" axis="periodo">Mattina</th>
-                                <th id="p2" scope="col" axis="periodo">Pomeriggio</th>
+                                <th id="p1" scope="col">Mattina</th>
+                                <th id="p2" scope="col">Pomeriggio</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th id="g1" scope="row" axis="giorno">Lunedì</th>
-                                <td data-title="Mattina" headers="p1 g1"><time datetime="10:00">10:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio" headers="p2 g1"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                                <th id="g1" scope="row">Lunedì</th>
+                                <td data-title="Mattina"><time datetime="10:00">10:00</time> - <time datetime="13:00">13:00</time></td>
+                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
                             </tr>
                             <tr>
-                                <th id="g2" scope="row" axis="giorno">Martedì</th>
-                                <td data-title="Mattina" headers="p1 g2"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio" headers="p2 g2"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                                <th id="g2" scope="row">Martedì</th>
+                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
                             </tr>
                             <tr>
-                                <th id="g3" scope="row" axis="giorno">Mercoledì</th>
-                                <td data-title="Mattina" headers="p1 g3"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio" headers="p2 g3"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                                <th id="g3" scope="row">Mercoledì</th>
+                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
                             </tr>
                             <tr>
-                                <th id="g4" scope="row" axis="giorno">Giovedì</th>
-                                <td data-title="Mattina" headers="p1 g4"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio" headers="p2 g4"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                                <th id="g4" scope="row">Giovedì</th>
+                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
                             </tr>
                             <tr>
-                                <th id="g5" scope="row" axis="giorno">Venerdì</th>
-                                <td data-title="Mattina" headers="p1 g5"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio" headers="p2 g5"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                                <th id="g5" scope="row">Venerdì</th>
+                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
                             </tr>
                             <tr>
-                                <th id="g6" scope="row" axis="giorno">Sabato</th>
-                                <td data-title="Mattina" headers="p1 g6"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio" headers="p2 g6">Chiuso</td>
+                                <th id="g6" scope="row">Sabato</th>
+                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                                <td data-title="Pomeriggio">Chiuso</td>
                             </tr>
                             <tr>
-                                <th id="g7" scope="row" axis="giorno">Domenica</th>
+                                <th id="g7" scope="row">Domenica</th>
                                 <td colspan="2" data-title="Mattina e Pomeriggio">Chiuso</td>  <!--qui come metto gli headers? -->
                             </tr>
                         </tbody>

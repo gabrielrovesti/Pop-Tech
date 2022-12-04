@@ -18,17 +18,16 @@
         <?php include ("includes/header.php"); ?>
         <?php include ("includes/menu.php"); ?>
        
-        <nav id="breadcrumbs" aria-label="Percorso" role="navigation">
+        <nav id="breadcrumbs" aria-label="Percorso" >
         <p>Ti trovi in: Chi siamo</p> 
         </nav>  
 
         <main id="content">
             <h1>Chi siamo</h1>
 
-            <article role="article">  <!--aggiunto article-->
                 <h2>La nostra Storia</h2>
 
-                <img src="images/chisiamo1.png" class="img-left" alt="Storia dell'azienda">  
+                <img src="images/chisiamo1.png" class="img-left" alt="Fotografia della sede">  
                     <p>
                         La nostra azienda nasce nel 2001, da un gruppo di amici colleghi di università.
                         Ben presto, si è capito che oltre alla comune passione informatica, c'era molto di più
@@ -52,13 +51,10 @@
                         con un secondo piano, per poter accogliere sempre più clienti.
                         Inoltre, abbiamo deciso di aprire una seconda sede a Milano, in viale Monza 12.
                     </p> 
-            </article>
-
-
-            <article  role="article">
+            
                 <h2>Il nostro <span lang="en">staff</span></h2>
 
-                <img src="images/chisiamo2.png" class="img-right" alt="Staff dell'azienda">  
+                <img src="images/chisiamo2.png" class="img-right" alt="Foto di gruppo dello staff">  
                 <p>
                     Per noi, il lavoro è un gioco e la passione è il nostro motore.
                     Per questo, abbiamo scelto di lavorare in un ambiente giovane e dinamico,
@@ -82,58 +78,54 @@
                     di ogni aspetto della nostra attività. Siamo il cuore pulsante di PopTech,
                     e siamo sempre pronti a rispondere alle vostre domande.
                 </p>
-            </article>
+            
                 <ul class="membristaff">
                     <li class="membro">
-                        <img src="images/gabriel.png" alt="Una foto del membro dello staff Gabriel Rovesti">
-
-                        <article role="article">
+                        <img src="images/gabriel.png" alt="Fotografia di Gabriel Rovesti">
+                        
                         <h3>Gabriel Rovesti</h3>
                         <p>
                             Cerco di essere un ragazzo creativo, curioso e sempre pronto a inseguire l'ultima sfida.
                             Seguo la parte responsabile e amministrativo "dietro le quinte",
                             ma sono anche il responsabile della parte grafica e del marketing.
                         </p>
-                        </article>
+                        
                     </li>
 
                     <li class="membro">
-                        <img src="images/giulio.png" alt="Una foto del membro dello staff Giulio Moretto">
+                        <img src="images/giulio.png" alt="Fotografia di Giulio Moretto">
 
-                        <article role="article">
                         <h3>Giulio Moretto</h3>
                         <p>
                             Ho sempre avuto una passione per la tecnologia e la programmazione.
                             Mi occupo della parte tecnica del sito, della gestione dei server e della sicurezza.
                             Seguo inoltre la parte abbigliamento e videogiochi alla vendita diretta
                         </p>
-                        </article>
+                        
                     </li>
 
                     <li class="membro">
-                        <img src="images/erica.png" alt="Una foto del membro dello staff Erica Cavaliere">
-
-                        <article role="article">
+                        <img src="images/erica.png" alt="Fotografia di Erica Cavaliere">
+                        
                         <h3>Erica Cavaliere</h3>
                         <p>
                             Sono una ragazza curiosa, che cerca sempre di divertirsi in quello che fa,
                             e di imparare sempre qualcosa di nuovo. Mi occupo della parte commerciale,
                             della gestione dei clienti e della vendita diretta.
                         </p>
-                        </article>
+                        
                     </li>
 
                     <li class="membro">
-                        <img src="images/teo.png" alt="Una foto del membro dello staff Teo Corbu">
-
-                        <article role="article">
+                        <img src="images/teo.png" alt="Fotografia di Teo Corbu">
+                        
                         <h3>Teo Corbu</h3>
                         <p>
                             Cerco sempre di essere un ragazzo positivo e disponibile, e di fare sempre
                             il possibile per aiutare gli altri. Mi occupo principalmente di seguire
                             la parte dei videogiochi, con particolare occhio alle ultime tecnologie.
                         </p>
-                        </article>
+                        
                     </li>
                 </ul>
                 
