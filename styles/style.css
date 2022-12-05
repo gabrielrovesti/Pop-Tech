@@ -108,12 +108,12 @@ main h2{
 
 #homePage #homeBanner{
     display: flex;
-    flex:100% 0 0;
+   
     flex-direction: row;
 }
 
 #homePage #homeBanner div, #homePage #homeBanner img{
-    width: 50%;
+    flex: 50% 0 0;
 }
 
 /* Category ========================= */
@@ -127,12 +127,12 @@ main h2{
 .productsRow{
     display: flex;
     flex-direction: row;
-    flex: 100% 0 0;
+    
     flex-wrap: wrap;
 }
 
 .productsRow article{
-    width: 18%;
+    flex: 18% 0 0;
     border: 1px solid black;
     margin-right: 1em;
     margin-bottom: 1em;

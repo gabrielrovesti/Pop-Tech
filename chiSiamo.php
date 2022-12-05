@@ -8,15 +8,15 @@
         <meta name="author" content="PopTech">
 
         <!-- Includi i link ai file di stile CSS e script Javascript -->
-        <?php include ("includes/inports.php"); ?>
+        <?php require_once("includes/inports.php"); ?>
 
     </head>
     <body id="chiSiamo">
 
         <a href="#content" class="srOnly">Vai al contenuto</a>
 
-        <?php include ("includes/header.php"); ?>
-        <?php include ("includes/menu.php"); ?>
+        <?php require_once("includes/header.php"); ?>
+        <?php require_once("includes/menu.php"); ?>
        
         <nav id="breadcrumbs" aria-label="Percorso" >
         <p>Ti trovi in: Chi siamo</p> 
@@ -130,6 +130,6 @@
                 </ul>
                 
         </main>
-        <?php include ("includes/footer.php");?>
+        <?php require_once("includes/footer.php");?>
     </body>
 </html>
