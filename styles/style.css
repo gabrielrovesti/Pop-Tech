@@ -72,6 +72,15 @@ nav#menu a{
 
 a{
     text-decoration: underline;
+    color:darkslategrey;
+}
+
+a:visited{
+    color:blue;
+}
+
+a:hover{
+    color:blueviolet;
 }
 
 a.button{

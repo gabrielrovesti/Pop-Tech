@@ -37,8 +37,8 @@
                         <img src="images/testImg.jpg" alt="Descrizione Immagine">
                         <h2>Product Name</h2>
                     </header>
-                        Descrizione Descrizione Descrizione Descrizione Descrizione
-                        <a href="" class="button" title="Vedi prodotto {nome prodotto}">Scopri di più</a>
+                    Descrizione Descrizione Descrizione Descrizione Descrizione
+                    <a href="" class="button" title="Vedi prodotto {nome prodotto}">Scopri di più</a>
                 </article>
 
             <?php } ?>
