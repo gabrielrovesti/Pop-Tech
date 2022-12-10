@@ -44,7 +44,7 @@ CREATE TABLE `prodotto` (
   `origine` varchar(100) NOT NULL,
   `marca` int(10) UNSIGNED NOT NULL,
   `modello` varchar(100) NOT NULL,
-  `dimensione` varchar(100) NOT NULL,
+  `dimensione` varchar(100) NULL,
   `peso` varchar(100) DEFAULT NULL,
   `categoria` int(10) UNSIGNED NOT NULL,
   `prezzo` decimal(5,2) UNSIGNED NOT NULL
@@ -67,6 +67,7 @@ ALTER TABLE `prodotto`
 
 CREATE TABLE `utente` (
   `ID` int(10) UNSIGNED NOT NULL,
+  `nome` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
   `admin` tinyint(1) NOT NULL
@@ -86,7 +87,7 @@ CREATE TABLE `recensione` (
   `prodotto` int(10) UNSIGNED NOT NULL,
   `utente` int(10) UNSIGNED NOT NULL,
   `contenuto` text NOT NULL,
-  `punteggio` decimal(1,1) UNSIGNED NOT NULL
+  `punteggio` decimal(2,1) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ALTER TABLE `recensione`
@@ -106,7 +107,7 @@ ALTER TABLE `recensione`
 CREATE TABLE `faq` (
   `ID` int(10) UNSIGNED NOT NULL,
   `domanda` text NOT NULL,
-  `rispost` text NOT NULL
+  `risposta` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ALTER TABLE `faq`  
@@ -122,7 +123,7 @@ ALTER TABLE `faq`
 INSERT INTO marca (ID,nome) VALUES 
 (1,'Funko Pop'),
 (2,'Ubisoft'),
-(3,'Toei Animations')
+(3,'Toei Animations');
 
 
 INSERT INTO categoria (ID, nome, inPrimaPagina) VALUES 
@@ -141,12 +142,12 @@ INSERT INTO prodotto (ID, nome, immagine, altimmagine, descrizione, origine, mar
 (5, '{ja|Goku} {en|T-shirt} XL', 'goku.jpg', 'T-shirt Rossa con logo in giapponese in alto a destra', 'Descrizone test', 'Cina', 3, 'APP001', '[XL|{en|Extra Large}]', NULL , 2, 30.00);
 
 
-INSERT INTO utenti (ID,nome,email,password,admin) VALUES
+INSERT INTO utente (ID,nome,email,password,admin) VALUES
 (1,'User','user@user.com','$2y$10$6H4I0IvKUEzsHS6A.86gke6vxY9dncY92PwmuvZaQQ.hvZEvxF9Dq',false),
 (2,'Admin','admin@admin.com','$2y$10$SFYKM6V9lhS7eWRuiRqWZu6IV43mEfcSGyVUhPM3GzRO9vWxQhwfG',true);
 
 
-INSERT INTO recensioni (ID, prod, utente, contenuto, punteggio) VALUES
+INSERT INTO recensione (ID, prodotto, utente, contenuto, punteggio) VALUES
 (1,1,1,'Bellissimo, lo ho preso come regalo', 4.5),
 (2,4,1,'Gameplay poco accattivante, non lo consiglio', 2.0);
 
@@ -154,4 +155,4 @@ INSERT INTO recensioni (ID, prod, utente, contenuto, punteggio) VALUES
 
 INSERT INTO faq (ID,domanda,risposta) VALUES
 (1, 'Quanto ci mettono ad arrivare gli ordini dal Giappone?', 'Gli ordini dal Giappone impiegano circa una settimana ad arrivare nella nostra sede'),
-(1, 'É possibile ordinare articoli personalizzati?', 'Certo! Potete comunicarci il vostro ordine usando il modulo nella pagina contatti con la vostra richiesta.');
+(2, 'É possibile ordinare articoli personalizzati?', 'Certo! Potete comunicarci il vostro ordine usando il modulo nella pagina contatti con la vostra richiesta.');
