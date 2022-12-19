@@ -23,6 +23,7 @@ ALTER TABLE `marca`
 CREATE TABLE `categoria` (
   `ID` int(11) UNSIGNED NOT NULL,
   `nome` varchar(100) NOT NULL,
+  `descrizione` varchar(100) NOT NULL,
   `inPrimaPagina` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -127,9 +128,9 @@ INSERT INTO marca (ID,nome) VALUES
 
 
 INSERT INTO categoria (ID, nome, inPrimaPagina) VALUES 
-(1,'Action Figure', false),
-(2,'Apparel', true),
-(3,'Videogiochi', true);
+(1,'Action Figure', 'Giocattoli', false),
+(2,'Apparel', 'Abbigliamento', true),
+(3,'Videogiochi', 'Gaming', true);
 
 
 INSERT INTO prodotto (ID, nome, immagine, altimmagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo) VALUES

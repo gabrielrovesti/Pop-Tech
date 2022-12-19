@@ -68,6 +68,11 @@ nav#menu a{
     display: none;
 }
 
+/* Make the login link appear on the far right */
+#loginLink {
+    float: right;
+}
+
 /* Anchor Links ========================= */
 
 a{
@@ -218,3 +223,59 @@ main h2{
 #prodotto div{
     flex: 67% 0 0;
 }
+
+/* Form ========================= */
+
+#inputForm{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#inputForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+  
+#inputForm input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#inputForm input[type="submit"] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Tema scuro ========================= */
+
+@media (prefers-color-scheme: dark) {
+	html {
+		filter: invert(100%);
+	}
+	img:not(.ignore-color-scheme),video:not(.ignore-color-scheme) {
+		filter: brightness(50%) invert(100%);
+	}
+	.ignore-color-scheme {
+		filter: invert(100%);
+	}
+}
+
+/* Eventuali alternative:
+
+html.dark-mode {
+    filter: invert(100%);
+}
+
+html.dark-mode img {
+    filter: invert(100%);
+}
+:not(img) { filter: invert(100%) } */

@@ -27,6 +27,8 @@
                 <li><a href="<?php echo($links[$i]); ?>" <?php if($langs[$i]) echo('lang="'.$langs[$i].'"'); ?> ><?php echo($names[$i]); ?></a></li>
             <?php } //fine else  ?>
         <?php } //fine for ?>
+        <a href="accedi.php" id="login_link">Accedi</a>
     </ul>
+    
 </nav>
 

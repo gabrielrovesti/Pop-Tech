@@ -33,7 +33,7 @@
 
                     <h2>Modulo Richieste</h2>
 
-                    <form action="/" method="POST">
+                    <form action="includes/invio_contatti" method="POST">
 
                         <label for="Nome">Nome</label>
                         <input type="text" id="Nome" name="Nome" placeholder="Nome" required="required" aria-required="true" data-msg-required="Per favore, inserisci il tuo nome" data-msg-invalid="Formato testo non corretto">
@@ -41,8 +41,7 @@
                         <label for="Cognome">Cognome</label>
                         <input type="text" id="Cognome" name="Cognome" placeholder="Cognome" required="required" aria-required="true" data-msg-required="Per favore, inserisci il tuo cognome" data-msg-invalid="Formato testo non corretto">
                     
-                        <!-- types email & tel? -->
-                        <label for="E-mail"><span lang="en">E-mail</span></label>
+                        <label for="E-mail" lang="en">Email</label>
                         <input type="email" id="E-mail" name="E-mail" placeholder="E-mail" required="required" aria-required="true" data-msg-required="Per favore, inserisci la tua casella di posta" data-msg-invalid="Formato non corretto">
                         
                         <label for="Telefono">Telefono</label>
@@ -51,10 +50,9 @@
                         <label for="Messaggio">Messaggio</label>
                         <textarea id="Messaggio" name="Messaggio" placeholder="Inserisci qui il tuo messaggio" required="required" aria-required="true" data-msg-required="Per favore, inserisci il tuo messaggio" data-msg-invalid="Formato testo non corretto"></textarea>
 
-                        <!-- CI VA IL SPAN LANG NELLE ETICHETTE?-->
+                        <!-- Da inserire qui successivamente la privacy policy-->
                         <label for="privacypolicy"><input type="checkbox" id="privacypolicy" name="privacy" value="privacy">Accetta la nostra <span lang="en">Privacy Policy</span></label>
 
-                        <!-- Bottoni -->
                         <button type="submit" href="" class="button">Invia</button>
                         <button type="reset" class="button">Cancella</button>
                     </form>
