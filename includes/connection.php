@@ -1,15 +1,21 @@
 <?php
 namespace DB;
-class DB_A{
+
+class DBAccess{
+   
     private const HOST_DB = "127.0.0.1";
-    private const DATABASE_NAME = "tecweb";
-    private const USERNAME = "user";
-    private const PASSWORD = "user";
+    private const DATABASE_NAME = "poptech";
+    private const USERNAME = "root";
+    private const PASSWORD = "root";
 
     private $connection;
 
     public function open_connection(){
-        $this->connection = mysqli_connect(DB_A::HOST_DB, DB_A::USERNAME, DB_A::PASSWORD, DB_A::DATABASE_NAME);
+
+        mysqli_report(MYSQLI_REPORT_ERROR);
+
+        $this->connection = mysqli_connect(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DATABASE_NAME);
+
         if(mysqli_connect_errno()) {
             echo "Errore di connessione al database: " . mysqli_connect_error();
             return false;
@@ -17,6 +23,28 @@ class DB_A{
         else{
             return true;
         }
+    }
+
+    public function exec_select_query($query){
+
+        $res = mysqli_query($this->connection, $query) or die("Errore DB: ".mysqli_error($this->conn));
+ 
+        if(mysqli_num_rows($res)==0){
+            return array();
+        }else{
+            
+            $resArray = array();
+            
+            while($row = mysqli_fetch_assoc($res)){
+                array_push($resArray,$row);
+            }
+            
+            $res->free();
+            
+            return $resArray;
+        }
+
+
     }
 
     public function close_connection(){

@@ -1,131 +1,109 @@
-﻿<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="utf-8">
+<?php
 
-    <title>Contatti - Pop Tech</title>
-    <meta name="description" content="Contatti | PopTech">
-    <meta name="keywords" content="PopTech, videogiochi, negozio videogiochi, gaming, manga, fumetti, giochi da tavolo, indirizzo, telefono, contattaci, contatti">
-    <meta name="author" content="PopTech">
+    require_once "includes/connection.php";
+    require_once "includes/utilities.php";
 
-    <!-- Includi i link ai file di stile CSS e script Javascript -->
-    <?php require_once("includes/inports.php"); ?>
+    use DB\DBAccess;
+
+    $template = file_get_contents('layouts/layout.html');
+
+    $contatti = file_get_contents('layouts/contatti.html');
+
+
+
+    $pageID = 'contattaci';
+    $title = "Contatti - Pop Tech";
+    $breadcrumbs = '<p>Ti trovi in: <a href="/" lang="en">Home</a> > Contatti</p>';
+
+    $content = "";
+
+    //Validazione form
+    $form_messages = '';
+    $allowed_tags = '<em><strong><h1><h2><h3><h4><h5><h6>';
+    $result = true;
+
+    $nome      = "";
+    $telefono  = "";
+    $email     = "";
+    $messaggio = "";
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+        //Controllo Nomo
+        $nome = sanitize($_POST['nome'], $allowed_tags);
+        if(strlen($nome) == 0){
+            $form_messages .= '<p>Il campo nome non può essere vuoto</p>';
+        }else{
+            if(preg_match("/\d/",$nome)){
+                $form_messages .= '<li>Il nome non può contenere numeri</li>';
+            }
+        }
         
-</head>
-<body>
+        //Controllo Telefono
+        $telefono = sanitize($_POST['telefono'], $allowed_tags);
+        if(strlen($telefono) == 0){
+            $form_messages .= '<p>Il campo telefono non può essere vuoto</p>';
+        }else{
+            if(!preg_match("/^[0-9]+$/",$telefono)){
+                $form_messages .= '<p>Il campo telefono non può contenere lettere</p>';
+            }
+        }
 
-    <a href="#content" class="srOnly">Vai al contenuto</a>
-	
-    <?php require_once("includes/header.php"); ?>
-    <?php require_once("includes/menu.php"); ?>
 
-    <nav id="breadcrumbs" aria-label="Percorso" >
-        <p>Ti trovi in: Contatti</p> 
-    </nav>
+        //Controllo Email
+        $email = sanitize($_POST['email'], $allowed_tags);
+        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+        if(strlen($email) == 0){
+            $form_messages .= '<p>Il campo e-mail non può essere vuoto</p>';
+        }else{
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                $form_messages .= '<p>Il campo e-mail non è valido</p>';
+            }
+            if(!preg_match("/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/",$email)){
+                $form_messages .= '<p>Il campo e-mail non è stato inserito nel formato corretto</p>';
+            }
+        }
+     
+        //Controllo Messaggio
+        $messaggio = sanitize($_POST['messaggio'], $allowed_tags);
+        if(strlen($messaggio) == 0){
+            $form_messages .= '<p>Il campo messaggio non può essere vuoto</p>';
+        }
 
-    <main id="content">
+        // Se non ci sono errori, si inviano i dati correttamente
+        if(strlen($form_messages) == 0){
+            // $db = new DBAccess;
+            // $db->open_connection();
+            // $query = "INSERT INTO contatti (nome, cognome, email, telefono, messaggio) VALUES ('$nome', '$cognome', '$email', '$telefono', '$messaggio')";
+            // $result = mysqli_query($connection, $query);
+            // $db->close_connection();
+            $result = true;
+        }
 
-            <h1>Contatti</h1>
+        if($result){
+            $form_messages .= '<p class="formSuccess">Il messaggio è stato inviato correttamente</p>';
+        }
+        else{
+            $form_messages .= '<p class="formError">Abbiamo un problema con l\'invio; riprova più tardi</p>';
+        }
 
-            <div id="contatti">
+    }
 
-                <div>          
 
-                    <h2>Modulo Richieste</h2>
+    $contatti = str_replace('{{formMessages}}',$form_messages,$contatti);
 
-                    <form action="includes/invio_contatti" method="POST">
+    $contatti = str_replace('{{nome}}',$nome,$contatti);
+    $contatti = str_replace('{{telefono}}',$telefono,$contatti);
+    $contatti = str_replace('{{email}}',$email,$contatti);
+    $contatti = str_replace('{{messaggio}}',$messaggio,$contatti);
 
-                        <label for="Nome">Nome</label>
-                        <input type="text" id="Nome" name="Nome" placeholder="Nome" required="required" aria-required="true" data-msg-required="Per favore, inserisci il tuo nome" data-msg-invalid="Formato testo non corretto">
-                        
-                        <label for="Cognome">Cognome</label>
-                        <input type="text" id="Cognome" name="Cognome" placeholder="Cognome" required="required" aria-required="true" data-msg-required="Per favore, inserisci il tuo cognome" data-msg-invalid="Formato testo non corretto">
-                    
-                        <label for="E-mail" lang="en">Email</label>
-                        <input type="email" id="E-mail" name="E-mail" placeholder="E-mail" required="required" aria-required="true" data-msg-required="Per favore, inserisci la tua casella di posta" data-msg-invalid="Formato non corretto">
-                        
-                        <label for="Telefono">Telefono</label>
-                        <input type="tel" id="Telefono" name="Telefono" placeholder="Telefono" required="required" aria-required="true" data-msg-required="Per favore, inserisci il tuo numero di telefono" data-msg-invalid="Formato telefono non corretto">
-                    
-                        <label for="Messaggio">Messaggio</label>
-                        <textarea id="Messaggio" name="Messaggio" placeholder="Inserisci qui il tuo messaggio" required="required" aria-required="true" data-msg-required="Per favore, inserisci il tuo messaggio" data-msg-invalid="Formato testo non corretto"></textarea>
+    $content .= $contatti;
 
-                        <!-- Da inserire qui successivamente la privacy policy-->
-                        <label for="privacypolicy"><input type="checkbox" id="privacypolicy" name="privacy" value="privacy">Accetta la nostra <span lang="en">Privacy Policy</span></label>
+    $menu = get_menu();
+    $template = str_replace('{{menu}}',$menu,$template);
 
-                        <button type="submit" href="" class="button">Invia</button>
-                        <button type="reset" class="button">Cancella</button>
-                    </form>
-                </div>
-                <div>
-                    <h2>Dove Siamo</h2>
-                    <p>
-                        Via Gattamelata 123 Padova <abbr title="Padova">PD</abbr>
-                    </p>
-                    <!-- Bottoni-->
-                    <a href="https://google.com/maps" class="button" target="_blank"><span lang="en">Google Maps</span></a>            
-                    <a href="https://maps.apple.com" class="button" target="_blank"><span lang="en">Apple Maps</span></a>
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs,$content);
 
-                    <h2>Chiamaci</h2>
-                    <a href="tel:+39049123456">049 123456</a>
+?>
 
-                    <h2>Scrivici</h2>
-                    <a href="mailto:info@comics.it">info@comics.it</a>
 
-                    <h2>Orari</h2>
-                    
-                    <table summary="Nella Tabella viene fornito in modo dettagliato gli orari di apertura e di chiusura del negozio. Ogni riga indica il giorno e gli orari di apertura e di chiusura di mattina e di pomeriggio">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th id="p1" scope="col">Mattina</th>
-                                <th id="p2" scope="col">Pomeriggio</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th id="g1" scope="row">Lunedì</th>
-                                <td data-title="Mattina"><time datetime="10:00">10:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
-                            </tr>
-                            <tr>
-                                <th id="g2" scope="row">Martedì</th>
-                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
-                            </tr>
-                            <tr>
-                                <th id="g3" scope="row">Mercoledì</th>
-                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
-                            </tr>
-                            <tr>
-                                <th id="g4" scope="row">Giovedì</th>
-                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
-                            </tr>
-                            <tr>
-                                <th id="g5" scope="row">Venerdì</th>
-                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
-                            </tr>
-                            <tr>
-                                <th id="g6" scope="row">Sabato</th>
-                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio">Chiuso</td>
-                            </tr>
-                            <tr>
-                                <th id="g7" scope="row">Domenica</th>
-                                <td colspan="2" data-title="Mattina e Pomeriggio">Chiuso</td>  <!--qui come metto gli headers? -->
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <figure>
-                    <img src="images/chisiamo2.png" alt="Posizione dell'azienda in una mappa geografica">
-                    <figcaption>Test</figcaption>
-                </figure>
-            </div>
-        </main>
-    <?php require_once("includes/footer.php"); ?>
-</body>
-</html>

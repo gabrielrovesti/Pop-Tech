@@ -259,13 +259,14 @@ main h2{
 
 @media (prefers-color-scheme: dark) {
 	html {
-		filter: invert(100%);
-	}
+
+    }
+		
 	img:not(.ignore-color-scheme),video:not(.ignore-color-scheme) {
-		filter: brightness(50%) invert(100%);
+		
 	}
 	.ignore-color-scheme {
-		filter: invert(100%);
+		
 	}
 }
 

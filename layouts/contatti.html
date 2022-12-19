@@ -1,0 +1,102 @@
+﻿
+
+<h1>Contatti</h1>
+
+            <div id="contatti">
+
+                <div>          
+
+                    <h2>Modulo Richieste</h2>
+
+                    {{formMessages}}
+
+                    <form action="contatti.php" method="POST">
+
+                        <label for="nome">nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome" required="required" data-msg-required="Per favore, inserisci il tuo nome" data-msg-invalid="Formato testo non corretto" value="{{nome}}">
+                                            
+                        <label for="email" lang="en">email</label>
+                        <input type="email" id="email" name="email" placeholder="E-mail" required="required" data-msg-required="Per favore, inserisci la tua casella di posta" data-msg-invalid="Formato non corretto" value="{{email}}">
+                        
+                        <label for="telefono">telefono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="telefono" data-msg-invalid="Formato telefono non corretto" value="{{telefono}}">
+                    
+                        <label for="messaggio">Messaggio</label>
+                        <textarea id="messaggio" name="messaggio" placeholder="Inserisci qui il tuo messaggio" required="required" data-msg-required="Per favore, inserisci il tuo messaggio" data-msg-invalid="Formato testo non corretto">{{messaggio}}</textarea>
+
+                        <!-- Da inserire qui successivamente la privacy policy-->
+                        <label for="privacypolicy"><input type="checkbox" id="privacypolicy" name="privacy" value="privacy" required="required">Accetta la nostra <span lang="en">Privacy Policy</span></label>
+
+                        <button type="submit" href="" class="button">Invia</button>
+                        <button type="reset" class="button">Cancella</button>
+                    </form>
+                </div>
+                <div>
+                    <h2>Dove Siamo</h2>
+                    <p>
+                        Via Gattamelata 123 Padova <abbr title="Padova">PD</abbr>
+                    </p>
+                    <!-- Bottoni-->
+                    <a href="https://google.com/maps" class="button" target="_blank"><span lang="en">Google Maps</span></a>            
+                    <a href="https://maps.apple.com" class="button" target="_blank"><span lang="en">Apple Maps</span></a>
+
+                    <h2>Chiamaci</h2>
+                    <a href="tel:+39049123456">049 123456</a>
+
+                    <h2>Scrivici</h2>
+                    <a href="mailto:info@comics.it">info@comics.it</a>
+
+                    <h2>Orari</h2>
+                    
+                    <table summary="Nella Tabella viene fornito in modo dettagliato gli orari di apertura e di chiusura del negozio. Ogni riga indica il giorno e gli orari di apertura e di chiusura di mattina e di pomeriggio">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th id="p1" scope="col">Mattina</th>
+                                <th id="p2" scope="col">Pomeriggio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th id="g1" scope="row">Lunedì</th>
+                                <td data-title="Mattina"><time datetime="10:00">10:00</time> - <time datetime="13:00">13:00</time></td>
+                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                            </tr>
+                            <tr>
+                                <th id="g2" scope="row">Martedì</th>
+                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                            </tr>
+                            <tr>
+                                <th id="g3" scope="row">Mercoledì</th>
+                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                            </tr>
+                            <tr>
+                                <th id="g4" scope="row">Giovedì</th>
+                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                            </tr>
+                            <tr>
+                                <th id="g5" scope="row">Venerdì</th>
+                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                            </tr>
+                            <tr>
+                                <th id="g6" scope="row">Sabato</th>
+                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                                <td data-title="Pomeriggio">Chiuso</td>
+                            </tr>
+                            <tr>
+                                <th id="g7" scope="row">Domenica</th>
+                                <td colspan="2" data-title="Mattina e Pomeriggio">Chiuso</td>  <!--qui come metto gli headers? -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <figure>
+                    <img src="images/chisiamo2.png" alt="Posizione dell'azienda in una mappa geografica">
+                    <figcaption>Test</figcaption>
+                </figure>
+            </div>
+     

@@ -1,33 +1,22 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-	<meta charset="utf-8">
-    
-	<title>Pop Tech</title>
-	
-    <meta name="description" content="Pagina principale | PopTech">
-    <meta name="keywords" content="PopTech, videogiochi, negozio videogiochi, gaming, manga, fumetti, fumetti comics, giochi da tavolo, magliette personalizzate, giocattoli, negozio di giocattoli">
-    <meta name="author" content="PopTech">
-    
-    <!-- Includi i link ai file di stile CSS e script Javascript -->
-    <?php require_once("includes/inports.php"); ?>
+<?php
 
-</head>
-<body id="homePage">
+    require_once "includes/connection.php";
+    require_once "includes/utilities.php";
 
-    <a href="#content" class="srOnly">Vai al contenuto</a>
-	
-    <?php require_once("includes/header.php"); ?>
-    <?php require_once("includes/menu.php"); ?>
-   
-    <nav id="breadcrumbs" aria-label="Percorso">
-        <p>Ti trovi in: <span lang="en">Home</span></p> 
-    </nav>    
-   
-	<main id="content">
-        
-        <h1>Il tuo negozio di Fumetti e Gaming a Padova</h1>
-        
+    use DB\DBAccess;
+
+    $template = file_get_contents('layouts/layout.html');
+
+
+    $pageID = 'homePage';
+    $title = "Pop Tech";
+    $breadcrumbs = '<p>Ti trovi in: <span lang="en">Home</span></p>';
+
+  
+
+    $content = "<h1>Il tuo negozio di Fumetti e Gaming a Padova</h1>";
+
+    $content .= '
         <div id="homeBanner">
             <div>
                 <ul>
@@ -39,34 +28,54 @@
                 </ul>
             </div>
             <img src="dd" alt="Immagine banner">
-        </div>
+        </div>';
 
-        <?php for($i=0;$i<2;$i++){ ?>
+    $connection = new DBAccess;
+    
 
-        <h2 class="categoryTitle">Categoria</h2> <a href="categoria.php" title="Vedi tutti {categoria}" class="button">Vedi Tutti</a>
+    if($connection->open_connection()){
 
-        <div class="productsRow">
+        $categories = $connection->exec_select_query('SELECT id, nome FROM categoria WHERE inPrimaPagina=1;');
 
-            <?php for($j=0;$j<5;$j++){ ?>
+        //if count($categories) omesso perché non deve stampare nulla se non sono selezionate categorie da inserire in prima pagina
 
-                <article>
-                    <header>
-                        <img src="images/testImg.jpg" alt="Descrizione Immagine">
-                        <h3>Product Name</h3>
-                    </header>
-                    
-                    Descrizione Descrizione Descrizione Descrizione Descrizione
-                    <a href="" class="button" title="Vedi prodotto {nome prodotto}">Scopri di più</a>
-                    
-                </article>
+        foreach($categories as $category){
 
-            <?php } ?>
-        </div>
+            $content .= '<h2 class="categoryTitle">'.parse_lang($category['nome']).'</h2>';
+            $content .= '<a href="categoria.php?id='.$category['id'].'" title="Vedi tutti i prodotti in '.parse_lang($category['nome']).'" class="button">Vedi Tutti</a>';
 
-        <?php } ?>
-	</main>
+            $products = $connection->exec_select_query('SELECT id, nome, descrizione, immagine, altImmagine FROM prodotto WHERE categoria='.$category['id'].' ORDER BY id DESC LIMIT 5;');
 
-    <?php require_once("includes/footer.php"); ?>
-	
-</body>
-</html>
+            $content .= '<div class="productsRow">';
+
+            foreach($products as $product){
+
+                $content .= '<article>
+                                    <header>
+                                        <img src="'.$product['immagine'].'" alt="'.$product['altImmagine'].'"/>
+                                        <h3>'.parse_lang($product['nome']).'</h3>
+                                    </header>                
+                                    '.parse_lang($product['descrizione']).'
+                                    <a href="/prodotto.php?id='.$product['id'].'" class="button" title="Vedi prodotto '.$product['nome'].'">Scopri di più</a>
+                            </article>';
+
+
+            }
+
+            $content .= '</div>';
+
+        }
+
+    }else{
+        $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
+    }
+
+
+    $menu = get_menu();
+    $template = str_replace('{{menu}}',$menu,$template);
+
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs,$content);
+
+?>
+
+
