@@ -127,7 +127,7 @@ INSERT INTO marca (ID,nome) VALUES
 (3,'Toei Animations');
 
 
-INSERT INTO categoria (ID, nome, inPrimaPagina) VALUES 
+INSERT INTO categoria (ID, nome, descrizione, inPrimaPagina) VALUES 
 (1,'Action Figure', 'Giocattoli', false),
 (2,'Apparel', 'Abbigliamento', true),
 (3,'Videogiochi', 'Gaming', true);
