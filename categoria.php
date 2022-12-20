@@ -1,52 +1,59 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-	<meta charset="utf-8" />
-    
-	<title>Categoria</title>
-	
-    <meta name="description" content="Categoria | PopTech">
-    <meta name="keywords" content="PopTech, videogiochi, negozio videogiochi, gaming, manga, fumetti, giochi da tavolo">
-    <meta name="author" content="PopTech">
-    
-    <!-- Includi i link ai file di stile CSS e script Javascript -->
-    <?php require_once("includes/inports.php"); ?>
+<?php
 
-</head>
-<body id="homePage">
+    require_once "includes/connection.php";
+    require_once "includes/utilities.php";
 
-    <a href="#content" class="srOnly">Vai al contenuto</a>
-	
-    <?php require_once("includes/header.php"); ?>
-    <?php require_once("includes/menu.php"); ?>
-   
-    <nav id="breadcrumbs" aria-label="Percorso">
-        <p>Ti trovi in: Prodotti > {nome categoria}</p> 
-    </nav>    
-   
-	<main id="content">
-       
-        <h1>Categoria</h1> 
+    use DB\DBAccess;
 
-        <div class="productsRow">
+    $template = file_get_contents('layouts/layout.html');
 
-            <?php for($j=0;$j<20;$j++){ ?>
+    $connection = new DBAccess;
 
-                <article>
-                    <header>
-                        <img src="images/testImg.jpg" alt="Descrizione Immagine">
-                        <h2>Product Name</h2>
-                    </header>
-                    Descrizione Descrizione Descrizione Descrizione Descrizione
-                    <a href="" class="button" title="Vedi prodotto {nome prodotto}">Scopri di più</a>
-                </article>
+    if ($connection->open_connection()) {
+            //$category = $connection->exec_select_query('SELECT categoria.nome FROM categoria, prodotto WHERE prodotto.categoria=categoria.nome;');
+            //da modificare per prendere la categoria inerente al link, giusta come idea e codice
+            
+            //$content = '<h1>'.parse_lang($category['categoria.nome']).'</h1>';
+            $content = " <h1>Categoria</h1>";
+            
+            //$breadcrumbs = '<p>Ti trovi in:'.parse_lang($category['nome']).'</p> ';
+            $breadcrumbs = '<p>Ti trovi in: Home > Categoria </p> ';
+            
+            //$pageID = parse_lang($category['nome']);
+            $pageID = 'Categoria';
+            //$title = parse_lang($category['nome']) . ' - Pop Tech';
+            $title = "Categoria - Pop Tech";
 
-            <?php } ?>
-        </div>
+            //$content .= '<h2 class="categoryTitle">'.parse_lang($category['nome']).'</h2>';
+            
+            //$content .= '<a href="categoria.php?id='.$category['id'].'" title="Vedi tutti i prodotti in '.parse_lang($category['nome']).'" class="button">Vedi Tutti</a>';
+            $content .= '<a href="categoria.php?id=1" class="button">Vedi Tutti</a>';
+            $content .= '<div class="productsRow">';
+            
+            $products = $connection->exec_select_query('SELECT id, nome, altimmagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto;');
 
-	</main>
+            foreach ($products as $product) {
+                $content .= '<article> 
+                <header>
+                    <img src="images/testImg.jpg" alt="'.parse_lang($product['altimmagine']) .'">
+                    <h2>'.parse_lang($product['nome']) .'</h2>
+                </header>
+                Descrizione Descrizione Descrizione Descrizione Descrizione
+                <a href="" class="button" title="Vedi prodotto ' . parse_lang($product['nome']) . '">Scopri di più</a></article>';
+            }
+        $content .= "</div>";
+    }
+    else{
+        $content = " <h1>Categoria</h1>";
+        $breadcrumbs = '<p>Ti trovi in: Home > Categoria</p> ';
+        $pageID = 'Categoria';
+        $title = "Categoria - Pop Tech";
+        $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
+    }
 
-    <?php require_once("includes/footer.php"); ?>
-	
-</body>
-</html>
+    $menu = get_menu();
+    $template = str_replace('{{menu}}',$menu,$template);
+    $template = str_replace('{{keywords}}', parse_lang($product['descrizione']), $template);
+    $template = str_replace('{{description}}', parse_lang($product['descrizione']), $template);
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs,$content);
+?>

@@ -1,6 +1,5 @@
 <?php
 
-
 /*
     Rimpiazza i placeholder del template html
 */
@@ -23,7 +22,6 @@ function replace_in_page(String $html, String $title, String $id, String $breadc
     return $html;
 
 }
-
 
 /*
     Rimpiazza i codici per la lingua con tag span

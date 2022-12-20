@@ -1,41 +1,60 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-	<meta charset="utf-8">
-	<title>{prodotto} - Pop Tech</title>
-    <meta name="description" content=" {prodotto} | PopTech">
-    <meta name="keywords" content="PopTech, videogiochi, negozio videogiochi, gaming, manga, fumetti, giochi da tavolo">
-    <meta name="author" content="PopTech">
-    <!-- Includi i link ai file di stile CSS e script Javascript -->
-    <?php require_once("includes/inports.php"); ?>
-</head>
-<body id="prodotto">
-    <a href="#content" class="srOnly">Vai al contenuto</a>
-    
-    <?php require_once("includes/header.php"); ?>
-    <?php require_once("includes/menu.php"); ?>
+<?php
 
-    <nav id="breadcrumbs" aria-label="Percorso">
-        <p>Ti trovi in: Prodotti > Ryu Gogo <span lang="en">limited Edition</span> 2020</p> 
-    </nav>
+    require_once "includes/connection.php";
+    require_once "includes/utilities.php";
 
-    <!--Modificare il "main" con PHP in modo che diventa dimanica e adatta per tutti i prodotti che andremo a inserire nella pagina-->
-	<main id="content">
-        <figure><img src="images/RuyGoGo.png" alt="Nome Prodotto"></figure>
-        <div>
-            <h1>Ryu Gogo<span lang="en"> Limited Edition </span>2020</h1>
-            <dl class="prodotto">
-                <dt id="descrizione"></dt><dd>Un'iconica statuina Funko Pop! Ryu Gogo Edizione Limitata</dd>
-                <dt id="prezzo"></dt><dd>50.00 €</dd>
-                <dt id="categoria">Categoria</dt><dd><span lang="en">Action Figure</span></dd>
-                <dt id="origine">Origine</dt><dd>Giappone</dd>
-                <dt id="marca">Marca</dt><dd><span lang="en">Funko Pop</span></dd>
-                <dt id="modello">Modello</dt><dd>RYU2020L</dd>
-                <dt id="dimensioni">Dimensioni</dt><dd>10 <abbr title="Centimetri">cm</abbr> &times; 10 <abbr title="Centimetri">cm</abbr> &times; 10 <abbr title="Centimetri">cm</abbr></dd>
-                <dt id="peso">Peso</dt><dd>10<abbr title="Grammi">g</abbr></dd><!--stessa cosa per i grammi-->
-            </dl>
-        </div>
-	</main>
-    <?php require_once("includes/footer.php"); ?>
-</body>
-</html>
+    use DB\DBAccess;
+
+    $template = file_get_contents('layouts/layout.html');
+
+    $connection = new DBAccess;
+
+    if ($connection->open_connection()) {
+        $content = '<h1>I Nostri Prodotti</h1>';
+        //$category = $connection->exec_select_query('SELECT categoria.nome FROM categoria, prodotto WHERE prodotto.categoria=categoria.nome;');
+        //da modificare per prendere la categoria inerente al link, giusta come idea e codice
+
+        $content .= '<h2 class="categoryTitle">Categoria</h2> <a href="categoria.php?id=1" class="button">Vedi Tutti</a>';
+
+        $products = $connection->exec_select_query('SELECT id, nome, altimmagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto;');
+        
+        //da modificare per prendersi il singolo prodotto associato al link; per ora come prodotti
+        foreach($products as $product){
+            $content = '<h1>'.parse_lang($product['nome']).'</h1>';
+            $breadcrumbs = '<p>Ti trovi in:'.parse_lang($product['nome']).'</p> ';
+            $pageID = parse_lang($product['nome']);
+            $title = parse_lang($product['nome']) . ' - Pop Tech';
+
+            //$content .= '<h2 class="categoryTitle">'.parse_lang($category['nome']).'</h2>';
+            //$content .= '<a href="categoria.php?id='.$category['id'].'" title="Vedi tutti i prodotti in '.parse_lang($category['nome']).'" class="button">Vedi Tutti</a>';
+            
+            $content .= '<h2 class="categoryTitle">Categoria</h2>';
+            $content .= '<h2 class="categoryTitle">Categoria</h2> <a href="categoria.php" title="Vedi tutti {categoria}" class="button">Vedi Tutti</a>';
+            
+            $content .= '<div class="productsRow">';
+
+            $content .= '<article> 
+            <header>
+                <img src="images/testImg.jpg" alt="Descrizione Immagine">
+                <h2>Product Name</h2>
+            </header>
+            Descrizione Descrizione Descrizione Descrizione Descrizione
+            <a href="" class="button" title="Vedi prodotto ' . parse_lang($product['nome']) . '">Scopri di più</a></article>';
+        }
+        $content .= "</div>";
+    }
+    else{
+        $content = " <h1>Prodotto</h1>";
+        $breadcrumbs = '<p>Ti trovi in: Home > Prodotto</p> ';
+        $pageID = 'Prodotto';
+        $title = "Prodotto - Pop Tech";
+        $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
+    }
+
+    $menu = get_menu();
+    $template = str_replace('{{menu}}',$menu,$template);
+    $template = str_replace('{{keywords}}', parse_lang($product['descrizione']), $template);
+    $template = str_replace('{{description}}', parse_lang($product['descrizione']), $template);
+
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs,$content);
+?>

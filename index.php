@@ -7,12 +7,10 @@
 
     $template = file_get_contents('layouts/layout.html');
 
-
     $pageID = 'homePage';
     $title = "Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: <span lang="en">Home</span></p>';
 
-  
 
     $content = "<h1>Il tuo negozio di Fumetti e Gaming a Padova</h1>";
 
@@ -31,7 +29,6 @@
         </div>';
 
     $connection = new DBAccess;
-    
 
     if($connection->open_connection()){
 
@@ -49,27 +46,21 @@
             $content .= '<div class="productsRow">';
 
             foreach($products as $product){
-
                 $content .= '<article>
-                                    <header>
-                                        <img src="'.$product['immagine'].'" alt="'.$product['altImmagine'].'"/>
-                                        <h3>'.parse_lang($product['nome']).'</h3>
-                                    </header>                
-                                    '.parse_lang($product['descrizione']).'
-                                    <a href="/prodotto.php?id='.$product['id'].'" class="button" title="Vedi prodotto '.$product['nome'].'">Scopri di più</a>
-                            </article>';
-
-
+                    <header>
+                        <img src="'.$product['immagine'].'" alt="'.$product['altImmagine'].'"/>
+                        <h3>'.parse_lang($product['nome']).'</h3>
+                    </header>                
+                    '.parse_lang($product['descrizione']).'
+                    <a href="/prodotto.php?id='.$product['id'].'" class="button" title="Vedi prodotto '.$product['nome'].'">Scopri di più</a>
+            </article>';
             }
-
             $content .= '</div>';
-
         }
 
     }else{
         $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
     }
-
 
     $menu = get_menu();
     $template = str_replace('{{menu}}',$menu,$template);

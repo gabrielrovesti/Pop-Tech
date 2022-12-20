@@ -9,8 +9,6 @@
 
     $contatti = file_get_contents('layouts/contatti.html');
 
-
-
     $pageID = 'contattaci';
     $title = "Contatti - Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: <a href="/" lang="en">Home</a> > Contatti</p>';
@@ -29,7 +27,7 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-        //Controllo Nomo
+        //Controllo Nome
         $nome = sanitize($_POST['nome'], $allowed_tags);
         if(strlen($nome) == 0){
             $form_messages .= '<p>Il campo nome non può essere vuoto</p>';
@@ -72,11 +70,6 @@
 
         // Se non ci sono errori, si inviano i dati correttamente
         if(strlen($form_messages) == 0){
-            // $db = new DBAccess;
-            // $db->open_connection();
-            // $query = "INSERT INTO contatti (nome, cognome, email, telefono, messaggio) VALUES ('$nome', '$cognome', '$email', '$telefono', '$messaggio')";
-            // $result = mysqli_query($connection, $query);
-            // $db->close_connection();
             $result = true;
         }
 

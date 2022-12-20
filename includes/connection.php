@@ -27,7 +27,7 @@ class DBAccess{
 
     public function exec_select_query($query){
 
-        $res = mysqli_query($this->connection, $query) or die("Errore DB: ".mysqli_error($this->conn));
+        $res = mysqli_query($this->connection, $query) or die("Errore DB: ".mysqli_error($this->connection));
  
         if(mysqli_num_rows($res)==0){
             return array();
