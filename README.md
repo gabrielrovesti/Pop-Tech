@@ -4,6 +4,9 @@ Web Technologies Project at University of Padua, 2022/2023 taught by Prof. Gaggi
 ## Documentazione disponibile su Google Drive al link:
 https://drive.google.com/drive/folders/1FS94n1iyw7iEUqW0HgsJ9iBf5w9uaIvi?usp=sharing
 
+## Mockup Figma disponibile al link:
+https://www.figma.com/file/VKGBmJToHccll3PvxvOG05/TechWeb?node-id=0%3A1&t=BvfcF5MTfd44gOxZ-0
+
 ## Come installare il progetto in localhost
 
 Scaricare un programma per la creazione del server locale
