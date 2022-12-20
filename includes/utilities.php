@@ -3,13 +3,15 @@
 /*
     Rimpiazza i placeholder del template html
 */
-function replace_in_page(String $html, String $title, String $id, String $breadcrumbs, String $content){
+function replace_in_page(String $html, String $title, String $id, String $breadcrumbs, String $keywords, String $description, String $content){
 
     //Header presente in ogni pagina
     $header = file_get_contents('./layouts/header.html');
     $html   = str_replace('{{header}}',$header,$html);
     
     $html = str_replace('{{title}}',$title,$html);
+    $html = str_replace('{{keywords}}',$keywords,$html);
+    $html = str_replace('{{description}}',$description,$html);
     $html = str_replace('{{pageID}}',$id,$html);
     $html = str_replace('{{breadcrumbs}}',$breadcrumbs,$html);
     $html = str_replace('{{content}}',$content,$html);
@@ -26,14 +28,21 @@ function replace_in_page(String $html, String $title, String $id, String $breadc
 /*
     Rimpiazza i codici per la lingua con tag span
 */
-function parse_lang(String $string){
+function parse_lang(String $string, bool $delete=false){
 
+    if($delete){
+        $replaceStart = '';
+        $replaceEnd = '';
+    }else{
+        $replaceStart = '<span lang="${2}">';
+        $replaceEnd = '</span>';
+    }
 
     //Rimpiazza i tag di fine con </span>
-    $string = preg_replace('/\[\/.{2}\]/', '</span>', $string); 
+    $string = preg_replace('/\[\/.{2}\]/', $replaceEnd, $string); 
 
     //Rimpiazza i tag di inizio con <span lang="xx">
-    $string = preg_replace('/(\[)(.*?)(\])/', '<span lang="${2}">', $string);
+    $string = preg_replace('/(\[)(.*?)(\])/', $replaceStart, $string);
 
     return $string;
 
@@ -47,7 +56,7 @@ function get_menu(){
     $menu = '';
 
     // Link da inserire
-    $links = ["index.php","prodotti.php","contatti.php","faq.php","chiSiamo.php"];
+    $links = ["index.php","prodotti.php","contatti.php","faq.php","chiSiamo.html"];
     // Nomi delle voci di menu
     $names = ["Home","Prodotti","Contatti","FAQ","Chi Siamo"];
     // Lingue dei link (se diverse da Italiano)
@@ -69,6 +78,23 @@ function get_menu(){
 
     return $menu;
 
+}
+
+/*
+    Restituisce il blocco nella productRow usato in Home, Categorie e Categoria
+*/
+
+function get_product_tile($product){
+    
+    return '<article> 
+                    <header>
+                        <img src="'.$product['immagine'].'" alt="'.$product['altimmagine'] .'">
+                        <h2>'.parse_lang($product['nome']) .'</h2>
+                    </header>
+                    '.parse_lang($product['descrizione']).'
+                    <a href="prodotto.php?id='.$product['id'].'" class="button" title="Vedi prodotto ' . parse_lang($product['nome'],true) . '">Scopri di più</a>
+                </article>';
+    
 }
 
 /*

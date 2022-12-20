@@ -24,10 +24,11 @@
                         </details>';
         }
     }else{
-    $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
+
+        $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
     }
 
     $menu = get_menu();
     $template = str_replace('{{menu}}',$menu,$template);
-    echo replace_in_page($template,$title,$pageID,$breadcrumbs,$content);
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs,'keywords','description',$content);
 ?>

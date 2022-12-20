@@ -9,52 +9,64 @@
 
     $connection = new DBAccess;
 
+    $pageID = 'prodotto';
+    $title  = '';
+    $breadcrumbs = '';
+    $content = '';
+    $descrizione = '';
+
     if ($connection->open_connection()) {
-        $content = '<h1>I Nostri Prodotti</h1>';
-        //$category = $connection->exec_select_query('SELECT categoria.nome FROM categoria, prodotto WHERE prodotto.categoria=categoria.nome;');
-        //da modificare per prendere la categoria inerente al link, giusta come idea e codice
-
-        $content .= '<h2 class="categoryTitle">Categoria</h2> <a href="categoria.php?id=1" class="button">Vedi Tutti</a>';
-
-        $products = $connection->exec_select_query('SELECT id, nome, altimmagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto;');
         
-        //da modificare per prendersi il singolo prodotto associato al link; per ora come prodotti
-        foreach($products as $product){
-            $content = '<h1>'.parse_lang($product['nome']).'</h1>';
-            $breadcrumbs = '<p>Ti trovi in:'.parse_lang($product['nome']).'</p> ';
-            $pageID = parse_lang($product['nome']);
-            $title = parse_lang($product['nome']) . ' - Pop Tech';
+        if(isset($_GET['id'])){
 
-            //$content .= '<h2 class="categoryTitle">'.parse_lang($category['nome']).'</h2>';
-            //$content .= '<a href="categoria.php?id='.$category['id'].'" title="Vedi tutti i prodotti in '.parse_lang($category['nome']).'" class="button">Vedi Tutti</a>';
-            
-            $content .= '<h2 class="categoryTitle">Categoria</h2>';
-            $content .= '<h2 class="categoryTitle">Categoria</h2> <a href="categoria.php" title="Vedi tutti {categoria}" class="button">Vedi Tutti</a>';
-            
-            $content .= '<div class="productsRow">';
+            $id = intval(sanitize($_GET['id'],''));
+            $products = $connection->exec_select_query("SELECT id, nome, immagine, altImmagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto WHERE id=$id;");
 
-            $content .= '<article> 
-            <header>
-                <img src="images/testImg.jpg" alt="Descrizione Immagine">
-                <h2>Product Name</h2>
-            </header>
-            Descrizione Descrizione Descrizione Descrizione Descrizione
-            <a href="" class="button" title="Vedi prodotto ' . parse_lang($product['nome']) . '">Scopri di più</a></article>';
+            if(count($products)){
+
+                $product = $products[0];
+
+                $breadcrumbs = '<p>Ti trovi in: '.parse_lang($product['nome']).'</p> ';
+                
+                $title = parse_lang($product['nome'],true) . ' - Pop Tech';
+
+                $content .= file_get_contents('layouts/prodotto.html');
+
+                $content = str_replace('{{nome}}',parse_lang($product['nome']),$content);
+                $content = str_replace('{{immagine}}',$product['immagine'],$content);
+                $content = str_replace('{{altImmagine}}',$product['altImmagine'],$content);
+                $content = str_replace('{{descrizione}}',$product['descrizione'],$content);
+                $content = str_replace('{{origine}}',$product['origine'],$content);
+                $content = str_replace('{{marca}}',$product['marca'],$content);
+                $content = str_replace('{{modello}}',$product['modello'],$content);
+                $content = str_replace('{{dimensioni}}',$product['dimensione'],$content);
+                $content = str_replace('{{peso}}',$product['peso'],$content);
+                $content = str_replace('{{categoria}}',$product['categoria'],$content);
+                $content = str_replace('{{prezzo}}',$product['prezzo'],$content);
+
+                $descrizione = $product['descrizione'];
+
+
+
+            }else{
+               
+                $content .= '<p>Prodotto non trovato</p>';
+            }
+
         }
-        $content .= "</div>";
-    }
-    else{
+
+        
+    }else{
+
         $content = " <h1>Prodotto</h1>";
         $breadcrumbs = '<p>Ti trovi in: Home > Prodotto</p> ';
-        $pageID = 'Prodotto';
         $title = "Prodotto - Pop Tech";
         $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
+   
     }
 
     $menu = get_menu();
     $template = str_replace('{{menu}}',$menu,$template);
-    $template = str_replace('{{keywords}}', parse_lang($product['descrizione']), $template);
-    $template = str_replace('{{description}}', parse_lang($product['descrizione']), $template);
 
-    echo replace_in_page($template,$title,$pageID,$breadcrumbs,$content);
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs, 'keywords', $descrizione, $content);
 ?>
