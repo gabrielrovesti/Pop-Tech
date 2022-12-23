@@ -134,13 +134,13 @@ INSERT INTO categoria (ID, nome, descrizione, inPrimaPagina) VALUES
 
 
 INSERT INTO prodotto (ID, nome, immagine, altimmagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo) VALUES
-(1, '{en|Funko Pop} 1', 'Funko1.jpg', 'Action figure di personaggio seduto', 'Descrizone test', 'Giappone', 1, 'FP001', '10[cm|centimentri] x 10[cm|centimentri] x 10[cm|centimentri]', '20[gr|grammi]' , 1, 10.00),
-(2, '{en|Funko Pop} 2', 'Funko1.jpg', 'Action figure di personaggio seduto', 'Descrizone test', 'Giappone', 1, 'FP001', '10[cm|centimentri] x 10[cm|centimentri] x 10[cm|centimentri]', '20[gr|grammi]' , 1, 15.00),
+(1, '[en]Funko Pop[/en] 1', 'Funko1.jpg', 'Action figure di personaggio seduto', 'Descrizone test', 'Giappone', 1, 'FP001', '10 _ cm|centimetri_ x 10_ cm|centimetri_ x 10_ cm|centimetri_', '20_gr|grammi_' , 1, 10.00),
+(2, '[en]Funko Pop[/en] 2', 'Funko1.jpg', 'Action figure di personaggio seduto', 'Descrizone test', 'Giappone', 1, 'FP001', '10_ cm|centimetri_ x 10_ cm|centimetri_ x 10_ cm|centimetri_', '20_gr|grammi_' , 1, 15.00),
 
-(3, '{en|Far Cry} 6 per {en|XBox one}', 'farcry6.jpg', 'Custodia del gioco per XBOX One', 'Descrizone test', 'Francia', 2, 'UB001', NULL, NULL , 2, 60.00),
-(4, '{en|Prince of Persia: The Sands of Time} per {en|XBox one}', 'prince.jpg', 'Custodia del gioco per XBOX One', 'Descrizone test', 'Francia', 2, 'UB002', NULL, NULL , 2, 60.00),
+(3, '[en]Far Cry[/en] 6 per [en]XBox one[/en]', 'farcry6.jpg', 'Custodia del gioco per XBOX One', 'Descrizone test', 'Francia', 2, 'UB001', NULL, NULL , 2, 60.00),
+(4, '[en]Prince of Persia: The Sands of Time[/en] per [en]XBox one[/en]', 'prince.jpg', 'Custodia del gioco per XBOX One', 'Descrizone test', 'Francia', 2, 'UB002', NULL, NULL , 2, 60.00),
 
-(5, '{ja|Goku} {en|T-shirt} XL', 'goku.jpg', 'T-shirt Rossa con logo in giapponese in alto a destra', 'Descrizone test', 'Cina', 3, 'APP001', '[XL|{en|Extra Large}]', NULL , 2, 30.00);
+(5, '[ja]Goku[/ja] [en]T-shirt[/en] XL', 'goku.jpg', 'T-shirt Rossa con logo in giapponese in alto a destra', 'Descrizone test', 'Cina', 3, 'APP001', '_XL|[en]Extra Large[/en]_', NULL , 2, 30.00);
 
 
 INSERT INTO utente (ID,nome,email,password,admin) VALUES
