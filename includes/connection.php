@@ -43,18 +43,12 @@ class DBAccess{
             
             return $resArray;
         }
-
-
     }
 
     //Esegui query che alterano il sitema
     public function exec_alter_query($query){
-
         $res = mysqli_query($this->connection, $query) or die("Errore DB: ".mysqli_error($this->connection));
- 
         return $res;
-
-
     }
 
     public function close_connection(){

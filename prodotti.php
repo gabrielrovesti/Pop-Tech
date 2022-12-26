@@ -13,7 +13,7 @@
 
     $connection = new DBAccess;
 
-    $content = '<h1>I Nostri Prodotti</h1>';
+    $content = '<h1 class="comic-title">I Nostri Prodotti</h1>';
 
     if ($connection->open_connection()) {
         
@@ -21,7 +21,7 @@
        
         foreach($categories as $category){
 
-            $content .= '<h2 class="categoryTitle">'.$category['nome'].'</h2> <a href="categoria.php?id='.$category['id'].'" class="button">Vedi Tutti</a>';
+            $content .= '<div class="comic_box"><h2 class="categoryTitle">'.$category['nome'].'</h2> <a href="categoria.php?id='.$category['id'].'" class="button">Vedi Tutti</a></div>';
 
             $products = $connection->exec_select_query('SELECT id, nome, immagine, altimmagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto WHERE categoria='.$category['id'].';');
 

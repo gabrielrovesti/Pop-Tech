@@ -1,5 +1,4 @@
 <?php
-
     require_once "includes/connection.php";
     require_once "includes/utilities.php";
 
@@ -26,7 +25,7 @@
 
                 $product = $products[0];
 
-                $breadcrumbs = '<p>Ti trovi in: '.parse_lang($product['nome']).'</p> ';
+                $breadcrumbs = '<p>Ti trovi in: Home > Prodotto > '.parse_lang($product['nome']).'</p> ';
                 
                 $title = parse_lang($product['nome'],true) . ' - Pop Tech';
 
@@ -45,24 +44,16 @@
                 $content = str_replace('{{prezzo}}',$product['prezzo'],$content);
 
                 $descrizione = $product['descrizione'];
-
-
-
             }else{
                
                 $content .= '<p>Prodotto non trovato</p>';
             }
-
         }
-
-        
     }else{
-
-        $content = " <h1>Prodotto</h1>";
+        $content = '<h1 class="comic-title">Prodotto</h1>';
         $breadcrumbs = '<p>Ti trovi in: Home > Prodotto</p> ';
         $title = "Prodotto - Pop Tech";
         $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
-   
     }
 
     $menu = get_menu();

@@ -25,9 +25,9 @@
 
                 $category = $categories[0];
             
-                $content .= '<h1>'.parse_lang($category['nome']).'</h1>';
+                $content .= '<h1 class="comic-title">'.parse_lang($category['nome']).'</h1>';
             
-                $breadcrumbs = '<p>Ti trovi in:'.parse_lang($category['nome']).'</p> ';
+                $breadcrumbs = '<p>Ti trovi in: Home > Categorie > '.parse_lang($category['nome']).'</p> ';
                 
                 $title = parse_lang($category['nome']) . ' - Pop Tech';          
             

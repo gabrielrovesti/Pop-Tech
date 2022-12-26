@@ -75,9 +75,7 @@ function get_menu(){
             $menu .= '<li><a href="'.$links[$i].'" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</a></li>';
         }
     }
-
     return $menu;
-
 }
 
 /*
@@ -85,15 +83,15 @@ function get_menu(){
 */
 
 function get_product_tile($product){
-    
-    return '<article> 
-                    <header>
-                        <img src="'.$product['immagine'].'" alt="'.$product['altimmagine'] .'">
-                        <h2>'.parse_lang($product['nome']) .'</h2>
-                    </header>
-                    '.parse_lang($product['descrizione']).'
-                    <a href="prodotto.php?id='.$product['id'].'" class="button" title="Vedi prodotto ' . parse_lang($product['nome'],true) . '">Scopri di più</a>
-                </article>';
+    return 
+    '<article> 
+        <header>
+            <img src="'.$product['immagine'].'" alt="'.$product['altimmagine'] .'">
+            <h2>'.parse_lang($product['nome']) .'</h2>
+        </header>
+        '.parse_lang($product['descrizione']).'
+        <a href="prodotto.php?id='.$product['id'].'" class="button" title="Vedi prodotto ' . parse_lang($product['nome'],true) . '">Scopri di più</a>
+    </article>';
     
 }
 
@@ -108,6 +106,4 @@ function sanitize($input, $allowed_tags) {
     $input = trim($input);
     return $input;
 }
-
-
 ?>

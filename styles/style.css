@@ -33,9 +33,13 @@ header#header h1{
 }
 
 footer{
-    padding:1em;
-    margin-top:1em;
-    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+    flex-wrap: wrap;
+    margin: 0.5em;
+    padding: 0.5em;
+    border: 3px solid black;
 }
 
 
@@ -51,17 +55,34 @@ footer{
 
 /* Navigation ========================= */
 
+#menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+    flex-wrap: wrap;
+    margin: 0.5em;
+    padding: 0.5em;
+    border: 3px solid black;
+}
+
 nav#menu ul{
-    margin:0em;
-    padding: 0em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 4px;
+    margin-right: -4px;
 }
 
 nav#menu ul li{
     list-style: none;
     display: inline-block;
+    margin-right: 4px;
 }
+
 nav#menu a{
     text-decoration: none;
+    display: block;
+    width: 8em;
 }
 
 #mobileMenuButton{
@@ -90,6 +111,7 @@ a:hover{
 
 a.button{
     border: 1px solid black;
+    border-radius: 2em;
     padding: .5em 1em .5em 1em;
     display: inline-block;
 }
@@ -122,7 +144,6 @@ main h2{
 
 #homePage #homeBanner{
     display: flex;
-   
     flex-direction: row;
 }
 
@@ -134,50 +155,112 @@ main h2{
 
 .categoryTitle{
     display: inline-block;
+    margin: 0.3em;
 }
 
 /* Product list (Home, Prodotti, Categoria ========================= */
 
 .productsRow{
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    padding: 1.1em;
     display: flex;
     flex-direction: row;
-    
     flex-wrap: wrap;
+    clear: both;
+}
+
+.productsRow article h2{
+    font-size: 20px;
+    color: black;
+    margin: 0 0 0.5em 0;
+    line-height: 1.1;
 }
 
 .productsRow article{
     flex: 18% 0 0;
-    border: 1px solid black;
+    border: 3px solid black;
+    border-radius: 1em;
     margin-right: 1em;
     margin-bottom: 1em;
+    padding: 0.5em;
 }
 
 .productsRow article img{
     width: 100%;
     height: auto;
+    overflow: hidden;
 }
 
 .productsRow article a.button{
+    text-align: center;
     display: block;
+    padding: 0.5em;
+    cursor: pointer;
+    width: 50%;
+    margin: auto;
 }
 
 /* Chi Siamo Page ========================= */
 
-#chiSiamo .img-left{
-    float:left;
-    width: 30%;
-    margin-right: 0.5em;
+#chiSiamo .outer-container {
+    padding: 0.5em;
+    height:auto;
+    overflow: hidden;
+    border: solid 2px black;
+    -webkit-transform: skew(-10deg);
+    -moz-transform: skew(-10deg);
+    -ms-transform: skew(-10deg);
+    -o-transform: skew(-10deg);
+    transform: skew(-10deg);
+    overflow: hidden;
+    border-radius: 1em;
 }
 
-#chiSiamo .img-right{
+#chiSiamo .outer-container .img-left{
+    float: left;
+    width: 30%;
+    display: block;
+    margin-right: 0.5em;
+    border: 3px solid black;
+}
+
+#chiSiamo .outer-container .img-right{
     float:right;
     width: 30%;
-    margin-left: 0.5em;
+    display: block;
+    margin-right: 0.5em;
+    border: 3px solid black;
+}
+
+#chiSiamo .who-title{
+    text-align: center;
 }
 
 #chiSiamo ul.membristaff{
     padding: 0em;
+    margin: 0em;
+    text-align: center;
+
 }
+
+#chiSiamo ul.membristaff li{
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em;
+    border: 3px solid black;
+    border-radius: 1em;
+    width: 30%;
+}
+
+#chiSiamo ul.membristaff li img{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+
 
 /* Contatti ========================= */
 
@@ -222,6 +305,13 @@ main h2{
 
 #prodotto div{
     flex: 67% 0 0;
+}
+
+.product-title{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    text-align: left;
 }
 
 /* Form ========================= */
@@ -270,13 +360,166 @@ main h2{
 	}
 }
 
-/* Eventuali alternative:
-
-html.dark-mode {
-    filter: invert(100%);
+/* Fumetti ========================= */
+.comic_box {
+    width: 300px;
+    margin: auto;
+    border: 3px solid black;
+    background: #fff;
+    padding: 0.2em;
+    text-align: center;
+    font-weight: 900;
+    position: relative;
+    /*Align this div left*/
+    float: left;
 }
 
-html.dark-mode img {
-    filter: invert(100%);
+/* Freccia del fumetto in basso a sinistra */ 
+.comic_box:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid black;
+    border-right: 10px solid transparent;
+    border-top: 10px solid black;
+    border-bottom: 10px solid transparent;
+    left: 22px;
+    bottom: -21px;
 }
-:not(img) { filter: invert(100%) } */
+  
+.comic_box:after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #fff;
+    border-bottom: 10px solid transparent;
+    left: 25px;
+    bottom: -14px;
+}
+
+/* Font titolo categoria */ 
+.comic-title{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    text-align: left;
+    color: #000080;
+}
+
+.comic-page-title{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    text-align: left;
+    color: #000;
+    text-align: center;
+}
+
+/* Fumetti FAQ: Domande e Risposte */
+
+/* Create a container for the questions and answers */
+.faq_container{
+    width: 100%;
+    margin: auto;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    clear: both;
+}
+
+.circular-question {
+    width: 200px;
+    border: 5px solid #000;
+    padding: 2em;
+    margin: 1em;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    position: relative;
+    color: #000;
+    
+}
+
+.circular-answer {
+    width: 200px;
+    border: 5px solid #000;
+    padding: 2em;
+    margin: auto;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    color: #000;
+}
+
+/* Cerchi in basso a destra */
+
+.circle1 {
+    border: 5px solid #000;
+    position: absolute;
+    width: 25px;
+    padding: 20px;
+    border-radius: 50%;
+    right: -30px;
+    bottom: 23px;
+}
+  
+.circle1:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    padding: 20px;
+    border-radius: 50%;
+    right: 0px;
+    bottom: 0px;
+    background: #fff;
+}
+  
+.circle2 {
+    border: 5px solid #000;
+    position: absolute;
+    width: 5px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    right: -60px;
+    bottom: 5px;
+}
+  
+/*Cerchi in basso a sinistra*/
+
+.circle3 {
+    border: 5px solid #000;
+    position: absolute;
+    width: 25px;
+    padding: 20px;
+    border-radius: 50%;
+    left: -20px;
+    bottom: 10px;
+}
+  
+.circle3:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    padding: 20px;
+    border-radius: 50%;
+    right: 0px;
+    bottom: 0px;
+    background: #fff;
+}
+  
+.circle4 {
+    border: 5px solid #000;
+    position: absolute;
+    width: 5px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    left: -60px;
+    bottom: 5px;
+}
+  
