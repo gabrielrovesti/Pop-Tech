@@ -8,15 +8,7 @@ body{
     font-family: "Times New Roman", serif;
 }
 
-/* Header ========================= 
-Problemi:
- - nel file header viene inserito un bottone in javascript,
-   come posso fare perchè non venga visualizzato in stampa?
-*/
-
-header#header{
-    justify-content: center;
-}
+/* Header ========================= */
 
 header#header h1{
     /*text-indent:100%;
@@ -29,67 +21,37 @@ header#header h1{
     margin-right: auto;
 }
 
-header#header h1#titoloh{
-
-}
-
-
-/*ho tolte il footer dalla stampa,
-ma pensavo di renderlo visibile senza il pulsante "Torna all'inizio della pagina"
-che è inserito all'interno del file footer.php*/
+/* Footer ========================= */
 
 footer{
-    display: none;
-    /*
-    padding:1em;
-    margin-top:1em;
-    border: 1px solid black;
-    */
+    margin: 5mm;
 }
 
-
 /* Utilities ========================= */
+
+#mobileMenuButton{
+    display: none;
+}
 
 .srOnly{
     display: none;
 }
 
-/* Navigation ========================= */
-
-nav#menu ul{
+footer a{
     display: none;
 }
 
-/* Anchor Links ========================= 
-Dove viene appliccato?*/
+/* Navigation ========================= */
 
-a{
-    text-decoration: underline;
-}
-
-a.button{
-    border: 1px solid black;
-    padding: .5em 1em .5em 1em;
-    display: inline-block;
+#menu{
+    display: none;
 }
 
 /* Main Content ========================= */
 
-main{
-    padding: 0.2em;
+main#content .button{
+    display: none;
 }
-
-main h1{
-	padding: 0.2em;
-	text-align: center;
-	line-height: 0.5em;
-}
-
-main h2{
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-}
-
 
 /* Home Page ======================== */
 
@@ -102,8 +64,7 @@ main h2{
     display: none;
 }
 
-/* Category ========================= 
-decidere se tenerlo visibile o cancellarlo*/
+/* Category ========================= */
 
 .categoryTitle{
     display: inline-block;
@@ -114,12 +75,12 @@ decidere se tenerlo visibile o cancellarlo*/
 .productsRow{
     display: flex;
     flex-direction: row;
-    flex: 100% 0 0;
+    
     flex-wrap: wrap;
 }
 
 .productsRow article{
-    width: 18%;
+    flex: 18% 0 0;
     border: 1px solid black;
     margin-right: 1em;
     margin-bottom: 1em;
@@ -131,57 +92,36 @@ decidere se tenerlo visibile o cancellarlo*/
 }
 
 .productsRow article a.button{
-    display: block;
-}
-
-/* Chi Siamo Page ========================= 
-Problemi:
-- lasciamo visibili le immagini o per la prof è meglio toglierle?
-- cambiare le percentuali in punti o centimetri?
-- come posso fare perchè le immagini non vengono divise in due pagine?*/
-
-#chiSiamo .img-left{
-    float:left;
-    width: 30%;
-    height: 10%;
-    margin-right: 0.5em;
-}
-
-#chiSiamo .img-right{
-    float:right;
-    width: 30%;
-    height: 10%;
-    margin-left: 0.5em;
-}
-
-#chiSiamo ul.membristaff{
-    padding: 0em;
-}
-
-/* Contatti ========================= 
-Ho tolto il modulo richieste perchè credo che non abbia senso stampato.
-Problema: per togliere il titolo "Modulo richieste devo aggiungere un id su h2"*/
-
-#contatti{
-    line-height: 1.0em;
-}
-
-#contatti form{
     display: none;
 }
+
+/* Chi Siamo Page ========================= */
+
+#chiSiamo img{
+    display: none;
+}
+
+/* Contatti ========================= */
+#contatti #modulo_richieste{
+    display: none;
+}
+
+#contatti .button{
+    display: none;
+} 
 
 #contatti figure{
     display: none;
 }
 
-/* Prodotto Page ========================= 
-Problema: cercare il modo di centrare l'immagine*/
+/* Prodotto Page ========================= */
 
-#prodotto figure img{
-    justify-content: center;
-    width: 5cm;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+#prodotto dd#prezzo{
+    margin: 5mm;
+    font-weight: bold;
+    font-size: 1cm;
 }
 
+#prodotto dt{
+    font-weight: bold;
+}

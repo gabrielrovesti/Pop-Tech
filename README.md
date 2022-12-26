@@ -1,6 +1,9 @@
 # PopTech
 Web Technologies Project at University of Padua, 2022/2023 taught by Prof. Gaggi
 
+## Indicazione collegamento Tecweb disponibile al link:
+https://docs.google.com/document/d/1ujVBFSKjLlNxy4Gqv3hF6krkaI-_Z7zm/edit 
+
 ## Documentazione disponibile su Google Drive al link:
 https://drive.google.com/drive/folders/1FS94n1iyw7iEUqW0HgsJ9iBf5w9uaIvi?usp=sharing
 

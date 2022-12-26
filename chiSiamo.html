@@ -8,15 +8,33 @@
         <meta name="author" content="PopTech">
 
         <!-- Includi i link ai file di stile CSS e script Javascript -->
-        <?php require_once("includes/inports.php"); ?>
+        <link rel="stylesheet" href="styles/style.css" media="screen">
+        <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 576px), only screen and (max-device-width: 576px)"> <!-- max-device-width deprecato ma usato da lacuni browser -->
+        <link rel="stylesheet" href="styles/print.css" media="print">
+        <link rel="shortcut icon" type="images/png" href="images/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="js/script.js"></script>
 
     </head>
     <body id="chiSiamo">
 
         <a href="#content" class="srOnly">Vai al contenuto</a>
 
-        <?php require_once("includes/header.php"); ?>
-        <?php require_once("includes/menu.php"); ?>
+        <header id="header">
+            <h1 lang="en">Pop Tech</h1>
+            <!-- Mobile menu -->
+            <button id="mobileMenuButton" onclick="toggleMobileMenu()">Menù</button>
+        </header>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="prodotti.php">Prodotti</a></li>
+                <li><a href="contatti.php">Contatti</a></li>
+                <li><a href="FAQ.php">FAQ</a></li>
+                <li id="currentlink" lang="en">Chi Siamo</li>
+            </ul>
+        </nav>
        
         <nav id="breadcrumbs" aria-label="Percorso" >
         <p>Ti trovi in: Chi siamo</p> 
@@ -130,6 +148,9 @@
                 </ul>
                 
         </main>
-        <?php require_once("includes/footer.php");?>
+        <footer>
+            <a href="#">Torna all'inizio della pagina</a>
+            Tech Shop - Via della Prova 12 12345 Padova (PD) - P.Iva 0112345
+        </footer>
     </body>
 </html>
