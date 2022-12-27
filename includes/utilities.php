@@ -73,7 +73,7 @@ function get_menu(){
     $menu = '';
 
     // Link da inserire
-    $links = ["index.php","prodotti.php","contatti.php","faq.php","chiSiamo.html"];
+    $links = ["index.php","prodotti.php","contatti.php","FAQ.php","chiSiamo.html"];
     // Nomi delle voci di menu
     $names = ["Home","Prodotti","Contatti","FAQ","Chi Siamo"];
     // Lingue dei link (se diverse da Italiano)
@@ -82,7 +82,7 @@ function get_menu(){
     $nLinks = count($links);
 
     //Togliere dall'url restituito da PHP -- cambierà in base all'hosting (probilmente non sará necessario in fase di consegna)
-    $strToRemove = "/poptech/sito/";
+    $strToRemove = "/PopTech/";
     $currentPage = str_replace($strToRemove,"",$_SERVER['REQUEST_URI']);
 
     for($i=0;$i<$nLinks;$i++){

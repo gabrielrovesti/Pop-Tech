@@ -74,7 +74,7 @@ header#header{
     margin: 0.5em;
     padding: 0.5em;
     border: 3px solid black;
-    /*bisogna aggiungere lo sfondo arancione/rosso*/
+    /*background-color: yellow;*/
 }
 
 header#header h1{
@@ -115,12 +115,6 @@ footer{
     clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* Breadcrumbs ========================= */
-
-nav#breadcrumbs{
-    margin-left: 0.5em;
-}
-
 /* Navigation ========================= */
 
 #menu{
@@ -133,25 +127,18 @@ nav#breadcrumbs{
     border: 3px solid black;
 }
 
-nav#menu ul li#currentLink{
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-style: dashed;
-    color: #0056A6;
-}
-
 nav#menu ul{
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    margin-left: 4px;
-    margin-right: -4px;
+    margin: 0.2em;
+    padding: 0.2em;
+    margin-left: 1em;
+    margin-right: -1em;
 }
 
 nav#menu ul li{
     list-style: none;
     display: inline-block;
-    margin-right: 4px;
+    margin-right: 1.8em;
 }
 
 nav#menu ul li#currentLink{
@@ -163,7 +150,6 @@ nav#menu ul li#currentLink{
 
 nav#menu a{
     text-decoration: none;
-    display: block;
     width: 8em;
 }
 
@@ -196,6 +182,15 @@ a.button{
     border: 3px solid black;
     padding: .5em 1em .5em 1em;
     display: inline-block;
+}
+
+a.button:visited{
+    color: darkslategrey;
+}
+
+a.button:hover{
+    color: white;
+    background-color: orangered;
 }
 
 /* Main Content ========================= */
@@ -345,7 +340,8 @@ main h2{
     order: 1;
 }
 
-#chiSiamo .text-container:afxxter{
+/*da sistemare*/
+#chiSiamo .text-container:after{
     content: " ";
     position: absolute;
     display: block;
