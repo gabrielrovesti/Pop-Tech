@@ -67,12 +67,10 @@ body{
 
 header#header{
     display: flex;
-    flex-grow: 0;
-    flex-basis: 100%;
     flex-direction: row;
     justify-content: center;
     margin: 0.5em;
-    padding: 0.5em;
+    padding: 0.2em;
     border: 3px solid black;
     /*bisogna aggiungere lo sfondo arancione/rosso*/
 }
@@ -81,13 +79,13 @@ header#header h1{
     text-indent:100%;
     white-space:nowrap;
     overflow:hidden;
-    font-size: 10em;
+    font-size: 7em;
     line-height: 1em;
     background-image: url(../images/logo.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    margin:0.2em;
+    margin:0.1em;
 }
 
 nav#breadcrumbs{
@@ -352,7 +350,7 @@ main h2{
 #chiSiamo .second .img-container{
     background-image: url('../images/chisiamo2.png');
     clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%)); 
+    -webkit-clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%); 
 }
 
 #chiSiamo .text-container:afxxter{
@@ -478,6 +476,33 @@ main h2{
     border: none;
     cursor: pointer;
 }
+
+/* Pagina 404 ========================= */
+
+#page404 footer,#page500 footer{
+   clear: left;
+}
+
+#page404 h1, #page500 h1{
+    text-align: left;
+}
+
+#page404 img, #page500 img{
+   max-width: 35%;
+   float: left;
+   margin: 2em 3em 2em 1em;
+}
+
+#page500 img{
+    max-width: 30%;
+   
+ }
+
+#page404 ul li{
+    list-style: none;
+    margin-top: 0.5em;
+}
+
 
 /* Tema scuro ========================= */
 
