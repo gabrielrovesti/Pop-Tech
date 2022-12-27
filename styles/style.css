@@ -17,6 +17,10 @@ header#header{
     flex-basis: 100%;
     flex-direction: row;
     justify-content: center;
+    margin: 0.5em;
+    padding: 0.5em;
+    border: 3px solid black;
+    /*bisogna aggiungere lo sfondo arancione/rosso*/
 }
 
 header#header h1{
@@ -53,6 +57,12 @@ footer{
     clip: rect(1px, 1px, 1px, 1px);
 }
 
+/* Breadcrumbs ========================= */
+
+nav#breadcrumbs{
+    margin-left: 0.5em;
+}
+
 /* Navigation ========================= */
 
 #menu{
@@ -79,6 +89,13 @@ nav#menu ul li{
     margin-right: 4px;
 }
 
+nav#menu ul li#currentLink{
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    color: #0056A6;
+}
+
 nav#menu a{
     text-decoration: none;
     display: block;
@@ -97,16 +114,17 @@ nav#menu a{
 /* Anchor Links ========================= */
 
 a{
-    text-decoration: underline;
+    text-decoration: none;
     color:darkslategrey;
 }
 
+/*di che colore facciamo il link visitato?*/
 a:visited{
     color:blue;
 }
 
 a:hover{
-    color:blueviolet;
+    color:#0095C5;
 }
 
 a.button{
@@ -133,7 +151,6 @@ main h2{
 	padding-top: 0.7em;
 	padding-bottom: 0.7em;
 }
-
 
 /* Home Page ======================== */
 
@@ -213,7 +230,7 @@ main h2{
     -moz-transform: skew(-10deg);
     -ms-transform: skew(-10deg);
     -o-transform: skew(-10deg);
-    transform: skew(-10deg);
+    transform: skew(-10deg); /*ok*/
     overflow: hidden;
     border-radius: 1em;
 }
