@@ -1,3 +1,56 @@
+/* Monstserrat font - Open Font License https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Medium.woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-MediumItalic.woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Bold.woff');
+    font-weight: 700;
+    font-style: normal;
+    margin: 0.5em;
+    padding: 0.5em;
+    border: 3px solid black;
+    /*bisogna aggiungere lo sfondo arancione/rosso*/
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-BoldItalic.woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Italic.woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Light.woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-LightItalic.woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* ------- */
+
 html,body{
     font-size: 100%;
     line-height: 1.5em;
@@ -6,7 +59,8 @@ html,body{
 body{
     max-width: 1920px;
     margin: auto;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+    
 }
 
 /* Header ========================= */
@@ -30,6 +84,10 @@ header#header h1{
     background-size: contain;
     background-position: center;
     margin:0.2em;
+}
+
+nav#breadcrumbs{
+    margin-left: 0.5em;
 }
 
 footer{
@@ -65,6 +123,13 @@ footer{
     border: 3px solid black;
 }
 
+nav#menu ul li#currentLink{
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    color: #0056A6;
+}
+
 nav#menu ul{
     list-style-type: none;
     margin: 0;
@@ -97,7 +162,7 @@ nav#menu a{
 /* Anchor Links ========================= */
 
 a{
-    text-decoration: underline;
+    text-decoration: none;
     color:darkslategrey;
 }
 
@@ -106,12 +171,11 @@ a:visited{
 }
 
 a:hover{
-    color:blueviolet;
+    color:#0095C5;
 }
 
 a.button{
-    border: 1px solid black;
-    border-radius: 2em;
+    border: 3px solid black;
     padding: .5em 1em .5em 1em;
     display: inline-block;
 }
@@ -138,8 +202,8 @@ main h2{
 /* Home Page ======================== */
 
 #homePage h2{
-    text-align: center;
     text-transform: uppercase;
+    transform: skew(-10deg); /*ok*/
 }
 
 #homePage #homeBanner{
@@ -155,7 +219,8 @@ main h2{
 
 .categoryTitle{
     display: inline-block;
-    margin: 0.3em;
+    margin: 0em;
+    padding: 0;
 }
 
 /* Product list (Home, Prodotti, Categoria ========================= */
@@ -163,12 +228,10 @@ main h2{
 .productsRow{
     position: relative;
     text-align: center;
-    white-space: nowrap;
-    padding: 1.1em;
+    margin-top: 0.25rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    clear: both;
 }
 
 .productsRow article h2{
@@ -179,9 +242,8 @@ main h2{
 }
 
 .productsRow article{
-    flex: 18% 0 0;
+    flex: 20% 0 0;
     border: 3px solid black;
-    border-radius: 1em;
     margin-right: 1em;
     margin-bottom: 1em;
     padding: 0.5em;
@@ -198,40 +260,88 @@ main h2{
     display: block;
     padding: 0.5em;
     cursor: pointer;
-    width: 50%;
+    max-width: 50%;
     margin: auto;
 }
 
 /* Chi Siamo Page ========================= */
 
 #chiSiamo .outer-container {
-    padding: 0.5em;
-    height:auto;
-    overflow: hidden;
-    border: solid 2px black;
-    -webkit-transform: skew(-10deg);
-    -moz-transform: skew(-10deg);
-    -ms-transform: skew(-10deg);
-    -o-transform: skew(-10deg);
-    transform: skew(-10deg);
-    overflow: hidden;
-    border-radius: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0.5em ;
 }
 
-#chiSiamo .outer-container .img-left{
-    float: left;
-    width: 30%;
-    display: block;
-    margin-right: 0.5em;
-    border: 3px solid black;
+#chiSiamo .text-container{
+    border-top: solid 3px black;
+    border-bottom: solid 3px black;
+    position: relative;
+    flex: 57% 0 0;
+    background-color: #fff;
 }
 
-#chiSiamo .outer-container .img-right{
-    float:right;
-    width: 30%;
+#chiSiamo .first .text-container{
+    border-left: solid 3px black;
+}
+
+#chiSiamo .second .text-container{
+    border-right: solid 3px black;
+}
+
+#chiSiamo .first .text-container:after,#chiSiamo .second .text-container:before{
+    content: " ";
+    position:absolute;
     display: block;
-    margin-right: 0.5em;
-    border: 3px solid black;
+    width: 15%;
+    height: 100%;
+    top:-3px;
+    z-index: -1;
+    border: solid 3px black;
+    transform-origin: bottom left;
+    -ms-transform: skew(-10deg, 0deg);
+    -webkit-transform: skew(-10deg, 0deg);
+    transform: skew(-10deg, 0deg);
+    background-color: #FFF;
+}
+
+#chiSiamo .first .text-container:after{
+    right:-1%;
+}
+
+#chiSiamo .second .text-container:before{
+    left:-14%;
+}
+
+
+
+
+#chiSiamo .img-container{
+    flex: 30% 0 0;   
+}
+#chiSiamo .img-container img{
+    max-width: 100%;
+}
+
+#chiSiamo .img-container .reverse{
+    order: 1;
+}
+
+#chiSiamo .text-container:afxxter{
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: #FF0000;
+    transform-origin: bottom left;
+    -ms-transform: skew(-30deg, 0deg);
+    -webkit-transform: skew(-30deg, 0deg);
+    transform: skew(-30deg, 0deg);
 }
 
 #chiSiamo .who-title{
@@ -250,7 +360,6 @@ main h2{
     margin: 0.5em;
     padding: 0.5em;
     border: 3px solid black;
-    border-radius: 1em;
     width: 30%;
 }
 
@@ -333,7 +442,6 @@ main h2{
     margin: 8px 0;
     box-sizing: border-box;
     border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
 #inputForm input[type="submit"] {
@@ -341,37 +449,24 @@ main h2{
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 }
 
 /* Tema scuro ========================= */
 
 @media (prefers-color-scheme: dark) {
-	html {
-
-    }
-		
-	img:not(.ignore-color-scheme),video:not(.ignore-color-scheme) {
-		
-	}
-	.ignore-color-scheme {
-		
-	}
+	
 }
 
 /* Fumetti ========================= */
 .comic_box {
-    width: 300px;
-    margin: auto;
+    display: inline-block;
+    width:auto;
     border: 3px solid black;
-    background: #fff;
-    padding: 0.2em;
-    text-align: center;
-    font-weight: 900;
-    position: relative;
-    /*Align this div left*/
-    float: left;
+    padding: .5em 1em .5em 1em;
+    text-align: left;
+    font-weight: bold;
+    position: relative;  
 }
 
 /* Freccia del fumetto in basso a sinistra */ 
@@ -399,24 +494,7 @@ main h2{
     border-bottom: 10px solid transparent;
     left: 25px;
     bottom: -14px;
-}
-
-/* Font titolo categoria */ 
-.comic-title{
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    font-size: 1.5em;
-    text-align: left;
-    color: #000080;
-}
-
-.comic-page-title{
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    font-size: 1.5em;
-    text-align: left;
-    color: #000;
-    text-align: center;
+    z-index: 2;
 }
 
 /* Fumetti FAQ: Domande e Risposte */

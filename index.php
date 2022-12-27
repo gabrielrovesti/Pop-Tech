@@ -28,7 +28,7 @@
             <img src="dd" alt="Immagine banner">
         </div>';
 
-    $connection = new DBAccess;
+    $connection = new DBAccess();
 
     if($connection->open_connection()){
 
@@ -38,8 +38,7 @@
 
         foreach($categories as $category){
 
-            $content .= '<h2 class="categoryTitle">'.parse_lang($category['nome']).'</h2>';
-            $content .= '<a href="categoria.php?id='.$category['id'].'" title="Vedi tutti i prodotti in '.parse_lang($category['nome']).'" class="button">Vedi Tutti</a>';
+            $content .= '<div class="comic_box"><h2 class="categoryTitle">'.parse_lang($category['nome']).'</h2> <a href="categoria.php?id='.$category['id'].'" class="button">Vedi Tutti</a></div>';
 
             $products = $connection->exec_select_query('SELECT id, nome, descrizione, immagine, altimmagine FROM prodotto WHERE categoria='.$category['id'].' ORDER BY id DESC LIMIT 5;');
 

@@ -27,6 +27,7 @@ function replace_in_page(String $html, String $title, String $id, String $breadc
 
 /*
     Rimpiazza i codici per la lingua con tag span
+    [en]...[/en]
 */
 function parse_lang(String $string, bool $delete=false){
 
@@ -47,6 +48,22 @@ function parse_lang(String $string, bool $delete=false){
     return $string;
 
 }
+
+/*
+    Rimpiazza i codici per l'abbreviazione con tag span
+    _cm|centrimetri_
+*/
+function parse_abbr(String $string, bool $delete=false){
+
+    if($delete){
+        $replace = '';
+    }else{
+        $replace = '<abbr title="${2}">${1}</abbr>';
+    }
+
+    return preg_replace('/_(.*?)\|(.*?)_/', $replace, $string);
+}
+
 
 /* 
     Rimpiazza {{menu}} con il menú in base alla pagina in cui si trova l'utente
@@ -69,7 +86,7 @@ function get_menu(){
     $currentPage = str_replace($strToRemove,"",$_SERVER['REQUEST_URI']);
 
     for($i=0;$i<$nLinks;$i++){
-        if($currentPage==$links[$i]){
+        if($currentPage==$links[$i] || ($currentPage=='' && $links[$i]=='index.php')){
             $menu .= '<li id="currentLink" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</li>';
         }else{
             $menu .= '<li><a href="'.$links[$i].'" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</a></li>';
@@ -81,7 +98,6 @@ function get_menu(){
 /*
     Restituisce il blocco nella productRow usato in Home, Categorie e Categoria
 */
-
 function get_product_tile($product){
     return 
     '<article> 
@@ -106,4 +122,95 @@ function sanitize($input, $allowed_tags) {
     $input = trim($input);
     return $input;
 }
+
+// -----------------------------------
+// Funzioni per l'area amministrativa
+// -----------------------------------
+
+
+/* 
+    Rimpiazza {{menu}} con il menú amministratore in base alla pagina in cui si trova l'amministratore
+*/
+function get_admin_menu(){
+
+    $menu = '';
+
+    // Link da inserire
+    $links = ["index.php","categorie.php","marche.php","recensioni.php"];
+    // Nomi delle voci di menu
+    $names = ["Prodotti","Categorie","Marche","Utenti","Recensioni"];
+    // Lingue dei link (se diverse da Italiano)
+    $langs = ["","","","",""];
+    // Numero dei link da mostrare (grandezza array)
+    $nLinks = count($links);
+
+    //Togliere dall'url restituito da PHP -- cambierà in base all'hosting (probilmente non sará necessario in fase di consegna)
+    $strToRemove = "/poptech/admin/";
+    $currentPage = str_replace($strToRemove,"",$_SERVER['REQUEST_URI']);
+
+    for($i=0;$i<$nLinks;$i++){
+        if($currentPage==$links[$i] || ($currentPage=='' && $links[$i]=='index.php') ){
+            $menu .= '<li id="currentLink" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</li>';
+        }else{
+            $menu .= '<li><a href="'.$links[$i].'" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</a></li>';
+        }
+    }
+
+    return $menu;
+
+}
+
+/* 
+    Verifica e carica l'immagine
+*/
+function upload_file($field,$testOnly=false){
+
+    if($field['name']=="")
+        return false;
+    
+    
+
+    $targetDir = '../uploads/';
+    $path      = $targetDir.$field['name'];
+    $fileType  = strtolower(pathinfo($path,PATHINFO_EXTENSION));
+
+ 
+
+    //Accetta solo immagini
+    if(!getimagesize($field['tmp_name'])){
+        return false;
+    }
+
+  
+
+    //Aggiungi il timestamp (unico per costruzione) al file se esiste già
+    while(file_exists($path)){ 
+        $name = str_replace(".".pathinfo($field['name'],PATHINFO_EXTENSION),"",$field['name']);
+        $name .= time();
+        $path = $targetDir.$name.'.'.$fileType;
+    }
+
+
+
+    //Accetta solo file jp(e)g o png
+    if($fileType != "jpg" && $fileType != "png" && $fileType != "jpeg"){
+        return false;
+    }
+
+    print_r($path);
+
+
+    if(!$testOnly){
+        if(move_uploaded_file($field["tmp_name"],$path)){
+            return $path;
+        }else{
+            return false;
+        }
+    }else{
+        //Non ha ritornato prima, quindi ha passato i test
+        return true;
+    }
+
+}
+
 ?>
