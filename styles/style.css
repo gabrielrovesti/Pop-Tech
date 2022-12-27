@@ -295,16 +295,18 @@ main h2{
     border-top: solid 3px black;
     border-bottom: solid 3px black;
     position: relative;
-    flex: 57% 0 0;
+   
     background-color: #fff;
 }
 
 #chiSiamo .first .text-container{
     border-left: solid 3px black;
+    flex: 57.6% 0 0;
 }
 
 #chiSiamo .second .text-container{
     border-right: solid 3px black;
+    flex: 57% 0 0;
 }
 
 #chiSiamo .first .text-container:after,#chiSiamo .second .text-container:before{
@@ -335,14 +337,22 @@ main h2{
 
 
 #chiSiamo .img-container{
-    flex: 30% 0 0;   
-}
-#chiSiamo .img-container img{
-    max-width: 100%;
+    flex: 40% 0 0;
+    border: solid 3px black;
 }
 
-#chiSiamo .img-container .reverse{
-    order: 1;
+
+#chiSiamo .first .img-container{
+    
+    background-image: url('../images/chisiamo1.png');    
+    clip-path: polygon(19% 0, 100% 0, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(19% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+#chiSiamo .second .img-container{
+    background-image: url('../images/chisiamo2.png');
+    clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%)); 
 }
 
 #chiSiamo .text-container:afxxter{
