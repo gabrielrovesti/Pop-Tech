@@ -72,7 +72,7 @@ header#header{
     margin: 0.5em;
     padding: 0.2em;
     border: 3px solid black;
-    /*background-color: yellow;*/
+    background-image: radial-gradient(orange 40%,red);
 }
 
 header#header h1{
@@ -118,7 +118,7 @@ footer{
 #menu{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;    
+    justify-content: space-between;
     flex-wrap: wrap;
     margin: 0.5em;
     padding: 0.5em;
@@ -167,10 +167,11 @@ a{
     color:darkslategrey;
 }
 
-/*di che colore facciamo il link visitato?*/
+/* di che colore facciamo? Io non inserirei un colore a :visited ma lascerei quello di default
 a:visited{
     color:blue;
 }
+*/
 
 a:hover{
     color:#0095C5;
@@ -180,15 +181,12 @@ a.button{
     border: 3px solid black;
     padding: .5em 1em .5em 1em;
     display: inline-block;
-}
-
-a.button:visited{
-    color: darkslategrey;
+    background-color: white;
 }
 
 a.button:hover{
     color: white;
-    background-color: orangered;
+    background-image: linear-gradient(to bottom left, red, orange);
 }
 
 /* Main Content ========================= */
@@ -222,7 +220,20 @@ main h2{
 }
 
 #homePage #homeBanner div, #homePage #homeBanner img{
-    flex: 50% 0 0;
+    flex: 47% 0 0;
+    margin: 0.5em;
+    padding: 0.5em;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+    border: 3px solid black;
+}
+
+#homePage #homeBanner div{
+    background-image: linear-gradient(to bottom right, #FDC708, #FFF5D1);
+}
+
+#homePage #homeBanner img{
+    background-image: linear-gradient(to top, #F9AAAA, #F8E4E4);
 }
 
 /* Category ========================= */
@@ -400,17 +411,33 @@ main h2{
     flex-wrap: wrap;
 }
 
+#contatti div{
+    background-image: linear-gradient(to bottom left, #FFC671, #FFF27F);
+}
+
+#contatti div#modulo_richieste{
+    background-image: linear-gradient(to top right, #55BEF9, #DCF1FD);
+}
+
 #contatti form label{
     display: block;
 }
 
 #contatti div, #contatti figure{
-    flex: 33% 0 0;
+    flex: 30% 0 0;
+    margin: 0.1em;
+    padding: 0.1em;
+    border: 3px solid black;
 }
 
+#contatti div{
+    padding-left: 1em;
+}
+
+/*
 #contatti figure{
     margin: 0em;
-}
+}*/
 
 #contatti img{
     max-width: 100%;
