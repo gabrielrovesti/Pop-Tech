@@ -41,7 +41,10 @@ nav#menu.show{
 }
 
 nav#menu ul li{
-    display: block;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
     margin: 0.5em 0em 0.5em 0em;
 }
 
