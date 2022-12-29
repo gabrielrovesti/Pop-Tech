@@ -1,10 +1,11 @@
 
-<img src="{{immagine}}" alt="{{altImmagine}}" />
+<picture><img src="{{immagine}}" alt="{{altImmagine}}" /></picture>
 
+<div>
+<h1>{{nome}}</h1>
 <dl>
-    <dt id="titolo">{{nome}}</dt>
     <dd class="comic_box2">{{descrizione}}</dd>
-    <dd id="prezzo">{{prezzo}}</dd> 
+    <dd class="comic_box" id="prezzo">{{prezzo}} &euro;</dd> 
     <dt>Categoria</dt><dd>{{categoria}}</dd>
     <dt>Origine</dt><dd>{{origine}}</dd>
     <dt>Marca</dt><dd>{{marca}}</dd>
@@ -12,3 +13,4 @@
     <dt>Dimensioni</dt><dd>{{dimensioni}}</dd>
     <dt>Peso</dt><dd>{{peso}}</dd>
 </dl>
+</div>

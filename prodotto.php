@@ -38,8 +38,8 @@
                 $content = str_replace('{{origine}}',$product['origine'],$content);
                 $content = str_replace('{{marca}}',$product['marca'],$content);
                 $content = str_replace('{{modello}}',$product['modello'],$content);
-                $content = str_replace('{{dimensioni}}',$product['dimensione'],$content);
-                $content = str_replace('{{peso}}',$product['peso'],$content);
+                $content = str_replace('{{dimensioni}}',parse_abbr($product['dimensione']),$content);
+                $content = str_replace('{{peso}}',parse_abbr($product['peso']),$content);
                 $content = str_replace('{{categoria}}',$product['categoria'],$content);
                 $content = str_replace('{{prezzo}}',$product['prezzo'],$content);
 

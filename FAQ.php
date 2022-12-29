@@ -15,15 +15,25 @@
 
     $connection = new DBAccess;
 
+    $content .= '<div class="faqRow">';
+
     if ($connection->open_connection()) {
         $faqs = $connection->exec_select_query('SELECT id, domanda, risposta FROM faq;');
         foreach($faqs as $faq){
-            $content .= '<div class="faq_container">';
-            $content .= 
-            '<div class="circular-question">'.parse_lang($faq['domanda']).' <div class="circle1"></div><div class="circle2"></div></div>'.
-            '<div class="circular-answer">'.parse_lang($faq['risposta']).' <div class="circle3"></div><div class="circle4"></div></div>';
-            $content .= '</div>';
+
+            $content .= '<details open="">
+                    <summary class="comic_box">'.parse_lang($faq['domanda']).'</summary>
+                    <p  class="comic_box2">'.parse_lang($faq['risposta']).'</p>
+            </details>';
+
+            // $content .= '<div class="faq_container">';
+            // $content .= 
+            // '<div class="circular-question">'.parse_lang($faq['domanda']).' <div class="circle1"></div><div class="circle2"></div></div>'.
+            // '<div class="circular-answer">'.parse_lang($faq['risposta']).' <div class="circle3"></div><div class="circle4"></div></div>';
+            // $content .= '</div>';
         }
+
+        $content .= "</div>";
     }else{
 
         $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';

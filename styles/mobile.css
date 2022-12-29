@@ -54,6 +54,13 @@ main#content h1{
     margin: 0.0em;
 }
 
+/* FAQ Page ========================= */
+
+.faqRow details{
+    flex:100% 0 0;
+}
+
+
 /* Home Page ========================= */
 
 #homePage #homeBanner div{

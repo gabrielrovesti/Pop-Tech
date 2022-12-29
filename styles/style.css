@@ -76,7 +76,7 @@ header#header{
 }
 
 header#header h1{
-    text-indent:100%;
+    text-indent:200%;
     white-space:nowrap;
     overflow:hidden;
     font-size: 7em;
@@ -183,6 +183,8 @@ a.button{
     padding: .5em 1em .5em 1em;
     display: inline-block;
     background-color: white;
+    /* TODO */
+    transition: background-image 0.2s ease-out;
 }
 
 a.button:hover{
@@ -295,7 +297,7 @@ main h2{
     margin: 0.5em ;
 }
 
-#chiSiamo .text-container{
+#chiSiamo .text-container,#chiSiamo .img-container{
     border-top: solid 3px black;
     border-bottom: solid 3px black;
     position: relative;
@@ -313,7 +315,18 @@ main h2{
     flex: 57% 0 0;
 }
 
-#chiSiamo .first .text-container:after,#chiSiamo .second .text-container:before{
+#chiSiamo .first .img-container{
+    border-right: solid 3px black;
+    background-image: linear-gradient(to bottom, #FDC708, #FFF5D1);
+}
+
+#chiSiamo .second .img-container{
+    border-left: solid 3px black;
+}
+
+#chiSiamo .first .text-container:after,#chiSiamo .second .text-container:before,
+#chiSiamo .first .img-container:before,#chiSiamo .second .img-container:after
+{
     content: " ";
     position:absolute;
     display: block;
@@ -329,8 +342,13 @@ main h2{
     background-color: #FFF;
 }
 
+#chiSiamo .first .img-container:before,#chiSiamo .second .img-container:after{
+    width: 40%;
+}
+
 #chiSiamo .first .text-container:after{
     right:-1%;
+    
 }
 
 #chiSiamo .second .text-container:before{
@@ -338,43 +356,20 @@ main h2{
 }
 
 
-
-
 #chiSiamo .img-container{
-    flex: 40% 0 0;
-    border: solid 3px black;
+    flex: 30% 0 0;
 }
 
 
-#chiSiamo .first .img-container{
-    
-    background-image: url('../images/chisiamo1.png');    
-    clip-path: polygon(19% 0, 100% 0, 100% 100%, 0% 100%);
-    -webkit-clip-path: polygon(19% 0, 100% 0, 100% 100%, 0% 100%);
+#chiSiamo .first .img-container:before{
+    left:-25%;
+    background-image: linear-gradient(to bottom, #FDC708, #FFF5D1);
 }
 
-#chiSiamo .second .img-container{
-    background-image: url('../images/chisiamo2.png');
-    clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%); 
+#chiSiamo .second .img-container:after{
+    right:-1%;
 }
 
-/*da sistemare*/
-#chiSiamo .text-container:after{
-    content: " ";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background: #FF0000;
-    transform-origin: bottom left;
-    -ms-transform: skew(-30deg, 0deg);
-    -webkit-transform: skew(-30deg, 0deg);
-    transform: skew(-30deg, 0deg);
-}
 
 #chiSiamo .who-title{
     text-align: center;
@@ -451,18 +446,40 @@ main h2{
     flex-wrap: wrap;
 }
 
-#prodotto{
-    flex: 30% 0 0;
+#prodotto h1{
+    text-align: left;
     margin: 0em;
+    padding: 0.3em;
 }
 
-#prodotto img{
-    max-width: 98%;
+#prodotto div{
+    flex: 50% 0 0;
+}
+
+#prodotto .comic_box2{
+    font-weight: normal;
+    width: 100%;
+}
+
+#prodotto .comic_box{
+    display: block;
+    max-width: 20%;
+    margin-bottom: 2em;
+    font-size: 1.5em;
+}
+
+#prodotto picture img{
+    max-width: 100%;
+}
+
+#prodotto picture{
+    flex: 45% 0 0;
+    height: auto;
     border: 3px solid black;
 }
 
 #prodotto dl{
-    margin-left: 2em;
+   
     display: inline;
 }
 
@@ -472,6 +489,10 @@ main h2{
 
 #prodotto dl dt{
     font-weight: bold;
+}
+
+#prodotto dl dt:not(.comic_box,.comic_box2), #prodotto dl dd:not(.comic_box,.comic_box2){
+    display: inline;
 }
 
 #prodotto dl dt#titolo{
@@ -543,7 +564,7 @@ main h2{
 }
 
 /* Fumetti ========================= */
-.comic_box {
+.comic_box,.comic_box2 {
     display: inline-block;
     width:auto;
     border: 3px solid black;
@@ -581,18 +602,9 @@ main h2{
     z-index: 2;
 }
 
-/*
-.comic_box2 {
-    display: inline-block;
-    width:auto;
-    border: 3px solid black;
-    padding: .5em 1em .5em 1em;
-    text-align: left;
-    font-weight: bold;
-    position: relative;  
-}
+/* Freccia del fumetto in basso a destra */ 
 
-Freccia del fumetto in basso a destra 
+
 .comic_box2:before {
     content: "";
     width: 0px;
@@ -618,9 +630,33 @@ Freccia del fumetto in basso a destra
     right: 25px;
     bottom: -14px;
     z-index: 2;
-}*/
+}
 
 /* Fumetti FAQ: Domande e Risposte */
+
+.faqRow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.faqRow details{
+    flex:48% 0 0;
+    margin-bottom: 2em;
+}
+
+.faqRow .comic_box{
+    border-radius: 2em;
+}
+
+.faqRow .comic_box2{
+    margin-top: 0.2em;
+    font-weight: normal;
+}
+
+.faqRow details:nth-of-type(odd){
+    margin-right: 2em;
+}
 
 /* Create a container for the questions and answers */
 .faq_container{
