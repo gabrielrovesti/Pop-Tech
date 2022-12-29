@@ -1,5 +1,9 @@
 <?php
 
+use DB\DBAccess;
+
+require_once('connection.php');
+
 /*
     Rimpiazza i placeholder del template html
 */
@@ -102,7 +106,7 @@ function get_product_tile($product){
     return 
     '<article> 
         <header>
-            <img src="'.$product['immagine'].'" alt="'.$product['altimmagine'] .'">
+            <img src="'.getThumbnail($product['immagine']).'" alt="'.$product['altimmagine'] .'">
             <h2>'.parse_lang($product['nome']) .'</h2>
         </header>
         '.parse_lang($product['descrizione']).'
@@ -114,13 +118,23 @@ function get_product_tile($product){
 /*
     Pulisce la stringa per l'iunserimento in database rimuovendo tag indesiderati, 
     spazi superflui e limitando il rischio di attacchi
+    Se permetto dei tag non devo inibirli con htmlentities
 */
 function sanitize($input, $allowed_tags) {
     $input = strip_tags($input, $allowed_tags);
-    $input = htmlentities($input, ENT_QUOTES, 'UTF-8');
+    if(!$allowed_tags)
+        $input = htmlentities($input, ENT_QUOTES, 'UTF-8');
     $input = stripslashes($input);
     $input = trim($input);
     return $input;
+}
+
+/*
+    Ritorna il path per il thumbanail
+*/
+function getThumbnail($file){
+    $fileType  = strtolower(pathinfo($file,PATHINFO_EXTENSION));
+    return str_replace(".".$fileType,"",$file).'-thumb.'.$fileType;
 }
 
 // -----------------------------------
@@ -136,7 +150,7 @@ function get_admin_menu(){
     $menu = '';
 
     // Link da inserire
-    $links = ["index.php","categorie.php","marche.php","recensioni.php"];
+    $links = ["index.php","categorie.php","marche.php","utenti.php","recensioni.php"];
     // Nomi delle voci di menu
     $names = ["Prodotti","Categorie","Marche","Utenti","Recensioni"];
     // Lingue dei link (se diverse da Italiano)
@@ -155,6 +169,13 @@ function get_admin_menu(){
             $menu .= '<li><a href="'.$links[$i].'" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</a></li>';
         }
     }
+
+    if(isLoggedIn(true)){
+        $menu .= '<li><a href="logout.php">Esci</a></li>';
+    }else{
+        $menu = '<li><a href="login.php">Accedi</a></li>';
+    }
+
 
     return $menu;
 
@@ -197,18 +218,101 @@ function upload_file($field,$testOnly=false){
         return false;
     }
 
-    print_r($path);
-
 
     if(!$testOnly){
         if(move_uploaded_file($field["tmp_name"],$path)){
-            return $path;
+
+            createThumbnail($path);
+
+            return str_replace('../','',$path);
         }else{
             return false;
         }
     }else{
         //Non ha ritornato prima, quindi ha passato i test
         return true;
+    }
+
+}
+
+function createThumbnail($file){
+
+    $w = 300;
+    $h = 300;
+
+    $fileType  = strtolower(pathinfo($file,PATHINFO_EXTENSION));
+
+    $newName = str_replace(".".$fileType,"",$file).'-thumb.'.$fileType;
+
+    list($width, $height) = getimagesize($file);
+    $ratio = $width / $height;
+
+    if ($w/$h > $ratio) {
+        $newwidth = $h*$ratio;
+        $newheight = $h;
+    } else {
+        $newheight = $w/$ratio;
+        $newwidth = $w;
+    }
+
+    switch($fileType){
+        case 'jpg': case 'jpeg':
+            $image = imagecreatefromjpeg($file);
+        break;
+
+        case 'png';
+            $image = imagecreatefrompng($file);
+        break;
+    }
+
+    $imgResized = imagescale($image , $newwidth, $newheight);
+
+    switch($fileType){
+        case 'jpg': case 'jpeg':
+            imagejpeg($imgResized,$newName);
+        break;
+
+        case 'png';
+            imagepng($imgResized,$newName);
+        break;
+    }
+
+}
+
+/*
+    Controlla se l'utente è collegato e se è amministratore
+*/
+function isLoggedIn(bool $isAdmin=false){
+
+    if(isset($_SESSION['user'])){
+
+        $connection = new DBAccess();
+
+        if($connection->open_connection()){
+
+            $id = $_SESSION['user'];
+
+            $users = $connection->exec_select_query("SELECT id,admin FROM utente WHERE id=$id");
+
+            if(count($users)>0){
+
+                $user = $users[0];
+                if($isAdmin){
+                    return $user['admin']==1; //ritorna true se esiste ed è admin
+                }else{
+                    return true; //ritorna true se esiste
+                }
+
+            }else{
+                return false; //utente non esiste
+            }
+
+        }else{
+            return false; //non è possibile collegarsi al DB
+        }
+
+    }else{
+        return false; //nessuna sessione attiva
     }
 
 }

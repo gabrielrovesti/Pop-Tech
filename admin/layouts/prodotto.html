@@ -1,0 +1,78 @@
+<form action="prodotto.php" method="post" enctype="multipart/form-data">
+
+    <input type="hidden" name="id" value="{{id}}" />
+    
+    {{errors}}
+
+    <fieldset>
+
+        <legend>Dati principali</legend>
+
+        <label for="nome" class="formBig">Nome
+            <input type="text" id="nome" name="nome" value="{{nome}}" />
+        </label>
+
+        <label for="altImmagine">Alt per Immagine
+            <input type="text" id="altImmagine" name="altImmagine" value="{{altImmagine}}"/>
+        </label>
+        
+        <label for="immagine">immagine
+            <input type="file" id="immagine" name="immagine" />
+        </label>
+
+        {{immagine}}
+        
+
+    </fieldset>
+
+    <fieldset>
+
+        <legend>Dati esterni</legend>
+
+        <label for="categoria">Categoria
+            <select name="categoria" id="categoria">
+                {{categorie}}
+            </select>
+        </label>
+
+        <label for="marca">Marca
+            <select name="marca" id="marca">
+                {{marche}}
+            </select>
+        </label>
+
+    </fieldset>
+
+    <fieldset>
+
+        <legend>Dati di dettaglio</legend>
+    
+        <label for="origine">Origine
+        <input type="text" id="origine" name="origine" value="{{origine}}" />
+        </label>    
+
+        <label for="modello">Modello
+            <input type="text" id="modello" name="modello" value="{{modello}}" />
+        </label>
+
+        <label for="dimesione">Dimesione
+            <input type="text" id="dimesione" name="dimensione" value="{{dimensione}}" />
+        </label>
+
+        <label for="peso">Peso
+            <input type="text" id="peso" name="peso" value="{{peso}}" />
+        </label>
+
+        <label for="prezzo">Prezzo
+            <input type="text" id="prezzo" name="prezzo" value="{{prezzo}}" />
+        </label>
+
+        <label for="descrizione" class="formBig">Descrizione
+            <textarea name="descrizione" id="descrizione" cols="30" rows="10">{{descrizione}}</textarea>
+        </label>
+
+    </fieldset>
+
+    <input type="submit" value="Salva" name="submit" class="btn btn-green"/>
+    <input type="reset" value="Annulla" class="btn btn-info" />
+</form>

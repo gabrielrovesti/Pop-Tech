@@ -212,7 +212,6 @@ main h2{
 
 #homePage h2{
     text-transform: uppercase;
-    transform: skew(-10deg); /*ok*/
 }
 
 #homePage #homeBanner{

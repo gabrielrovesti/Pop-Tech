@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+    
+	<title>{{title}}</title>
+	
+    <!-- Merta Tag Keywords, Description ignorati perché la pagina non viene indicizzata dai motori di ricerca-->
+    <meta name="author" content="PopTech"> 
+
+    <link rel="stylesheet" href="../styles/admin.css" media="screen">
+    <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 576px), only screen and (max-device-width: 576px)"> <!-- max-device-width deprecato ma usato da lacuni browser -->
+    <link rel="stylesheet" href="styles/print.css" media="print">
+
+    <link rel="shortcut icon" type="images/png" href="images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="js/script.js"></script>
+
+</head>
+<body id="admin_{{pageID}}">
+
+    <a href="#content" class="srOnly">Vai al contenuto</a>
+
+    <nav id="menu">
+        <h1>Area amministrativa <span lang="en">Pop Tech</span></h1>
+        <ul> 
+            {{menu}}
+        </ul>
+    </nav>
+
+   
+    <nav id="breadcrumbs" aria-label="Percorso">
+        {{breadcrumbs}}
+    </nav>    
+   
+	<main id="content">
+        
+        {{content}}
+       
+	</main>
+
+    <footer id="adminFooter">
+        Area Riservata - Pop Tech s.r.l. 
+    </footer>
+	
+</body>
+</html>

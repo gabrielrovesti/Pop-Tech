@@ -1,0 +1,183 @@
+html,body{
+    font-size: 100%;
+    line-height: 1.5em;
+}
+
+body{
+    max-width: 1920px;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    color: darkblue;
+    text-decoration: underline;
+}
+a:visited{
+    color:purple;
+}
+a:hover{
+    color:blue;
+}
+
+/* Menu ========================= */
+
+nav#menu h1{
+    flex-grow: 1;
+    font-size: 1.3em;
+}
+
+nav#menu{
+    display: flex;
+    flex-direction: row;
+    padding: 0em 0.2em 0em 0.5em;
+    margin: 0.5em;
+    border: 1px solid black;
+    border-radius: 0.5em;
+}
+
+nav#menu ul{
+    padding: 0em;
+    display: inline;
+}
+
+nav#menu ul li{
+    display: inline-block;
+    list-style: none;
+    padding:0.3em 0.5em 0.3em 0.5em;
+    margin-right: 0.25em;
+    background-color: #444444;
+    border-radius: 0.5em;
+}
+
+nav#menu ul li a{
+    color: #FFF;
+    text-decoration: none;
+}
+
+
+nav#menu ul li#currentLink{
+    background-color: darkblue;
+    color:#FFF;
+}
+
+/* Margini ========================= */
+
+main,footer, nav#breadcrumbs{
+    margin: 0.5em;
+}
+
+/* Utilities ========================= */
+
+.srOnly{
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Lista elementi ========================= */
+
+.listItem{
+    padding: 0.2em 0.2em 0.2em 0.5em;
+    margin: 0.5em 0em 0.5em 0em;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.listItem:hover{
+    background: lightgray;
+}
+
+.listItem span{
+    flex-grow: 1;
+}
+
+.listItem a.btn{
+    margin-right: 0.3em;
+}
+
+/* Pulsanti ========================= */
+
+.btn{
+    border-radius: 0.5em;
+    text-decoration: none;
+    padding: 0.5em 0.6em 0.5em 0.6em;
+    border-width: 1px;
+}
+
+.btn:hover,.btn:focus{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.btn-green,.btn-green:visited,.btn-green:hover{
+    background-color: #218c74;
+    border-color: #218c74;
+    color:#FFF;
+}
+
+.btn-info,.btn-info:visited,.btn-info:hover{
+    background-color: #227093;
+    border-color: #227093;
+    color:#FFF;
+}
+
+.btn-danger,.btn-danger:visited,.btn-danger:hover{
+    background-color: #b33939;
+    border-color: #b33939;
+    color:#FFF;
+}
+
+/* Form ========================= */
+
+label{
+    font-weight: bold;
+    display: inline-block;
+}
+
+input[type=text],input[type=password],select,textarea{
+    display: block;
+    padding: 0.4em;
+    border-radius: 0.3em;
+    border: 1px solid gray;
+}
+
+input[type=submit],input[type=reset]{
+    margin-top: 0.5em;
+
+}
+
+.formBig{
+    display: block;
+}
+.formBig input,.formBig textarea{
+    min-width:50%;
+}
+
+
+
+/* Messaggi ========================= */
+
+.message{
+    padding: 0.5em;
+    border-radius: 0.3em;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.successMsg{
+    background-color: #cdf9eb;
+    border-color: #114c3d;
+    color: #114c3d;
+}
+
+.errorMsg{
+    background-color: #edb7ba;
+    border-color: #7a1717;
+    color: #7a1717;
+}
