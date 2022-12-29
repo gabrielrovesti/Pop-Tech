@@ -39,7 +39,7 @@
                 array_push($errors,'<p class="message errorMsg">formato dell\'email non corretto</p>');
             }
 
-            if(strlen($password)<5){
+            if(strlen($password)<4){ //"user" ha 4 caratteri
                 array_push($errors,'<p class="message errorMsg">Formato della password non corretto.</p>');
             }
 
@@ -50,7 +50,7 @@
                 if($connection->open_connection()){
                     
                     //Cerca utente con quell'id
-                    $users = $connection->exec_select_query("SELECT id,admin,password FROM utente WHERE email='$email' AND admin=1;");  
+                    $users = $connection->exec_select_query("SELECT id,admin,password FROM utente WHERE email='$email';");  
 
                     if(count($users)>0){ //Utente trovato
                        

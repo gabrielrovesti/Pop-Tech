@@ -1,0 +1,17 @@
+<form action="faq.php" method="post">
+
+    <input type="hidden" name="id" value="{{id}}"/>
+
+    {{errors}}
+
+    <label for="nome" class="formBig">Domanda
+        <input type="text" id="domanda" name="domanda" value="{{domanda}}" />
+    </label>
+    <label for="risposta" class="formBig">Risposta
+        <input type="text" id="risposta" name="risposta" value="{{risposta}}" />
+    </label>
+   
+    
+    <input type="submit" value="Salva" name="submit" class="btn btn-green"/>
+    <input type="reset" value="Annulla" class="btn btn-info" />
+</form>

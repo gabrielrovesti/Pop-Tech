@@ -109,7 +109,7 @@ function get_product_tile($product){
             <img src="'.getThumbnail($product['immagine']).'" alt="'.$product['altimmagine'] .'">
             <h2>'.parse_lang($product['nome']) .'</h2>
         </header>
-        '.parse_lang($product['descrizione']).'
+        '.substr(parse_lang($product['descrizione']),0,100).'...
         <a href="prodotto.php?id='.$product['id'].'" class="button" title="Vedi prodotto ' . parse_lang($product['nome'],true) . '">Scopri di più</a>
     </article>';
     
@@ -150,11 +150,11 @@ function get_admin_menu(){
     $menu = '';
 
     // Link da inserire
-    $links = ["index.php","categorie.php","marche.php","utenti.php","recensioni.php"];
+    $links = ["index.php","categorie.php","marche.php","utenti.php","recensioni.php","faqs.php"];
     // Nomi delle voci di menu
-    $names = ["Prodotti","Categorie","Marche","Utenti","Recensioni"];
+    $names = ["Prodotti","Categorie","Marche","Utenti","Recensioni","FAQ"];
     // Lingue dei link (se diverse da Italiano)
-    $langs = ["","","","",""];
+    $langs = ["","","","","","en"];
     // Numero dei link da mostrare (grandezza array)
     $nLinks = count($links);
 
@@ -297,6 +297,7 @@ function isLoggedIn(bool $isAdmin=false){
             if(count($users)>0){
 
                 $user = $users[0];
+               
                 if($isAdmin){
                     return $user['admin']==1; //ritorna true se esiste ed è admin
                 }else{
@@ -314,6 +315,52 @@ function isLoggedIn(bool $isAdmin=false){
     }else{
         return false; //nessuna sessione attiva
     }
+
+}
+
+
+// -----------------------------------
+// Funzioni per l'area utente
+// -----------------------------------
+
+
+/* 
+    Rimpiazza {{menu}} con il menú amministratore in base alla pagina in cui si trova l'amministratore
+*/
+function get_user_menu(){
+
+    $menu = '';
+
+    // Link da inserire
+    $links = ["index.php","profilo.php"];
+    // Nomi delle voci di menu
+    $names = ["Recensioni","Profilo"];
+    // Lingue dei link (se diverse da Italiano)
+    $langs = ["",""];
+    // Numero dei link da mostrare (grandezza array)
+    $nLinks = count($links);
+
+    //Togliere dall'url restituito da PHP -- cambierà in base all'hosting (probilmente non sará necessario in fase di consegna)
+    $strToRemove = "/poptech/area-utente/";
+    $currentPage = str_replace($strToRemove,"",$_SERVER['REQUEST_URI']);
+
+    for($i=0;$i<$nLinks;$i++){
+        if($currentPage==$links[$i] || ($currentPage=='' && $links[$i]=='index.php') ){
+            $menu .= '<li id="currentLink" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</li>';
+        }else{
+            $menu .= '<li><a href="'.$links[$i].'" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</a></li>';
+        }
+    }
+
+    if(isLoggedIn()){
+        $menu .= '<li><a href="logout.php">Esci</a></li>';
+    }else{
+        $menu = '<li><a href="login.php">Accedi</a></li>';
+        $menu .= '<li><a href="register.php">Registrati</a></li>';
+    }
+
+
+    return $menu;
 
 }
 

@@ -37,7 +37,6 @@
                 $id = intval(sanitize($_GET['id'],""));
                 $type = sanitize($_GET['type'],"");
 
-
                 $content = "<h1>Elimina</h1>";            
 
                 switch($type){
@@ -92,8 +91,19 @@
 
                     break;
 
-                    case 'recensione':
+                    case 'faq':
 
+                        $typeText = "della FAQ'";
+                        $backLink = "faqs.php";
+                        $faqs = $connection->exec_select_query('SELECT domanda FROM faq WHERE id='.$id.';');
+                        if(isset($faqs[0])){
+                            $faq = $faqs[0];
+                            $nome = $faq['domanda'];
+                        }
+
+                    break;
+
+                    case 'recensione':
 
                         $typeText = "della recensione";
                         $backLink = "recensioni.php";
@@ -128,7 +138,7 @@
                     array_push($errors,"Errore: ID non selezionato.");
                 }
 
-                if(!isset($_POST['type']) || strlen($_POST['type'])<=4){
+                if(!isset($_POST['type'])){
                     array_push($errors,"Errore: tipo non selezionato.");
                 }
 

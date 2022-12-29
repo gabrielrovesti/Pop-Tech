@@ -87,8 +87,8 @@ CREATE TABLE `recensione` (
   `ID` int(11) UNSIGNED NOT NULL,
   `prodotto` int(10) UNSIGNED NOT NULL,
   `utente` int(10) UNSIGNED NOT NULL,
-  `contenuto` text NOT NULL,
-  `punteggio` decimal(2,1) UNSIGNED NOT NULL
+  `contenuto` text,
+  `punteggio` decimal(2,1) UNSIGNED NOT NULL DEFAULT '0.0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ALTER TABLE `recensione`

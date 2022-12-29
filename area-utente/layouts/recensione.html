@@ -4,17 +4,11 @@
 
     {{errors}}
     
-    <label for="nome" class="">Prodotto
-        <select id="prodotto" name="prodotto">
-            {{prodotti}}
-        </select>
-    </label>
+    <label for="nome" class="">Prodotto: {{nomeProdotto}}</label>
 
-    <label for="email" class="">Utente
-        <select id="utente" name="utente">
-            {{utenti}}
-        </select>
-    </label>
+    <input type="hidden" name="utente" value="{{utente}}">
+    <input type="hidden" name="prodotto" value="{{prodotto}}">
+
 
     <label for="contenuto" class="formBig">Contenuto
         <textarea name="contenuto" id="contenuto" cols="30" rows="10">{{contenuto}}</textarea>

@@ -9,14 +9,17 @@
 
     $template = file_get_contents('layouts/layout.html');
     $form     = file_get_contents('layouts/recensione.html');
+    $viewPage = file_get_contents('layouts/recensioneStatic.html');
 
     $pageID = 'recensione';
     $title = "Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="recensioni.php">Recensioni</a> > Nuovo recensione</p>';
+    $breadcrumbs = '<p>Ti trovi in: <a href="index.php">Le tue Recensioni</a> > Visualizza Recensione</p>';
+
+    $utente = $_SESSION['user'];
 
     $errorsStr = "";
 
-    if(!isLoggedIn(true)){
+    if(!isLoggedIn()){
 
         $content = '<p class="message errorMsg">Attenzione non disponi dei privilegi necessari per accede a questa pagina.</p>';
 
@@ -29,29 +32,32 @@
         $utente     = '';
         $prodotto   = '';
         $contenuto  = '';
-        $punteggio = '';
+        $punteggio  = '';
+        $nomeProdotto = '';
 
         $connection = new DBAccess();
 
         if($connection->open_connection()){
 
-            $users    = $connection->exec_select_query('SELECT id,nome FROM utente ORDER BY nome;');
-            $products = $connection->exec_select_query('SELECT id,nome FROM prodotto ORDER BY nome;');
-        
+            
             if(isset($_POST['submit'])){
             //Invio del form
 
                 $errors = [];
                 $query = "";
-                $action = "inserita";
-
+                
                 //Prelevamento dati
-                $utente    = sanitize($_POST['utente'],"");
+                
                 $prodotto  = sanitize($_POST['prodotto'],"");
+                $utente    = sanitize($_POST['utente'],"");
                 $contenuto = sanitize($_POST['contenuto'],"<p><em><b><strong><ul><li><ol>");
                 $punteggio = floatVal(sanitize($_POST['punteggio'],""));
-                
 
+                $prodotti = $connection->exec_select_query("SELECT nome FROM prodotto WHERE id=$prodotto");
+                if(isset($prodotti[0])){
+                    $nomeProdotto = parse_lang($prodotti[0]['nome']);
+                }
+                
                 //Validazione dati
                 if($utente==''){
                     array_push($errors,'<p class="message errorMsg">Selezionare un utente.</p>');
@@ -61,29 +67,25 @@
                     array_push($errors,'<p class="message errorMsg">Selezionare un utente.</p>');
                 }
 
+                if($contenuto==''){
+                    array_push($errors,'<p class="message errorMsg">Inserire il contenuto della recesione.</p>');
+                }
                 
 
                 if(count($errors)==0){
                     //Procedi con inserimento o medifica
                     if(isset($_POST['id']) && intval($_POST['id'])!=0){
 
-                        //Richiesta di modifica del prodotto
+                        //Richiesta di modifica
                         $id   = intval(sanitize($_POST['id'],""));
-                        $query = "UPDATE recensione SET utente=$utente, prodotto=$prodotto, contenuto='$contenuto', punteggio=$punteggio WHERE id=$id";
-                        $action = "modificata";
+                        $query = "UPDATE recensione SET contenuto='$contenuto', punteggio=$punteggio WHERE id=$id;";
                 
-                    }else{
-
-                        //Richiesta di creazione del prodotto
-                        $id = '';
-                        $query = "INSERT INTO recensione(utente,prodotto,contenuto,punteggio) VALUES ($utente,$prodotto,'$contenuto',$punteggio);";
-
                     }
 
                     $queryOK = $connection->exec_alter_query($query);
 
                     if($queryOK){
-                        $content .= '<p class="message successMsg">Recensione '.$action.' con successo</p>';
+                        $content .= '<p class="message successMsg">Recensione salvata con successo</p>';
                     }else{
                         $content .= '<p class="message errorMsg">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
                     }
@@ -98,20 +100,10 @@
 
                     $form = str_replace('{{id}}',$id,$form);
 
-                    $utenti = "";
-                    foreach($users as $user){
-                        $utenti .= '<option value="'.$user['id'].'" '.(($user['id']==$review['utente'])?'selected':'').'>'.$user['nome'].'</option>';
-                    }
+                    $form = str_replace('{{utente}}',$utente,$form);
 
-                    $prodotti = "";
-                    foreach($products as $product){
-                        $prodotti .= '<option value="'.$product['id'].'" '.(($product['id']==$review['prodotto'])?'selected':'').'>'.parse_lang($product['nome'],true).'</option>';
-                    }
-
-                    $form = str_replace('{{utenti}}',$utenti,$form);
-
-                    $form = str_replace('{{prodotti}}',$prodotti,$form);
-
+                    $form = str_replace('{{prodotto}}',$prodotto,$form);
+                    $form = str_replace('{{nomeProdotto}}',$nomeProdotto,$form);
                     $form = str_replace('{{contenuto}}',$contenuto,$form);
                     $form = str_replace('{{punteggio}}',$punteggio,$form);
                                 
@@ -134,14 +126,47 @@
 
                         $review = $reviews[0];
 
-                        $content = "<h1>Modifica Recensione</h1>";
+                        $content = "<h1>Visualizza Recensione</h1>";
 
-                        $breadcrumbs = '<p>Ti trovi in: <a href="recensioni.php">Recensioni</a> > Modifica Recensione</p>';
+                        $breadcrumbs = '<p>Ti trovi in: <a href="index.php">Recensioni</a> > Visualizza Recensione</p>';
 
                         $utente     = $review['utente'];
                         $prodotto   = $review['prodotto'];
                         $contenuto  = $review['contenuto'];
-                        $punteggio = $review['punteggio'];
+                        $punteggio  = $review['punteggio'];
+
+                        $prodotti = $connection->exec_select_query("SELECT nome FROM prodotto WHERE id=$prodotto");
+                        if(isset($prodotti[0])){
+                            $nomeProdotto = parse_lang($prodotti[0]['nome']);
+                        }
+
+                        if($contenuto == "" && $punteggio == 0){
+
+                            //Se la recensione è impostata come "nuova" dall'amministratore mostra il form
+                            $form = str_replace('{{id}}',$id,$form);
+
+                            $form = str_replace('{{utente}}',$utente,$form);
+                            $form = str_replace('{{prodotto}}',$prodotto,$form);
+                            $form = str_replace('{{nomeProdotto}}',$nomeProdotto,$form);
+                            $form = str_replace('{{contenuto}}',$contenuto,$form);
+                            $form = str_replace('{{punteggio}}',$punteggio,$form);
+                                            
+                            $form = str_replace('{{errors}}',$errorsStr,$form);
+
+
+                            $content .= $form;
+
+                        }else{
+                            //Altrimenti mostra la pagina statica di riepilogo
+
+                            $viewPage= str_replace('{{nomeProdotto}}',$nomeProdotto,$viewPage);
+                            $viewPage = str_replace('{{contenuto}}',$contenuto,$viewPage);
+                            $viewPage = str_replace('{{punteggio}}',$punteggio,$viewPage);
+
+
+                            $content .= $viewPage;
+
+                        }
 
                     }else{
                         //TODO 404
@@ -149,29 +174,7 @@
 
                 }
 
-                $utenti = "";
-                foreach($users as $user){
-                    $utenti .= '<option value="'.$user['id'].'" '.(($user['id']==$utente)?'selected':'').'>'.$user['nome'].'</option>';
-                }
-
-                $prodotti = "";
                 
-                foreach($products as $product){
-                    $prodotti .= '<option value="'.$product['id'].'" '.(($product['id']==$prodotto)?'selected':'').'>'.parse_lang($product['nome'],true).'</option>';
-                }
-
-                $form = str_replace('{{id}}',$id,$form);
-
-                $form = str_replace('{{utenti}}',$utenti,$form);
-                $form = str_replace('{{prodotti}}',$prodotti,$form);
-
-                $form = str_replace('{{contenuto}}',$contenuto,$form);
-                $form = str_replace('{{punteggio}}',$punteggio,$form);
-                                
-                $form = str_replace('{{errors}}',$errorsStr,$form);
-
-
-                $content .= $form;
             }
 
         }else{
