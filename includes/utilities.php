@@ -109,7 +109,7 @@ function get_product_tile($product){
             <img src="'.getThumbnail($product['immagine']).'" alt="'.$product['altimmagine'] .'">
             <h2>'.parse_lang($product['nome']) .'</h2>
         </header>
-        '.substr(parse_lang($product['descrizione']),0,100).'...
+        <p>'.substr(parse_lang(strip_tags($product['descrizione']),""),0,100).'...</p>
         <a href="prodotto.php?id='.$product['id'].'" class="button" title="Vedi prodotto ' . parse_lang($product['nome'],true) . '">Scopri di più</a>
     </article>';
     

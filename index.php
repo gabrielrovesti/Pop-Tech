@@ -16,7 +16,7 @@
 
     $content .= '
         <div id="homeBanner">
-            <div>
+            <div id="slogans">
                 <ul>
                     <li>Aperti dal 2000</li>
                     <li>Edizioni Originali</li>
@@ -25,7 +25,8 @@
                     <li><span lang="en">Vintage</span> Italiano</li>
                 </ul>
             </div>
-            <img src="dd" alt="Immagine banner">
+            <div id="picture">
+            </div>
         </div>';
 
     $connection = new DBAccess();

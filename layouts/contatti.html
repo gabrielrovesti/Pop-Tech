@@ -25,13 +25,13 @@
                         <textarea id="messaggio" name="messaggio" placeholder="Inserisci qui il tuo messaggio" required="required" data-msg-required="Per favore, inserisci il tuo messaggio" data-msg-invalid="Formato testo non corretto">{{messaggio}}</textarea>
 
                         
-                        <label for="privacypolicy"><input type="checkbox" id="privacypolicy" name="privacy" value="privacy" required="required">Accetta la nostra <a href="privacy.html"><span lang="en">Privacy Policy</span></label>
+                        <label for="privacypolicy"><input type="checkbox" id="privacypolicy" name="privacy" value="privacy" required="required">Accetta la nostra <a href="privacy.html"><span lang="en">Privacy Policy</span></a></label>
 
                         <button type="submit" href="" class="button">Invia</button>
                         <button type="reset" class="button">Cancella</button>
                     </form>
                 </div>
-                <div>
+                <div id="info">
                     <h2>DOVE SIAMO</h2>
                     <p>
                         Via Gattamelata 123 Padova <abbr title="Padova">PD</abbr>
@@ -46,48 +46,50 @@
                     <a href="mailto:info@comics.it">info@comics.it</a>
 
                     <h2>Orari</h2>
+
+                    <span class="srOnly" id="tableDesc">Nella Tabella vengono decritti gli orari di apertura e di chiusura del negozio. Ogni riga indica il giorno e gli orari di apertura e di chiusura di mattina e di pomeriggio</span>
                     
-                    <table id="timetable" summary="Nella Tabella viene fornito in modo dettagliato gli orari di apertura e di chiusura del negozio. Ogni riga indica il giorno e gli orari di apertura e di chiusura di mattina e di pomeriggio">
+                    <table id="timetable" aria-describedby="tableDesc">
                         <thead>
                             <tr>
                                 <th>Giorno</th>
-                                <th id="p1" scope="col">Mattina</th>
-                                <th id="p2" scope="col">Pomeriggio</th>
+                                <th scope="col">Mattina</th>
+                                <th scope="col">Pomeriggio</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th id="g1" scope="row">Lunedì</th>
+                                <th scope="row">Lunedì</th>
                                 <td data-title="Mattina"><time datetime="10:00">10:00</time> - <time datetime="13:00">13:00</time></td>
                                 <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
                             </tr>
                             <tr>
-                                <th id="g2" scope="row">Martedì</th>
+                                <th scope="row">Martedì</th>
                                 <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
                                 <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
                             </tr>
                             <tr>
-                                <th id="g3" scope="row">Mercoledì</th>
+                                <th scope="row">Mercoledì</th>
                                 <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
                                 <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
                             </tr>
                             <tr>
-                                <th id="g4" scope="row">Giovedì</th>
+                                <th scope="row">Giovedì</th>
                                 <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
                                 <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
                             </tr>
                             <tr>
-                                <th id="g5" scope="row">Venerdì</th>
+                                <th scope="row">Venerdì</th>
                                 <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
                                 <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
                             </tr>
                             <tr>
-                                <th id="g6" scope="row">Sabato</th>
+                                <th scope="row">Sabato</th>
                                 <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
                                 <td data-title="Pomeriggio">Chiuso</td>
                             </tr>
                             <tr>
-                                <th id="g7" scope="row">Domenica</th>
+                                <th scope="row">Domenica</th>
                                 <td colspan="2" data-title="Mattina e Pomeriggio">Chiuso</td>
                             </tr>
                         </tbody>

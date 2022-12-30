@@ -91,7 +91,7 @@ nav#breadcrumbs{
     margin-left: 0.5em;
     position: relative;
 	max-width: 30em;
-    padding: 0.1em;
+    padding: 0.1em 0.1em 0.1em 0.8em;
     border-radius: 1rem;
     box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
 }
@@ -207,15 +207,16 @@ main{
 }
 
 main h1{
-	padding: 0.7em;
+	padding: 0.3em;
 	padding-top: 0.1em;
 	text-align: center;
-	line-height: 1.5em;
+	margin: 0.3em;
 }
 
 main h2{
 	padding-top: 0.7em;
 	padding-bottom: 0.7em;
+    margin: 0.3em;
 }
 
 /* Home Page ======================== */
@@ -226,24 +227,57 @@ main h2{
 
 #homePage #homeBanner{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
+    justify-content: space-between;
 }
 
-#homePage #homeBanner div, #homePage #homeBanner img{
-    flex: 47% 0 0;
+#homePage #homeBanner div{
+    flex: 46% 0 0;
     margin: 0.5em;
     padding: 0.5em;
     margin-left: 0.1em;
     margin-right: 0.1em;
-    border: 3px solid black;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    position: relative;
 }
 
-#homePage #homeBanner div{
-    background-image: linear-gradient(to bottom right, #FDC708, #FFF5D1);
+#homePage #homeBanner #slogans{
+    background-image: linear-gradient(to bottom, #FDC708, #FFF5D1);
+    border-left: 3px solid black;
 }
 
-#homePage #homeBanner img{
+#homePage #homeBanner #picture{
     background-image: linear-gradient(to top, #F9AAAA, #F8E4E4);
+    border-right: 3px solid black;
+}
+
+#homePage #homeBanner #slogans:after, #homePage #homeBanner #picture:before{
+    content: " ";
+    position:absolute;
+    display: block;
+    width: 15%;
+    height: 100%;
+    top:-3px;
+    z-index: -1;
+    border: solid 3px black;
+    transform-origin: bottom left;
+    -ms-transform: skew(-5deg, 0deg);
+    -webkit-transform: skew(-5deg, 0deg);
+    transform: skew(-5deg, 0deg);
+    background-color: #FFF;
+}
+
+#homePage #homeBanner #slogans:after{
+    right:-1%;
+    background-image: linear-gradient(to bottom, #FDC708, #FFF5D1);
+}
+
+
+#homePage #homeBanner #picture:before{
+    left:-4%;
+    background-image: linear-gradient(to top, #F9AAAA, #F8E4E4);   
 }
 
 /* Category ========================= */
@@ -278,21 +312,34 @@ main h2{
     margin-right: 1em;
     margin-bottom: 1em;
     padding: 0.5em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.productsRow article header{
+   
 }
 
 .productsRow article img{
-    width: 100%;
-    height: auto;
-    overflow: hidden;
+    max-width: 100%;
+   
+}
+
+.productsRow article p{
+    flex-grow: 1;
 }
 
 .productsRow article a.button{
     text-align: center;
-    display: block;
+    
     padding: 0.5em;
     cursor: pointer;
-    max-width: 50%;
-    margin: auto;
+   
+    margin: 0 auto;
+
+    
 }
 
 /* Chi Siamo ========================= */
@@ -309,7 +356,6 @@ main h2{
     border-top: solid 3px black;
     border-bottom: solid 3px black;
     position: relative;
-   
     background-color: #fff;
 }
 
@@ -339,7 +385,6 @@ main h2{
     position:absolute;
     display: block;
     width: 15%;
-    padding: 5%;
     height: 100%;
     top:-3px;
     z-index: -1;
@@ -363,9 +408,8 @@ main h2{
     left:-14%;
 }
 
-
 #chiSiamo .img-container{
-    flex: 30% 0 0;
+    flex: 33% 0 0;
 }
 
 #chiSiamo .first .img-container:before{
@@ -386,14 +430,17 @@ main h2{
     margin: 0em;
     text-align: center;
     word-wrap:break-word;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #chiSiamo ul.membristaff li{
     display: inline-block;
-    margin: 0.5em;
     padding: 0.5em;
     border: 3px solid black;
-    width: 30%;
+    flex: 31% 0 0;
 }
 
 #chiSiamo ul.membristaff li img{
@@ -407,20 +454,67 @@ main h2{
 #contatti{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     flex-wrap: wrap;
-    margin: 0.2em;
-    overflow: hidden;
     position: relative;
 }
 
 #contatti div#modulo_richieste{
-    background-image: linear-gradient(to top right, #55BEF9, #DCF1FD);   
+    background-image: linear-gradient(to top, #55BEF9, #DCF1FD);
+    border-left: 3px solid black;
 }
 
-#contatti div{
-    background-image: linear-gradient(to bottom left, #FFC671, #FFF27F);
+#contatti div#info{
+    background-image: linear-gradient(to bottom, #FFC671, #FFF27F);
+    border-right: 3px solid black;
+}
+
+#contatti #modulo_richieste, #contatti #info{
+    flex: 45% 0 0;
+    margin: 0.1em;
+    padding: 0.1em;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    position: relative;
+}
+
+#contatti div#modulo_richieste:after,#contatti div#info:before{
+    content: " ";
+    position:absolute;
+    display: block;
+    width: 15%;
+    height: 100%;
+    top:-3px;
+    z-index: -1;
+    border: solid 3px black;
+    transform-origin: bottom left;
+    -ms-transform: skew(-5deg, 0deg);
+    -webkit-transform: skew(-5deg, 0deg);
+    transform: skew(-5deg, 0deg);
+    background-color: #FFF;
+}
+
+#contatti div#modulo_richieste:after{
+    right:-1%;
+    background-image: linear-gradient(to top, #55BEF9, #DCF1FD);
+}
+
+
+#contatti div#info:before{
+    left:-15%;
+    background-image: linear-gradient(to bottom, #FFC671, #FFF27F);
+}
+
+
+#contatti h2{
+    margin:0em;
+    padding: 0.5em;
+    text-transform: uppercase;
+}
+
+#contatti p{
+    margin: 0em 0em 0.5em 0em;  
 }
 
 #contatti div#modulo_richieste input[type=text], input[type=email], input[type=tel], textarea {
@@ -444,29 +538,33 @@ main h2{
 }
 
 #contatti #timetable {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    flex-wrap: wrap;
-    margin: 0.5em ;
+    margin: 0em auto;
+    margin-bottom: 0.6em;
+    width: 90%;
+    border: 3px solid black;
+    border-collapse: collapse;
+    background-color: rgba(255,255,255,0.2);
 }
 
 #contatti #timetable tr, th, td{
-    border: 3px solid black;
-    padding: 0.5em;
-    margin: 0.5em;
+    padding:0.5em;
 }
 
-#contatti #timetable th {
-    align-items: center;
+#contatti #timetable th{
+    text-transform: uppercase;
+}
+
+#contatti #timetable thead{
+    border-bottom: 3px solid #000;
+}
+
+
+#contatti #timetable tr:nth-of-type(even) td, #contatti #timetable tr:nth-of-type(even) th {
+    background-color: rgba(0, 0, 0, .1);
 }
 
 #contatti div#modulo_richieste button {
-    padding: 0.5em;
-    margin: 0.5em 0;
     border: 3px solid black;
-    border-radius: 2em;
     font-family: 'Montserrat', sans-serif;
     background-color: #fff;
     cursor: pointer;
@@ -474,21 +572,6 @@ main h2{
 
 #contatti form label{
     display: block;
-}
-
-#contatti div, #contatti figure{
-    flex: 30% 0 0;
-    margin: 0.1em;
-    padding: 0.1em;
-    border: 3px solid black;
-}
-
-#contatti div{
-    padding-left: 1em;
-}
-
-#contatti img{
-    max-width: 100%;
 }
 
 /* Prodotto ========================= */
@@ -708,39 +791,3 @@ main h2{
     margin-right: 2em;
 }
 
-/* Container e gestione domande/risposte FAQ */
-
-.faq_container{
-    width: 100%;
-    margin: auto;
-    padding: 0.5em;
-    display: block;
-    flex-direction: row;
-    flex-wrap: wrap;
-    clear: both;
-}
-
-.circular-question {
-    width: 200px;
-    border: 5px solid #000;
-    padding: 2em;
-    margin: auto;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: bold;
-    position: relative;
-    color: #000; 
-}
-
-.circular-answer {
-    width: 200px;
-    border: 5px solid #000;
-    padding: 2em;
-    margin: auto;
-    border-radius: 50%;
-    text-align: center;
-    position: relative;
-    color: #000;
-}
-  

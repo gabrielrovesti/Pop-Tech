@@ -28,6 +28,7 @@ header#header h1{
 
 nav#menu{
     opacity: 0;
+    margin: 0;
     max-height: 1px;
     overflow-y: hidden;
     text-align: center;
@@ -47,10 +48,21 @@ nav#menu ul li{
     margin: 0.5em 0em 0.5em 0em;
 }
 
+nav#breadcrumbs{
+    max-width: 100%;
+    margin: 0em 0.5em;
+}
+
 /* Main Content ========================= */
+
+main#content{
+    margin: 0.5em;
+    padding: 0em;
+}
 
 main#content h1{
     margin: 0.0em;
+    line-height: 1.2;
 }
 
 /* FAQ Page ========================= */
@@ -65,9 +77,6 @@ main#content h1{
     width: 100%;
 }
 
-#homePage #homeBanner img{
-    display: none;
-}
 
 #homePage #homeBanner{
     text-align: center;
@@ -79,6 +88,19 @@ main#content h1{
     padding: 0em;
 }
 
+#homePage #homeBanner #slogans{
+    flex: 100% 0 1;
+    border: 3px solid black;
+}
+
+#homePage #homeBanner #slogans:after{
+    display: none;
+}
+
+#homePage #homeBanner #picture{
+    display: none;
+}
+
 /* Product list (Home, Prodotti, Categoria  ========================= */
 
 .productsRow{
@@ -86,19 +108,11 @@ main#content h1{
 }
 
 .productsRow article{
-    width: 47%;
+    flex: 100% 0 1;
     margin-right: 0em;
 }
 
 /* Contatti Page ========================= */
-
-#contatti div, #contatti figure{
-    flex: 100% 0 0;
-}
-
-#contatti figure{
-    display: none;
-}
 
 #contatti table thead, #contatti table tfoot{
     display: none;
@@ -107,6 +121,60 @@ main#content h1{
 #contatti table tr, #contatti table th, #contatti table td{
     display: block;
 }
+
+
+#contatti #modulo_richieste, #contatti #info{
+    flex: calc(100% - 6px) 0 0; /* 100% meno la rarghezza dei bordi (3+3) */
+    border-bottom:none;
+    border-top:none;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    position: relative;
+    margin: 0;
+    padding: 0em;
+}
+
+#contatti div#modulo_richieste:after,#contatti div#info:before{
+    width: 100%;
+    height: 15%;
+    bottom: 0px;
+
+    transform-origin: bottom left;
+    -ms-transform: skew(0deg, -5deg);
+    -webkit-transform: skew(0deg, -5deg);
+    transform: skew(0deg, -5deg);
+}
+
+#contatti #modulo_richieste{
+    margin-bottom: 25%;
+    border-top: 3px solid black;
+    padding-bottom: 2em;
+}
+
+#contatti #info{
+    border-bottom: 3px solid black;
+}
+
+
+#contatti div#modulo_richieste:after{
+    top:99%;
+    left: -3px;
+    background-image: linear-gradient(to top, #55BEF9, #55BEF9);
+}
+
+
+#contatti div#info:before{
+    top: -4px;
+    left: -3px;
+    background-image: linear-gradient(to bottom, #FFC671, #FFC671);
+}
+
+#contatti h2{
+    margin: 0em;
+    padding: 0.5em 0em 0.5em 0em;
+    max-width: 100%;
+}
+
 
 /* Responsive Table  ========================= */
 
@@ -117,12 +185,102 @@ th[data-title]:before, td[data-title]:before{
 
 /* Prodotto Page  ========================= */
 
-#prodotto figure, #prodotto div{
-    flex: 100% 0 0;
+#prodotto picture, #prodotto div{
+    flex: 100% 0 1;
 }
 
+#prodotto .comic_box{
+    max-width: 100%;
+}
 /* Chi Siamo Page ========================= */
 
-#chiSiamo img{
+#chiSiamo .outer-container{
+    margin: 0em;
+}
+
+#chiSiamo .text-container,#chiSiamo .img-container{
+    border-top:none;
+    border-bottom:none;
+    border-left: solid 3px black;
+    border-right: solid 3px black;
+    padding: 0.2em;
+}
+
+#chiSiamo .first .text-container{
+    border-top: solid 3px black;
+    border-bottom: none;
+    flex: 100% 0 1
+}
+
+#chiSiamo .second .text-container{
+    border-bottom: solid 3px black;
+    border-top: none;
+    flex: 100% 0 1;
+}
+
+#chiSiamo .img-container{
+    flex: 100% 0 1;
+    min-height: 30vh;
+   
+}
+
+#chiSiamo .first .img-container{
+    border-bottom: solid 3px black;
+    margin: 4em 0em 2em 0em;
+}
+
+#chiSiamo .second .img-container{
+    border-top: solid 3px black;
+    margin-bottom: 4em;
+}
+
+
+#chiSiamo .first .text-container:after,#chiSiamo .second .text-container:before,
+#chiSiamo .first .img-container:before,#chiSiamo .second .img-container:after
+{
     width: 100%;
+    height: 15%;
+    bottom:0px;
+   
+    transform-origin: bottom left;
+    -ms-transform: skew(0deg, -5deg);
+    -webkit-transform: skew(0deg, -5deg);
+    transform: skew(0deg, -5deg);
+}
+
+
+
+#chiSiamo .first .text-container:after{
+    left:-1%; 
+    top:89%;
+}
+
+#chiSiamo .second .text-container:before{
+    left:-1%; 
+    top: -1%;
+}
+
+#chiSiamo .first .img-container:before{
+    left:0%;
+    width: calc(100% - 4px);
+    background-image: linear-gradient(to bottom, #FDC708, #FDC708);
+}
+
+#chiSiamo .second .img-container:after{
+    right:-1%;
+    top: 98%;
+}
+
+#chiSiamo h2{
+    text-align: center;
+}
+
+#chiSiamo ul.membristaff li{    
+    flex: 100% 0 1;
+    padding: 0.2em;
+    margin-top: 0.5em;
+}
+
+#chiSiamo ul.membristaff li img{
+    max-width: 100%;
 }
