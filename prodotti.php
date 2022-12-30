@@ -13,7 +13,7 @@
 
     $connection = new DBAccess;
 
-    $content = '<h1 class="comic-title">I Nostri Prodotti</h1>';
+    $content = '<h1>I Nostri Prodotti</h1>';
 
     if ($connection->open_connection()) {
         

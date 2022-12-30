@@ -11,7 +11,7 @@
 
     $pageID      = 'categoria';
     $title       = "Categoria - Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: Home > Categoria</p>';
+    $breadcrumbs = '<p>Ti trovi in: <a href="/" lang="en">Home</a> > Categoria</p>';
     $content     = '';
 
     if ($connection->open_connection()) {

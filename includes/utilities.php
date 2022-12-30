@@ -176,7 +176,6 @@ function get_admin_menu(){
         $menu = '<li><a href="login.php">Accedi</a></li>';
     }
 
-
     return $menu;
 
 }
@@ -189,20 +188,14 @@ function upload_file($field,$testOnly=false){
     if($field['name']=="")
         return false;
     
-    
-
     $targetDir = '../uploads/';
     $path      = $targetDir.$field['name'];
     $fileType  = strtolower(pathinfo($path,PATHINFO_EXTENSION));
-
- 
 
     //Accetta solo immagini
     if(!getimagesize($field['tmp_name'])){
         return false;
     }
-
-  
 
     //Aggiungi il timestamp (unico per costruzione) al file se esiste già
     while(file_exists($path)){ 
@@ -211,13 +204,10 @@ function upload_file($field,$testOnly=false){
         $path = $targetDir.$name.'.'.$fileType;
     }
 
-
-
     //Accetta solo file jp(e)g o png
     if($fileType != "jpg" && $fileType != "png" && $fileType != "jpeg"){
         return false;
     }
-
 
     if(!$testOnly){
         if(move_uploaded_file($field["tmp_name"],$path)){
@@ -318,7 +308,6 @@ function isLoggedIn(bool $isAdmin=false){
 
 }
 
-
 // -----------------------------------
 // Funzioni per l'area utente
 // -----------------------------------
@@ -358,8 +347,6 @@ function get_user_menu(){
         $menu = '<li><a href="login.php">Accedi</a></li>';
         $menu .= '<li><a href="register.php">Registrati</a></li>';
     }
-
-
     return $menu;
 
 }

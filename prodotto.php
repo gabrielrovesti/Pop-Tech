@@ -25,7 +25,7 @@
 
                 $product = $products[0];
 
-                $breadcrumbs = '<p>Ti trovi in: Home > Prodotto > '.parse_lang($product['nome']).'</p> ';
+                $breadcrumbs = '<p>Ti trovi in: <a href="/" lang="en">Home</a> > Prodotto > '.parse_lang($product['nome']).'</p> ';
                 
                 $title = parse_lang($product['nome'],true) . ' - Pop Tech';
 
@@ -50,7 +50,7 @@
             }
         }
     }else{
-        $content = '<h1 class="comic-title">Prodotto</h1>';
+        $content = '<h1>Prodotto</h1>';
         $breadcrumbs = '<p>Ti trovi in: Home > Prodotto</p> ';
         $title = "Prodotto - Pop Tech";
         $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
