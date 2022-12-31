@@ -81,7 +81,7 @@
                     case 'utente':
 
 
-                        $typeText = "dell'utente'";
+                        $typeText = "dell'utente";
                         $backLink = "utenti.php";
                         $users = $connection->exec_select_query('SELECT id, nome FROM utente WHERE id='.$id.';');
                         if(isset($users[0])){

@@ -345,7 +345,7 @@ function get_user_menu(){
         $menu .= '<li><a href="logout.php">Esci</a></li>';
     }else{
         $menu = '<li><a href="login.php">Accedi</a></li>';
-        $menu .= '<li><a href="register.php">Registrati</a></li>';
+        $menu .= '<li><a href="registrazione.php">Registrati</a></li>';
     }
     return $menu;
 

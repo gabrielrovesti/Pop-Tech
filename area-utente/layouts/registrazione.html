@@ -1,0 +1,25 @@
+
+<form action="registrazione.php" method="post">
+    
+    {{errors}}
+
+    <label for="nome">Nome
+        <input type="text" name="nome" id="nome" value="{{nome}}">
+    </label>
+
+    <label for="email">Email
+        <input type="text" name="email" id="email" value="{{email}}">
+    </label>
+
+    <label for="password">Password
+        <input type="password" name="password" id="password">
+    </label>
+
+    <label for="passwordConfirm">Conferma Password
+        <input type="password" name="passwordConfirm" id="passwordConfirm">
+    </label>
+
+    <input type="submit" name="submit" value="Salva" class="btn btn-green">
+    <input type="submit" name="reset" value="Annulla" class="btn btn-info">
+
+</form>
