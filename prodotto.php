@@ -25,7 +25,7 @@
 
                 $product = $products[0];
 
-                $breadcrumbs = '<p>Ti trovi in: <a href="/" lang="en">Home</a> > Prodotto > '.parse_lang($product['nome']).'</p> ';
+                $breadcrumbs = '<p>Ti trovi in: <a href="/" lang="en">Home</a> >  <a href="prodotti.php">Prodotti</a> > '.parse_lang($product['nome']).'</p> ';
                 
                 $title = parse_lang($product['nome'],true) . ' - Pop Tech';
 
