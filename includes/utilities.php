@@ -96,6 +96,8 @@ function get_menu(){
             $menu .= '<li><a href="'.$links[$i].'" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</a></li>';
         }
     }
+    $menu .= '<li><a class="button" href="area-utente/registrazione.php">Registrati</a></li>';
+    $menu .= '<li><a class="button" href="area-utente/login.php">Accedi</a></li>';
     return $menu;
 }
 

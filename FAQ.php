@@ -23,13 +23,14 @@
 
             $content .= '<details open="">
                     <summary class="comic_box">'.parse_lang($faq['domanda']).'</summary>
-                    <p  class="comic_box2">'.parse_lang($faq['risposta']).'</p>
+                    <p class="comic_box2">'.parse_lang($faq['risposta']).'</p>
             </details>';
         }
 
         $content .= "</div>";
     }else{
-        $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
+        $content .= '<p class="error">I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>
+        <img class="error_image" src="images/comic_error.png">';
     }
 
     $menu = get_menu();

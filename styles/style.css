@@ -59,6 +59,90 @@ body{
     font-family: 'Montserrat',Arial, Helvetica, sans-serif;
 }
 
+/* Variabili CSS */
+
+:root{
+    --bgimgcolor: #FDA30A;
+    --linkcolor: darkslategrey;
+    --linkhovercolor: #0095C5;
+    --currentlinkcolor: #0056A6;
+    --hover1: red;
+    --hover2: orange;
+    --header1: orange;
+    --header2: #FDA30A;
+    --slogan1: #FDC708;
+    --slogan2: #FFF5D1;
+    --picture1: #F9AAAA;
+    --picture2: #F8E4E4;
+    --request1: #55BEF9;
+    --request2: #DCF1FD;
+    --info1: #FFC671;
+    --info2: #FFF27F;
+    --linkbuttoncolor: #000;
+    --bordercolor: #000;
+    --bordertransparentcolor: #fff;
+    --inputbordercolor: #ccc;
+    --contentbgcolor: #fff;
+    --visitedcolor: #f3c42b;
+    --timetablecolor: rgba(255,255,255,0.2);
+    --timetablechildrencolor: rgba(255,255,255,0.2);
+    --breadcrumb1: rgba(0, 0, 0, .3);
+    --breadcrumb2: rgba(0, 0, 0, .2);
+    --breadcrumbbeforecolor: rgba(0, 0, 0, .1);
+}
+
+/* Tema scuro ========================= 
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        --bgimgcolor: #1A0909;
+        --linkcolor: lightgrey;
+        --linkhovercolor: #1F9D9E;
+        --currentlinkcolor: #107A7B;
+        --hover1: red;
+        --hover2: orange;
+        --header1: orange;
+        --header2: #FDA30A;
+        --slogan1: blue;
+        --slogan2: darkblue;
+        --picture1: #0f9494;
+        --picture2: #073838;
+        --request1: #bd2d2d;
+        --request2: #ec3e3e;
+        --info1: #1f8ce4;
+        --info2: #0d4f85;
+        --linkbuttoncolor: #FFF;
+        --bordercolor: #FFF;
+        --bordertransparentcolor: #1E0E0E;
+        --inputbordercolor: #828282;
+        --contentbgcolor: #1E0E0E;
+        --visitedcolor: #857F33;
+        --timetablecolor: rgba(0,0,0,0.2);
+        --timetablechildrencolor: rgba(0,0,0,0.2);
+        --breadcrumb1: rgba(255, 255, 255, .3);
+        --breadcrumb2: rgba(255, 255, 255, .3);
+        --breadcrumbbeforecolor: rgba(255, 255, 255, .3);
+        --image-filter: grayscale(50%);
+    }
+
+    body{
+        background-color: var(--bgimgcolor);
+    }
+
+    p, h1, h2, h3, h4, h5, h6, ul, li, dl, dd, details, label, button, th, td, tr {
+        color: #fff;
+    }
+
+    img:not([src*=".svg"]) {
+        filter: var(--image-filter);
+    }
+    
+    img{
+        color: #fff;
+    }
+}
+*/
+
 /* Header ========================= */
 
 header#header{
@@ -68,11 +152,10 @@ header#header{
     align-items: center;
     margin: 0.5em;
     padding: 0.2em;
-    border: 3px solid black;
-    background-image:  url('../images/halftone.svg'), radial-gradient(orange 40%,#FDA30A);
+    border: 3px solid var(--bordercolor);
+    background-image:  url('../images/halftone.svg'), radial-gradient(var(--header1),var(--header2));
     background-repeat: no-repeat;
     background-position: center;
-    
     background-size: cover;
 }
 
@@ -97,7 +180,7 @@ nav#breadcrumbs{
 	max-width: 30em;
     padding: 0.1em 0.1em 0.1em 0.8em;
     border-radius: 1rem;
-    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+    box-shadow:	0 0.125rem 0.5rem var(--breadcrumb1), 0 0.0625rem 0.125rem var(--breadcrumb2);
 }
 
 nav#breadcrumbs::before{
@@ -109,8 +192,8 @@ nav#breadcrumbs::before{
 	left: 1.5em;
 	border: 1rem solid transparent;
 	border-top: none;
-	border-bottom-color: #fff;
-	filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+	border-bottom-color: var(--bordertransparentcolor);
+	filter: drop-shadow(0 -0.0625rem 0.0625rem var(--breadcrumbbeforecolor));
 }
 
 /* Footer ========================= */
@@ -122,7 +205,7 @@ footer{
     flex-wrap: wrap;
     margin: 0.5em;
     padding: 0.5em;
-    border: 3px solid black;
+    border: 3px solid var(--bordercolor);
 }
 
 /* Utilities ========================= */
@@ -144,7 +227,7 @@ footer{
     flex-wrap: wrap;
     margin: 0.5em;
     padding: 0.5em;
-    border: 3px solid black;
+    border: 3px solid var(--bordercolor);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -166,7 +249,7 @@ nav#menu ul li#currentLink{
     font-weight: bold;
     text-decoration: underline;
     text-decoration-style: dashed;
-    color: #0056A6;
+    color: var(--currentlinkcolor);
 }
 
 nav#menu a{
@@ -178,30 +261,40 @@ nav#menu a{
     display: none;
 }
 
+.error{
+    text-align: center;
+}
+
+.error_image{
+    display: block;
+    margin: 0 auto;
+    height: auto;
+}
+
 /* Anchor Links ========================= */
 
 a{
     text-decoration: none;
-    color:darkslategrey;
+    color:var(--linkcolor);
 }
 
 a:hover{
-    color:#0095C5;
+    color:var(--linkhovercolor);
 }
 
 a.button{
-    border: 3px solid black;
+    border: 3px solid var(--bordercolor);
     padding: .5em 1em .5em 1em;
     display: inline-block;
-    background: white;
-    color: #000;
-    /* TODO */
+    text-align: center;
+    background: var(--contentbgcolor);
+    color: var(--linkbuttoncolor);
     transition: color 0.2s ease-out;
 }
 
 a.button:hover{
-    color: white;
-    background: linear-gradient(to bottom left, red, orange);
+    color: var(--contentbgcolor);
+    background: linear-gradient(to bottom left, var(--hover1), var(--hover2));
 }
 
 /* Main Content ========================= */
@@ -242,19 +335,19 @@ main h2{
     padding: 0.5em;
     margin-left: 0.1em;
     margin-right: 0.1em;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
+    border-top: 3px solid var(--bordercolor);
+    border-bottom: 3px solid var(--bordercolor);
     position: relative;
 }
 
 #homePage #homeBanner #slogans{
-    background-image: linear-gradient(to bottom, #FDC708, #FFF5D1);
-    border-left: 3px solid black;
+    background-image: linear-gradient(to bottom, var(--slogan1), var(--slogan2));
+    border-left: 3px solid var(--bordercolor);
 }
 
 #homePage #homeBanner #picture{
-    background-image: linear-gradient(to top, #F9AAAA, #F8E4E4);
-    border-right: 3px solid black;
+    background-image: linear-gradient(to top, var(--picture1), var(--picture2));
+    border-right: 3px solid var(--bordercolor);
 }
 
 #homePage #homeBanner #slogans:after, #homePage #homeBanner #picture:before{
@@ -265,23 +358,23 @@ main h2{
     height: 100%;
     top:-3px;
     z-index: -1;
-    border: solid 3px black;
+    border: solid 3px var(--bordercolor);
     transform-origin: bottom left;
     -ms-transform: skew(-5deg, 0deg);
     -webkit-transform: skew(-5deg, 0deg);
     transform: skew(-5deg, 0deg);
-    background-color: #FFF;
+    background-color: var(--contentbgcolor);
 }
 
 #homePage #homeBanner #slogans:after{
     right:-1%;
-    background-image: linear-gradient(to bottom, #FDC708, #FFF5D1);
+    background-image: linear-gradient(to bottom,var(--slogan1), var(--slogan2));
 }
 
 
 #homePage #homeBanner #picture:before{
     left:-4%;
-    background-image: linear-gradient(to top, #F9AAAA, #F8E4E4);   
+    background-image: linear-gradient(to top, var(--picture1), var(--picture2));
 }
 
 /* Category ========================= */
@@ -315,14 +408,14 @@ main h2{
 
 .productsRow article h2{
     font-size: 20px;
-    color: black;
+    color: var(--bordercolor);
     margin: 0 0 0.5em 0;
     line-height: 1.1;
 }
 
 .productsRow article{
     flex: 20% 0 0;
-    border: 3px solid black;
+    border: 3px solid var(--bordercolor);
     margin-right: 1em;
     margin-bottom: 1em;
     padding: 0.5em;
@@ -332,13 +425,8 @@ main h2{
     justify-content: space-between;
 }
 
-.productsRow article header{
-   
-}
-
 .productsRow article img{
     max-width: 100%;
-   
 }
 
 .productsRow article p{
@@ -347,13 +435,9 @@ main h2{
 
 .productsRow article a.button{
     text-align: center;
-    
     padding: 0.5em;
     cursor: pointer;
-   
     margin: 0 auto;
-
-    
 }
 
 /* Chi Siamo ========================= */
@@ -367,34 +451,33 @@ main h2{
 }
 
 #chiSiamo .text-container,#chiSiamo .img-container{
-    border-top: solid 3px black;
-    border-bottom: solid 3px black;
+    border-top: solid 3px var(--bordercolor);
+    border-bottom: solid 3px var(--bordercolor);
     position: relative;
-    background-color: #fff;
+    background-color: var(--contentbgcolor);
 }
 
 #chiSiamo .first .text-container{
-    border-left: solid 3px black;
+    border-left: solid 3px var(--bordercolor);
     flex: 57% 0 0;
 }
 
 #chiSiamo .second .text-container{
-    border-right: solid 3px black;
+    border-right: solid 3px var(--bordercolor);
     flex: 57% 0 0;
 }
 
 #chiSiamo .first .img-container{
-    border-right: solid 3px black;
-    background-image: linear-gradient(to bottom, #FDC708, #FFF5D1);
+    border-right: solid 3px  var(--bordercolor);
+    background-image: linear-gradient(to bottom, var(--slogan1), var(--slogan2));
 }
 
 #chiSiamo .second .img-container{
-    border-left: solid 3px black;
+    border-left: solid 3px var(--bordercolor);
 }
 
 #chiSiamo .first .text-container:after,#chiSiamo .second .text-container:before,
-#chiSiamo .first .img-container:before,#chiSiamo .second .img-container:after
-{
+#chiSiamo .first .img-container:before,#chiSiamo .second .img-container:after{
     content: " ";
     position:absolute;
     display: block;
@@ -402,12 +485,12 @@ main h2{
     height: 100%;
     top:-3px;
     z-index: -1;
-    border: solid 3px black;
+    border: solid 3px var(--bordercolor);
     transform-origin: bottom left;
     -ms-transform: skew(-10deg, 0deg);
     -webkit-transform: skew(-10deg, 0deg);
     transform: skew(-10deg, 0deg);
-    background-color: #FFF;
+    background-color: var(--contentbgcolor);
 }
 
 #chiSiamo .first .img-container:before,#chiSiamo .second .img-container:after{
@@ -428,7 +511,7 @@ main h2{
 
 #chiSiamo .first .img-container:before{
     left:-25%;
-    background-image: linear-gradient(to bottom, #FDC708, #FFF5D1);
+    background-image: linear-gradient(to bottom, var(--slogan1), var(--slogan2));
 }
 
 #chiSiamo .second .img-container:after{
@@ -453,7 +536,7 @@ main h2{
 #chiSiamo ul.membristaff li{
     display: inline-block;
     padding: 0.5em;
-    border: 3px solid black;
+    border: 3px solid var(--bordercolor);
     flex: 31% 0 0;
 }
 
@@ -475,21 +558,21 @@ main h2{
 }
 
 #contatti div#modulo_richieste{
-    background-image: linear-gradient(to top, #55BEF9, #DCF1FD);
-    border-left: 3px solid black;
+    background-image: linear-gradient(to top, var(--request1), var(--request2));
+    border-left: 3px solid var(--bordercolor);
 }
 
 #contatti div#info{
-    background-image: linear-gradient(to bottom, #FFC671, #FFF27F);
-    border-right: 3px solid black;
+    background-image: linear-gradient(to bottom, var(--info1), var(--info2));
+    border-right: 3px solid var(--bordercolor);
 }
 
 #contatti #modulo_richieste, #contatti #info{
     flex: 45% 0 0;
     margin: 0.1em;
     padding: 0.1em;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
+    border-top: 3px solid var(--bordercolor);
+    border-bottom: 3px solid var(--bordercolor);
     position: relative;
 }
 
@@ -501,25 +584,24 @@ main h2{
     height: 100%;
     top:-3px;
     z-index: -1;
-    border: solid 3px black;
+    border: solid 3px var(--bordercolor);
     transform-origin: bottom left;
     -ms-transform: skew(-5deg, 0deg);
     -webkit-transform: skew(-5deg, 0deg);
     transform: skew(-5deg, 0deg);
-    background-color: #FFF;
+    background-color: var(--contentbgcolor);
 }
 
 #contatti div#modulo_richieste:after{
     right:-1%;
-    background-image: linear-gradient(to top, #55BEF9, #DCF1FD);
+    background-image: linear-gradient(to top, var(--request1), var(--request2));
 }
 
 
 #contatti div#info:before{
     left:-15%;
-    background-image: linear-gradient(to bottom, #FFC671, #FFF27F);
+    background-image: linear-gradient(to bottom, var(--info1), var(--info2));
 }
-
 
 #contatti h2{
     margin:0em;
@@ -535,7 +617,7 @@ main h2{
     padding: 0.5em;
     margin: 0.5em 0;
     width: 70%;
-    border: 3px solid black;
+    border: solid 3px var(--bordercolor);
 }
 
 #contatti div#modulo_richieste button[type=submit], button[type=reset]{
@@ -555,9 +637,9 @@ main h2{
     margin: 0em auto;
     margin-bottom: 0.6em;
     width: 90%;
-    border: 3px solid black;
+    border: solid 3px var(--bordercolor);
     border-collapse: collapse;
-    background-color: rgba(255,255,255,0.2);
+    background-color: var(--timetablecolor);
 }
 
 #contatti #timetable tr, th, td{
@@ -569,18 +651,18 @@ main h2{
 }
 
 #contatti #timetable thead{
-    border-bottom: 3px solid #000;
+    border-bottom: 3px solid var(--bordercolor);
 }
 
 
 #contatti #timetable tr:nth-of-type(even) td, #contatti #timetable tr:nth-of-type(even) th {
-    background-color: rgba(0, 0, 0, .1);
+    background-color: var(--timetablechildrencolor);
 }
 
 #contatti div#modulo_richieste button {
-    border: 3px solid black;
+    border: solid 3px var(--bordercolor);
     font-family: 'Montserrat', sans-serif;
-    background-color: #fff;
+    background-color: var(--contentbgcolor);
     cursor: pointer;
 }
 
@@ -626,7 +708,7 @@ main h2{
 #prodotto picture{
     flex: 45% 0 0;
     height: auto;
-    border: 3px solid black;
+    border: solid 3px var(--bordercolor);
 }
 
 #prodotto dl{
@@ -669,7 +751,7 @@ main h2{
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid var(--bordercolor);
 }
 
 #inputForm input[type="submit"] {
@@ -705,17 +787,11 @@ main h2{
     margin-top: 0.5em;
 }
 
-/* Tema scuro ========================= */
-
-@media (prefers-color-scheme: dark) {
-	
-}
-
 /* Fumetti ========================= */
 .comic_box,.comic_box2 {
     display: inline-block;
     width:auto;
-    border: 3px solid black;
+    border: 3px solid var(--bordercolor);
     padding: .5em 1em .5em 1em;
     text-align: left;
     font-weight: bold;
@@ -728,9 +804,9 @@ main h2{
     width: 0px;
     height: 0px;
     position: absolute;
-    border-left: 10px solid black;
+    border-left: 10px solid var(--bordercolor);
     border-right: 10px solid transparent;
-    border-top: 10px solid black;
+    border-top: 10px solid var(--bordercolor);
     border-bottom: 10px solid transparent;
     left: 22px;
     bottom: -21px;
@@ -741,9 +817,9 @@ main h2{
     width: 0px;
     height: 0px;
     position: absolute;
-    border-left: 10px solid #fff;
+    border-left: 10px solid var(--bordertransparentcolor);
     border-right: 10px solid transparent;
-    border-top: 10px solid #fff;
+    border-top: 10px solid var(--bordertransparentcolor);
     border-bottom: 10px solid transparent;
     left: 25px;
     bottom: -14px;
@@ -757,9 +833,9 @@ main h2{
     width: 0px;
     height: 0px;
     position: absolute;
-    border-right: 10px solid black;
+    border-right: 10px solid var(--bordercolor);
     border-left: 10px solid transparent;
-    border-top: 10px solid black;
+    border-top: 10px solid var(--bordercolor);
     border-bottom: 10px solid transparent;
     right: 22px;
     bottom: -21px;
@@ -770,9 +846,9 @@ main h2{
     width: 0px;
     height: 0px;
     position: absolute;
-    border-right: 10px solid #fff;
+    border-right: 10px solid var(--bordertransparentcolor);
     border-left: 10px solid transparent;
-    border-top: 10px solid #fff;
+    border-top: 10px solid var(--bordertransparentcolor);
     border-bottom: 10px solid transparent;
     right: 25px;
     bottom: -14px;

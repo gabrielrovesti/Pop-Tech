@@ -11,7 +11,6 @@
     $title = "Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: <span lang="en">Home</span></p>';
 
-
     $content = "<h1>Il tuo negozio di Fumetti e Gaming a Padova</h1>";
 
     $content .= '
@@ -52,7 +51,8 @@
         }
 
     }else{
-        $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
+        $content .= '<p class="error">I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>
+        <img class="error_image" src="images/comic_error.png">';
     }
 
     $menu = get_menu();
