@@ -125,6 +125,7 @@
             
             }
 
+            $connection->close_connection();
         
 
         }else{

@@ -733,6 +733,17 @@ main h2{
     text-align: center;
 }
 
+#prodotto div.comic_box{
+    margin: 1em;
+    font-weight: normal;
+    font-size: medium;
+}
+
+#prodotto div.comic_box img{
+    display: inline;
+    max-width: 1.3em;
+}
+
 /* Form ========================= */
 
 #inputForm{

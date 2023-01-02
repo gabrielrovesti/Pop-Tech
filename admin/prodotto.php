@@ -180,7 +180,7 @@
                     $content .= $form;
 
                 }
-
+                $connection->close_connection();
             }else{
 
                 //Richiesta di visualizzazione del form

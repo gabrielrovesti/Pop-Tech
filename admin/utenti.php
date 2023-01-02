@@ -28,6 +28,7 @@
         if($connection->open_connection()){
 
             $users = $connection->exec_select_query('SELECT id, nome, admin FROM utente ORDER BY admin,nome;');
+            $connection->close_connection();
 
             foreach($users as $user){
                 

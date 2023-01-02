@@ -20,6 +20,7 @@
 
             $id = intval(sanitize($_GET['id'],''));
             $products = $connection->exec_select_query("SELECT id, nome, immagine, altImmagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto WHERE id=$id;");
+            
 
             if(count($products)){
 
@@ -44,6 +45,26 @@
                 $content = str_replace('{{prezzo}}',$product['prezzo'],$content);
 
                 $descrizione = $product['descrizione'];
+
+                $feedbacks = $connection->exec_select_query("SELECT contenuto, punteggio FROM recensione WHERE prodotto=$id;"); 
+                $connection->close_connection();
+
+                foreach($feedbacks as $feedback){
+                    $content .= '<div class="comic_box">';
+                    $i=0;
+                    for(;$i<intval($feedback['punteggio']);$i++){
+                        $content .= '<img src="images/stella_piena.svg" />';
+                    }
+                    if(intval($feedback['punteggio'])!=$feedback['punteggio']){
+                        $content .= '<img src="images/stella_mezza.svg" />';
+                        $i++;
+                    }
+                    for(;$i<5;$i++){
+                        $content .= '<img src="images/stella_vuota.svg" />';
+                    }
+                    $content.='<p>'.$feedback['contenuto'].'</p></div>';
+                }
+
             }else{
                
                 $content .= '<p>Prodotto non trovato</p>';

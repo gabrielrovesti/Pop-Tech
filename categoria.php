@@ -34,6 +34,7 @@
                 $content .= '<div class="productsRow">';
                 
                 $products = $connection->exec_select_query("SELECT id, nome, immagine, altimmagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto WHERE categoria=$id;");
+                $connection->close_connection();
 
                 foreach ($products as $product) {
                     $content .= get_product_tile($product);

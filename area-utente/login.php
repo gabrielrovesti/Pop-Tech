@@ -51,6 +51,7 @@
                     
                     //Cerca utente con quell'id
                     $users = $connection->exec_select_query("SELECT id,admin,password FROM utente WHERE email='$email';");  
+                    $connection->close_connection();
 
                     if(count($users)>0){ //Utente trovato
                        

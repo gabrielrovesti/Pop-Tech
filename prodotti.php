@@ -41,6 +41,7 @@
             $content .= "</div>";
 
         }
+        $connection->close_connection();
 
     }else{
         $content .= '<h1>Prodotti</h1>';

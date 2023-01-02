@@ -28,7 +28,8 @@
         if($connection->open_connection()){
 
             $reviews = $connection->exec_select_query('SELECT recensione.id, recensione.contenuto, recensione.punteggio, prodotto.nome AS product FROM recensione, prodotto WHERE recensione.utente='.$userid.' AND recensione.prodotto=prodotto.id;');
-            
+            $connection->close_connection();
+
             if(count($reviews)==0){
                 $content .= '<p>Nessuna recensione disponibile.</p>';
             }
