@@ -292,6 +292,16 @@ main h2{
     padding: 0;
 }
 
+/* Pagina Prodotti ========================= */
+
+.categoyList{
+    margin-bottom: 1em;
+}
+
+.categoyList a.button{
+    margin-right: 1em;
+}
+
 /* Product list (Home, Prodotti, Categoria ========================= */
 
 .productsRow{
