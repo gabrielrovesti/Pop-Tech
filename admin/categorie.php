@@ -28,6 +28,7 @@
         if($connection->open_connection()){
 
             $categories = $connection->exec_select_query('SELECT id, nome FROM categoria ORDER BY nome;');
+            $connection->close_connection();
 
             foreach($categories as $category){
                 

@@ -12,7 +12,7 @@
 
     $connection = new DBAccess();
 
-    $pageID = 'homePage';
+    $pageID = 'delete';
     $title = "Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: Elimina</p>';
 
@@ -165,6 +165,7 @@
             }else{
                 $content = '<p class="message errorMsg">L\'indirizzo digitato non è completo. Selezionare un elemento da eliminare dalla lista.</p>';
             }
+            $connection->close_connection();
 
         }else{
             $content .= '<p class="message errorMsg">Errore nell\'eliminazione. Contatta il supporto tecnico.</p>';

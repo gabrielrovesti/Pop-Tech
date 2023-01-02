@@ -28,6 +28,7 @@
         if($connection->open_connection()){
 
             $products = $connection->exec_select_query('SELECT id, nome FROM prodotto ORDER BY nome;');
+            $connection->close_connection();
 
             foreach($products as $product){
                 

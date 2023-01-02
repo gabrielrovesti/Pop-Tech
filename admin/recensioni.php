@@ -28,6 +28,7 @@
         if($connection->open_connection()){
 
             $reviews = $connection->exec_select_query('SELECT recensione.id, utente.nome AS user, prodotto.nome AS product FROM recensione, prodotto, utente WHERE recensione.utente=utente.id AND recensione.prodotto=prodotto.id;');
+            $connection->close_connection();
 
             foreach($reviews as $review){
 

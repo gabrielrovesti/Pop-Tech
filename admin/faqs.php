@@ -28,6 +28,7 @@
         if($connection->open_connection()){
 
             $faqs = $connection->exec_select_query('SELECT id, domanda FROM faq;');
+            $connection->close_connection();
 
             foreach($faqs as $faq){
                 

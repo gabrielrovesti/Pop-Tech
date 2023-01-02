@@ -49,6 +49,7 @@
             }
             $content .= '</div>';
         }
+        $connection->close_connection();
 
     }else{
         $content .= '<p class="error">I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>

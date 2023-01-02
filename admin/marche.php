@@ -28,6 +28,7 @@
         if($connection->open_connection()){
 
             $brands = $connection->exec_select_query('SELECT id, nome FROM marca ORDER BY nome;');
+            $connection->close_connection();
 
             foreach($brands as $brand){
                 
