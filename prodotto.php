@@ -34,7 +34,7 @@
                 $content = str_replace('{{nome}}',parse_lang($product['nome']),$content);
                 $content = str_replace('{{immagine}}',$product['immagine'],$content);
                 $content = str_replace('{{altImmagine}}',$product['altImmagine'],$content);
-                $content = str_replace('{{descrizione}}',$product['descrizione'],$content);
+                $content = str_replace('{{descrizione}}',parse_lang($product['descrizione']),$content);
                 $content = str_replace('{{origine}}',$product['origine'],$content);
                 $content = str_replace('{{marca}}',$product['marca'],$content);
                 $content = str_replace('{{modello}}',$product['modello'],$content);

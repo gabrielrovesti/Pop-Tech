@@ -48,7 +48,7 @@
                         $products = $connection->exec_select_query('SELECT id, nome FROM prodotto WHERE id='.$id.';');
                         if(isset($products[0])){
                             $product = $products[0];
-                            $nome    = $product['nome'];
+                            $nome    = parse_lang($product['nome']);
                         }
 
                     break;
@@ -60,7 +60,7 @@
                         $brands = $connection->exec_select_query('SELECT id, nome FROM marca WHERE id='.$id.';');
                         if(isset($products[0])){
                             $brand = $brands[0];
-                            $nome  = $brand['nome'];
+                            $nome  = parse_lang($brand['nome']);
                         }
 
                     break;
@@ -73,7 +73,7 @@
                         $categories = $connection->exec_select_query('SELECT id, nome FROM categoria WHERE id='.$id.';');
                         if(isset($categories[0])){
                             $category = $categories[0];
-                            $nome     = $category['nome'];
+                            $nome     = parse_lang($category['nome']);
                         }
 
                     break;
