@@ -7,8 +7,15 @@
 	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#74B5EC;}
 	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#191919;}
 	.st3{fill-rule:evenodd;clip-rule:evenodd;}
+
+	@media (prefers-color-scheme: dark) {
+		path{
+			stroke:#fff;
+			stroke-width:2;
+		}
+	}
 </style>
-<g id="Artboard-Copy">
+<g id="erica">
 	<g id="a-person_x2F_bust" transform="translate(708.000000, 297.999779)">
 		<g id="BODY" transform="translate(-0.000000, 481.000221)">
 			<path id="_x270B_-Skin" class="st0" d="M191.6,754c-60.2-1.3-115,2.3-172.9-9.4l-0.1-2c-12.4-0.4-8.3-12-5.8-20.1

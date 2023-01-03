@@ -127,7 +127,7 @@
                         $admin = $user['admin'];
 
                     }else{
-                        //TODO 404
+                        $content .= '<p class="message errorMsg">Utente non trovato.</p>';
                     }           
 
                 }
@@ -149,6 +149,7 @@
 
     $menu = get_admin_menu();
     $template = str_replace('{{menu}}',$menu,$template);
+    $template = str_replace('{{onload}}','setAdminUtenteChecks();addFieldsEvent();',$template);
 
     $template = str_replace('{{title}}',$title,$template);
     $template = str_replace('{{breadcrumbs}}',$breadcrumbs,$template);

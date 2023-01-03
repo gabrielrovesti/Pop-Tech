@@ -8,6 +8,12 @@
 	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#EEEEEE;}
 	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#191919;}
 	.st4{fill-rule:evenodd;clip-rule:evenodd;}
+	@media (prefers-color-scheme: dark) {
+		path{
+			stroke:#fff;
+			stroke-width:2;
+		}
+	}
 </style>
 <g id="Gabriel">
 	<g id="a-person_x2F_bust" transform="translate(714.000000, 404.999936)">

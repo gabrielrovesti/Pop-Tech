@@ -194,14 +194,38 @@ input[type=submit],input[type=reset]{
     border-style: solid;
 }
 
-.successMsg{
+.successMsg,.formSuccess{
     background-color: var(--successbgcolor);
     border-color: var(--successbordercolor);
     color: var(--successcolor);
 }
 
-.errorMsg{
+.errorMsg,.formError{
     background-color: var(--errorbgcolor);
     border-color: var(--errorbordercolor);
     color: var(--errorcolor);
+}
+
+.formError, #contatti p.formError{
+    background-color: var(--formerrorcolor);
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    padding: 0.5em;
+    color: rgb(120, 3, 3);
+}
+
+
+.formSuccess, #contatti p.formSuccess{
+    background-color: var(--formsuccesscolor);
+    padding: 0.5em;
+    color: rgb(3, 120, 3);
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+.fieldError, input[type="text"].fieldError, .fieldError, input[type="password"].fieldError, input[type="email"].fieldError, input[type="tel"].fieldError, textarea.fieldError{
+    color: rgb(105, 0, 0);
+    border-color: var(--errorbordercolor);
 }

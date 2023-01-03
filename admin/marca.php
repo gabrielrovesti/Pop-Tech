@@ -108,7 +108,7 @@
                         $nome = $brand['nome'];
 
                     }else{
-                        //TODO 404
+                        $content .= '<p class="message errorMsg">Marca non trovata.</p>';
                     }           
 
                 }
@@ -129,6 +129,8 @@
 
     $menu = get_admin_menu();
     $template = str_replace('{{menu}}',$menu,$template);
+    $template = str_replace('{{onload}}','setAdminCategoriaMarcaChecks();addFieldsEvent();',$template);
+
 
     $template = str_replace('{{title}}',$title,$template);
     $template = str_replace('{{breadcrumbs}}',$breadcrumbs,$template);
