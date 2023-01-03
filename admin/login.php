@@ -22,10 +22,7 @@
         die();
 
     }else{
-
-
         $content = "<h1>Accedi</h1>";
-
 
         if(isset($_POST['submit'])){
             //Invio del form
@@ -44,9 +41,7 @@
             }
 
             if(count($errors)==0){
-
                 $connection = new DBAccess();
-
                 if($connection->open_connection()){
                     
                     //Cerca utente con quell'id
@@ -77,39 +72,24 @@
                         $errorsStr .= '<li>'.$error.'</li>';
                     }
                     $errorsStr .= '<ul>';
-    
                     $form = str_replace("{{errors}}",$errorsStr,$form); //Contiene solo l'ultimo errore
-    
                     $content .= $form;
-        
                 }else{
                     $content .= getDBConnectionError(true);
-                }
-                                        
+                }                       
             }else{ //Mostra form con errori di formato
-
                 $errorsStr = '<ul>';
                 foreach($errors as $error){
                     $errorsStr .= '<li>'.$error.'</li>';
                 }
                 $errorsStr .= '<ul>';
-
                 $form = str_replace("{{errors}}",$errorsStr,$form);
-
                 $content .= $form;
-
             }
-                
-
         }else{
-
             $form = str_replace("{{errors}}",$errorsStr,$form);
-
-            $content .= $form;
-            
-        }
-
-        
+            $content .= $form; 
+        } 
     }
 
     $template = str_replace('{{menu}}',"",$template);

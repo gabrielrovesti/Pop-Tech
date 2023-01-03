@@ -15,13 +15,13 @@
 
     if(!isLoggedIn(true)){
 
-        $content = '<p class="message errorMsg">Attenzione non disponi dei privilegi necessari per accede a questa pagina.</p>';
+        $content = '<p class="message errorMsg">Attenzione: non disponi dei privilegi necessari per accede a questa pagina.</p>';
 
     }else{
 
         $content = "<h1>Recensioni</h1>";
 
-        $content .= '<a href="recensione.php" class="btn btn-green">Aggiungi recensione</a>';
+        $content .= '<a href="recensione.php" class="btn btn-green" aria-label="button">Aggiungi recensione</a>';
 
         $connection = new DBAccess();
 
@@ -35,8 +35,8 @@
                 $content .= '<article class="listItem">';
                     $content .= '<span>'.$review['user'].' - ';
                     $content .= parse_lang($review['product']).'</span>';
-                    $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-info">Modifica</a>';
-                    $content .= '<a href="delete.php?id='.$review['id'].'&type=recensione" class="btn btn-danger">Elimina</a>';
+                    $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-info" aria-label="button">Modifica</a>';
+                    $content .= '<a href="delete.php?id='.$review['id'].'&type=recensione" class="btn btn-danger" aria-label="button">Elimina</a>';
                 $content .= '</article>';
 
             }

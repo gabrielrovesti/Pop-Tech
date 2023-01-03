@@ -6,8 +6,7 @@ class DBAccess{
     private const HOST_DB = "127.0.0.1";
     private const DATABASE_NAME = "poptech";
     private const USERNAME = "root";
-    private const PASSWORD = "root";
-
+    private const PASSWORD = "";
     private $connection;
 
     public function open_connection(){
@@ -45,7 +44,7 @@ class DBAccess{
         }
     }
 
-    //Esegui query che alterano il sitema
+    //Esegui query che alterano il sistema
     public function exec_alter_query($query){
         $res = mysqli_query($this->connection, $query) or die("Errore DB: ".mysqli_error($this->connection));
         return $res;

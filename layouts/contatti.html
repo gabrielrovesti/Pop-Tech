@@ -1,100 +1,91 @@
-﻿
+﻿<h1>Contatti</h1>
+<div id="contatti">
+    <div id="modulo_richieste">          
+        <h2>MODULO RICHIESTE</h2>
 
-<h1>Contatti</h1>
+        {{formMessages}}
 
-            <div id="contatti">
+        <form action="contatti.php" method="POST">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Inserire nome" required="required" data-msg-required="Per favore, inserisci il tuo nome" data-msg-invalid="Formato testo non corretto" value="{{nome}}">
+                                
+            <label for="email" lang="en">Indirizzo e-mail</label>
+            <input type="email" id="email" name="email" placeholder="Inserire e-mail" required="required" data-msg-required="Per favore, inserisci la tua casella di posta" data-msg-invalid="Formato non corretto" value="{{email}}">
+            
+            <label for="telefono">Telefono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Inserire telefono" data-msg-invalid="Formato telefono non corretto" value="{{telefono}}">
+        
+            <label for="messaggio">Messaggio</label>
+            <textarea id="messaggio" name="messaggio" placeholder="Inserisci qui il tuo messaggio" required="required" data-msg-required="Per favore, inserisci il tuo messaggio" data-msg-invalid="Formato testo non corretto">{{messaggio}}</textarea>
 
-                <div id="modulo_richieste">          
+            <label for="privacypolicy"><input type="checkbox" id="privacypolicy" name="privacy" value="1" required="required">Accetta la nostra <a href="privacy.html"><span lang="en">Privacy Policy</span></a></label>
 
-                    <h2>MODULO RICHIESTE</h2>
+            <input type="submit" class="button" value="invia" name="invia" aria-label="button">
+            <input type="reset" class="button" value="cancella" name="cancella" aria-label="button">
+        </form>
+    </div>
+    <div id="info">
+        <h2>DOVE SIAMO</h2>
+        <p>
+            Via Gattamelata 123 Padova <abbr title="Padova">PD</abbr>
+        </p>
+        <a href="https://google.com/maps" class="button" target="_blank"><span lang="en">Google Maps</span></a>            
+        <a href="https://maps.apple.com" class="button" target="_blank"><span lang="en">Apple Maps</span></a>
 
-                    {{formMessages}}
+        <h2>Chiamaci</h2>
+        <a href="tel:+39049123456">049 123456</a>
 
-                    <form action="contatti.php" method="POST">
+        <h2>Scrivici</h2>
+        <a href="mailto:info@comics.it">info@comics.it</a>
 
-                        <label for="nome">Nome</label>
-                        <input type="text" id="nome" name="nome" placeholder="Inserire nome" required="required" data-msg-required="Per favore, inserisci il tuo nome" data-msg-invalid="Formato testo non corretto" value="{{nome}}">
-                                            
-                        <label for="email" lang="en">Indirizzo e-mail</label>
-                        <input type="email" id="email" name="email" placeholder="Inserire e-mail" required="required" data-msg-required="Per favore, inserisci la tua casella di posta" data-msg-invalid="Formato non corretto" value="{{email}}">
-                        
-                        <label for="telefono">Telefono</label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="Inserire telefono" data-msg-invalid="Formato telefono non corretto" value="{{telefono}}">
-                    
-                        <label for="messaggio">Messaggio</label>
-                        <textarea id="messaggio" name="messaggio" placeholder="Inserisci qui il tuo messaggio" required="required" data-msg-required="Per favore, inserisci il tuo messaggio" data-msg-invalid="Formato testo non corretto">{{messaggio}}</textarea>
+        <h2>Orari</h2>
 
-                        
-                        <label for="privacypolicy"><input type="checkbox" id="privacypolicy" name="privacy" value="1" required="required">Accetta la nostra <a href="privacy.html"><span lang="en">Privacy Policy</span></a></label>
-
-                        <input type="submit" class="button" value="invia">
-                        <input type="reset" class="button" value="Cancella">
-                    </form>
-                </div>
-                <div id="info">
-                    <h2>DOVE SIAMO</h2>
-                    <p>
-                        Via Gattamelata 123 Padova <abbr title="Padova">PD</abbr>
-                    </p>
-                    <a href="https://google.com/maps" class="button" target="_blank"><span lang="en">Google Maps</span></a>            
-                    <a href="https://maps.apple.com" class="button" target="_blank"><span lang="en">Apple Maps</span></a>
-
-                    <h2>Chiamaci</h2>
-                    <a href="tel:+39049123456">049 123456</a>
-
-                    <h2>Scrivici</h2>
-                    <a href="mailto:info@comics.it">info@comics.it</a>
-
-                    <h2>Orari</h2>
-
-                    <span class="srOnly" id="tableDesc">Nella Tabella vengono decritti gli orari di apertura e di chiusura del negozio. Ogni riga indica il giorno e gli orari di apertura e di chiusura di mattina e di pomeriggio</span>
-                    
-                    <table id="timetable" aria-describedby="tableDesc">
-                        <thead>
-                            <tr>
-                                <th>Giorno</th>
-                                <th scope="col">Mattina</th>
-                                <th scope="col">Pomeriggio</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">Lunedì</th>
-                                <td data-title="Mattina"><time datetime="10:00">10:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Martedì</th>
-                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Mercoledì</th>
-                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Giovedì</th>
-                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Venerdì</th>
-                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Sabato</th>
-                                <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
-                                <td data-title="Pomeriggio">Chiuso</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Domenica</th>
-                                <td colspan="2" data-title="Mattina e Pomeriggio">Chiuso</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-               
-            </div>
-     
+        <span class="srOnly" id="tableDesc">Nella Tabella vengono decritti gli orari di apertura e di chiusura del negozio. Ogni riga indica il giorno e gli orari di apertura e di chiusura di mattina e di pomeriggio</span>
+        
+        <table id="timetable" aria-describedby="tableDesc">
+            <thead>
+                <tr>
+                    <th>Giorno</th>
+                    <th scope="col">Mattina</th>
+                    <th scope="col">Pomeriggio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Lunedì</th>
+                    <td data-title="Mattina"><time datetime="10:00">10:00</time> - <time datetime="13:00">13:00</time></td>
+                    <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                </tr>
+                <tr>
+                    <th scope="row">Martedì</th>
+                    <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                    <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                </tr>
+                <tr>
+                    <th scope="row">Mercoledì</th>
+                    <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                    <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                </tr>
+                <tr>
+                    <th scope="row">Giovedì</th>
+                    <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                    <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                </tr>
+                <tr>
+                    <th scope="row">Venerdì</th>
+                    <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                    <td data-title="Pomeriggio"><time datetime="15:00">15:00</time> - <time datetime="19:00">19:00</time></td>
+                </tr>
+                <tr>
+                    <th scope="row">Sabato</th>
+                    <td data-title="Mattina"><time datetime="09:00">9:00</time> - <time datetime="13:00">13:00</time></td>
+                    <td data-title="Pomeriggio">Chiuso</td>
+                </tr>
+                <tr>
+                    <th scope="row">Domenica</th>
+                    <td colspan="2" data-title="Mattina e Pomeriggio">Chiuso</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

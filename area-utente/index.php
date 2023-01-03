@@ -15,7 +15,7 @@
 
     if(!isLoggedIn()){
 
-        $content = '<p class="message errorMsg">Attenzione non disponi dei privilegi necessari per accede a questa pagina.</p>';
+        $content = '<p class="message errorMsg">Attenzione: non disponi dei privilegi necessari per accede a questa pagina.</p>';
 
     }else{
 
@@ -36,14 +36,13 @@
 
             foreach($reviews as $review){
 
-                
                 $content .= '<article class="listItem">';
                     $content .= '<span>'.parse_lang($review['product']).'</span>';
 
                     if($review['contenuto']=='' && $review['punteggio']==0)
-                        $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-green">Inserisci</a>';
+                        $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-green" aria-label="button">Inserisci</a>';
                     else
-                    $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-info">Vedi</a>';
+                    $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-info" aria-label="button">Vedi</a>';
                 $content .= '</article>';
 
             }

@@ -46,14 +46,12 @@
     font-style: italic;
 }
 
-/* Impostazione generali */
+/* Impostazione generale */
 
 html,body{
     font-size: 100%;
     line-height: 1.5em;
-    
 }
-
 
 /* Variabili CSS */
 
@@ -158,8 +156,6 @@ body{
     background-color: var(--bgcolor);
     color: var(--textcolor);
 }
-
-
 
 /* Header ========================= */
 

@@ -99,8 +99,8 @@ function get_menu(){
             $menu .= '<li><a href="'.$links[$i].'" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</a></li>';
         }
     }
-    $menu .= '<li><a class="button" href="area-utente/registrazione.php">Registrati</a></li>';
-    $menu .= '<li><a class="button" href="area-utente/login.php">Accedi</a></li>';
+    $menu .= '<li><a class="button" href="area-utente/registrazione.php" aria-label="button">Registrati</a></li>';
+    $menu .= '<li><a class="button" href="area-utente/login.php" aria-label="button">Accedi</a></li>';
     return $menu;
 }
 
@@ -115,7 +115,7 @@ function get_product_tile($product){
             <h2>'.parse_lang($product['nome']) .'</h2>
         </header>
         <p>'.substr(parse_lang(strip_tags($product['descrizione']),""),0,100).'...</p>
-        <a href="prodotto.php?id='.$product['id'].'" class="button" title="Vedi prodotto ' . parse_lang($product['nome'],true) . '">Scopri di più</a>
+        <a href="prodotto.php?id='.$product['id'].'" aria-label="button" class="button" title="Vedi prodotto ' . parse_lang($product['nome'],true) . '">Scopri di più</a>
     </article>';
     
 }
@@ -181,9 +181,9 @@ function get_admin_menu(){
     }
 
     if(isLoggedIn(true)){
-        $menu .= '<li><a href="logout.php">Esci</a></li>';
+        $menu .= '<li><a href="logout.php" aria-label="button">Esci</a></li>';
     }else{
-        $menu = '<li><a href="login.php">Accedi</a></li>';
+        $menu = '<li><a href="login.php" aria-label="button">Accedi</a></li>';
     }
 
     return $menu;

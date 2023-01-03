@@ -12,13 +12,13 @@
 
     $pageID = 'recensione';
     $title = "Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="recensioni.php">Recensioni</a> > Nuovo recensione</p>';
+    $breadcrumbs = '<p>Ti trovi in: <a href="recensioni.php">Recensioni</a> > Nuova recensione</p>';
 
     $errorsStr = "";
 
     if(!isLoggedIn(true)){
 
-        $content = '<p class="message errorMsg">Attenzione non disponi dei privilegi necessari per accede a questa pagina.</p>';
+        $content = '<p class="message errorMsg">Attenzione: non disponi dei privilegi necessari per accede a questa pagina.</p>';
 
     }else{
 
