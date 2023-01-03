@@ -29,6 +29,7 @@
         $id   = '';
         $nome = '';
         $errorsStr = '';
+        $checked = '';
 
         if($connection->open_connection()){
 
@@ -111,7 +112,7 @@
                         $checked = ($category['inPrimaPagina']==1)?'checked':'';
 
                     }else{
-                        //TODO 404
+                        $content .= '<p class="message errorMsg">Categoria non trovata.</p>';
                     }           
 
                 }
@@ -137,6 +138,7 @@
 
     $menu = get_admin_menu();
     $template = str_replace('{{menu}}',$menu,$template);
+    $template = str_replace('{{onload}}','setAdminCategoriaMarcaChecks();addFieldsEvent();',$template);
 
     $template = str_replace('{{title}}',$title,$template);
     $template = str_replace('{{breadcrumbs}}',$breadcrumbs,$template);

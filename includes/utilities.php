@@ -7,10 +7,13 @@ require_once('connection.php');
 /*
     Rimpiazza i placeholder del template html
 */
-function replace_in_page(String $html, String $title, String $id, String $breadcrumbs, String $keywords, String $description, String $content){
+function replace_in_page(String $html, String $title, String $id, String $breadcrumbs, String $keywords, String $description, String $content, String $onload = ''){
 
     //Header presente in ogni pagina
     $header = file_get_contents('./layouts/header.html');
+
+    $html = str_replace('{{onload}}',$onload,$html);
+
     $html   = str_replace('{{header}}',$header,$html);
     
     $html = str_replace('{{title}}',$title,$html);
@@ -23,7 +26,7 @@ function replace_in_page(String $html, String $title, String $id, String $breadc
     //Footer presente in ogni pagina
     $footer = file_get_contents('./layouts/footer.html');
     $html   = str_replace('{{footer}}',$footer,$html);
-    
+
 
     return $html;
 

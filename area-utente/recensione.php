@@ -67,8 +67,8 @@
                     array_push($errors,'<p class="message errorMsg">Selezionare un utente.</p>');
                 }
 
-                if($contenuto==''){
-                    array_push($errors,'<p class="message errorMsg">Inserire il contenuto della recesione.</p>');
+                if(strlen($contenuto)<10){
+                    array_push($errors,'<p class="message errorMsg">Inserire il contenuto della recesione, con almeno 10 caratteri.</p>');
                 }
                 
 
@@ -169,7 +169,7 @@
                         }
 
                     }else{
-                        //TODO 404
+                        $content .= '<p class="message errorMsg">Recensione non trovata.</p>';
                     }           
 
                 }
@@ -186,7 +186,8 @@
 
     $menu = get_admin_menu();
     $template = str_replace('{{menu}}',$menu,$template);
-
+    $template = str_replace('{{onload}}','setUserRecensioneChecks();addFieldsEvent();',$template);
+    
     $template = str_replace('{{title}}',$title,$template);
     $template = str_replace('{{breadcrumbs}}',$breadcrumbs,$template);
     $template = str_replace('{{content}}',$content,$template);

@@ -113,6 +113,7 @@
     }
 
     $template = str_replace('{{menu}}',"",$template);
+    $template = str_replace('{{onload}}','setUserLoginChecks();addFieldsEvent();',$template);
 
 
     $template = str_replace('{{title}}',$title,$template);

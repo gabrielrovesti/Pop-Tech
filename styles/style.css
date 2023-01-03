@@ -69,7 +69,7 @@ html,body{
     --hover2: orange;
     
     --header1: orange;
-    --header2: #FDA30A;
+    --header2: #e99400;
 
     --chiSiamoGrad1Stop1: #FDC708;
     --chiSiamoGrad1Stop2: #FFF5D1;
@@ -96,6 +96,9 @@ html,body{
     --breadcrumb1: rgba(0, 0, 0, .3);
     --breadcrumb2: rgba(0, 0, 0, .2);
     --breadcrumbbeforecolor: rgba(0, 0, 0, .1);
+
+    --formerrorcolor:rgb(255, 193, 193);
+    --formsuccesscolor:rgb(197, 255, 193);
 }
 
 /* Tema scuro ========================= */
@@ -111,9 +114,7 @@ html,body{
         --currentlinkcolor: #1995B0;
         --hover1: red;
         --hover2: orange;
-       
-        --header1: orange;
-        --header2: #FDA30A;
+
 
         --chiSiamoGrad1Stop1: #c0610e;
         --chiSiamoGrad1Stop2: #894911;
@@ -140,6 +141,8 @@ html,body{
         --breadcrumb1: rgba(255, 255, 255, 1);
         --breadcrumb2: rgba(255, 255, 255, 1);
         --breadcrumbbeforecolor: rgba(255, 255, 255, 1);
+
+
     }
 
     #chiSiamo ul.membristaff li img{
@@ -303,19 +306,34 @@ a:visited, nav ul li a:visited{
     color:var(--linkvisitedcolor);
 }
 
-a.button{
+a.button, input.button{
     border: 3px solid var(--bordercolor);
     padding: .5em 1em .5em 1em;
+    cursor: pointer;
     display: inline-block;
     text-align: center;
     background: var(--contentbgcolor);
     color: var(--linkbuttoncolor);
     transition: color 0.2s ease-out;
+    font-size: 1em;
 }
 
-a.button:hover{
+a.button:hover,input.button:hover{
     color: var(--linkcolor);
     background: linear-gradient(to bottom left, var(--hover1), var(--hover2));
+}
+
+input.button:disabled{
+    opacity: 0.5;
+}
+
+input.button:disabled:hover{
+    background: var(--contentbgcolor);
+    color: var(--linkbuttoncolor);
+}
+
+input.button{
+    margin-top: 1em;
 }
 
 /* Main Content ========================= */
@@ -430,6 +448,7 @@ main h2{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .productsRow article h2{
@@ -440,9 +459,8 @@ main h2{
 }
 
 .productsRow article{
-    flex: 15% 0 0;
+    flex: 18% 0 0;
     border: 3px solid var(--bordercolor);
-    margin-right: 1em;
     margin-bottom: 1em;
     padding: 0.5em;
 
@@ -814,6 +832,32 @@ main h2{
     border: none;
     cursor: pointer;
 }
+
+.formError, #contatti p.formError{
+    background-color: var(--formerrorcolor);
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    padding: 0.5em;
+    color: rgb(120, 3, 3);
+}
+
+
+.formSuccess, #contatti p.formSuccess{
+    background-color: var(--formsuccesscolor);
+    padding: 0.5em;
+    color: rgb(3, 120, 3);
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+.fieldError, #contatti div#modulo_richieste input[type="text"].fieldError, input[type="email"].fieldError, input[type="tel"].fieldError, textarea.fieldError{
+    color: red;
+    border:solid 3px var(--formerrorcolor);
+}
+
+
 
 /* Pagina 404 ========================= */
 
