@@ -670,6 +670,11 @@ main h2{
     display: block;
 }
 
+#contatti form button:hover{
+    color: var(--contentbgcolor);
+    background: linear-gradient(to bottom left, var(--hover1), var(--hover2));
+}
+
 /* Prodotto ========================= */
 
 #prodotto main{

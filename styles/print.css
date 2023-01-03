@@ -11,9 +11,6 @@ body{
 /* Header ========================= */
 
 header#header h1{
-    /*text-indent:100%;
-    white-space:nowrap;
-    overflow:hidden;*/
     height: 3cm;
     width: auto;
     content: url(../images/logo.svg);
@@ -24,7 +21,8 @@ header#header h1{
 /* Footer ========================= */
 
 footer{
-    margin: 5mm;
+    margin-top: 0.5cm;
+    text-align: center;
 }
 
 /* Utilities ========================= */
@@ -57,7 +55,6 @@ main#content .button{
 
 #homePage h2{
     text-align: center;
-    text-transform: uppercase;
 }
 
 #homePage #homeBanner img{
@@ -67,28 +64,25 @@ main#content .button{
 /* Category ========================= */
 
 .categoryTitle{
+    font-size: 0.7cm;
     display: inline-block;
+    text-transform: uppercase;
 }
 
 /* Product list (Home, Prodotti, Categoria =========================*/
 
 .productsRow{
-    display: flex;
-    flex-direction: row;
-    
-    flex-wrap: wrap;
+    display: block;
 }
 
 .productsRow article{
-    flex: 18% 0 0;
-    border: 1px solid black;
-    margin-right: 1em;
-    margin-bottom: 1em;
+    height: 4.5cm;
 }
 
 .productsRow article img{
-    width: 100%;
-    height: auto;
+    max-height: 4cm;
+    float: left;
+    margin-right: 0.5cm;
 }
 
 .productsRow article a.button{
@@ -99,6 +93,20 @@ main#content .button{
 
 #chiSiamo img{
     display: none;
+}
+
+#chiSiamo .membro img{
+    display: inline;
+    float: left;
+    max-height: 3.3cm;
+}
+
+#chiSiamo h2#staff{
+    margin-top: 3cm;
+}
+
+#chiSiamo ul{
+    list-style: none;
 }
 
 /* Contatti ========================= */
@@ -114,14 +122,49 @@ main#content .button{
     display: none;
 }
 
+#contatti #timetable{
+    border: solid 0.1cm black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#contatti #timetable thead{
+    border-bottom: solid 0.1cm black;
+}
+
+#contatti #timetable tr, #contatti #timetable th, #contatti #timetable td{
+    padding:0.5em;
+}
+
+/* FAQ: Domande e Risposte */
+
+#FAQ summary{
+    font-weight: bold;
+}
+
 /* Prodotto Page ========================= */
+
+#prodotto img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-height: 8cm;
+}
 
 #prodotto dd#prezzo{
     margin: 5mm;
     font-weight: bold;
-    font-size: 1cm;
+    font-size: 0.7cm;
 }
 
 #prodotto dt{
+    float: left;
+    margin-right: 0.3cm;
     font-weight: bold;
+}
+
+/* Area Utente ========================= */
+
+body#admin_prodotti{
+    display: none;
 }
