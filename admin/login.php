@@ -83,7 +83,7 @@
                     $content .= $form;
         
                 }else{
-                    $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
+                    $content .= getDBConnectionError(true);
                 }
                                         
             }else{ //Mostra form con errori di formato

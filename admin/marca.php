@@ -122,7 +122,7 @@
             $connection->close_connection();
 
         }else{
-            $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
+            $content .= getDBConnectionError(true);
         }
 
     }

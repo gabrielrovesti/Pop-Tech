@@ -139,6 +139,11 @@ function getThumbnail($file){
     return str_replace(".".$fileType,"",$file).'-thumb.'.$fileType;
 }
 
+function getDBConnectionError(bool $back = false){
+    return '<p class="error">I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>
+        <img class="error_image" src="'.($back?'../':'').'images/comic_error.png">';
+}
+
 // -----------------------------------
 // Funzioni per l'area amministrativa
 // -----------------------------------

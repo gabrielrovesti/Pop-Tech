@@ -74,8 +74,7 @@
         $content = '<h1>Prodotto</h1>';
         $breadcrumbs = '<p>Ti trovi in: Home > Prodotto</p> ';
         $title = "Prodotto - Pop Tech";
-        $content .= '<p class="error">I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>
-        <img class="error_image" src="images/comic_error.png">';
+        $content .= getDBConnectionError();
     }
 
     $menu = get_menu();

@@ -239,7 +239,9 @@
 
                     }else{
                         //TODO 404
-                    }              
+                    }    
+                    
+                    $connection->close_connection();
 
                 }else{
                     //Presenta form per l'inserimento
@@ -279,7 +281,7 @@
 
         }else{
             //Errore di connessione al database
-            $content .= '<p>I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>';
+            $content .= getDBConnectionError(true);
         }
 
     }
