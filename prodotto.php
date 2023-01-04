@@ -32,16 +32,28 @@
 
                 $content .= file_get_contents('layouts/prodotto.html');
 
+                $categoria = "";
+                $categories = $connection->exec_select_query("SELECT nome FROM categoria WHERE id=".$product['categoria'].";");
+                if(isset($categories[0])){
+                    $categoria = '<a href="categoria.php?id='.$product['categoria'].'">'.$categories[0]['nome'].'</a>';
+                }
+
+                $marca = "";
+                $brands = $connection->exec_select_query("SELECT nome FROM marca WHERE id=".$product['marca'].";");
+                if(isset($brands[0])){
+                    $marca = $brands[0]['nome'];
+                }
+
                 $content = str_replace('{{nome}}',parse_lang($product['nome']),$content);
                 $content = str_replace('{{immagine}}',$product['immagine'],$content);
                 $content = str_replace('{{altImmagine}}',$product['altImmagine'],$content);
                 $content = str_replace('{{descrizione}}',parse_lang($product['descrizione']),$content);
                 $content = str_replace('{{origine}}',$product['origine'],$content);
-                $content = str_replace('{{marca}}',$product['marca'],$content);
+                $content = str_replace('{{marca}}',$marca,$content);
                 $content = str_replace('{{modello}}',$product['modello'],$content);
                 $content = str_replace('{{dimensioni}}',parse_abbr($product['dimensione']),$content);
                 $content = str_replace('{{peso}}',parse_abbr($product['peso']),$content);
-                $content = str_replace('{{categoria}}',$product['categoria'],$content);
+                $content = str_replace('{{categoria}}',$categoria,$content);
                 $content = str_replace('{{prezzo}}',$product['prezzo'],$content);
 
                 $descrizione = $product['descrizione'];
