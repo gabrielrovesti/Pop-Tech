@@ -43,11 +43,21 @@
 
                 //Prelevamento dati
                 $nome          = sanitize($_POST['nome'],"");
-                $inPrimaPagina = intval(sanitize($_POST['inPrimaPagina'],""));
+                $inPrimaPagina = (isset($_POST['inPrimaPagina']) ? intval(sanitize($_POST['inPrimaPagina'],"")) : 0);
+                $keywords      = sanitize($_POST['keywords'],"");
+                $descrizione    = sanitize($_POST['descrizione'],"");
 
                 //Validazione dati
                 if(strlen($nome)<=1){
                     array_push($errors,'<p class="message errorMsg">Inserire un nome con almeno due caratteri.</p>');
+                }
+
+                if(strlen($descrizione)<50){
+                    array_push($errors,'<p class="message errorMsg">Inserire una descrizione con almeno 50 caratteri.</p>');
+                }
+
+                if(strlen($keywords)<2){
+                    array_push($errors,'<p class="message errorMsg">Inserire delle keywords.</p>');
                 }
 
                 if(count($errors)==0){
@@ -56,13 +66,13 @@
 
                         //Richiesta di modifica del prodotto
                         $id   = intval(sanitize($_POST['id'],""));
-                        $query = "UPDATE categoria SET nome='$nome', inPrimaPagina='$inPrimaPagina' WHERE id=$id";
+                        $query = "UPDATE categoria SET nome='$nome', inPrimaPagina='$inPrimaPagina', keywords='$keywords', descrizione='$descrizione' WHERE id=$id";
                         $action = 'modificata';
                 
                     }else{
 
                         //Richiesta di creazione del prodotto
-                        $query = "INSERT INTO categoria(nome,inPrimaPagina) VALUES ('$nome','$inPrimaPagina')";
+                        $query = "INSERT INTO categoria(nome,inPrimaPagina,keywords,descrizione) VALUES ('$nome','$inPrimaPagina','$keywords','$descrizione')";
 
                     }
 
@@ -84,6 +94,8 @@
 
                     $form = str_replace('{{id}}',$id,$form);
                     $form = str_replace('{{nome}}',$nome,$form);
+                    $form = str_replace('{{keywords}}',$keywords,$form);
+                    $form = str_replace('{{descrizione}}',$descrizione,$form);
                     $form = str_replace('{{errors}}',$errorsStr,$form);
 
                     $content .= $form;
@@ -108,7 +120,9 @@
 
                         $breadcrumbs = '<p>Ti trovi in: <a href="categorie.php">Categorie</a> > '.parse_lang($category['nome']).'</p>';
 
-                        $nome    = $category['nome'];
+                        $nome        = $category['nome'];
+                        $keywords    = $category['keywords'];
+                        $descrizione = $category['descrizione'];
                         $checked = ($category['inPrimaPagina']==1)?'checked':'';
 
                     }else{
@@ -120,6 +134,9 @@
                 $form = str_replace('{{id}}',$id,$form);
                 $form = str_replace('{{errors}}',$errorsStr,$form);
                 $form = str_replace('{{nome}}',$nome,$form);
+                $form = str_replace('{{keywords}}',$keywords,$form);
+                $form = str_replace('{{descrizione}}',$descrizione,$form);
+
                 $form = str_replace('{{checked}}',$checked,$form);
 
                 $content .= $form;

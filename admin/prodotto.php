@@ -40,7 +40,7 @@
                 //Prelevamento dati
                 $nome        = sanitize($_POST['nome'],"");
                 $immagine    = $_FILES['immagine'];
-                $altImmagine = sanitize($_POST['altImmagine'],"");
+                $keywords = sanitize($_POST['keywords'],"");
                 $categoria   = sanitize($_POST['categoria'],"");
                 $origine     = sanitize($_POST['origine'],"");
                 $marca       = sanitize($_POST['marca'],"");
@@ -48,7 +48,7 @@
                 $dimensione  = sanitize($_POST['dimensione'],"");
                 $peso        = sanitize($_POST['peso'],"");
                 $prezzo      = floatval(sanitize($_POST['prezzo'],""));
-                $descrizione = sanitize($_POST['descrizione'],"<span><em><ul><li><b><strong><ol>");
+                $descrizione = addslashes(sanitize($_POST['descrizione'],"<span><em><ul><li><b><strong><ol>"));
 
                 //Validazione dati
                 if(strlen($nome)<=4){
@@ -111,13 +111,13 @@
 
                         $id = intval(sanitize($_POST['id'],""));
 
-                        $query = "UPDATE `prodotto` SET `nome`='$nome',".(($path)?"`immagine`='$path',":"")."`altImmagine`='$altImmagine',`descrizione`='$descrizione',`origine`='$origine',`marca`='$marca',`modello`='$modello',`dimensione`='$dimensione',`peso`='$peso',`categoria`='$categoria',`prezzo`='$prezzo' WHERE id=$id";
+                        $query = "UPDATE `prodotto` SET `nome`='$nome',".(($path)?"`immagine`='$path',":"")."`keywords`='$keywords',`descrizione`='$descrizione',`origine`='$origine',`marca`='$marca',`modello`='$modello',`dimensione`='$dimensione',`peso`='$peso',`categoria`='$categoria',`prezzo`='$prezzo' WHERE id=$id";
 
                     }else{
                         $path = upload_file($immagine);
                         //Richiesta di creazione del prodotto                  
                         if($path){              
-                            $query = "INSERT INTO `prodotto`(`nome`, `immagine`, `altImmagine`, `descrizione`, `origine`, `marca`, `modello`, `dimensione`, `peso`, `categoria`, `prezzo`) VALUES ('$nome','$path','$altImmagine','$descrizione','$origine','$marca','$modello','$dimensione','$peso','$categoria','$prezzo')";
+                            $query = "INSERT INTO `prodotto`(`nome`, `immagine`, `keywords`, `descrizione`, `origine`, `marca`, `modello`, `dimensione`, `peso`, `categoria`, `prezzo`) VALUES ('$nome','$path','$keywords','$descrizione','$origine','$marca','$modello','$dimensione','$peso','$categoria','$prezzo')";
                         }else{
                             $content .= '<p class="message errorMsg">Errore durante il caricamento dell\'immagine. Sono supportati file jpg,jpeg e png.</p>';
                         }
@@ -147,7 +147,7 @@
                     
                     $form = str_replace('{{nome}}',$nome,$form);
                     //$form = str_replace('{{immagine}}',$immagine,$form); l'utente deve ri-selezionare il file
-                    $form = str_replace('{{altImmagine}}',$altImmagine,$form);
+                    $form = str_replace('{{keywords}}',$keywords,$form);
                     
                     $form = str_replace('{{origine}}',$origine,$form);
                     $form = str_replace('{{prezzo}}',$prezzo,$form);
@@ -188,7 +188,7 @@
                 $nome        = '';
                 $immagine    = '';
                 $descrizione = '';
-                $altImmagine = '';
+                $keywords = '';
                 $prezzo      = '';
 
                 $categories = $connection->exec_select_query('SELECT id,nome FROM categoria ORDER BY nome;');
@@ -216,7 +216,7 @@
                         //Preleva i dati dal DB
                         $nome        = $product['nome'];
                         $immagine    = $product['immagine'];
-                        $altImmagine = $product['altImmagine'];
+                        $keywords    = $product['keywords'];
                         $descrizione = $product['descrizione'];            
                         $origine     = $product['origine'];
                         $modello     = $product['modello'];
@@ -262,7 +262,7 @@
                 $form = str_replace('{{id}}',$id,$form);
                 $form = str_replace('{{nome}}',$nome,$form);
                 $form = str_replace('{{immagine}}','<img src="../'.getThumbnail($immagine).'" alt="">',$form);
-                $form = str_replace('{{altImmagine}}',$altImmagine,$form);
+                $form = str_replace('{{keywords}}',$keywords,$form);
                 $form = str_replace('{{marche}}',$marche,$form);
                 $form = str_replace('{{categorie}}',$categorie,$form);
                 $form = str_replace('{{descrizione}}',$descrizione,$form);

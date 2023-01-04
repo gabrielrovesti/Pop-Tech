@@ -14,12 +14,15 @@
     $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> > Categoria</p>';
     $content     = '';
 
+    $keywords    = '';
+    $descrizione = '';
+
     if ($connection->open_connection()) {
             
         if(isset($_GET['id'])){
 
             $id = intval(sanitize($_GET['id'],''));        
-            $categories = $connection->exec_select_query("SELECT id, nome FROM categoria WHERE id=$id;");
+            $categories = $connection->exec_select_query("SELECT id, nome, keywords, descrizione FROM categoria WHERE id=$id;");
 
             if(count($categories)){
 
@@ -29,11 +32,14 @@
             
                 $breadcrumbs = '<p>Ti trovi in: Home > Categorie > '.parse_lang($category['nome']).'</p> ';
                 
-                $title = parse_lang($category['nome']) . ' - Pop Tech';          
+                $title = parse_lang($category['nome']) . ' - Pop Tech';    
+                
+                $keywords    = $category['keywords'];
+                $descrizione = $category['descrizione'];
             
                 $content .= '<div class="productsRow">';
                 
-                $products = $connection->exec_select_query("SELECT id, nome, immagine, altimmagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto WHERE categoria=$id;");
+                $products = $connection->exec_select_query("SELECT id, nome, immagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto WHERE categoria=$id;");
                 $connection->close_connection();
 
                 foreach ($products as $product) {
@@ -55,5 +61,5 @@
     $menu = get_menu();
     $template = str_replace('{{menu}}',$menu,$template);
 
-    echo replace_in_page($template,$title,$pageID,$breadcrumbs,'keywords','description',$content);
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs,$keywords,$descrizione,$content);
 ?>

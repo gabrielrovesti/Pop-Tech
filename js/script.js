@@ -208,6 +208,18 @@ function setAdminCategoriaMarcaChecks(){
             condition: function(str){
                 return str.length>=2;
             }
+        },
+        keywords:{
+            message:"Inserire delle keywords.",
+            condition: function(str){
+                return str.length>=2;
+            }
+        },
+        descrizione:{
+            message:"Inserire una descrizione di almeno 50 caratteri.",
+            condition: function(str){
+                return str.length>=50;
+            }
         }
     };
 }
@@ -221,9 +233,9 @@ function setAdminUtenteChecks(){
             }
         },
         password:{
-            message:"Inserire una password con almeno cinque caratteri.",
+            message:"Inserire una password con almeno quattro caratteri.",
             condition: function(str){
-                return str.length>=5;
+                return str.length>=4;
             }
         },
         email:{

@@ -41,7 +41,7 @@
 
             $content .= '<div class="comic_box"><h2 class="categoryTitle">'.parse_lang($category['nome']).'</h2> <a href="categoria.php?id='.$category['id'].'" class="button" aria-label="Vedi i prodotti in '.parse_lang($category['nome']).'">Vedi Tutti</a></div>';
 
-            $products = $connection->exec_select_query('SELECT id, nome, descrizione, immagine, altimmagine FROM prodotto WHERE categoria='.$category['id'].' ORDER BY id DESC LIMIT 5;');
+            $products = $connection->exec_select_query('SELECT id, nome, descrizione, immagine FROM prodotto WHERE categoria='.$category['id'].' ORDER BY id DESC LIMIT 5;');
 
             $content .= '<div class="productsRow">';
 

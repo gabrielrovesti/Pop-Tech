@@ -29,7 +29,7 @@
 
             $content .= '<div class="comic_box" id="cat-'.$category['id'].'"><h2 class="categoryTitle">'.parse_lang($category['nome']).'</h2> <a href="categoria.php?id='.$category['id'].'" class="button" aria-label="Vedi i prodotti in '.parse_lang($category['nome']).'">Vedi Tutti</a></div>';
 
-            $products = $connection->exec_select_query('SELECT id, nome, immagine, altimmagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto WHERE categoria='.$category['id'].';');
+            $products = $connection->exec_select_query('SELECT id, nome, immagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto WHERE categoria='.$category['id'].';');
 
             $content .= '<div class="productsRow">';
 

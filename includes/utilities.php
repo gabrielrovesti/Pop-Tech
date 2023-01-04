@@ -111,7 +111,7 @@ function get_product_tile($product){
     return 
     '<article> 
         <header>
-            <img src="'.getThumbnail($product['immagine']).'" alt="'.$product['altimmagine'] .'">
+            <img src="'.getThumbnail($product['immagine']).'" alt="">
             <h2>'.parse_lang($product['nome']) .'</h2>
         </header>
         <p>'.get_short_product_text($product['descrizione']).'</p>

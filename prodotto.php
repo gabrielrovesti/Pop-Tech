@@ -13,13 +13,14 @@
     $breadcrumbs = '';
     $content = '';
     $descrizione = '';
+    $keywords = '';
 
     if ($connection->open_connection()) {
         
         if(isset($_GET['id'])){
 
             $id = intval(sanitize($_GET['id'],''));
-            $products = $connection->exec_select_query("SELECT id, nome, immagine, altImmagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto WHERE id=$id;");
+            $products = $connection->exec_select_query("SELECT id, nome, immagine, keywords, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto WHERE id=$id;");
             
 
             if(count($products)){
@@ -46,7 +47,6 @@
 
                 $content = str_replace('{{nome}}',parse_lang($product['nome']),$content);
                 $content = str_replace('{{immagine}}',$product['immagine'],$content);
-                $content = str_replace('{{altImmagine}}',$product['altImmagine'],$content);
                 $content = str_replace('{{descrizione}}',parse_lang($product['descrizione']),$content);
                 $content = str_replace('{{origine}}',$product['origine'],$content);
                 $content = str_replace('{{marca}}',$marca,$content);
@@ -56,7 +56,8 @@
                 $content = str_replace('{{categoria}}',$categoria,$content);
                 $content = str_replace('{{prezzo}}',$product['prezzo'],$content);
 
-                $descrizione = $product['descrizione'];
+                $descrizione = parse_lang(strip_tags($product['descrizione']),true);
+                $keywords    = $product['keywords'];
 
                 $feedbacks = $connection->exec_select_query("SELECT contenuto, punteggio FROM recensione WHERE prodotto=$id;"); 
                 $connection->close_connection();
@@ -89,5 +90,5 @@
     $menu = get_menu();
     $template = str_replace('{{menu}}',$menu,$template);
 
-    echo replace_in_page($template,$title,$pageID,$breadcrumbs, 'keywords', $descrizione, $content);
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs,$keywords, $descrizione, $content);
 ?>

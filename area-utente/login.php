@@ -105,9 +105,7 @@
 
             $content .= $form;
             
-        }
-
-        
+        }        
     }
 
     $template = str_replace('{{menu}}',"",$template);

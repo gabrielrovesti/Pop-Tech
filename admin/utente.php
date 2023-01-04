@@ -53,8 +53,8 @@
                     array_push($errors,'<p class="message errorMsg">Inserire un nome con almeno due caratteri.</p>');
                 }
 
-                if(strlen($password)<=5){
-                    array_push($errors,'<p class="message errorMsg">Inserire una password di almeno 5 caratteri.</p>');
+                if(strlen($password)<4){
+                    array_push($errors,'<p class="message errorMsg">Inserire una password di almeno 4 caratteri.</p>');
                 }
 
                 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
