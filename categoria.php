@@ -11,7 +11,7 @@
 
     $pageID      = 'categoria';
     $title       = "Categoria - Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="/" lang="en">Home</a> > Categoria</p>';
+    $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> > Categoria</p>';
     $content     = '';
 
     if ($connection->open_connection()) {
@@ -49,7 +49,6 @@
         }
     }
     else{
-        $content .= '<h1>Categoria</h1>';
         $content .= getDBConnectionError();
     }
 

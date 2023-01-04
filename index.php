@@ -11,7 +11,7 @@
     $title = "Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: <span lang="en">Home</span></p>';
 
-    $content = "<h1>Il tuo negozio di Fumetti e Gaming a Padova</h1>";
+    $content = "<h1>Il tuo negozio di Fumetti e Videogiochi a Padova</h1>";
 
     $content .= '
         <div id="homeBanner">

@@ -35,3 +35,14 @@ nella cartella poptech nel localhost (solitamente in una cartella chiamata "htdo
 Aprire il browser e andare su [http://localhost/poptech](http://localhost/poptech)
 
 _have fun_
+
+### Eventuali errori & Troubleshooting
+
+- (Windows) XAMPP non si chiude e dà come errore "Eaccess Exception"
+-- https://stackoverflow.com/questions/32839132/xampp-access-violation-at-address-005abeffe
+
+- #1045 - Access denied for user 'root'@'localhost' (using password: YES)
+-- Mettere password vuota nel file "connection.php" per l'utente "root"
+
+- Non si vedono le modifiche in browser
+-- Cancellare cache e <span lang="en">cookie</span> e ricaricare la pagina

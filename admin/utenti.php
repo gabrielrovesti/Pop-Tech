@@ -9,7 +9,7 @@
 
     $template = file_get_contents('layouts/layout.html');
 
-    $pageID = 'homePage';
+    $pageID = 'utenti';
     $title = "Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: Utenti</p>';
 
@@ -21,7 +21,7 @@
 
         $content = "<h1>Utenti</h1>";
 
-        $content .= '<a href="utente.php" class="btn btn-green" aria-label="button">Aggiungi utente</a>';
+        $content .= '<a href="utente.php" class="btn btn-green">Aggiungi utente</a>';
 
         $connection = new DBAccess();
 
@@ -34,8 +34,8 @@
                 
                 $content .= '<article class="listItem">';
                     $content .= '<span>'.parse_lang($user['nome']).(($user['admin'])?' <em>Amministratore</em>':'').'</span>';
-                    $content .= '<a href="utente.php?id='.$user['id'].'" class="btn btn-info" aria-label="button">Modifica</a>';
-                    $content .= '<a href="delete.php?id='.$user['id'].'&type=utente" class="btn btn-danger" aria-label="button">Elimina</a>';
+                    $content .= '<a href="utente.php?id='.$user['id'].'" class="btn btn-info">Modifica</a>';
+                    $content .= '<a href="delete.php?id='.$user['id'].'&type=utente" class="btn btn-danger">Elimina</a>';
                 $content .= '</article>';
 
             }

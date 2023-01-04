@@ -10,8 +10,7 @@
     $template = file_get_contents('layouts/layout.html');
     $form     = file_get_contents('layouts/prodotto.html');
     
-
-    $pageID = 'homePage';
+    $pageID = 'prodotto';
     $title = "Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: <a href="index.php">Prodotti</a> > Nuovo Prodotto</p>';
 

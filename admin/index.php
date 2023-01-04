@@ -15,7 +15,7 @@
 
     if(!isLoggedIn(true)){
 
-        $content = '<p class="message errorMsg">Attenzione non disponi dei privilegi necessari per accede a questa pagina.</p>';
+        $content = '<p class="message errorMsg">Attenzione: non disponi dei privilegi necessari per accede a questa pagina.</p>';
 
     }else{
 
@@ -34,8 +34,8 @@
                 
                 $content .= '<article class="listItem">';
                     $content .= '<span>'.parse_lang($product['nome']).'</span>';
-                    $content .= '<a href="prodotto.php?id='.$product['id'].'" class="btn btn-info" aria-label="button">Modifica</a>';
-                    $content .= '<a href="delete.php?id='.$product['id'].'&type=prodotto" class="btn btn-danger" aria-label="button">Elimina</a>';
+                    $content .= '<a href="prodotto.php?id='.$product['id'].'" class="btn btn-info">Modifica</a>';
+                    $content .= '<a href="delete.php?id='.$product['id'].'&type=prodotto" class="btn btn-danger">Elimina</a>';
                 $content .= '</article>';
 
             }

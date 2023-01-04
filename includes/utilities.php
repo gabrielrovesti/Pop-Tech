@@ -10,7 +10,7 @@ require_once('connection.php');
 function replace_in_page(String $html, String $title, String $id, String $breadcrumbs, String $keywords, String $description, String $content, String $onload = ''){
 
     //Header presente in ogni pagina
-    $header = file_get_contents('./layouts/header.html');
+    $header = file_get_contents('layouts/header.html');
 
     $html = str_replace('{{onload}}',$onload,$html);
 
@@ -24,7 +24,7 @@ function replace_in_page(String $html, String $title, String $id, String $breadc
     $html = str_replace('{{content}}',$content,$html);
 
     //Footer presente in ogni pagina
-    $footer = file_get_contents('./layouts/footer.html');
+    $footer = file_get_contents('layouts/footer.html');
     $html   = str_replace('{{footer}}',$footer,$html);
 
 
@@ -89,8 +89,8 @@ function get_menu(){
     $nLinks = count($links);
 
     //Togliere dall'url restituito da PHP -- cambierà in base all'hosting (probilmente non sará necessario in fase di consegna)
-    $strToRemove = "/PopTech/";
-    $currentPage = str_replace($strToRemove,"",$_SERVER['REQUEST_URI']);
+    $strToRemove = "/poptech/";
+    $currentPage = str_replace($strToRemove,"",$_SERVER['REQUEST_URI']); 
 
     for($i=0;$i<$nLinks;$i++){
         if($currentPage==$links[$i] || ($currentPage=='' && $links[$i]=='index.php')){
@@ -99,8 +99,8 @@ function get_menu(){
             $menu .= '<li><a href="'.$links[$i].'" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</a></li>';
         }
     }
-    $menu .= '<li><a class="button" href="area-utente/registrazione.php" aria-label="button">Registrati</a></li>';
-    $menu .= '<li><a class="button" href="area-utente/login.php" aria-label="button">Accedi</a></li>';
+    $menu .= '<li><a class="button" href="area-utente/registrazione.php">Registrati</a></li>';
+    $menu .= '<li><a class="button" href="area-utente/login.php">Accedi</a></li>';
     return $menu;
 }
 
@@ -115,7 +115,7 @@ function get_product_tile($product){
             <h2>'.parse_lang($product['nome']) .'</h2>
         </header>
         <p>'.substr(parse_lang(strip_tags($product['descrizione']),""),0,100).'...</p>
-        <a href="prodotto.php?id='.$product['id'].'" aria-label="button" class="button" title="Vedi prodotto ' . parse_lang($product['nome'],true) . '">Scopri di più</a>
+        <a href="prodotto.php?id='.$product['id'].'" class="button" title="Vedi prodotto ' . parse_lang($product['nome'],true) . '">Scopri di più</a>
     </article>';
     
 }
@@ -144,7 +144,7 @@ function getThumbnail($file){
 
 function getDBConnectionError(bool $back = false){
     return '<p class="error">I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>
-        <img class="error_image" src="'.($back?'../':'').'images/comic_error.png">';
+        <img class="error_image" alt="" src="'.($back?'../':'').'images/comic_error.png">';
 }
 
 // -----------------------------------
@@ -181,9 +181,9 @@ function get_admin_menu(){
     }
 
     if(isLoggedIn(true)){
-        $menu .= '<li><a href="logout.php" aria-label="button">Esci</a></li>';
+        $menu .= '<li><a href="logout.php">Esci</a></li>';
     }else{
-        $menu = '<li><a href="login.php" aria-label="button">Accedi</a></li>';
+        $menu = '<li><a href="login.php">Accedi</a></li>';
     }
 
     return $menu;

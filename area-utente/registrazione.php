@@ -10,7 +10,7 @@
     $template = file_get_contents('layouts/layout.html');
     $form     = file_get_contents('layouts/registrazione.html');
 
-    $pageID = 'prodotti';
+    $pageID = 'registrazione';
     $title = "Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: Profilo</p>';
 
@@ -43,7 +43,7 @@
             }
 
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                array_push($errors,'<p class="message errorMsg">Inserire una mail corretta.</p>');
+                array_push($errors,'<p class="message errorMsg">Inserire una e-mail corretta.</p>');
             }
 
             if(strlen($password)<4){

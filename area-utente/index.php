@@ -40,9 +40,9 @@
                     $content .= '<span>'.parse_lang($review['product']).'</span>';
 
                     if($review['contenuto']=='' && $review['punteggio']==0)
-                        $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-green" aria-label="button">Inserisci</a>';
+                        $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-green">Inserisci</a>';
                     else
-                    $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-info" aria-label="button">Vedi</a>';
+                    $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-info"">Vedi</a>';
                 $content .= '</article>';
 
             }

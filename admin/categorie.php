@@ -9,19 +9,19 @@
 
     $template = file_get_contents('layouts/layout.html');
 
-    $pageID = 'homePage';
+    $pageID = 'categorie';
     $title = "Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: Categorie</p>';
 
     if(!isLoggedIn(true)){
 
-        $content = '<p class="message errorMsg">Attenzione non disponi dei privilegi necessari per accede a questa pagina.</p>';
+        $content = '<p class="message errorMsg">Attenzione: non disponi dei privilegi necessari per accede a questa pagina.</p>';
 
     }else{
 
         $content = "<h1>Categorie</h1>";
 
-        $content .= '<a href="categoria.php" class="btn btn-green" aria-label="button">Aggiungi Categoria</a>';
+        $content .= '<a href="categoria.php" class="btn btn-green">Aggiungi Categoria</a>';
 
         $connection = new DBAccess();
 
@@ -34,8 +34,8 @@
                 
                 $content .= '<article class="listItem">';
                     $content .= '<span>'.parse_lang($category['nome']).'</span>';
-                    $content .= '<a href="categoria.php?id='.$category['id'].'" class="btn btn-info" aria-label="button">Modifica</a>';
-                    $content .= '<a href="delete.php?id='.$category['id'].'&type=categoria" class="btn btn-danger" aria-label="button">Elimina</a>';
+                    $content .= '<a href="categoria.php?id='.$category['id'].'" class="btn btn-info">Modifica</a>';
+                    $content .= '<a href="delete.php?id='.$category['id'].'&type=categoria" class="btn btn-danger">Elimina</a>';
                 $content .= '</article>';
 
             }

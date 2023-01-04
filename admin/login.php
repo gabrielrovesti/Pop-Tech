@@ -33,7 +33,7 @@
             $password = sanitize($_POST['password'],"");
 
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                array_push($errors,'<p class="message errorMsg">formato dell\'email non corretto</p>');
+                array_push($errors,'<p class="message errorMsg">Formato dell\'email non corretto</p>');
             }
 
             if(strlen($password)<5){

@@ -9,7 +9,7 @@
 
     $pageID = 'prodotti';
     $title = "Prodotti - Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="/" lang="en">Home</a> > Prodotti</p> ';
+    $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> > Prodotti</p> ';
 
     $connection = new DBAccess;
 
@@ -44,7 +44,6 @@
         $connection->close_connection();
 
     }else{
-        $content .= '<h1>Prodotti</h1>';
         $content .= getDBConnectionError();
     }
 
