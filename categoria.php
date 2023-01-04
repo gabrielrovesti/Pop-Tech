@@ -22,7 +22,7 @@
         if(isset($_GET['id'])){
 
             $id = intval(sanitize($_GET['id'],''));        
-            $categories = $connection->exec_select_query("SELECT id, nome, keywords, descrizione FROM categoria WHERE id=$id;");
+            $categories = $connection->exec_select_query("SELECT id, nome FROM categoria WHERE id=$id;");
 
             if(count($categories)){
 
@@ -32,10 +32,7 @@
             
                 $breadcrumbs = '<p>Ti trovi in: Home > Categorie > '.parse_lang($category['nome']).'</p> ';
                 
-                $title = parse_lang($category['nome']) . ' - Pop Tech';    
-                
-                $keywords    = $category['keywords'];
-                $descrizione = $category['descrizione'];
+                $title = parse_lang($category['nome']) . ' - Pop Tech';
             
                 $content .= '<div class="productsRow">';
                 

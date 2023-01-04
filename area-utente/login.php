@@ -108,7 +108,8 @@
         }        
     }
 
-    $template = str_replace('{{menu}}',"",$template);
+    $menu = get_user_menu();
+    $template = str_replace('{{menu}}',$menu,$template);
     $template = str_replace('{{onload}}','setUserLoginChecks();addFieldsEvent();',$template);
 
 

@@ -371,17 +371,16 @@ function get_user_menu(){
 
     //Togliere dall'url restituito da PHP -- cambierà in base all'hosting (probilmente non sará necessario in fase di consegna)
     $strToRemove = "/poptech/area-utente/";
-    $currentPage = str_replace($strToRemove,"",$_SERVER['REQUEST_URI']);
-
-    for($i=0;$i<$nLinks;$i++){
-        if($currentPage==$links[$i] || ($currentPage=='' && $links[$i]=='index.php') ){
-            $menu .= '<li id="currentLink" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</li>';
-        }else{
-            $menu .= '<li><a href="'.$links[$i].'" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</a></li>';
-        }
-    }
+    $currentPage = str_replace($strToRemove,'',$_SERVER['REQUEST_URI']);
 
     if(isLoggedIn()){
+        for($i=0;$i<$nLinks;$i++){
+            if($currentPage==$links[$i] || ($currentPage=='' && $links[$i]=='index.php') ){
+                $menu .= '<li id="currentLink" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</li>';
+            }else{
+                $menu .= '<li><a href="'.$links[$i].'" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</a></li>';
+            }
+        }
         $menu .= '<li><a href="logout.php" class="button">Esci</a></li>';
     }else{
         $menu .= '<li><a href="registrazione.php" class="button">Registrati</a></li>';
