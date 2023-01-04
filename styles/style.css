@@ -19,6 +19,7 @@
     font-style: normal;
     /*bisogna aggiungere lo sfondo arancione/rosso*/
 }
+
 @font-face {
     font-family: 'Montserrat';
     src: url('../fonts/Montserrat-BoldItalic.woff');
@@ -422,27 +423,18 @@ main h2{
     background-image: linear-gradient(to bottom,var(--chiSiamoGrad1Stop1), var(--chiSiamoGrad1Stop2));
 }
 
-
 #homePage #homeBanner #picture:before{
     left:-6%;
     background-image: linear-gradient(to top, var(--homeGrad2Stop1), var(--homeGrad2Stop2));
 }
 
-/* Category ========================= */
-
-.categoryTitle{
-    display: inline-block;
-    margin: 0em;
-    padding: 0;
-}
-
 /* Pagina Prodotti ========================= */
 
-.categoyList{
+.categoryList{
     margin-bottom: 1em;
 }
 
-.categoyList a.button{
+.categoryList a.button{
     margin-right: 1em;
 }
 
@@ -455,7 +447,6 @@ main h2{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
- 
 }
 
 .productsRow article h2{
@@ -469,7 +460,6 @@ main h2{
     flex: 18% 0 1;
     border: 3px solid var(--bordercolor);
     margin-bottom: 1em;
-    margin-left: 0.55em;
     padding: 0.5em;
 
     display: flex;
@@ -492,6 +482,25 @@ main h2{
     margin: 0 auto;
 }
 
+#data{
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    position: relative;
+    border: #000 1px solid;
+    margin: 10em 7em 10em 7em;
+    padding: 0.5em;
+    position: relative;
+}
+
+#data input[type=text], #data input[type=password], #data input[type=email], #data textarea{
+    margin: 0.5em;
+    padding: 0.5em;
+    display: block;
+}
+
 /* Chi Siamo ========================= */
 
 #chiSiamo .outer-container {
@@ -509,6 +518,11 @@ main h2{
     background-color: var(--contentbgcolor);
 }
 
+#chiSiamo .img-container{
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 #chiSiamo .first .text-container{
     border-left: solid 3px var(--bordercolor);
     flex: 56% 0 0;
@@ -521,7 +535,7 @@ main h2{
 }
 
 #chiSiamo .first .img-container{
-    border-right: solid 3px  var(--bordercolor);
+    border-right: solid 3px var(--bordercolor);
     background-image: linear-gradient(to bottom, var(--chiSiamoGrad1Stop1), var(--chiSiamoGrad1Stop2));
 }
 
@@ -549,6 +563,7 @@ main h2{
 
 #chiSiamo .first .img-container:before,#chiSiamo .second .img-container:after{
     width: 40%;
+    
 }
 
 #chiSiamo .first .text-container:after{
@@ -597,7 +612,6 @@ main h2{
 
 #chiSiamo ul.membristaff li{
     display: inline-block;
-    
     border: 3px solid var(--bordercolor);
     flex: 31% 0 0;
 }
@@ -633,6 +647,7 @@ main h2{
     border-right: 3px solid var(--bordercolor);
 }
 
+
 #contatti #modulo_richieste, #contatti #info{
     flex: 45% 0 0;
     margin: 0.1em;
@@ -660,6 +675,7 @@ main h2{
 
 #contatti div#modulo_richieste:after{
     right:-1%;
+    border-left: solid 3px transparent;
     background-image: linear-gradient(to top, var(--contattiGrad1Stop1), var(--contattiGrad1Stop2));
 }
 
@@ -721,7 +737,6 @@ main h2{
     border-bottom: 3px solid var(--bordercolor);
 }
 
-
 #contatti #timetable tr:nth-of-type(even) td, #contatti #timetable tr:nth-of-type(even) th {
     background-color: var(--timetablechildrencolor);
 }
@@ -774,6 +789,10 @@ main h2{
     border-radius: 2em;
 }
 
+#prodotto picture img{
+    max-width: 100%;
+}
+
 #prodotto picture{
     flex: 45% 0 0;
     display: flex;
@@ -781,10 +800,6 @@ main h2{
     align-items: center;
     height: auto;
     border: solid 3px var(--bordercolor);
-}
-
-#prodotto picture img{
-    max-width: 100%;
 }
 
 #prodotto dl{
@@ -872,8 +887,6 @@ main h2{
     color: red;
     border:solid 3px var(--formerrorcolor);
 }
-
-
 
 /* Pagina 404 ========================= */
 

@@ -1,16 +1,13 @@
-
-<form action="login.php" method="post">
+<div id="data">
+    <form action="login.php" method="post">
+        {{errors}}
     
-    {{errors}}
-
-    <label for="email">E-mail
+        <label for="email">E-mail</label>
         <input type="text" name="email" id="email">
-    </label>
-
-    <label for="password">Password
+        
+        <label for="password">Password</label>
         <input type="password" name="password" id="password">
-    </label>
-
-    <input type="submit" name="submit" value="Accedi"  class="btn btn-info">
-
-</form>
+        
+        <input type="submit" name="submit" value="Accedi" class="btn btn-info">
+    </form>
+</div>

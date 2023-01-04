@@ -19,7 +19,7 @@
         
         $categories = $connection->exec_select_query('SELECT id, nome FROM categoria ORDER BY nome;');
 
-        $content .= '<div class="categoyList">';
+        $content .= '<div class="categoryList">';
         foreach($categories as $category){
             $content .= '<a href="#cat-'.$category['id'].'" class="button">'.parse_lang($category['nome']).'</a>';
         }

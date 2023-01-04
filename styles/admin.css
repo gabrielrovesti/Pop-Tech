@@ -1,12 +1,63 @@
+/* Monstserrat font - Open Font License https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Medium.woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-MediumItalic.woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Bold.woff');
+    font-weight: 700;
+    font-style: normal;
+    /*bisogna aggiungere lo sfondo arancione/rosso*/
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-BoldItalic.woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Italic.woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Light.woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-LightItalic.woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
 html,body{
     font-size: 100%;
     line-height: 1.5em;
+    height: 100%;
+    margin: auto;
 }
 
 body{
     max-width: 1920px;
     margin: auto;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 0em;
+    font-family: 'Montserrat',Arial, Helvetica, sans-serif;
 }
 /*Variabili CSS*/
 :root{
@@ -87,10 +138,20 @@ nav#menu ul li#currentLink{
     color:#FFF;
 }
 
-/* Margini ========================= */
+/* Breadcrumb ========================= */
 
-main,footer, nav#breadcrumbs{
+nav#breadcrumbs{
     margin: 0.5em;
+}
+
+/* Utilities ========================= */
+
+.srOnly{
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
 }
 
 /* Utilities ========================= */
@@ -130,10 +191,13 @@ main,footer, nav#breadcrumbs{
 /* Pulsanti ========================= */
 
 .btn{
-    border-radius: 0.5em;
-    text-decoration: none;
-    padding: 0.5em 0.6em 0.5em 0.6em;
-    border-width: 1px;
+    font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: .5em 1em .5em 1em;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border: 3px solid var(--bordercolor);
 }
 
 .btn:hover,.btn:focus{
@@ -168,13 +232,17 @@ label{
 
 input[type=text],input[type=password],select,textarea{
     display: block;
-    padding: 0.4em;
+    padding: 0.5em;
     border-radius: 0.3em;
     border: 1px solid var(--inputborder);
 }
 
 input[type=submit],input[type=reset]{
-    margin-top: 0.5em;
+    display: inline-block;
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid var(--inputborder);
+
 }
 
 .formBig{
@@ -215,7 +283,6 @@ input[type=submit],input[type=reset]{
     color: rgb(120, 3, 3);
 }
 
-
 .formSuccess, #contatti p.formSuccess{
     background-color: var(--formsuccesscolor);
     padding: 0.5em;
@@ -227,5 +294,67 @@ input[type=submit],input[type=reset]{
 
 .fieldError, input[type="text"].fieldError, .fieldError, input[type="password"].fieldError, input[type="email"].fieldError, input[type="tel"].fieldError, textarea.fieldError{
     color: rgb(105, 0, 0);
+    /*Placeholder solution -> Seguo la larghezza degli errori o gli input si spostano a lato*/
+    width: 80%;
     border-color: var(--errorbordercolor);
+}
+
+/* Main Content ========================= */
+
+main{
+    padding: 0.5em;
+}
+
+main h1{
+	padding: 0.3em;
+	padding-top: 0.1em;
+	text-align: center;
+	margin: 0.3em;
+}
+
+main h2{
+	padding-top: 0.7em;
+	padding-bottom: 0.7em;
+    margin: 0.3em;
+}
+
+#data{
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    position: relative;
+    border: #000 1px solid;
+    margin: 10em 7em 10em 7em;
+    padding: 0.5em;
+    position: relative;
+}
+
+#data input[type=text], #data input[type=password], #data input[type=email], #data textarea{
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+#content {
+    min-height: 100%;
+}
+
+#content:after {
+    content: "";
+    display: block;
+}
+
+/* Footer ========================= */
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding: 0.5em;
+    margin: 0.5em;
+    border: 1px solid black;
+    border-radius: 0.5em;
 }

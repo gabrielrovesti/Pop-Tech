@@ -14,7 +14,7 @@ function replace_in_page(String $html, String $title, String $id, String $breadc
 
     $html = str_replace('{{onload}}',$onload,$html);
 
-    $html   = str_replace('{{header}}',$header,$html);
+    $html  = str_replace('{{header}}',$header,$html);
     
     $html = str_replace('{{title}}',$title,$html);
     $html = str_replace('{{keywords}}',$keywords,$html);
@@ -211,9 +211,9 @@ function get_admin_menu(){
     }
 
     if(isLoggedIn(true)){
-        $menu .= '<li><a href="logout.php">Esci</a></li>';
+        $menu .= '<li><a href="logout.php" class="button">Esci</a></li>';
     }else{
-        $menu = '<li><a href="login.php">Accedi</a></li>';
+        $menu = '<li><a href="login.php" class="button">Accedi</a></li>';
     }
 
     return $menu;
@@ -382,10 +382,10 @@ function get_user_menu(){
     }
 
     if(isLoggedIn()){
-        $menu .= '<li><a href="logout.php">Esci</a></li>';
+        $menu .= '<li><a href="logout.php" class="button">Esci</a></li>';
     }else{
-        $menu = '<li><a href="login.php">Accedi</a></li>';
-        $menu .= '<li><a href="registrazione.php">Registrati</a></li>';
+        $menu .= '<li><a href="registrazione.php" class="button">Registrati</a></li>';
+        $menu .= '<li><a href="login.php" class="button">Accedi</a></li>';
     }
     return $menu;
 

@@ -23,9 +23,7 @@
 
     }else{
 
-
         $content = "<h1>Accedi</h1>";
-
 
         if(isset($_POST['submit'])){
             //Invio del form

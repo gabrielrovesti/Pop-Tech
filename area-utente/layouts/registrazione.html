@@ -1,25 +1,21 @@
-
-<form action="registrazione.php" method="post">
+<div id="data">
+    <form action="registrazione.php" method="post">
+        {{errors}}
     
-    {{errors}}
-
-    <label for="nome">Nome
+        <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" value="{{nome}}">
-    </label>
-
-    <label for="email">E-mail
+        
+        <label for="email">Indirizzo email</label>
         <input type="text" name="email" id="email" value="{{email}}">
-    </label>
-
-    <label for="password">Password
+        
+        <label for="password">Password</label>
         <input type="password" name="password" id="password">
-    </label>
-
-    <label for="passwordConfirm">Conferma Password
+        
+        <label for="passwordConfirm">Conferma Password</label>
         <input type="password" name="passwordConfirm" id="passwordConfirm">
-    </label>
-
-    <input type="submit" name="submit" value="Salva" class="btn btn-green">
-    <input type="submit" name="reset" value="Annulla" class="btn btn-info">
-
-</form>
+        
+        <input type="submit" name="submit" value="Salva" class="button">
+        <input type="reset" name="reset" value="Annulla" class="button">
+    
+    </form>
+</div>
