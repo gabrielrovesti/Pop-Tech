@@ -50,7 +50,7 @@ function parse_lang(String $string, bool $delete=false){
     $string = preg_replace('/\[\/.{2}\]/', $replaceEnd, $string); 
 
     //Rimpiazza i tag di inizio con <span lang="xx">
-    $string = preg_replace('/(\[)(.*?)(\])/', $replaceStart, $string);
+    $string = preg_replace('/(\[)([a-z]{2})(\])/', $replaceStart, $string);
 
     return $string;
 
@@ -99,8 +99,8 @@ function get_menu(){
             $menu .= '<li><a href="'.$links[$i].'" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</a></li>';
         }
     }
-    $menu .= '<li><a class="button" href="area-utente/registrazione.php">Registrati</a></li>';
-    $menu .= '<li><a class="button" href="area-utente/login.php">Accedi</a></li>';
+    $menu .= '<li><a class="button" href="area-utente/registrazione.php" >Registrati</a></li>';
+    $menu .= '<li><a class="button" href="area-utente/login.php" >Accedi</a></li>';
     return $menu;
 }
 
@@ -114,10 +114,40 @@ function get_product_tile($product){
             <img src="'.getThumbnail($product['immagine']).'" alt="'.$product['altimmagine'] .'">
             <h2>'.parse_lang($product['nome']) .'</h2>
         </header>
-        <p>'.substr(parse_lang(strip_tags($product['descrizione']),""),0,100).'...</p>
-        <a href="prodotto.php?id='.$product['id'].'" class="button" title="Vedi prodotto ' . parse_lang($product['nome'],true) . '">Scopri di più</a>
+        <p>'.get_short_product_text($product['descrizione']).'</p>
+        <a href="prodotto.php?id='.$product['id'].'"  class="button" title="Vedi prodotto ' . parse_lang($product['nome'],true) . '">Scopri di più</a>
     </article>';
     
+}
+
+function get_short_product_text($text){
+
+    $limit = 100;
+
+    if(strlen($text)<$limit)
+        return parse_lang($text);
+    else{
+
+        $shortText = substr($text,0,$limit);
+
+        $openMatches = [];
+        
+        $openLang   = preg_match_all('/(\[)([a-z]{2})(\])/', $shortText,$openMatches);
+        $closedLang = preg_match_all('/\[\/.{2}\]/',$shortText); 
+        
+        if($openLang!=$closedLang){
+
+            $fullMatches = $openMatches[0];
+            $lastMatch   = count($fullMatches);
+
+            return parse_lang($shortText.str_replace("[","[/",$fullMatches[$lastMatch-1])).'...';
+        }else{
+            return parse_lang($shortText).'...';
+        }
+
+    }
+    
+
 }
 
 /*

@@ -378,6 +378,13 @@ main h2{
 #homePage #homeBanner #slogans{
     background-image: linear-gradient(to bottom, var(--chiSiamoGrad1Stop1), var(--chiSiamoGrad1Stop2));
     border-left: 3px solid var(--bordercolor);
+    font-size: 1.8em;
+    padding: 0.5em 0em 0.5em 0em;
+    margin: 0.3em 0.3em 0.3em 0em;
+}
+
+#homePage #homeBanner #slogans ul li{
+    margin: 0.5em
 }
 
 #homePage #homeBanner #picture{
@@ -413,7 +420,7 @@ main h2{
 
 
 #homePage #homeBanner #picture:before{
-    left:-5%;
+    left:-6%;
     background-image: linear-gradient(to top, var(--homeGrad2Stop1), var(--homeGrad2Stop2));
 }
 

@@ -1,3 +1,39 @@
+:root{
+
+    --chiSiamoGrad1Stop1: #FDC708;
+    --chiSiamoGrad1Stop2: #FFF5D1;
+
+    --contattiGrad1Stop1: #55BEF9;
+    --contattiGrad1Stop2: #DCF1FD;
+    --contattiGrad2Stop1: #FFC671;
+    --contattiGrad2Stop2: #FFF27F;
+
+    --bordercolor: #000;
+   
+}
+
+/* Tema scuro ========================= */
+
+@media (prefers-color-scheme: dark) {
+    :root{
+
+        --chiSiamoGrad1Stop1: #c0610e;
+        --chiSiamoGrad1Stop2: #894911;
+        
+        --homeGrad2Stop1: #4f2162;
+        --homeGrad2Stop2: #923CB5;
+
+        --contattiGrad1Stop1: #380036;
+        --contattiGrad1Stop2: #098e8e;
+        --contattiGrad2Stop1: #A71D31;
+        --contattiGrad2Stop2: #3F0D12;
+
+        --bordercolor: #FFF;
+
+    }
+
+}
+
 /* Mobile Menu Button ========================= */
 
 header#header #mobileMenuButton{
@@ -23,6 +59,7 @@ header#header h1{
     margin-left: 0.1em;
     font-size: 5em;
 }
+
 
 /* Menu ========================= */
 
@@ -89,7 +126,14 @@ main#content h1{
 
 #homePage #homeBanner #slogans{
     flex: 100% 0 1;
-    border: 3px solid black;
+    border: 3px solid var(--bordercolor);
+    font-size: 1em;
+    margin: 0.5em 0em 1em 0em;
+    padding: 0.5em;
+}
+
+#homePage #homeBanner #slogans ul li{
+    margin: 0.5em
 }
 
 #homePage #homeBanner #slogans:after{
@@ -101,6 +145,11 @@ main#content h1{
 }
 
 /* Product list (Home, Prodotti, Categoria  ========================= */
+
+.categoyList a{
+    margin-bottom: 1em;
+}
+
 
 .productsRow{
     justify-content: space-between;
@@ -125,8 +174,8 @@ main#content h1{
     flex: calc(100% - 6px) 0 0; /* 100% meno la rarghezza dei bordi (3+3) */
     border-bottom:none;
     border-top:none;
-    border-left: 3px solid black;
-    border-right: 3px solid black;
+    border-left: 3px solid var(--bordercolor);
+    border-right: 3px solid var(--bordercolor);
     position: relative;
     margin: 0;
     padding: 0em;
@@ -145,25 +194,25 @@ main#content h1{
 
 #contatti #modulo_richieste{
     margin-bottom: 25%;
-    border-top: 3px solid black;
+    border-top: 3px solid var(--bordercolor);
     padding-bottom: 2em;
 }
 
 #contatti #info{
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid var(--bordercolor);
 }
 
 #contatti div#modulo_richieste:after{
     top:99%;
     left: -3px;
-    background-image: linear-gradient(to top, #55BEF9, #55BEF9);
+    background-image: linear-gradient(to top, var(--contattiGrad1Stop1), var(--contattiGrad1Stop1));
 }
 
 
 #contatti div#info:before{
     top: -4px;
     left: -3px;
-    background-image: linear-gradient(to bottom, #FFC671, #FFC671);
+    background-image: linear-gradient(to bottom, var(--contattiGrad2Stop1), var(--contattiGrad2Stop1));
 }
 
 #contatti h2{
@@ -197,19 +246,20 @@ th[data-title]:before, td[data-title]:before{
 #chiSiamo .text-container,#chiSiamo .img-container{
     border-top:none;
     border-bottom:none;
-    border-left: solid 3px black;
-    border-right: solid 3px black;
+    border-left: solid 3px var(--bordercolor);
+    border-right: solid 3px var(--bordercolor);
     padding: 0.2em;
 }
 
 #chiSiamo .first .text-container{
-    border-top: solid 3px black;
+    border-top: solid 3px var(--bordercolor);
     border-bottom: none;
-    flex: 100% 0 1
+    flex: 100% 0 1;
+    padding-right: 0.5em;
 }
 
 #chiSiamo .second .text-container{
-    border-bottom: solid 3px black;
+    border-bottom: solid 3px var(--bordercolor);
     border-top: none;
     flex: 100% 0 1;
 }
@@ -221,12 +271,12 @@ th[data-title]:before, td[data-title]:before{
 }
 
 #chiSiamo .first .img-container{
-    border-bottom: solid 3px black;
+    border-bottom: solid 3px var(--bordercolor);
     margin: 4em 0em 2em 0em;
 }
 
 #chiSiamo .second .img-container{
-    border-top: solid 3px black;
+    border-top: solid 3px var(--bordercolor);
     margin-bottom: 4em;
 }
 
@@ -247,24 +297,26 @@ th[data-title]:before, td[data-title]:before{
 
 
 #chiSiamo .first .text-container:after{
-    left:-1%; 
+    left:-3px; 
     top:89%;
 }
 
 #chiSiamo .second .text-container:before{
-    left:-1%; 
+    left:-3px; 
     top: -1%;
 }
 
 #chiSiamo .first .img-container:before{
-    left:0%;
-    width: calc(100% - 4px);
-    background-image: linear-gradient(to bottom, #FDC708, #FDC708);
+    left:-3px;
+    top:-2%;
+    width: calc(100% - 0px);
+    background-image: linear-gradient(to bottom, var(--chiSiamoGrad1Stop1), var(--chiSiamoGrad1Stop1));
 }
 
 #chiSiamo .second .img-container:after{
-    right:-1%;
+    right:-3px; 
     top: 98%;
+    background-image: linear-gradient(to bottom, var(--contattiGrad1Stop1), var(--contattiGrad1Stop1));
 }
 
 #chiSiamo h2{

@@ -21,7 +21,7 @@
 
         $content = "<h1>Categorie</h1>";
 
-        $content .= '<a href="categoria.php" class="btn btn-green">Aggiungi Categoria</a>';
+        $content .= '<a href="categoria.php" class="btn btn-green" >Aggiungi Categoria</a>';
 
         $connection = new DBAccess();
 
@@ -34,8 +34,8 @@
                 
                 $content .= '<article class="listItem">';
                     $content .= '<span>'.parse_lang($category['nome']).'</span>';
-                    $content .= '<a href="categoria.php?id='.$category['id'].'" class="btn btn-info">Modifica</a>';
-                    $content .= '<a href="delete.php?id='.$category['id'].'&type=categoria" class="btn btn-danger">Elimina</a>';
+                    $content .= '<a href="categoria.php?id='.$category['id'].'" class="btn btn-info" >Modifica</a>';
+                    $content .= '<a href="delete.php?id='.$category['id'].'&type=categoria" class="btn btn-danger" >Elimina</a>';
                 $content .= '</article>';
 
             }
