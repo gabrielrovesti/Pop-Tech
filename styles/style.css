@@ -282,6 +282,10 @@ nav#menu a:hover{
     color:var(--linkhovercolor);
 }
 
+nav#menu a:visited{
+    color:var(--linkvisitedcolor);
+}
+
 #mobileMenuButton{
     display: none;
 }
@@ -484,6 +488,10 @@ main h2{
     padding: 0.5em;
     cursor: pointer;
     margin: 0 auto;
+}
+
+.categoryTitle{
+    display: inline-block;
 }
 
 #data{

@@ -1,0 +1,51 @@
+/* Menu ========================= */
+
+nav#menu h1{
+   flex: 100% 0 0;
+}
+
+nav#menu{
+    flex: 100% 0 0;
+    flex-wrap: wrap;
+}
+
+nav#menu ul{
+    padding: 0em;
+    display: inline;
+}
+
+nav#menu ul li{
+   margin-bottom: 0.5em;
+}
+
+/* Lista elementi ========================= */
+
+.listItem span{
+    flex:100% 0 1;
+    margin-bottom: 0.3em;
+}
+
+.listItem a.btn{
+    margin-right: 0.3em;
+}
+
+/* Main Content ========================= */
+
+main{
+    padding: 0.5em;
+}
+
+main h1{
+    line-height: 1;
+}
+
+#data{
+    padding: 0.3em;
+    margin: 0em;
+}
+
+
+#data input[type=text], #data input[type=password], #data input[type=email], #data textarea, #data select{
+    margin: 0.5em;
+    padding: 0.5em;
+}

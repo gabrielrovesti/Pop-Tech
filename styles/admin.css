@@ -240,7 +240,7 @@ input[type=submit],input[type=reset]{
 }
 
 .formBig input,.formBig textarea{
-    min-width:50%;
+    width: 90%;
 }
 
 /* Messaggi ========================= */
@@ -326,9 +326,18 @@ main h2{
     padding: 0.5em;
 }
 
-#content {
-    min-height: 100%;
+form{
+    max-width: 100%;
 }
+
+label{
+    max-width: 100%;
+}
+
+select{
+    max-width: 95%;
+}
+
 
 #content:after {
     content: "";
