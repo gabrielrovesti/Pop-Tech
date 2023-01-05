@@ -320,7 +320,7 @@ a.button, input.button{
 }
 
 a.button:hover,input.button:hover{
-    color: var(--linkcolor);
+    color: var(--linkbuttoncolor);
     background: linear-gradient(to bottom left, var(--hover1), var(--hover2));
 }
 

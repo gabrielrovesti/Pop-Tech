@@ -151,7 +151,7 @@ nav#breadcrumbs{
     height: 1px;
     width: 1px;
     overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px); /*questa è una funzione obsoleta*/
+    clip: rect(1px, 1px, 1px, 1px);
 }
 
 /* Lista elementi ========================= */

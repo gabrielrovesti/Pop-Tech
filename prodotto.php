@@ -20,7 +20,7 @@
         if(isset($_GET['id'])){
 
             $id = intval(sanitize($_GET['id'],''));
-            $products = $connection->exec_select_query("SELECT id, nome, immagine, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto WHERE id=$id;");
+            $products = $connection->exec_select_query("SELECT id, nome, immagine, keywords, descrizione, origine, marca, modello, dimensione, peso, categoria, prezzo FROM prodotto WHERE id=$id;");
             
 
             if(count($products)){
@@ -57,6 +57,7 @@
                 $content = str_replace('{{prezzo}}',$product['prezzo'],$content);
 
                 $descrizione = parse_lang(strip_tags($product['descrizione']),true);
+                $keywords    = $product['keywords'];
 
                 $feedbacks = $connection->exec_select_query("SELECT contenuto, punteggio FROM recensione WHERE prodotto=$id;"); 
                 $connection->close_connection();

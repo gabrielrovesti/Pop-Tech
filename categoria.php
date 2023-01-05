@@ -11,7 +11,7 @@
 
     $pageID      = 'categoria';
     $title       = "Categoria - Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> > Categoria</p>';
+    $breadcrumbs = '';
     $content     = '';
 
     $keywords    = '';
@@ -22,7 +22,7 @@
         if(isset($_GET['id'])){
 
             $id = intval(sanitize($_GET['id'],''));        
-            $categories = $connection->exec_select_query("SELECT id, nome FROM categoria WHERE id=$id;");
+            $categories = $connection->exec_select_query("SELECT id, nome, keywords, descrizione FROM categoria WHERE id=$id;");
 
             if(count($categories)){
 
@@ -30,9 +30,12 @@
             
                 $content .= '<h1 class="comic-title">'.parse_lang($category['nome']).'</h1>';
             
-                $breadcrumbs = '<p>Ti trovi in: Home > Categorie > '.parse_lang($category['nome']).'</p> ';
+                $breadcrumbs = '<p>Ti trovi in: <a href="index.php"><span lang="en">Home</span></a> > Categorie > '.parse_lang($category['nome']).'</p> ';
                 
                 $title = parse_lang($category['nome']) . ' - Pop Tech';
+
+                $keywords    = $category['keywords'];
+                $descrizione = $category['descrizione'];
             
                 $content .= '<div class="productsRow">';
                 
