@@ -60,9 +60,9 @@ html,body{
     --textcolor: #000;
     --bgcolor: #fff;
     --bgimgcolor: #FDA30A;
-    --linkcolor: #0095C5;
-    --linkvisitedcolor:#0400B5;
-    --linkhovercolor: #0095C5;
+    --linkcolor: #4747FF;
+    --linkvisitedcolor:#920eba;
+    --linkhovercolor: #4747FF;
     --currentlinkcolor: #0056A6;
     --hover1: red;
     --hover2: orange;
@@ -107,13 +107,12 @@ html,body{
         --textcolor: #fff;
         --bgcolor: #000;
         --bgimgcolor: #1A0909;
-        --linkcolor: #8EE2FD;
+        --linkcolor: #5AD3FC;
         --linkhovercolor: #1995B0;
         --linkvisitedcolor:#C769E9;
         --currentlinkcolor: #1995B0;
         --hover1: red;
         --hover2: orange;
-
 
         --chiSiamoGrad1Stop1: #c0610e;
         --chiSiamoGrad1Stop2: #894911;
@@ -265,11 +264,13 @@ nav#menu ul li{
     margin-right: 1.8em;
 }
 
+/*Make the currentlink accessible and visible in color and contrast to W3C*/
 nav#menu ul li#currentLink{
     font-weight: bold;
-    text-decoration: underline;
-    text-decoration-style: dashed;
     color: var(--currentlinkcolor);
+    border: 1px solid var(--bordercolor);
+    border-radius: 0.5em;
+    padding: 0.2em;
 }
 
 nav#menu a{

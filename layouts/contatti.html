@@ -7,27 +7,27 @@
 
         <form action="contatti.php" method="POST">
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Inserire nome" required="required" data-msg-required="Per favore, inserisci il tuo nome" data-msg-invalid="Formato testo non corretto" value="{{nome}}">
+            <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required="required" data-msg-required="Per favore, inserisci il tuo nome" data-msg-invalid="Formato testo non corretto" value="{{nome}}">
                                 
             <label for="email" lang="en">Indirizzo e-mail</label>
-            <input type="email" id="email" name="email" placeholder="Inserire e-mail" required="required" data-msg-required="Per favore, inserisci la tua casella di posta" data-msg-invalid="Formato non corretto" value="{{email}}">
+            <input type="email" id="email" name="email" placeholder="Inserire la tua e-mail" required="required" data-msg-required="Per favore, inserisci la tua casella di posta" data-msg-invalid="Formato non corretto" value="{{email}}">
             
             <label for="telefono">Telefono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Inserire telefono" data-msg-invalid="Formato telefono non corretto" value="{{telefono}}">
+            <input type="tel" id="telefono" name="telefono" placeholder="Inserisci il tuo telefono" data-msg-invalid="Formato telefono non corretto" value="{{telefono}}">
         
             <label for="messaggio">Messaggio</label>
             <textarea id="messaggio" name="messaggio" placeholder="Inserisci qui il tuo messaggio" required="required" data-msg-required="Per favore, inserisci il tuo messaggio" data-msg-invalid="Formato testo non corretto">{{messaggio}}</textarea>
 
             <label for="privacypolicy"><input type="checkbox" id="privacypolicy" name="privacy" value="1" required="required">Accetta la nostra <a href="privacy.html"><span lang="en">Privacy Policy</span></a></label>
 
-            <input type="submit" class="button" value="invia" name="Invia">
-            <input type="reset" class="button" value="cancella" name="Cancella">
+            <input type="submit" name="submit" value="Invia" class="button">
+            <input type="submit" name="reset" value="Cancella" class="button">
         </form>
     </div>
     <div id="info">
         <h2>DOVE SIAMO</h2>
         <p>
-            Via Gattamelata 123 Padova <abbr title="Padova">PD</abbr>
+            Via Trieste, 12, Padova (<abbr title="Padova">PD</abbr>)
         </p>
         <a href="https://google.com/maps" class="button" target="_blank"><span lang="en">Google Maps</span></a>            
         <a href="https://maps.apple.com" class="button" target="_blank"><span lang="en">Apple Maps</span></a>
