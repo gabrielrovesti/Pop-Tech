@@ -32,11 +32,11 @@
 
             foreach($categories as $category){
                 
-                $content .= '<article class="listItem">';
+                $content .= '<div class="listItem">';
                     $content .= '<span>'.parse_lang($category['nome']).'</span>';
                     $content .= '<a href="categoria.php?id='.$category['id'].'" class="btn btn-info" >Modifica</a>';
                     $content .= '<a href="delete.php?id='.$category['id'].'&type=categoria" class="btn btn-danger" >Elimina</a>';
-                $content .= '</article>';
+                $content .= '</div>';
 
             }
 

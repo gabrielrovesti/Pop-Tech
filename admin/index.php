@@ -32,11 +32,11 @@
 
             foreach($products as $product){
                 
-                $content .= '<article class="listItem">';
+                $content .= '<div class="listItem">';
                     $content .= '<span>'.parse_lang($product['nome']).'</span>';
                     $content .= '<a href="prodotto.php?id='.$product['id'].'" class="btn btn-info">Modifica</a>';
                     $content .= '<a href="delete.php?id='.$product['id'].'&type=prodotto" class="btn btn-danger">Elimina</a>';
-                $content .= '</article>';
+                $content .= '</div>';
 
             }
 

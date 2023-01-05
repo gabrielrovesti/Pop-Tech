@@ -32,11 +32,11 @@
 
             foreach($faqs as $faq){
                 
-                $content .= '<article class="listItem">';
+                $content .= '<div class="listItem">';
                     $content .= '<span>'.parse_lang($faq['domanda']).'</span>';
                     $content .= '<a href="faq.php?id='.$faq['id'].'" class="btn btn-info">Modifica</a>';
                     $content .= '<a href="delete.php?id='.$faq['id'].'&type=faq" class="btn btn-danger">Elimina</a>';
-                $content .= '</article>';
+                $content .= '</div>';
 
             }
 

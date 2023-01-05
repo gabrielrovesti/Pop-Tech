@@ -36,14 +36,14 @@
 
             foreach($reviews as $review){
 
-                $content .= '<article class="listItem">';
+                $content .= '<div class="listItem">';
                     $content .= '<span>'.parse_lang($review['product']).'</span>';
 
                     if($review['contenuto']=='' && $review['punteggio']==0)
                         $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-green">Inserisci</a>';
                     else
-                    $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-info"">Vedi</a>';
-                $content .= '</article>';
+                    $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-info">Vedi</a>';
+                $content .= '</div>';
 
             }
 

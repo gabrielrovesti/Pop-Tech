@@ -32,12 +32,12 @@
 
             foreach($reviews as $review){
 
-                $content .= '<article class="listItem">';
+                $content .= '<div class="listItem">';
                     $content .= '<span>'.$review['user'].' - ';
                     $content .= parse_lang($review['product']).'</span>';
                     $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-info">Modifica</a>';
                     $content .= '<a href="delete.php?id='.$review['id'].'&type=recensione" class="btn btn-danger">Elimina</a>';
-                $content .= '</article>';
+                $content .= '</div>';
 
             }
 

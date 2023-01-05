@@ -11,7 +11,7 @@
 
     $pageID = 'contattaci';
     $title = "Contatti - Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> > Contatti</p>';
+    $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Contatti</p>';
 
     $content = "";
 

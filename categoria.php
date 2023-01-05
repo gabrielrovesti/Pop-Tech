@@ -30,7 +30,7 @@
             
                 $content .= '<h1 class="comic-title">'.parse_lang($category['nome']).'</h1>';
             
-                $breadcrumbs = '<p>Ti trovi in: <a href="index.php"><span lang="en">Home</span></a> > Categorie > '.parse_lang($category['nome']).'</p> ';
+                $breadcrumbs = '<p>Ti trovi in: <a href="index.php"><span lang="en">Home</span></a> &gt; Categorie &gt; '.parse_lang($category['nome']).'</p> ';
                 
                 $title = parse_lang($category['nome']) . ' - Pop Tech';
 

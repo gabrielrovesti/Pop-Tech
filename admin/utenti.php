@@ -32,11 +32,11 @@
 
             foreach($users as $user){
                 
-                $content .= '<article class="listItem">';
+                $content .= '<div class="listItem">';
                     $content .= '<span>'.parse_lang($user['nome']).(($user['admin'])?' <em>Amministratore</em>':'').'</span>';
                     $content .= '<a href="utente.php?id='.$user['id'].'" class="btn btn-info">Modifica</a>';
                     $content .= '<a href="delete.php?id='.$user['id'].'&type=utente" class="btn btn-danger">Elimina</a>';
-                $content .= '</article>';
+                $content .= '</div>';
 
             }
 

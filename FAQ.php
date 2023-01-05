@@ -9,7 +9,7 @@
 
     $pageID = 'FAQ';
     $title = "FAQ - Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> > <abbr title="Frequently Asked Questions" lang="en">FAQ</abbr></p> ';
+    $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; <abbr title="Frequently Asked Questions" lang="en">FAQ</abbr></p> ';
 
     $content = '<h1><abbr title="Frequently Asked Questions" lang="en">FAQ</abbr></h1>';
 

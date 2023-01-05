@@ -9,7 +9,7 @@
 
     $pageID = 'prodotti';
     $title = "Prodotti - Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> > Prodotti</p> ';
+    $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Prodotti</p> ';
 
     $connection = new DBAccess;
 

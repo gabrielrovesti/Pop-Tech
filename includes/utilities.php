@@ -122,7 +122,7 @@ function get_product_tile($product){
 
 function get_short_product_text($text){
 
-    $limit = 100;
+    $limit = 150;
 
     if(strlen($text)<$limit)
         return parse_lang($text);

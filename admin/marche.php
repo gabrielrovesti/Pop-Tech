@@ -32,11 +32,11 @@
 
             foreach($brands as $brand){
                 
-                $content .= '<article class="listItem">';
+                $content .= '<div class="listItem">';
                     $content .= '<span>'.parse_lang($brand['nome']).'</span>';
                     $content .= '<a href="marca.php?id='.$brand['id'].'" class="btn btn-info">Modifica</a>';
                     $content .= '<a href="delete.php?id='.$brand['id'].'&type=marca" class="btn btn-danger">Elimina</a>';
-                $content .= '</article>';
+                $content .= '</div>';
 
             }
 

@@ -278,6 +278,10 @@ nav#menu a{
     color: var(--textcolor);
 }
 
+nav#menu a:hover{
+    color:var(--linkhovercolor);
+}
+
 #mobileMenuButton{
     display: none;
 }
