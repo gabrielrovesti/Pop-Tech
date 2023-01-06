@@ -13,7 +13,7 @@
 
     $pageID = 'recensione';
     $title = "Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="index.php">Le tue Recensioni</a> > Visualizza Recensione</p>';
+    $breadcrumbs = '<p>Ti trovi in: <a href="index.php">Le tue Recensioni</a> &gt; Visualizza Recensione</p>';
 
     $utente = $_SESSION['user'];
 
@@ -127,8 +127,7 @@
                         $review = $reviews[0];
 
                         $content = "<h1>Visualizza Recensione</h1>";
-
-                        $breadcrumbs = '<p>Ti trovi in: <a href="index.php">Recensioni</a> > Visualizza Recensione</p>';
+                        $breadcrumbs = '<p>Ti trovi in: <a href="index.php">Recensioni</a> &gt; Visualizza Recensione</p>';
 
                         $utente     = $review['utente'];
                         $prodotto   = $review['prodotto'];
@@ -139,7 +138,7 @@
                         if(isset($prodotti[0])){
                             $nomeProdotto = parse_lang($prodotti[0]['nome']);
                         }
-
+                        
                         if($contenuto == "" && $punteggio == 0){
 
                             //Se la recensione è impostata come "nuova" dall'amministratore mostra il form
@@ -153,45 +152,31 @@
                                             
                             $form = str_replace('{{errors}}',$errorsStr,$form);
 
-
                             $content .= $form;
 
                         }else{
                             //Altrimenti mostra la pagina statica di riepilogo
-
-                            $viewPage= str_replace('{{nomeProdotto}}',$nomeProdotto,$viewPage);
+                            
+                            $viewPage = str_replace('{{nomeProdotto}}',$nomeProdotto,$viewPage);
                             $viewPage = str_replace('{{contenuto}}',$contenuto,$viewPage);
                             $viewPage = str_replace('{{punteggio}}',$punteggio,$viewPage);
 
-
                             $content .= $viewPage;
-
+                            
                         }
-
                     }else{
                         $content .= '<p class="message errorMsg">Recensione non trovata.</p>';
                     }           
-
-                }
-
-                
+                }   
             }
             $connection->close_connection();
-
         }else{
             $content .= getDBConnectionError(true);
         }
 
     }
 
-    $menu = get_admin_menu();
+    $menu = get_user_menu();
     $template = str_replace('{{menu}}',$menu,$template);
-    $template = str_replace('{{onload}}','setUserRecensioneChecks();addFieldsEvent();',$template);
-    
-    $template = str_replace('{{title}}',$title,$template);
-    $template = str_replace('{{breadcrumbs}}',$breadcrumbs,$template);
-    $template = str_replace('{{content}}',$content,$template);
-
-    echo $template;
-
+    echo replace_in_user_page($template,$title,$pageID,$breadcrumbs,$content,'setUserRecensioneChecks();addFieldsEvent();');
 ?>

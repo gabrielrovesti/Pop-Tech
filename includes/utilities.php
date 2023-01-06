@@ -27,9 +27,25 @@ function replace_in_page(String $html, String $title, String $id, String $breadc
     $footer = file_get_contents('layouts/footer.html');
     $html   = str_replace('{{footer}}',$footer,$html);
 
+    return $html;
+}
+/*Senza keywords e descrizione per pagine utente e replicare struttura menù*/
+function replace_in_user_page(String $html, String $title, String $id, String $breadcrumbs, String $content, String $onload = ''){
+
+    //Header presente in ogni pagina
+    $header = file_get_contents('../layouts/header.html');
+    $html = str_replace('{{onload}}',$onload,$html);
+    $html = str_replace('{{header}}',$header,$html);
+    $html = str_replace('{{title}}',$title,$html);
+    $html = str_replace('{{pageID}}',$id,$html);
+    $html = str_replace('{{breadcrumbs}}',$breadcrumbs,$html);
+    $html = str_replace('{{content}}',$content,$html);
+
+    //Footer presente in ogni pagina
+    $footer = file_get_contents('../layouts/footer.html');
+    $html   = str_replace('{{footer}}',$footer,$html);
 
     return $html;
-
 }
 
 /*
@@ -386,6 +402,8 @@ function get_user_menu(){
         $menu .= '<li><a href="registrazione.php" class="button">Registrati</a></li>';
         $menu .= '<li><a href="login.php" class="button">Accedi</a></li>';
     }
+
+
     return $menu;
 
 }

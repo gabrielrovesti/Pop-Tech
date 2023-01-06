@@ -224,6 +224,8 @@ footer{
     flex-wrap: wrap;
     margin: 0.5em;
     padding: 0.5em;
+    
+    margin-top: auto;
     border: 3px solid var(--bordercolor);
 }
 
@@ -264,7 +266,30 @@ nav#menu ul li{
     margin-right: 1.8em;
 }
 
-/*Make the currentlink accessible and visible in color and contrast to W3C*/
+/* Recensioni utente ========================= */
+.listItem{
+    padding: 0.2em 0.2em 0.2em 0.5em;
+    margin: 0.5em 0em 0.5em 0em;
+    border: 1px solid var(--bordercolor);
+    border-radius: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.listItem:hover{
+    background: var(--itemhovercolor);
+}
+
+.listItem span{
+    flex-grow: 1;
+}
+
+.listItem a.btn{
+    margin-right: 0.3em;
+}
+
+
 nav#menu ul li#currentLink{
     font-weight: bold;
     color: var(--currentlinkcolor);
@@ -299,6 +324,30 @@ nav#menu a:visited{
     display: block;
     margin: 0 auto;
     height: auto;
+}
+
+/* Recensioni utente ========================= */
+.review{
+    padding: 0.2em 0.2em 0.2em 0.5em;
+    margin: 0.5em 0em 0.5em 0em;
+    border: 1px solid var(--bordercolor);
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin: auto;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.review dt{
+    font-weight: bold;
+    margin: 0.5em 0em 0.5em 0em;
+}
+
+.review dd {
+    margin: 0.5em 0em 0.5em 0em;
+    text-align: center;
 }
 
 /* Anchor Links ========================= */
@@ -350,6 +399,10 @@ input.button{
 
 main{
     padding: 0.5em;
+}
+
+#content{
+    flex: 1 0 auto;
 }
 
 main h1{
@@ -502,17 +555,28 @@ main h2{
     display: flex;
     text-align: center;
     position: relative;
-    border: #000 1px solid;
-    margin: 10em 7em 10em 7em;
+    border: 1px solid var(--bordercolor);
+    border-radius: 1.5em;
+    margin: 6em 5em 6em 5em;
     padding: 0.5em;
     position: relative;
+    flex: 1 0 0;
 }
 
 #data input[type=text], #data input[type=password], #data input[type=email], #data textarea{
-    margin: 0.5em;
     padding: 0.5em;
+    margin: 0.5em;
     display: block;
+    width: 100%;
+    border: solid 3px var(--bordercolor);
 }
+
+#data button[type=submit], #data button[type=reset]{
+    font-size: 1em;
+    padding: 0.5em;
+    color: var(--textcolor);
+}
+
 
 /* Chi Siamo ========================= */
 

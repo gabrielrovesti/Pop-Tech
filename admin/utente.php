@@ -12,7 +12,7 @@
 
     $pageID = 'utente';
     $title = "Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="utenti.php">Utenti</a> > Nuovo utente</p>';
+    $breadcrumbs = '<p>Ti trovi in: <a href="utenti.php">Utenti</a> &gt; Nuovo utente</p>';
 
     if(!isLoggedIn(true)){
 
@@ -120,7 +120,7 @@
 
                         $content = "<h1>Modifica ".parse_lang($user['nome'])."</h1>";
 
-                        $breadcrumbs = '<p>Ti trovi in: <a href="utenti.php">Utenti</a> > '.parse_lang($user['nome']).'</p>';
+                        $breadcrumbs = '<p>Ti trovi in: <a href="utenti.php">Utenti</a> &gt; '.parse_lang($user['nome']).'</p>';
 
                         $nome  = $user['nome'];
                         $email = $user['email'];

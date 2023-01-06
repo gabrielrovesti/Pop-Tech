@@ -34,8 +34,8 @@
                 
                 $content .= '<div class="listItem">';
                     $content .= '<span>'.parse_lang($category['nome']).'</span>';
-                    $content .= '<a href="categoria.php?id='.$category['id'].'" class="btn btn-info" >Modifica</a>';
-                    $content .= '<a href="delete.php?id='.$category['id'].'&type=categoria" class="btn btn-danger" >Elimina</a>';
+                    $content .= '<span><a href="categoria.php?id='.$category['id'].'" class="btn btn-info" >Modifica</a>';
+                    $content .= '<a href="delete.php?id='.$category['id'].'&type=categoria" class="btn btn-danger" >Elimina</a></span>';
                 $content .= '</div>';
 
             }

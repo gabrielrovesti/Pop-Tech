@@ -69,8 +69,8 @@ body{
     --bordercolor: #000;
     --itemhovercolor: lightgray;
     --btncolor:#FFF;
-    --btnbgcolor: #218c74; 
-    --btnbordercolor: #218c74;
+    --btnbgcolor: #145749; 
+    --btnbordercolor: #145749;
     --btninfobordercolor: #227093;
     --btninfobgcolor: #227093; 
     --btndangerbgcolor: #b33939;
@@ -106,10 +106,9 @@ nav#menu h1{
 
 nav#menu{
     display: flex;
-    flex-direction: row;
     padding: 0em 0.2em 0em 0.5em;
     margin: 0.5em;
-    border: 1px solid black;
+    border: 1px solid var(--bordercolor);
     border-radius: 0.5em;
 }
 
@@ -157,25 +156,49 @@ nav#breadcrumbs{
 /* Lista elementi ========================= */
 
 .listItem{
-    padding: 0.2em 0.2em 0.2em 0.5em;
+    padding: 0em 0.2em 0em 0.5em;
     margin: 0.5em 0em 0.5em 0em;
     border: 1px solid var(--bordercolor);
     border-radius: 0.5em;
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
     align-items: center;
+    justify-content: space-between;
 }
+  
 
 .listItem:hover{
     background: var(--itemhovercolor);
 }
 
 .listItem span{
-    flex-grow: 1;
+    font-weight: bold;
 }
 
-.listItem a.btn{
-    margin-right: 0.3em;
+
+/* Recensioni utente ========================= */
+.review{
+    padding: 0.2em 0.2em 0.2em 0.5em;
+    margin: 0.5em 0em 0.5em 0em;
+    border: 1px solid var(--bordercolor);
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin: auto;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.review dt{
+    font-weight: bold;
+    margin: 0.5em 0em 0.5em 0em;
+}
+
+.review dd {
+    margin: 0.5em 0em 0.5em 0em;
+    text-align: center;
 }
 
 /* Pulsanti ========================= */
@@ -199,6 +222,16 @@ nav#breadcrumbs{
     background-color: var(--btnbgcolor);
     border-color: var(--btnbordercolor);
     color:var(--btncolor);
+}
+.btn-info, .btn-danger, .btn-green{
+    display: inline-block;
+    margin: 0.5em;
+}
+
+.btn-green{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-info,.btn-info:visited,.btn-info:hover{
@@ -315,11 +348,28 @@ main h2{
     display: flex;
     text-align: center;
     position: relative;
-    border: #000 1px solid;
-    margin: 1em ;
+    border: 1px solid var(--bordercolor);
+    border-radius: 1.5em;
+    margin: 10em 7em 10em 7em;
     padding: 0.5em;
     position: relative;
+    flex: 1 0 0;
 }
+
+#data input[type=text], #data input[type=password], #data input[type=email], #data textarea{
+    padding: 0.5em;
+    margin: 0.5em;
+    display: block;
+    width: 100%;
+    border: solid 3px var(--bordercolor);
+}
+
+#data button[type=submit], #data button[type=reset]{
+    font-size: 1em;
+    padding: 0.5em;
+    color: var(--textcolor);
+}
+
 
 #data input[type=text], #data input[type=password], #data input[type=email], #data textarea{
     margin: 0.5em;

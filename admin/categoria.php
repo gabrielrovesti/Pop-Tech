@@ -12,7 +12,7 @@
 
     $pageID = 'categoria';
     $title = "Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="categorie.php">Categorie</a> > Nuova Categoria</p>';
+    $breadcrumbs = '<p>Ti trovi in: <a href="categorie.php">Categorie</a> &gt; Nuova Categoria</p>';
 
 
     if(!isLoggedIn(true)){

@@ -19,7 +19,7 @@
 
     }else{
 
-        $content = "<h1>marche</h1>";
+        $content = "<h1>Marche</h1>";
 
         $content .= '<a href="marca.php" class="btn btn-green">Aggiungi Marca</a>';
 
@@ -34,8 +34,8 @@
                 
                 $content .= '<div class="listItem">';
                     $content .= '<span>'.parse_lang($brand['nome']).'</span>';
-                    $content .= '<a href="marca.php?id='.$brand['id'].'" class="btn btn-info">Modifica</a>';
-                    $content .= '<a href="delete.php?id='.$brand['id'].'&type=marca" class="btn btn-danger">Elimina</a>';
+                    $content .= '<span><a href="marca.php?id='.$brand['id'].'" class="btn btn-info">Modifica</a>';
+                    $content .= '<a href="delete.php?id='.$brand['id'].'&type=marca" class="btn btn-danger">Elimina</a></span>';
                 $content .= '</div>';
 
             }

@@ -21,7 +21,7 @@
 
         $content = "<h1>FAQ</h1>";
 
-        $content .= '<a href="faq.php" class="btn btn-green">Aggiungi <abbr title="Frequently Asked Questions" lang="en">FAQ</abbr></a>';
+        $content .= '<a href="faq.php" class="btn btn-green"> Aggiungi FAQ</a>';
 
         $connection = new DBAccess();
 
@@ -34,8 +34,8 @@
                 
                 $content .= '<div class="listItem">';
                     $content .= '<span>'.parse_lang($faq['domanda']).'</span>';
-                    $content .= '<a href="faq.php?id='.$faq['id'].'" class="btn btn-info">Modifica</a>';
-                    $content .= '<a href="delete.php?id='.$faq['id'].'&type=faq" class="btn btn-danger">Elimina</a>';
+                    $content .= '<span><a href="faq.php?id='.$faq['id'].'" class="btn btn-info">Modifica</a>';
+                    $content .= '<a href="delete.php?id='.$faq['id'].'&type=faq" class="btn btn-danger">Elimina</a></span>';
                 $content .= '</div>';
 
             }

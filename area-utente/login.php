@@ -110,13 +110,5 @@
 
     $menu = get_user_menu();
     $template = str_replace('{{menu}}',$menu,$template);
-    $template = str_replace('{{onload}}','setUserLoginChecks();addFieldsEvent();',$template);
-
-
-    $template = str_replace('{{title}}',$title,$template);
-    $template = str_replace('{{breadcrumbs}}',$breadcrumbs,$template);
-    $template = str_replace('{{content}}',$content,$template);
-
-    echo $template;
-
+    echo replace_in_user_page($template,$title,$pageID,$breadcrumbs,$content, 'setUserLoginChecks();addFieldsEvent();');
 ?>

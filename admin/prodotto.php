@@ -12,7 +12,7 @@
     
     $pageID = 'prodotto';
     $title = "Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="index.php">Prodotti</a> > Nuovo Prodotto</p>';
+    $breadcrumbs = '<p>Ti trovi in: <a href="index.php">Prodotti</a> &gt; Nuovo Prodotto</p>';
 
     if(!isLoggedIn(true)){
 

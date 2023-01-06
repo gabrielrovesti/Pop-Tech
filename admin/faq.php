@@ -12,12 +12,12 @@
 
     $pageID = 'faq';
     $title = "Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="faqs.php">FAQ</a> > Nuova FAQ</p>';
+    $breadcrumbs = '<p>Ti trovi in: <a href="faqs.php">FAQ</a> &gt; Nuova FAQ</p>';
 
 
     if(!isLoggedIn(true)){
 
-        $content = '<p class="message errorMsg">Attenzione non disponi dei privilegi necessari per accede a questa pagina.</p>';
+        $content = '<p class="message errorMsg">Attenzione: non disponi dei privilegi necessari per accede a questa pagina.</p>';
 
         }else{
 
@@ -109,7 +109,7 @@
 
                         $content = "<h1>Modifica ".parse_lang($faq['domanda'])."</h1>";
 
-                        $breadcrumbs = '<p>Ti trovi in: <a href="faqs.php">FAQ</a> > '.parse_lang($faq['domanda']).'</p>';
+                        $breadcrumbs = '<p>Ti trovi in: <a href="faqs.php">FAQ</a> &gt; '.parse_lang($faq['domanda']).'</p>';
 
                         $domanda  = $faq['domanda'];
                         $risposta = $faq['risposta'];

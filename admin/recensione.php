@@ -12,7 +12,7 @@
 
     $pageID = 'recensione';
     $title = "Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: <a href="recensioni.php">Recensioni</a> > Nuova recensione</p>';
+    $breadcrumbs = '<p>Ti trovi in: <a href="recensioni.php">Recensioni</a> &gt; Nuova recensione</p>';
 
     $errorsStr = "";
 
@@ -136,7 +136,7 @@
 
                         $content = "<h1>Modifica Recensione</h1>";
 
-                        $breadcrumbs = '<p>Ti trovi in: <a href="recensioni.php">Recensioni</a> > Modifica Recensione</p>';
+                        $breadcrumbs = '<p>Ti trovi in: <a href="recensioni.php">Recensioni</a> &gt; Modifica Recensione</p>';
 
                         $utente     = $review['utente'];
                         $prodotto   = $review['prodotto'];

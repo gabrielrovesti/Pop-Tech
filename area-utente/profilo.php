@@ -12,7 +12,7 @@
 
     $pageID = 'profilo';
     $title = "Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: Profilo</p>';
+    $breadcrumbs = '<p>Ti trovi in: Area Utente &gt; Profilo</p>';
 
     $nome  = '';
     $email = '';
@@ -21,9 +21,7 @@
     $errors    = [];
 
     if(!isLoggedIn()){
-
         $content = '<p class="message errorMsg">Attenzione: non disponi dei privilegi necessari per accede a questa pagina.</p>';
-
     }else{
 
         $content = "<h1>Il tuo profilo</h1>";
@@ -33,12 +31,8 @@
         $connection = new DBAccess();
 
         if($connection->open_connection()){
-
-
             if(isset($_POST['submit'])){
-                //Invio del form
-    
-                //Prelevamento dati
+                //Invio del form e prelevamento dati
                 
                 $nome  = sanitize($_POST['nome'],"");
                 $email = sanitize($_POST['email'],"");
@@ -58,7 +52,6 @@
                 }
 
                 if(count($errors)==0){
-
                     $query = "";
 
                     //Richiesta di modifica
@@ -73,9 +66,7 @@
                     }else{
                         $content .= '<p class="message errorMsg">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
                     }
-
                 }else{
-
                     //Ritorna il form con i dati precompilati
                     $errorsStr = '<ul>';
                     foreach($errors as $error){
@@ -89,12 +80,8 @@
                     $form = str_replace('{{errors}}',$errorsStr,$form);
 
                     $content .= $form;
-
                 }
-
             }else{
-
-
                 $users = $connection->exec_select_query('SELECT nome,email FROM utente WHERE id='.$userid.';');
 
                 if(isset($users[0])){
@@ -106,26 +93,16 @@
                     $form = str_replace('{{nome}}',$user['nome'],$form);
 
                 }
-                
                 $content .= $form;
-
             }
             $connection->close_connection();
 
         }else{
             $content .= getDBConnectionError(true);
         }
-
     }
 
     $menu = get_user_menu();
     $template = str_replace('{{menu}}',$menu,$template);
-    $template = str_replace('{{onload}}','setUserProfiloChecks();addFieldsEvent();',$template);
-
-    $template = str_replace('{{title}}',$title,$template);
-    $template = str_replace('{{breadcrumbs}}',$breadcrumbs,$template);
-    $template = str_replace('{{content}}',$content,$template);
-
-    echo $template;
-
+    echo replace_in_user_page($template,$title,$pageID,$breadcrumbs,$content, 'setUserProfiloChecks();addFieldsEvent();');
 ?>  

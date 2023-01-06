@@ -9,9 +9,9 @@
 
     $template = file_get_contents('layouts/layout.html');
 
-    $pageID = 'prodotti';
+    $pageID = 'Area Utente';
     $title = "Pop Tech";
-    $breadcrumbs = '<p>Ti trovi in: Prodotti</p>';
+    $breadcrumbs = '<p>Ti trovi in: Area Utente &gt; Recensioni</p>';
 
     if(!isLoggedIn()){
 
@@ -35,14 +35,13 @@
             }
 
             foreach($reviews as $review){
-
                 $content .= '<div class="listItem">';
                     $content .= '<span>'.parse_lang($review['product']).'</span>';
 
                     if($review['contenuto']=='' && $review['punteggio']==0)
                         $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-green">Inserisci</a>';
                     else
-                    $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-info">Vedi</a>';
+                    $content .= '<a href="recensione.php?id='.$review['id'].'" class="button">Vedi</a>';
                 $content .= '</div>';
 
             }
@@ -55,12 +54,5 @@
 
     $menu = get_user_menu();
     $template = str_replace('{{menu}}',$menu,$template);
-    $template = str_replace('{{onload}}','',$template);
-
-    $template = str_replace('{{title}}',$title,$template);
-    $template = str_replace('{{breadcrumbs}}',$breadcrumbs,$template);
-    $template = str_replace('{{content}}',$content,$template);
-
-    echo $template;
-
+    echo replace_in_user_page($template,$title,$pageID,$breadcrumbs,$content, '');
 ?>  
