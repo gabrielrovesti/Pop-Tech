@@ -84,6 +84,7 @@
             }
         }
     }else{
+        $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; <a href="prodotti.php">Prodotti</a> &gt; Prodotto</p> ';
         $content .= getDBConnectionError();
     }
 
