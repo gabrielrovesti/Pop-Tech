@@ -189,7 +189,9 @@ function getThumbnail($file){
 }
 
 function getDBConnectionError(bool $back = false){
-    return '<p class="error">I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.</p>
+    return '<p class="error">I sistemi sono momentaneamente fuori servizio. Ci scusiamo per il disagio.
+    Torna alla <a href="'.($back?'../':'').'index.php">Home</a> o riprova più tardi.
+    Se il problema persiste contatta l\'amministratore.</p>
         <img class="error_image" alt="" src="'.($back?'../':'').'images/comic_error.png">';
 }
 

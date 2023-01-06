@@ -53,6 +53,8 @@
         $connection->close_connection();
 
     }else{
+        $breadcrumbs = '<p>Ti trovi in: <span lang="en">Home</span></p>';
+        $content = "<h1>Il tuo negozio di Fumetti e Videogiochi a Padova</h1>";
         $content .= getDBConnectionError();
     }
 

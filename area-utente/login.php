@@ -100,11 +100,8 @@
                 
 
         }else{
-
             $form = str_replace("{{errors}}",$errorsStr,$form);
-
             $content .= $form;
-            
         }        
     }
 
