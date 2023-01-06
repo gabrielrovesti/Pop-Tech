@@ -34,8 +34,8 @@
                 
                 $content .= '<div class="listItem">';
                     $content .= '<span>'.parse_lang($faq['domanda']).'</span>';
-                    $content .= '<span><a href="faq.php?id='.$faq['id'].'" class="btn btn-info">Modifica</a>';
-                    $content .= '<a href="delete.php?id='.$faq['id'].'&type=faq" class="btn btn-danger">Elimina</a></span>';
+                    $content .= '<span><a href="faq.php?id='.$faq['id'].'" class="btn btn-info" title="Modifica '.parse_lang($faq['domanda'],true).'">Modifica</a>';
+                    $content .= '<a href="delete.php?id='.$faq['id'].'&type=faq" class="btn btn-danger" title="Elimina '.parse_lang($faq['domanda'],true).'">Elimina</a></span>';
                 $content .= '</div>';
 
             }

@@ -35,8 +35,8 @@
                 $content .= '<div class="listItem">';
                     $content .= '<span>'.$review['user'].' - ';
                     $content .= parse_lang($review['product']).'</span>';
-                    $content .= '<span><a href="recensione.php?id='.$review['id'].'" class="btn btn-info">Modifica</a>';
-                    $content .= '<a href="delete.php?id='.$review['id'].'&type=recensione" class="btn btn-danger">Elimina</a></span>';
+                    $content .= '<span><a href="recensione.php?id='.$review['id'].'" class="btn btn-info" title="Modifica '.parse_lang($review['product'],true).' di '.$review['user'].'">Modifica</a>';
+                    $content .= '<a href="delete.php?id='.$review['id'].'&type=recensione" class="btn btn-danger" title="Elimina '.parse_lang($review['product'],true).' di '.$review['user'].'">Elimina</a></span>';
                 $content .= '</div>';
 
             }

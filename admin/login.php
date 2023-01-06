@@ -71,7 +71,7 @@
                     foreach($errors as $error){
                         $errorsStr .= '<li>'.$error.'</li>';
                     }
-                    $errorsStr .= '<ul>';
+                    $errorsStr .= '</ul>';
                     $form = str_replace("{{errors}}",$errorsStr,$form); //Contiene solo l'ultimo errore
                     $content .= $form;
                 }else{

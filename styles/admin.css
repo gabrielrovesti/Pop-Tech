@@ -228,11 +228,6 @@ nav#breadcrumbs{
     margin: 0.5em;
 }
 
-.btn-green{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .btn-info,.btn-info:visited,.btn-info:hover{
     background-color: var(--btninfobgcolor);
@@ -247,6 +242,20 @@ nav#breadcrumbs{
 }
 
 /* Form ========================= */
+
+#login form{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    max-width: 30%;
+}
+
+#login form input[type=text],#login form input[type=password]{
+    margin: 0 auto;
+    width: auto;
+}
 
 label{
     font-weight: bold;
@@ -283,6 +292,16 @@ input[type=submit],input[type=reset]{
     border-radius: 0.3em;
     border-width: 1px;
     border-style: solid;
+   
+}
+
+form ul{
+    margin: 0em;
+    padding: 0em;
+}
+
+form ul li{
+    list-style: none;
 }
 
 .successMsg,.formSuccess{
@@ -298,10 +317,9 @@ input[type=submit],input[type=reset]{
 }
 
 .formError, #contatti p.formError{
-    background-color: var(--formerrorcolor);
-    width: 80%;
+    background-color: var(--errorbgcolor);
+    max-width: 80%;
     display: block;
-    margin: 0 auto;
     padding: 0.5em;
     color: rgb(120, 3, 3);
 }
@@ -318,7 +336,7 @@ input[type=submit],input[type=reset]{
 .fieldError, input[type="text"].fieldError, .fieldError, input[type="password"].fieldError, input[type="email"].fieldError, input[type="tel"].fieldError, textarea.fieldError{
     color: rgb(105, 0, 0);
     /*Placeholder solution -> Seguo la larghezza degli errori o gli input si spostano a lato*/
-    width: 80%;
+    width: 100%;
     border-color: var(--errorbordercolor);
 }
 
@@ -339,41 +357,6 @@ main h2{
 	padding-top: 0.7em;
 	padding-bottom: 0.7em;
     margin: 0.3em;
-}
-
-#data{
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    display: flex;
-    text-align: center;
-    position: relative;
-    border: 1px solid var(--bordercolor);
-    border-radius: 1.5em;
-    margin: 10em 7em 10em 7em;
-    padding: 0.5em;
-    position: relative;
-    flex: 1 0 0;
-}
-
-#data input[type=text], #data input[type=password], #data input[type=email], #data textarea{
-    padding: 0.5em;
-    margin: 0.5em;
-    display: block;
-    width: 100%;
-    border: solid 3px var(--bordercolor);
-}
-
-#data button[type=submit], #data button[type=reset]{
-    font-size: 1em;
-    padding: 0.5em;
-    color: var(--textcolor);
-}
-
-
-#data input[type=text], #data input[type=password], #data input[type=email], #data textarea{
-    margin: 0.5em;
-    padding: 0.5em;
 }
 
 form{

@@ -293,8 +293,7 @@ nav#menu ul li{
 nav#menu ul li#currentLink{
     font-weight: bold;
     color: var(--currentlinkcolor);
-    border: 1px solid var(--bordercolor);
-    border-radius: 0.5em;
+   border-bottom: 3px solid var(--currentlinkcolor);
     padding: 0.2em;
 }
 
@@ -310,6 +309,10 @@ nav#menu a:hover{
 
 nav#menu a:visited{
     color:var(--linkvisitedcolor);
+}
+
+nav#menu a.button:visited:hover{
+    color:var(--linkbuttoncolor);
 }
 
 #mobileMenuButton{
@@ -353,7 +356,7 @@ nav#menu a:visited{
 /* Anchor Links ========================= */
 
 a{
-    text-decoration: none;
+    text-decoration: none; 
     color:var(--linkcolor);
 }
 
@@ -373,11 +376,10 @@ a.button, input.button{
     text-align: center;
     background: var(--contentbgcolor);
     color: var(--linkbuttoncolor);
-    transition: color 0.2s ease-out;
     font-size: 1em;
 }
 
-a.button:hover,input.button:hover{
+a.button:hover, input.button:hover{
     color: var(--linkbuttoncolor);
     background: linear-gradient(to bottom left, var(--hover1), var(--hover2));
 }
@@ -388,6 +390,14 @@ input.button:disabled{
 
 input.button:disabled:hover{
     background: var(--contentbgcolor);
+    color: var(--linkbuttoncolor);
+}
+
+a.button:visited{
+    color: var(--linkvisitedcolor);
+}
+
+a.button:visited:hover{
     color: var(--linkbuttoncolor);
 }
 
@@ -567,15 +577,10 @@ main h2{
     padding: 0.5em;
     margin: 0.5em;
     display: block;
-    width: 100%;
     border: solid 3px var(--bordercolor);
 }
 
-#data button[type=submit], #data button[type=reset]{
-    font-size: 1em;
-    padding: 0.5em;
-    color: var(--textcolor);
-}
+
 
 
 /* Chi Siamo ========================= */
@@ -860,7 +865,8 @@ main h2{
 
 #prodotto .comic_box{
     display: block;
-    max-width: 20%;
+    max-width: 30%;
+    text-align: center;
     margin-bottom: 2em;
     font-size: 1.5em;
     border-radius: 2em;
@@ -926,15 +932,12 @@ main h2{
 }
   
 #inputForm input[type="text"], input[type="password"] {
-    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    box-sizing: border-box;
     border: 1px solid var(--bordercolor);
 }
 
 #inputForm input[type="submit"] {
-    width: 100%;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
