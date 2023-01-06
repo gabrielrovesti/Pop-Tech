@@ -529,9 +529,10 @@ main h2{
 }
 
 .productsRow article{
-    flex: 18% 0 1;
+    flex: 17.7% 0 1;
     border: 3px solid var(--bordercolor);
     margin-bottom: 1em;
+    margin-right: 0.5em;
     padding: 0.5em;
 
     display: flex;

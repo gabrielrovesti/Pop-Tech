@@ -128,7 +128,7 @@ function get_product_tile($product){
     '<article> 
         <header>
             <img src="'.getThumbnail($product['immagine']).'" alt="">
-            <h2>'.parse_lang($product['nome']) .'</h2>
+            <h3>'.parse_lang($product['nome']) .'</h3>
         </header>
         <p>'.get_short_product_text($product['descrizione']).'</p>
         <a href="prodotto.php?id='.$product['id'].'"  class="button" title="Vedi prodotto ' . parse_lang($product['nome'],true) . '">Scopri di più</a>
