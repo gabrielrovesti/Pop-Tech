@@ -43,7 +43,7 @@
                 $connection->close_connection();
 
                 foreach ($products as $product) {
-                    $content .= get_product_tile($product);
+                    $content .= get_product_tile($product,true);
                 }
                 
                 $content .= "</div>";

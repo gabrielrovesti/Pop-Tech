@@ -266,6 +266,14 @@ nav#menu ul li{
     margin-right: 1.8em;
 }
 
+nav#menu ul li a.button:hover{
+    color: var(--linkbuttoncolor);
+}
+
+nav#menu ul li a.button:visited:hover{
+    color: var(--linkbuttoncolor);
+}
+
 /* Recensioni utente ========================= */
 .listItem{
     padding: 0.2em 0.2em 0.2em 0.5em;
