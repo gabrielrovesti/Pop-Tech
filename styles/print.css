@@ -144,11 +144,15 @@ main#content .button{
 
 /* Prodotto Page ========================= */
 
-#prodotto img{
+#prodotto picture>img{
     margin-left: auto;
     margin-right: auto;
     display: block;
     max-height: 8cm;
+}
+
+#prodotto dl{
+    margin-bottom: 0.7cm;
 }
 
 #prodotto dd#prezzo{
@@ -163,8 +167,50 @@ main#content .button{
     font-weight: bold;
 }
 
+#prodotto img{
+    display: inline-block;
+    max-height: 0.5cm;
+    margin-top: 0cm;
+    margin-bottom: 0cm;
+}
+
+#prodotto .comic_box p{
+    margin-top: 0cm;
+    margin-bottom: 0.5cm;
+}
+
 /* Area Utente ========================= */
 
 body#admin_prodotti{
     display: none;
 }
+
+body#admin_registrazione label, body#admin_login label{
+    display: block;
+}
+
+body#admin_registrazione label::after, body#admin_login label::after{
+    content: ":";
+}
+
+body#admin_registrazione input, body#admin_login input{
+    display: none;
+}
+
+body#admin_recensione dt{
+    font-weight: bold;
+}
+
+body#admin_recensione dt::after{
+    content: ":";
+}
+
+body#admin_recensione dd{
+    margin-left: 0.5cm;
+    margin-bottom: 0.3cm;
+}
+
+body#admin_recensione .punteggio{
+    display: inline;
+}
+
