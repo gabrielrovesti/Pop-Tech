@@ -332,3 +332,9 @@ th[data-title]:before, td[data-title]:before{
 #chiSiamo ul.membristaff li img{
     max-width: 100%;
 }
+
+/* Area utente  ========================= */
+#data{
+    margin: 0em;
+    padding: 0.5em;
+}
