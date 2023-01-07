@@ -122,17 +122,23 @@ function get_menu(){
 
 /*
     Restituisce il blocco nella productRow usato in Home, Categorie e Categoria
+    $category indica se si trova nella pagina categoria o no
 */
-function get_product_tile($product){
-    return 
-    '<article> 
+function get_product_tile($product, $category=false){
+     
+    $content = '<article> 
         <header>
-            <img src="'.getThumbnail($product['immagine']).'" alt="">
-            <h3>'.parse_lang($product['nome']) .'</h3>
-        </header>
+            <img src="'.getThumbnail($product['immagine']).'" alt="">';
+            if(!$category)
+                $content .= '<h3>'.parse_lang($product['nome']) .'</h3>';
+            else
+                $content .= '<h2>'.parse_lang($product['nome']) .'</h2>';
+    $content .= '</header>
         <p>'.get_short_product_text($product['descrizione']).'</p>
         <a href="prodotto.php?id='.$product['id'].'"  class="button" title="Vedi prodotto ' . parse_lang($product['nome'],true) . '">Scopri di più</a>
     </article>';
+
+    return $content;
     
 }
 
