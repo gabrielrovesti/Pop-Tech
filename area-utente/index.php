@@ -9,7 +9,7 @@
 
     $template = file_get_contents('layouts/layout.html');
 
-    $pageID = 'Area Utente';
+    $pageID = 'area_utente';
     $title = "Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: Area Utente &gt; Recensioni</p>';
 
@@ -39,7 +39,7 @@
                     $content .= '<span>'.parse_lang($review['product']).'</span>';
 
                     if($review['contenuto']=='' && $review['punteggio']==0)
-                        $content .= '<a href="recensione.php?id='.$review['id'].'" class="btn btn-green" title="Inserisci recensione di '.parse_lang($review['product'],true).'">Inserisci</a>';
+                        $content .= '<a href="recensione.php?id='.$review['id'].'" class="button" title="Inserisci recensione di '.parse_lang($review['product'],true).'">Inserisci</a>';
                     else
                     $content .= '<a href="recensione.php?id='.$review['id'].'" class="button" title="Vedi recensione di '.parse_lang($review['product'],true).'">Vedi</a>';
                 $content .= '</div>';

@@ -1,26 +1,26 @@
 <div id="data">
     <form action="utente.php" method="post">
-        <input type="hidden" name="id" value="{{id}}"/>
+        <input type="hidden" name="id" value="{{id}}">
     
         {{errors}}
         
         <label for="nome" class="formBig">Nome
-            <input type="text" id="nome" name="nome" value="{{nome}}" />
+            <input type="text" id="nome" name="nome" value="{{nome}}" >
         </label>
     
         <label for="email" class="formBig">E-mail
-            <input type="text" id="email" name="email" value="{{email}}" />
+            <input type="text" id="email" name="email" value="{{email}}" >
         </label>
     
         <label for="password" class="formBig">Password
-            <input type="password" id="password" name="password" value="" />
+            <input type="password" id="password" name="password" value="" >
         </label>
     
         <label for="admin">
-            <input type="checkbox" id="admin" name="admin" value="1" {{admin}} /> Utente Amministratore      
+            <input type="checkbox" id="admin" name="admin" value="1" {{admin}} > Utente Amministratore      
         </label>
         
-        <input type="submit" value="Salva" name="submit"  class="btn btn-green"/>
-        <input type="reset" value="Annulla" name="reset"  class="btn btn-info" />
+        <input type="submit" value="Salva" name="submit"  class="btn btn-green">
+        <input type="reset" value="Annulla" name="reset"  class="btn btn-info" >
     </form>
 </div>
