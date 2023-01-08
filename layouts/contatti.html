@@ -7,16 +7,16 @@
 
         <form action="contatti.php" method="POST">
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required="required" data-msg-required="Per favore, inserisci il tuo nome" data-msg-invalid="Formato testo non corretto" value="{{nome}}">
+            <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required="required" value="{{nome}}" autocomplete="name">
                                 
             <label for="email" lang="en">Indirizzo e-mail</label>
-            <input type="email" id="email" name="email" placeholder="Inserire la tua e-mail" required="required" data-msg-required="Per favore, inserisci la tua casella di posta" data-msg-invalid="Formato non corretto" value="{{email}}">
+            <input type="email" id="email" name="email" placeholder="Inserire la tua e-mail" required="required" value="{{email}}" autocomplete="email">
             
             <label for="telefono">Telefono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Inserisci il tuo telefono" data-msg-invalid="Formato telefono non corretto" value="{{telefono}}">
+            <input type="tel" id="telefono" name="telefono" placeholder="Inserisci il tuo telefono" value="{{telefono}}" autocomplete="tel">
         
             <label for="messaggio">Messaggio</label>
-            <textarea id="messaggio" name="messaggio" placeholder="Inserisci qui il tuo messaggio" required="required" data-msg-required="Per favore, inserisci il tuo messaggio" data-msg-invalid="Formato testo non corretto">{{messaggio}}</textarea>
+            <textarea id="messaggio" name="messaggio" placeholder="Inserisci qui il tuo messaggio" required="required" autocomplete="off">{{messaggio}}</textarea>
 
             <label for="privacypolicy"><input type="checkbox" id="privacypolicy" name="privacy" value="1" required="required">Accetta la nostra <a href="privacy.html"><span lang="en">Privacy Policy</span></a></label>
 
@@ -33,7 +33,7 @@
         <a href="https://maps.apple.com" class="button" target="_blank"><span lang="en">Apple Maps</span></a>
 
         <h2>Chiamaci</h2>
-        <a href="tel:+39049123456">049 123456</a>
+        <a href="tel:+39049123456" aria-label="Chiamaci al 049 123456">049 123456</a>
 
         <h2>Scrivici</h2>
         <a href="mailto:info@comics.it">info@comics.it</a>
@@ -42,7 +42,7 @@
 
         <span class="srOnly" id="tableDesc">Tabella con 8 righe e 3 colonne. Nella Tabella vengono decritti gli orari di apertura del negozio. Ogni riga indica il giorno e gli orari di apertura e di chiusura di mattina e di pomeriggio.</span>
         
-        <table id="timetable" aria-describedby="tableDesc">
+        <table id="timetable" aria-label="Tabella degli orari di apertua" aria-describedby="tableDesc">
             <thead>
                 <tr>
                     <th>Giorno</th>

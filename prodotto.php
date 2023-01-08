@@ -65,16 +65,19 @@
                 foreach($feedbacks as $feedback){
                     $content .= '<div class="comic_box">';
                     $i=0;
+
+                    $content .= '<span title="Punteggio: '.$feedback['punteggio'].' su 5" >';
                     for(;$i<intval($feedback['punteggio']);$i++){
-                        $content .= '<img src="images/stella_piena.svg" alt="" />';
+                        $content .= '<img src="images/stella_piena.svg" alt="" aria-hidden="true">';
                     }
                     if(intval($feedback['punteggio'])!=$feedback['punteggio']){
-                        $content .= '<img src="images/stella_mezza.svg" alt="" />';
+                        $content .= '<img src="images/stella_mezza.svg" alt="" aria-hidden="true">';
                         $i++;
                     }
                     for(;$i<5;$i++){
-                        $content .= '<img src="images/stella_vuota.svg" alt="" />';
+                        $content .= '<img src="images/stella_vuota.svg" alt="" aria-hidden="true">';
                     }
+                    $content .= '</span>';
                     $content.='<p>'.$feedback['contenuto'].'</p></div>';
                 }
 

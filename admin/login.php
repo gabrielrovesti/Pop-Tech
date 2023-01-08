@@ -10,7 +10,7 @@
     $template = file_get_contents('layouts/layout.html');
     $form     = file_get_contents('layouts/login.html');
 
-    $pageID = 'login';
+    $pageID = 'loginPage';
     $title = "Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: Accedi';
 

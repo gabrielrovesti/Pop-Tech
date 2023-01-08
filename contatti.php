@@ -39,38 +39,38 @@
         //Controllo campi
 
         if(strlen($nome) == 0){
-            $form_messages .= '<p>Il campo nome non può essere vuoto</p>';
+            $form_messages .= '<p class="formError">Il campo nome non può essere vuoto</p>';
         }else{
             if(preg_match("/\d/",$nome)){
-                $form_messages .= '<li>Il nome non può contenere numeri</li>';
+                $form_messages .= '<p class="formError">Il nome non può contenere numeri</p>';
             }
         }
         
         if(strlen($telefono) == 0){
-            $form_messages .= '<p>Il campo telefono non può essere vuoto</p>';
+            $form_messages .= '<p class="formError">Il campo telefono non può essere vuoto</p>';
         }else{
             if(!preg_match("/^[0-9]+$/",$telefono)){
-                $form_messages .= '<p>Il campo telefono non può contenere lettere</p>';
+                $form_messages .= '<p class="formError">Il campo telefono non può contenere lettere</p>';
             }
         }
 
         if(strlen($email) == 0){
-            $form_messages .= '<p>Il campo e-mail non può essere vuoto</p>';
+            $form_messages .= '<p class="formError">Il campo e-mail non può essere vuoto</p>';
         }else{
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                $form_messages .= '<p>Il campo e-mail non è valido</p>';
+                $form_messages .= '<p class="formError">Il campo e-mail non è valido</p>';
             }
             if(!preg_match("/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/",$email)){
-                $form_messages .= '<p>Il campo e-mail non è stato inserito nel formato corretto</p>';
+                $form_messages .= '<p class="formError">Il campo e-mail non è stato inserito nel formato corretto</p>';
             }
         }
      
         if(strlen($messaggio) == 0){
-            $form_messages .= '<p>Il campo messaggio non può essere vuoto</p>';
+            $form_messages .= '<p class="formError">Il campo messaggio non può essere vuoto</p>';
         }
 
         if(strlen($messaggio) == 0){
-            $form_messages .= '<p>Il campo messaggio non può essere vuoto</p>';
+            $form_messages .= '<p class="formError">Il campo messaggio non può essere vuoto</p>';
         }
 
         if($privacy!=1){
@@ -84,14 +84,14 @@
 
         if($result){
 
-            $form_messages .= '<p class="formSuccess">Il messaggio è stato inviato correttamente</p>';
+            $form_messages .= '<p class="formSuccess" role="status">Il messaggio è stato inviato correttamente</p>';
             $nome      = "";
             $telefono  = "";
             $email     = "";
             $messaggio = "";
 
         }else{
-            $form_messages .= '<p class="formError">Abbiamo un problema con l\'invio; riprova più tardi</p>';
+            $form_messages .= '<p class="formError" role="status">Abbiamo un problema con l\'invio; riprova più tardi</p>';
         }
 
     }

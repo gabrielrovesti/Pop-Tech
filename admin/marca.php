@@ -67,9 +67,9 @@
                     $queryOK = $connection->exec_alter_query($query);
 
                     if($queryOK){
-                        $content .= '<p class="message successMsg">Marca '.$action.' con successo</p>';
+                        $content .= '<p class="message successMsg" role="status">Marca '.$action.' con successo</p>';
                     }else{
-                        $content .= '<p class="message errorMsg">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
+                        $content .= '<p class="message errorMsg" role="status">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
                     }
 
                 }else{

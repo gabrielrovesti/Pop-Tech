@@ -6,23 +6,23 @@
         {{errors}}
         
         <label for="prodotto">Prodotto
-            <select id="prodotto" name="prodotto">
+            <select id="prodotto" name="prodotto" autocomplete="off">
                 {{prodotti}}
             </select>
         </label>
     
         <label for="utente">Utente
-            <select id="utente" name="utente">
+            <select id="utente" name="utente" autocomplete="off">
                 {{utenti}}
             </select>
         </label>
     
         <label for="contenuto" class="formBig">Contenuto
-            <textarea name="contenuto" id="contenuto" cols="30" rows="10">{{contenuto}}</textarea>
+            <textarea name="contenuto" id="contenuto" cols="30" rows="10" autocomplete="off">{{contenuto}}</textarea>
         </label>
     
         <label for="punteggio">Punteggio
-            <input type="range" name="punteggio" id="punteggio" min="0" max="5" step="0.5" value="{{punteggio}}">
+            <input type="range" name="punteggio" id="punteggio" min="0" max="5" step="0.5" value="{{punteggio}}" autocomplete="off">
         </label>
         
         <input type="submit" value="Salva" name="submit"  class="btn btn-green">

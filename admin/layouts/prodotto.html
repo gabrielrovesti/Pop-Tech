@@ -9,11 +9,11 @@
             <legend>Dati principali</legend>
     
             <label for="nome" class="formBig">Nome
-                <input type="text" id="nome" name="nome" value="{{nome}}" >
+                <input type="text" id="nome" name="nome" value="{{nome}}" autocomplete="off">
             </label>
     
             <label for="keywords">Keywords
-                <input type="text" id="keywords" name="keywords" value="{{keywords}}">
+                <input type="text" id="keywords" name="keywords" value="{{keywords}}" autocomplete="off">
             </label>
             
             <label for="immagine">Immagine
@@ -30,13 +30,13 @@
             <legend>Dati esterni</legend>
     
             <label for="categoria">Categoria
-                <select name="categoria" id="categoria">
+                <select name="categoria" id="categoria" autocomplete="off">
                     {{categorie}}
                 </select>
             </label>
     
             <label for="marca">Marca
-                <select name="marca" id="marca">
+                <select name="marca" id="marca" autocomplete="off">
                     {{marche}}
                 </select>
             </label>
@@ -48,27 +48,27 @@
             <legend>Dati di dettaglio</legend>
         
             <label for="origine">Origine
-            <input type="text" id="origine" name="origine" value="{{origine}}" >
+            <input type="text" id="origine" name="origine" value="{{origine}}" autocomplete="off">
             </label>    
     
             <label for="modello">Modello
-                <input type="text" id="modello" name="modello" value="{{modello}}" >
+                <input type="text" id="modello" name="modello" value="{{modello}}" autocomplete="off">
             </label>
     
             <label for="dimesione">Dimensione
-                <input type="text" id="dimesione" name="dimensione" value="{{dimensione}}" >
+                <input type="text" id="dimesione" name="dimensione" value="{{dimensione}}" autocomplete="off">
             </label>
     
             <label for="peso">Peso
-                <input type="text" id="peso" name="peso" value="{{peso}}" >
+                <input type="text" id="peso" name="peso" value="{{peso}}" autocomplete="off">
             </label>
     
             <label for="prezzo">Prezzo
-                <input type="text" id="prezzo" name="prezzo" value="{{prezzo}}" >
+                <input type="text" id="prezzo" name="prezzo" value="{{prezzo}}" autocomplete="off">
             </label>
     
             <label for="descrizione" class="formBig">Descrizione
-                <textarea name="descrizione" id="descrizione" cols="30" rows="10">{{descrizione}}</textarea>
+                <textarea name="descrizione" id="descrizione" cols="30" rows="10" autocomplete="off">{{descrizione}}</textarea>
             </label>
     
         </fieldset>

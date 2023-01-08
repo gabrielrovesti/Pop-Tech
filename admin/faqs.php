@@ -19,7 +19,7 @@
 
     }else{
 
-        $content = "<h1>FAQ</h1>";
+        $content = '<h1><abbr title="Frequently Asked Questions">FAQ</abbr></h1>';
 
         $content .= '<a href="faq.php" class="btn btn-green"> Aggiungi FAQ</a>';
 

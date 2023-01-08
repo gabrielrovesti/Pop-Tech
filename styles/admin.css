@@ -257,6 +257,10 @@ nav#breadcrumbs{
     width: auto;
 }
 
+#login .formError{
+    max-width: 100%;
+}
+
 label{
     font-weight: bold;
     display: inline-block;

@@ -43,6 +43,7 @@ function replace_in_user_page(String $html, String $title, String $id, String $b
 
     //Footer presente in ogni pagina
     $footer = file_get_contents('../layouts/footer.html');
+    $footer = str_replace("privacy.html","../privacy.html",$footer);
     $html   = str_replace('{{footer}}',$footer,$html);
 
     return $html;
@@ -211,7 +212,7 @@ function getDBConnectionError(bool $back = false){
 */
 function get_admin_menu(){
 
-    $menu = '';
+    $menu = '<ul>';
 
     // Link da inserire
     $links = ["index.php","categorie.php","marche.php","utenti.php","recensioni.php","faqs.php"];
@@ -237,8 +238,10 @@ function get_admin_menu(){
     if(isLoggedIn(true)){
         $menu .= '<li><a href="logout.php" class="button">Esci</a></li>';
     }else{
-        $menu = '<li><a href="login.php" class="button">Accedi</a></li>';
+        $menu = '<ul><li><a href="login.php" class="button">Accedi</a></li>';
     }
+
+    $menu .= '</ul>';
 
     return $menu;
 
