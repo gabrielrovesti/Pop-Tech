@@ -66,14 +66,14 @@
                     $content .= '<div class="comic_box">';
                     $i=0;
                     for(;$i<intval($feedback['punteggio']);$i++){
-                        $content .= '<img src="images/stella_piena.svg" />';
+                        $content .= '<img src="images/stella_piena.svg" alt="" />';
                     }
                     if(intval($feedback['punteggio'])!=$feedback['punteggio']){
-                        $content .= '<img src="images/stella_mezza.svg" />';
+                        $content .= '<img src="images/stella_mezza.svg" alt="" />';
                         $i++;
                     }
                     for(;$i<5;$i++){
-                        $content .= '<img src="images/stella_vuota.svg" />';
+                        $content .= '<img src="images/stella_vuota.svg" alt="" />';
                     }
                     $content.='<p>'.$feedback['contenuto'].'</p></div>';
                 }
