@@ -193,7 +193,7 @@ body#admin_registrazione label::after, body#admin_login label::after{
     content: ":";
 }
 
-body#admin_registrazione input, body#admin_login input{
+body#admin_registrazione input, body#admin_login input, body#admin_profilo .password{
     display: none;
 }
 
@@ -213,4 +213,3 @@ body#admin_recensione dd{
 body#admin_recensione .punteggio{
     display: inline;
 }
-
