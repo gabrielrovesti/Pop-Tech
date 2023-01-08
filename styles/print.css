@@ -181,35 +181,35 @@ main#content .button{
 
 /* Area Utente ========================= */
 
-body#admin_prodotti{
+body#user_prodotti{
     display: none;
 }
 
-body#admin_registrazione label, body#admin_login label{
+body#user_registrazione label, body#user_login label{
     display: block;
 }
 
-body#admin_registrazione label::after, body#admin_login label::after{
+body#user_registrazione label::after, body#user_login label::after{
     content: ":";
 }
 
-body#admin_registrazione input, body#admin_login input, body#admin_profilo .password{
+body#user_registrazione input, body#user_login input, body#user_profilo .password{
     display: none;
 }
 
-body#admin_recensione dt{
+body#user_recensione dt{
     font-weight: bold;
 }
 
-body#admin_recensione dt::after{
+body#user_recensione dt::after{
     content: ":";
 }
 
-body#admin_recensione dd{
+body#user_recensione dd{
     margin-left: 0.5cm;
     margin-bottom: 0.3cm;
 }
 
-body#admin_recensione .punteggio{
+body#user_recensione .punteggio{
     display: inline;
 }
