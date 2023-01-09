@@ -321,3 +321,39 @@ function setUserRecensioneChecks(){
         }
     };
 }
+
+function setUserRegistrazioneChecks(){
+    checks = {
+        nome:{
+            message:"Inserire un nome con almeno due caratteri.",
+            condition: function(str){
+                return str.length>=2;
+            }
+        },
+        password:{
+            message:"Inserire una password con almeno quattro caratteri.",
+            condition: function(str){
+                return str.length>=4;
+            }
+        },
+        password:{
+            message:"Inserire una password con almeno quattro caratteri.",
+            condition: function(str){
+                return str.length>=4;
+            }
+        },
+        passwordConfirm:{
+            message:"Le password inserite non combaciano.",
+            condition: function(str){
+                return str == document.getElementById('password').value;
+            }
+        },
+        email:{
+            message:"Inserire un indirizzo email valido.",
+            condition: function(str){
+                let expr = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return expr.test(str.toLowerCase());
+            }
+        }
+    };
+}

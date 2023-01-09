@@ -108,6 +108,6 @@
     $menu = get_user_menu();
     $template = str_replace('{{menu}}',$menu,$template);
     $template = str_replace('{{pageID}}',$pageID,$template);
-    echo replace_in_user_page($template,$title,$pageID,$breadcrumbs,$content, '');
+    echo replace_in_user_page($template,$title,$pageID,$breadcrumbs,$content, 'setUserRegistrazioneChecks();addFieldsEvent();');
 
 ?>  
