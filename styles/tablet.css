@@ -1,0 +1,167 @@
+/* Regole CSS per tablet portrait */
+
+:root{
+
+    --chiSiamoGrad1Stop1: #FDC708;
+    --chiSiamoGrad1Stop2: #FFF5D1;
+
+    --contattiGrad1Stop1: #55BEF9;
+    --contattiGrad1Stop2: #DCF1FD;
+    --contattiGrad2Stop1: #FFC671;
+    --contattiGrad2Stop2: #FFF27F;
+
+    --bordercolor: #000;
+   
+}
+
+/* Tema scuro ========================= */
+
+@media (prefers-color-scheme: dark) {
+    :root{
+
+        --chiSiamoGrad1Stop1: #c0610e;
+        --chiSiamoGrad1Stop2: #894911;
+        
+        --homeGrad2Stop1: #4f2162;
+        --homeGrad2Stop2: #923CB5;
+
+        --contattiGrad1Stop1: #380036;
+        --contattiGrad1Stop2: #098e8e;
+        --contattiGrad2Stop1: #A71D31;
+        --contattiGrad2Stop2: #3F0D12;
+
+        --bordercolor: #FFF;
+
+    }
+
+}
+
+
+/* Pagina Home ========================= */
+
+#homePage #homeBanner div{
+    flex: 45.5% 0 0;
+}
+
+#homePage #homeBanner #picture:before{
+    left:-8%;
+}
+
+/* Product list (Home, Prodotti, Categoria ========================= */
+
+
+.productsRow article{
+    flex: 28% 0 1;
+    margin-right: 0.8   em;
+}
+
+/* Categoria ========================= */
+
+#prodotti .categoryList a.button{
+    margin-bottom: 1em;
+}
+
+
+/* Prodotto ========================= */
+#prodotto picture{
+    flex: 30% 0 0;
+}
+
+/* Contatti ========================= */
+#contatti #modulo_richieste, #contatti #info{
+    flex: calc(100% - 6px) 0 0; /* 100% meno la rarghezza dei bordi (3+3) */
+    border-bottom:none;
+    border-top:none;
+    border-left: 3px solid var(--bordercolor);
+    border-right: 3px solid var(--bordercolor);
+    position: relative;
+    margin: 0;
+    padding: 0em;
+}
+
+#contatti div#modulo_richieste:after,#contatti div#info:before{
+    width: 100%;
+    height: 15%;
+    bottom: 0px;
+
+    transform-origin: bottom left;
+    -ms-transform: skew(0deg, -5deg);
+    -webkit-transform: skew(0deg, -5deg);
+    transform: skew(0deg, -5deg);
+}
+
+#contatti #modulo_richieste{
+    margin-bottom: 12%;
+    border-top: 3px solid var(--bordercolor);
+    padding-bottom: 2em;
+}
+
+#contatti #info{
+    border-bottom: 3px solid var(--bordercolor);
+}
+
+#contatti div#modulo_richieste:after{
+    height: 20%;
+    top:96%;
+    left: -3px;
+    background-image: linear-gradient(to top, var(--contattiGrad1Stop1), var(--contattiGrad1Stop1));
+}
+
+
+#contatti div#info:before{
+    top: -4px;
+    left: -3px;
+    background-image: linear-gradient(to bottom, var(--contattiGrad2Stop1), var(--contattiGrad2Stop1));
+}
+
+/* FAQ ========================= */
+
+.faqRow details{
+    flex:100% 0 0;
+    margin-bottom: 2em;
+}
+
+/* Chi Siamo ========================= */
+#chiSiamo .first .text-container{
+    flex: 60% 0 0;
+}
+
+#chiSiamo .second .text-container{
+    flex: 60% 0 0;
+}
+
+#chiSiamo .first .img-container{
+    flex: 22% 0 0;
+}
+
+#chiSiamo .second .img-container{
+    flex: 24% 0 0;
+}
+
+#chiSiamo .first .text-container:after,#chiSiamo .second .text-container:before,
+#chiSiamo .first .img-container:before,#chiSiamo .second .img-container:after{
+    
+    width: 25%;
+    height: 100%;
+    top:-3px;
+    z-index: -1;
+   
+}
+
+#chiSiamo .first .text-container:after{
+    right:-1%;  
+}
+
+#chiSiamo .second .text-container:before{
+    left:-20%;
+}
+
+#chiSiamo .first .img-container:before{
+    left:-60%;
+    width: 60%;
+}
+
+#chiSiamo .second .img-container:after{
+    right: -2%;
+    width: 60%;
+}

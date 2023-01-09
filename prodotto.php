@@ -59,7 +59,7 @@
                 $descrizione = parse_lang(strip_tags($product['descrizione']),true);
                 $keywords    = $product['keywords'];
 
-                $feedbacks = $connection->exec_select_query("SELECT contenuto, punteggio FROM recensione WHERE prodotto=$id;"); 
+                $feedbacks = $connection->exec_select_query("SELECT contenuto, punteggio FROM recensione WHERE prodotto=$id AND punteggio!=0 AND contenuto !='';"); 
                 $connection->close_connection();
 
                 foreach($feedbacks as $feedback){

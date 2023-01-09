@@ -525,7 +525,7 @@ main h2{
     margin-right: 1em;
 }
 
-/* Product list (Home, Prodotti, Categoria ========================= */
+/* Product list (Home, Prodotti, Categoria) ========================= */
 
 .productsRow{
     position: relative;
@@ -776,7 +776,6 @@ main h2{
 
 #contatti div#modulo_richieste:after{
     right:-1%;
-    border-left: solid 3px transparent;
     background-image: linear-gradient(to top, var(--contattiGrad1Stop1), var(--contattiGrad1Stop2));
 }
 
