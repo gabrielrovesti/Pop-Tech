@@ -583,21 +583,24 @@ main h2{
     position: relative;
     border: 1px solid var(--bordercolor);
     border-radius: 1.5em;
-    margin: 6em 5em 6em 5em;
     padding: 0.5em;
+    margin: 6em 5em 6em 5em;
     position: relative;
     flex: 1 0 0;
+    overflow: hidden;
 }
 
 #data input[type=text], #data input[type=password], #data input[type=email], #data textarea{
     padding: 0.5em;
-    margin: 0.5em;
+    margin: auto;
     display: block;
     border: solid 3px var(--bordercolor);
 }
 
-
-
+#data label{
+    padding: 0.5em;
+    margin: auto;
+}
 
 /* Chi Siamo ========================= */
 
@@ -969,7 +972,6 @@ main h2{
     color: rgb(120, 3, 3);
 }
 
-
 .formSuccess, #contatti p.formSuccess{
     background-color: var(--formsuccesscolor);
     padding: 0.5em;
@@ -977,6 +979,12 @@ main h2{
     width: 80%;
     display: block;
     margin: 0 auto;
+}
+
+/*Align input types center*/
+.fieldError input{
+    margin: auto;
+    display: block;
 }
 
 .fieldError, #contatti div#modulo_richieste input[type="text"].fieldError, input[type="email"].fieldError, input[type="tel"].fieldError, textarea.fieldError{
