@@ -116,8 +116,7 @@ function get_menu(){
             $menu .= '<li><a href="'.$links[$i].'" '.(($langs[$i])?'lang="'.$langs[$i].'"':'').'>'.$names[$i].'</a></li>';
         }
     }
-    $menu .= '<li><a class="button" href="area-utente/registrazione.php" >Registrati</a></li>';
-    $menu .= '<li><a class="button" href="area-utente/login.php" >Accedi</a></li>';
+    $menu .= '<li><a class="button" href="area-utente/" >Area Utente</a></li>';
     return $menu;
 }
 
@@ -386,6 +385,8 @@ function isLoggedIn(bool $isAdmin=false){
 function get_user_menu(){
 
     $menu = '';
+
+    $menu .= '<li><a href="../index.php" class="button">Torna al sito</a></li>';
 
     // Link da inserire
     $links = ["index.php","profilo.php"];

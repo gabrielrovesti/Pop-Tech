@@ -42,8 +42,8 @@
                 $action = 'inserita';
 
                 //Prelevamento dati
-                $domanda  = sanitize($_POST['domanda'],"");
-                $risposta = sanitize($_POST['risposta'],"");
+                $domanda  = addslashes(sanitize($_POST['domanda'],""));
+                $risposta = addslashes(sanitize($_POST['risposta'],""));
 
                 //Validazione dati
                 if(strlen($domanda)<=10){
@@ -116,7 +116,7 @@
 
                     }else{
                         $content .= '<p class="message errorMsg">FAQ non trovata.</p>';
-                    }           
+                    }
 
                 }
 
@@ -141,6 +141,7 @@
     $menu = get_admin_menu();
     $template = str_replace('{{menu}}',$menu,$template);
     $template = str_replace('{{onload}}','setAdminFAQChecks();addFieldsEvent();',$template);
+    $template = str_replace('{{pageID}}',$pageID,$template);
 
     $template = str_replace('{{title}}',$title,$template);
     $template = str_replace('{{breadcrumbs}}',$breadcrumbs,$template);

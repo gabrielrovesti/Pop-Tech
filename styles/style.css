@@ -111,8 +111,8 @@ html,body{
         --linkhovercolor: #1995B0;
         --linkvisitedcolor:#C769E9;
         --currentlinkcolor: #1995B0;
-        --hover1: red;
-        --hover2: orange;
+        --hover1: rgb(180, 0, 0);
+        --hover2: rgb(200, 124, 1);
 
         --chiSiamoGrad1Stop1: #c0610e;
         --chiSiamoGrad1Stop2: #894911;
@@ -369,7 +369,7 @@ nav#menu a.button:visited:hover{
 /* Anchor Links ========================= */
 
 a{
-    text-decoration: none; 
+    text-decoration: underline; 
     color:var(--linkcolor);
 }
 
@@ -386,10 +386,12 @@ a.button, input.button{
     padding: .5em 1em .5em 1em;
     cursor: pointer;
     display: inline-block;
+    text-decoration: none;
     text-align: center;
     background: var(--contentbgcolor);
     color: var(--linkbuttoncolor);
     font-size: 1em;
+    font-weight: normal;
 }
 
 a.button:hover, input.button:hover{
