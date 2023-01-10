@@ -213,3 +213,29 @@ body#user_recensione dd{
 body#user_recensione .punteggio{
     display: inline;
 }
+
+/* Area Admin ========================= */
+
+.btn, textarea, select{
+    display: none;
+}
+
+#admin_prodotto label, #admin_categoria label:not(.checkbox), #admin_utente label:not(.checkbox), #admin_recensione label, #admin_faq label, #admin_loginPage label{
+    display: block;
+}
+
+#admin_prodotto label::after, #admin_categoria label:not(.checkbox)::after, #admin_marca label::after, #admin_utente label:not(.checkbox)::after, #admin_recensione label::after, #admin_faq label::after, #admin_loginPage label::after{
+    content: ":";
+}
+
+#admin_prodotto input, #admin_categoria input:not(#inPrimaPagina), #admin_marca input,  #admin_utente input:not(#admin), #admin_recensione input, #admin_faq input, #admin_loginPage input{
+    display: none;
+}
+
+#admin_prodotto #breadcrumbs, #admin_categoria #breadcrumbs, #admin_marca #breadcrumbs,  #admin_utente #breadcrumbs, #admin_recensione #breadcrumbs, #admin_faq #breadcrumbs{
+    display: none;
+}
+
+#admin_prodotti #breadcrumbs, #admin_categorie #breadcrumbs, #admin_marche #breadcrumbs,  #admin_utenti #breadcrumbs, #admin_recensioni #breadcrumbs, #admin_faqs #breadcrumbs, #admin_loginPage #breadcrumbs{
+    display: none;
+}
