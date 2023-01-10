@@ -54,9 +54,6 @@ function validateField(event){
             //Classe di stile con errore
             event.target.classList.add('fieldError');
 
-            //Aria-alert per focus screen reader
-            event.target.setAttribute('aria-alert',checks[name].message);
-
             //Inserisci il messaggio errore
             event.target.parentNode.insertBefore(newElement, event.target.nextSibling);
 
@@ -68,9 +65,6 @@ function validateField(event){
             if(event.target.nextSibling){ //Togli il tag p di errore se già presente
                 if(event.target.nextSibling.tagName == 'P')
                   event.target.nextSibling.remove();
-            }
-            if(event.target.getAttribute('aria-alert')){//Togli aria-alert se già presente
-                event.target.setAttribute('aria-label','');
             }
             event.target.classList.remove('fieldError'); //Togli classe di errore dal campo
 

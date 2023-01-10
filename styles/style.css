@@ -60,10 +60,10 @@ html,body{
     --textcolor: #000;
     --bgcolor: #fff;
     --bgimgcolor: #FDA30A;
-    --linkcolor: #4747FF;
-    --linkvisitedcolor:#920eba;
+    --linkcolor: #285794;
+    --linkvisitedcolor:#830da7;
     --linkhovercolor: #4747FF;
-    --currentlinkcolor: #0056A6;
+    --currentlinkcolor: #003e77;
     --hover1: red;
     --hover2: orange;
     
@@ -81,7 +81,7 @@ html,body{
     --contattiGrad2Stop1: #FFF494;
     --contattiGrad2Stop2: #FFC671;
 
-    --linkbuttoncolor: #000;
+    --linkbuttoncolor: #fff;
     --bordercolor: #000;
     --bordertransparentcolor: #fff;
     --inputbordercolor: #ccc;
@@ -96,8 +96,10 @@ html,body{
     --breadcrumb2: rgba(0, 0, 0, .2);
     --breadcrumbbeforecolor: rgba(0, 0, 0, .1);
 
-    --formerrorcolor:rgb(255, 193, 193);
-    --formsuccesscolor:rgb(197, 255, 193);
+    --formerrorcolorbg:rgb(255, 193, 193);
+    --formerrorcolor: #4d0202;
+    --formsuccesscolorbg:rgb(197, 255, 193);
+    --formsuccesscolor: rgb(0, 58, 0);
 }
 
 /* Tema scuro ========================= */
@@ -110,7 +112,7 @@ html,body{
         --linkcolor: #5AD3FC;
         --linkhovercolor: #1995B0;
         --linkvisitedcolor:#C769E9;
-        --currentlinkcolor: #1995B0;
+        --currentlinkcolor: #59b4c9;
         --hover1: rgb(180, 0, 0);
         --hover2: rgb(200, 124, 1);
 
@@ -237,6 +239,7 @@ footer{
     width: 1px;
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
+    color: var(--textcolor);
 }
 
 /* Navigation ========================= */
@@ -389,7 +392,7 @@ a.button, input.button{
     text-decoration: none;
     text-align: center;
     background: var(--contentbgcolor);
-    color: var(--linkbuttoncolor);
+    color: var(--textcolor);
     font-size: 1em;
     font-weight: normal;
 }
@@ -963,18 +966,18 @@ main h2{
 }
 
 .formError, #contatti p.formError{
-    background-color: var(--formerrorcolor);
+    background-color: var(--formerrorcolorbg);
     width: 80%;
     display: block;
-    margin: 0 auto;
+    margin: 0.5em auto;
     padding: 0.5em;
-    color: rgb(120, 3, 3);
+    color: var(--formerrorcolor);
 }
 
 .formSuccess, #contatti p.formSuccess{
-    background-color: var(--formsuccesscolor);
+    background-color: var(--formsuccesscolorbg);
     padding: 0.5em;
-    color: rgb(3, 120, 3);
+    color:var(--formsuccesscolor);
     width: 80%;
     display: block;
     margin: 0 auto;
@@ -987,8 +990,14 @@ main h2{
 }
 
 .fieldError, #contatti div#modulo_richieste input[type="text"].fieldError, input[type="email"].fieldError, input[type="tel"].fieldError, textarea.fieldError{
-    color: red;
-    border:solid 3px var(--formerrorcolor);
+    color: var(--formerrorcolor);
+    border:solid 3px var(--formerrorcolorbg);
+}
+
+/* Pagina Privacy ========================= */
+
+#privacy p,#privacy h3,#privacy h4{
+    margin-left: 0.5em;
 }
 
 /* Pagina 404 ========================= */

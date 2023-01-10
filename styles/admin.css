@@ -71,17 +71,17 @@ body{
     --btncolor:#FFF;
     --btnbgcolor: #145749; 
     --btnbordercolor: #145749;
-    --btninfobordercolor: #227093;
-    --btninfobgcolor: #227093; 
-    --btndangerbgcolor: #b33939;
-    --btndangerbordercolor: #b33939;
+    --btninfobordercolor: #1d5c78;
+    --btninfobgcolor: #1d5c78; 
+    --btndangerbgcolor: #9b3131;
+    --btndangerbordercolor: #9b3131;
     --inputborder: gray;
     --successcolor: #114c3d;
     --successbgcolor: #cdf9eb;
     --successbordercolor: #114c3d;
-    --errorcolor: #7a1717;
+    --errorcolor: #4d0202;
     --errorbgcolor: #edb7ba;
-    --errorbordercolor: #7a1717;
+    --errorbordercolor: #4d0202;
 }
 
 a{
@@ -325,7 +325,7 @@ form ul li{
     max-width: 80%;
     display: block;
     padding: 0.5em;
-    color: rgb(120, 3, 3);
+    color: var(--errorcolor);
 }
 
 .formSuccess, #contatti p.formSuccess{
