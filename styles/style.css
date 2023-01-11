@@ -1119,3 +1119,13 @@ main h2{
     margin-right: 2em;
 }
 
+/* Pulsante torna in cima alla pagina */
+#goUpButtton{
+    position: fixed;
+    right: 0.5em;
+    bottom: 1em;
+    display: none;
+}
+#goUpButtton.show{
+    display: inline-block;
+}

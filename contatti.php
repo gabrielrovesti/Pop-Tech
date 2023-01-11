@@ -109,7 +109,7 @@
     $menu = get_menu();
     $template = str_replace('{{menu}}',$menu,$template);
 
-    echo replace_in_page($template,$title,$pageID,$breadcrumbs,'keywords','descrizione',$content,'setContattiChecks();addFieldsEvent();');
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs,'keywords','descrizione',$content,'setContattiChecks();addFieldsEvent();addScrollEventListener();');
 
 ?>
 

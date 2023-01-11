@@ -122,46 +122,88 @@
 }
 
 /* Chi Siamo ========================= */
+
+#chiSiamo .outer-container{
+    margin: 0em;
+}
+
+#chiSiamo .text-container,#chiSiamo .img-container{
+    border-top:none;
+    border-bottom:none;
+    border-left: solid 3px var(--bordercolor);
+    border-right: solid 3px var(--bordercolor);
+    padding: 0.2em;
+}
+
 #chiSiamo .first .text-container{
-    flex: 60% 0 0;
+    border-top: solid 3px var(--bordercolor);
+    border-bottom: none;
+    flex: 100% 0 1;
+    padding-right: 0.5em;
+    margin-bottom: 3em;
 }
 
 #chiSiamo .second .text-container{
-    flex: 60% 0 0;
+    border-bottom: solid 3px var(--bordercolor);
+    border-top: none;
+    flex: 100% 0 1;
+}
+
+#chiSiamo .img-container{
+    flex: 100% 0 1;
+    min-height: 30vh;
+}
+
+#chiSiamo .img-container img{
+    width: 30%;
 }
 
 #chiSiamo .first .img-container{
-    flex: 22% 0 0;
+    border-bottom: solid 3px var(--bordercolor);
+    margin: 4em 0em 1em 0em;
 }
 
 #chiSiamo .second .img-container{
-    flex: 24% 0 0;
+    border-top: solid 3px var(--bordercolor);
+    margin-bottom: 6em;
 }
+
 
 #chiSiamo .first .text-container:after,#chiSiamo .second .text-container:before,
-#chiSiamo .first .img-container:before,#chiSiamo .second .img-container:after{
-    
-    width: 25%;
-    height: 100%;
-    top:-3px;
-    z-index: -1;
+#chiSiamo .first .img-container:before,#chiSiamo .second .img-container:after
+{
+    width: 100%;
+    height: 23%;
+    bottom:0px;
    
+    transform-origin: bottom left;
+    -ms-transform: skew(0deg, -5deg);
+    -webkit-transform: skew(0deg, -5deg);
+    transform: skew(0deg, -5deg);
 }
 
+
+
 #chiSiamo .first .text-container:after{
-    right:-1%;  
+    left:-3px; 
+    top:99%;
 }
 
 #chiSiamo .second .text-container:before{
-    left:-20%;
+    left:-3px; 
+    top: -1%;
 }
 
 #chiSiamo .first .img-container:before{
-    left:-60%;
-    width: 60%;
+    left:-3px;
+    top:-2%;
+    width: calc(100% - 0px);
+    background-image: linear-gradient(to bottom, var(--chiSiamoGrad1Stop1), var(--chiSiamoGrad1Stop1));
 }
 
 #chiSiamo .second .img-container:after{
-    right: -2%;
-    width: 60%;
+    right:-3px; 
+    top: 98%;
+    background-image: linear-gradient(to bottom, var(--contattiGrad1Stop1), var(--contattiGrad1Stop1));
 }
+
