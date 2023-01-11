@@ -38,5 +38,5 @@
 
     $menu = get_menu();
     $template = str_replace('{{menu}}',$menu,$template);
-    echo replace_in_page($template,$title,$pageID,$breadcrumbs,'keywords','description',$content);
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs,'keywords','description',$content,'addScrollEventListener()');
 ?>

@@ -351,3 +351,31 @@ function setUserRegistrazioneChecks(){
         }
     };
 }
+
+
+//Aggiungi listener per evento scroll
+//per il pulsante "torna in cima alla pagina"
+function addScrollEventListener(){
+    window.addEventListener("scroll",toggleUpButton)
+}
+
+//Mostra o nascondi il pulsante "torna in cima alla pagina"
+//in base alla posizione di scroll
+function toggleUpButton(){
+
+    let button = document.getElementById('goUpButtton');
+    let scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
+    
+    let body = document.body; 
+    let html = document.documentElement;
+
+    let bodyHeight = Math.max( body.scrollHeight, body.offsetHeight, 
+        html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+    if(scrollPos>bodyHeight/6){
+        button.classList.add('show');
+    }else{
+        button.classList.remove('show');
+    }
+
+}
