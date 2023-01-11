@@ -374,6 +374,11 @@ function isLoggedIn(bool $isAdmin=false){
 
 }
 
+function getAdminLoggedOutError(){
+    return '<h1>Area riservata</h1>
+    <p class="message errorMsg">Attenzione: non disponi dei privilegi necessari per accede a questa pagina.</p>';
+}
+
 // -----------------------------------
 // Funzioni per l'area utente
 // -----------------------------------

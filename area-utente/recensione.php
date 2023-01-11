@@ -21,7 +21,7 @@
 
     if(!isLoggedIn()){
 
-        $content = '<p class="message errorMsg">Attenzione: non disponi dei privilegi necessari per accede a questa pagina.</p>';
+        $content = getAdminLoggedOutError();
 
     }else{
 
