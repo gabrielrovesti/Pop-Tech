@@ -120,7 +120,7 @@
 
                         $content = "<h1>Modifica ".parse_lang($category['nome'])."</h1>";
 
-                        $breadcrumbs = '<p>Ti trovi in: <a href="categorie.php">Categorie</a> > '.parse_lang($category['nome']).'</p>';
+                        $breadcrumbs = '<p>Ti trovi in: <a href="categorie.php">Categorie</a> &gt; '.parse_lang($category['nome']).'</p>';
 
                         $nome        = $category['nome'];
                         $keywords    = $category['keywords'];

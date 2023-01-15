@@ -83,7 +83,7 @@ function setContattiChecks(){
             }
         },
         telefono:{
-            message:"Inserire un numero di telefono valido composto da solo cifre numeriche.",
+            message:"Inserire un numero di telefono valido composto da sole cifre numeriche.",
             condition: function(str){
                 let expr = /^[0-9]+$/;
                 return expr.test(str);
