@@ -653,7 +653,7 @@ main h2{
     content: " ";
     position:absolute;
     display: block;
-    width: 15%;
+    width: 18%;
     height: 100%;
     top:-3px;
     z-index: -1;

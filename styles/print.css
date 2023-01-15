@@ -107,6 +107,8 @@ main#content .button{
 
 #chiSiamo ul{
     list-style: none;
+    margin: 0em;
+    padding: 0em;
 }
 
 /* Contatti ========================= */
@@ -178,6 +180,12 @@ main#content .button{
     margin-top: 0cm;
     margin-bottom: 0.5cm;
 }
+/* Pulsante torna in cima ============== */
+
+#goUpButtton,#goUpButtton.show{
+    display: none;
+}
+
 
 /* Area Utente ========================= */
 

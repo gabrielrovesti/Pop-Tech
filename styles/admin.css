@@ -344,6 +344,14 @@ form ul li{
     border-color: var(--errorbordercolor);
 }
 
+/* Delete page ========================== */
+
+#deleteForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Main Content ========================= */
 
 main{

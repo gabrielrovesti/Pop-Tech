@@ -173,7 +173,7 @@
 #chiSiamo .first .img-container:before,#chiSiamo .second .img-container:after
 {
     width: 100%;
-    height: 23%;
+    height: 30%;
     bottom:0px;
    
     transform-origin: bottom left;
@@ -186,7 +186,7 @@
 
 #chiSiamo .first .text-container:after{
     left:-3px; 
-    top:99%;
+    top:94%;
 }
 
 #chiSiamo .second .text-container:before{
