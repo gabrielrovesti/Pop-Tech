@@ -33,11 +33,11 @@
             $password = sanitize($_POST['password'],"");
 
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                array_push($errors,'<p class="message errorMsg">Formato dell\'email non corretto</p>');
+                array_push($errors,'<p class="message errorMsg">Formato dell\'<span lang="en">email</span> non corretto</p>');
             }
 
             if(strlen($password)<5){
-                array_push($errors,'<p class="message errorMsg">Formato della password non corretto.</p>');
+                array_push($errors,'<p class="message errorMsg">Formato della <span lang="en">password</span> non corretto.</p>');
             }
 
             if(count($errors)==0){
@@ -60,11 +60,11 @@
                             die();
 
                         }else{
-                            array_push($errors,'<p class="message errorMsg">Nome utente o password non corretti</p>');
+                            array_push($errors,'<p class="message errorMsg">Nome utente o <span lang="en">password</span> non corretti</p>');
                         }
 
                     }else{
-                        array_push($errors,'<p class="message errorMsg">Nome utente o password non corretti</p>');
+                        array_push($errors,'<p class="message errorMsg">Nome utente o <span lang="en">password</span> non corretti</p>');
                     }
 
                     $errorsStr = '<ul>';

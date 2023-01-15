@@ -55,10 +55,10 @@
         }
 
         if(strlen($email) == 0){
-            $form_messages .= '<p class="formError">Il campo e-mail non può essere vuoto</p>';
+            $form_messages .= '<p class="formError">Il campo <span lang="en">email</span> non può essere vuoto</p>';
         }else{
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                $form_messages .= '<p class="formError">Il campo e-mail non è valido</p>';
+                $form_messages .= '<p class="formError">Il campo <span lang="en">email</span> non è valido</p>';
             }
             if(!preg_match("/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/",$email)){
                 $form_messages .= '<p class="formError">Il campo e-mail non è stato inserito nel formato corretto</p>';

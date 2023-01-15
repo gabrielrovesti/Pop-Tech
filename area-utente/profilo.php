@@ -44,11 +44,11 @@
                 }
 
                 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                    array_push($errors,'<p class="message errorMsg">Inserire una mail corretta.</p>');
+                    array_push($errors,'<p class="message errorMsg">Inserire una <span lang="en">email</span> corretta.</p>');
                 }
 
                 if(strlen($password)<4){
-                    array_push($errors,'<p class="message errorMsg">Inserire una password con almeno 4 caretteri.</p>');
+                    array_push($errors,'<p class="message errorMsg">Inserire una <span lang="en">password</span> con almeno 4 caretteri.</p>');
                 }
 
                 if(count($errors)==0){

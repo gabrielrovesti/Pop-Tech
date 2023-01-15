@@ -1,5 +1,5 @@
 // Mostra o nascondi il menu mobile
-// usato dal menu "hamburgher"
+// usato dal menu "hamburger"
 function toggleMobileMenu(){
     document.querySelector("nav#menu").classList.toggle("show");
 }
@@ -90,7 +90,7 @@ function setContattiChecks(){
             }
         },
         email:{
-            message:"Inserire un indirizzo email valido.",
+            message:"Inserire un indirizzo <span lang='en'>email</span> valido.",
             condition: function(str){
                 let expr = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return expr.test(str.toLowerCase());
@@ -118,14 +118,14 @@ function setAdminLoginChecks(){
 
     checks = {
         email:{
-            message:"Inserire un indirizzo email valido.",
+            message:"Inserire un indirizzo <span lang='en'>email</span> valido.",
             condition: function(str){
                 let expr = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return expr.test(str.toLowerCase());
             }
         },
         password:{
-            message:"Inserire una password di almeno 5 caratteri.",
+            message:"Inserire una <span lang='en'>password</span> di almeno 5 caratteri.",
             condition: function(str){
                 return str.length>=5;
             }
@@ -150,7 +150,7 @@ function setAdminProdottoChecks(){
             }
         },
         origine:{
-            message:"Inserire una nazione di originea.",
+            message:"Inserire una nazione di origine.",
             condition: function(str){
                 return str.length>0;
             }
@@ -191,7 +191,7 @@ function setAdminProdottoChecks(){
                 return (!isNaN(parseFloat(str))) && parseFloat(str)>0;
             }
         }
-        //immagine controllata da PHP quando avviene l'umpoad
+        //immagine controllata da PHP quando avviene l'upload
     };
 }
 
@@ -204,7 +204,7 @@ function setAdminCategoriaMarcaChecks(){
             }
         },
         keywords:{
-            message:"Inserire delle keywords.",
+            message:"Inserire delle <span lang='en'>keywords</span>.",
             condition: function(str){
                 return str.length>=2;
             }
@@ -227,13 +227,13 @@ function setAdminUtenteChecks(){
             }
         },
         password:{
-            message:"Inserire una password con almeno quattro caratteri.",
+            message:"Inserire una <span lang='en'>password</span> con almeno quattro caratteri.",
             condition: function(str){
                 return str.length>=4;
             }
         },
         email:{
-            message:"Inserire un indirizzo email valido.",
+            message:"Inserire un indirizzo <span lang='en'>email</span>valido.",
             condition: function(str){
                 let expr = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return expr.test(str.toLowerCase());
@@ -265,14 +265,14 @@ function setUserLoginChecks(){
 
     checks = {
         email:{
-            message:"Inserire un indirizzo email valido.",
+            message:"Inserire un indirizzo <span lang='en'>email</span> valido.",
             condition: function(str){
                 let expr = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return expr.test(str.toLowerCase());
             }
         },
         password:{
-            message:"Inserire una password di almeno 4 caratteri.",
+            message:"Inserire una <span lang='en'>password</span> di almeno 4 caratteri.",
             condition: function(str){
                 return str.length>=4;
             }
@@ -290,13 +290,13 @@ function setUserProfiloChecks(){
             }
         },
         password:{
-            message:"Inserire una password con almeno quattro caratteri.",
+            message:"Inserire una <span lang='en'>password</span> con almeno quattro caratteri.",
             condition: function(str){
                 return str.length>=4;
             }
         },
         email:{
-            message:"Inserire un indirizzo email valido.",
+            message:"Inserire un indirizzo <span lang='en'>email</span> valido.",
             condition: function(str){
                 let expr = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return expr.test(str.toLowerCase());
@@ -308,7 +308,7 @@ function setUserProfiloChecks(){
 function setUserRecensioneChecks(){
     checks = {
         contenuto:{
-            message:"Inserire il contenuto della recesione, con almeno 10 caratteri.",
+            message:"Inserire il contenuto della recensione, con almeno 10 caratteri.",
             condition: function(str){
                 return str.length>=10;
             }
@@ -325,25 +325,25 @@ function setUserRegistrazioneChecks(){
             }
         },
         password:{
-            message:"Inserire una password con almeno quattro caratteri.",
+            message:"Inserire una <span lang='en'>password</span> con almeno quattro caratteri.",
             condition: function(str){
                 return str.length>=4;
             }
         },
         password:{
-            message:"Inserire una password con almeno quattro caratteri.",
+            message:"Inserire una <span lang='en'>password</span> con almeno quattro caratteri.",
             condition: function(str){
                 return str.length>=4;
             }
         },
         passwordConfirm:{
-            message:"Le password inserite non combaciano.",
+            message:"Le <span lang='en'>password</span> inserite non combaciano.",
             condition: function(str){
                 return str == document.getElementById('password').value;
             }
         },
         email:{
-            message:"Inserire un indirizzo email valido.",
+            message:"Inserire un indirizzo <span lang='en'>email</span> valido.",
             condition: function(str){
                 let expr = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return expr.test(str.toLowerCase());
