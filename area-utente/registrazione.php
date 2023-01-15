@@ -43,15 +43,15 @@
             }
 
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                array_push($errors,'<p class="message errorMsg">Inserire una e-mail corretta.</p>');
+                array_push($errors,'<p class="message errorMsg">Inserire una <span lang="en">email</span> corretta.</p>');
             }
 
             if(strlen($password)<4){
-                array_push($errors,'<p class="message errorMsg">Inserire una password con almeno 4 caretteri.</p>');
+                array_push($errors,'<p class="message errorMsg">Inserire una <span lang="en">password</span> con almeno 4 caretteri.</p>');
             }
 
             if($password != $passwordConfirm){
-                array_push($errors,'<p class="message errorMsg">Le password inserite non combaciano.</p>');
+                array_push($errors,'<p class="message errorMsg">Le <span lang="en">password</span inserite non combaciano.</p>');
             }
 
             if(count($errors)==0){
@@ -66,7 +66,7 @@
                 $queryOK = $connection->exec_alter_query($query);
 
                 if($queryOK){
-                    $content .= '<p class="message successMsg">Utente creato con successo. Clicca su accedi per entrare nella tua area utente.</p>';
+                    $content .= '<p class="message successMsg">Utente creato con successo. Clicca su Accedi per entrare nella tua area utente.</p>';
                 }else{
                     $content .= '<p class="message errorMsg">Errore durante la creazione dell\'utente. Contatta il supporto tecnico.</p>';
                 }

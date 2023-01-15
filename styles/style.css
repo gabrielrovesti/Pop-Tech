@@ -746,6 +746,10 @@ main h2{
     border-left: 3px solid var(--bordercolor);
 }
 
+#contatti div#modulo_richieste h2{
+    text-transform: uppercase;
+}
+
 #contatti div#info{
     background-image: linear-gradient(to bottom, var(--contattiGrad2Stop1), var(--contattiGrad2Stop2));
     border-right: 3px solid var(--bordercolor);
