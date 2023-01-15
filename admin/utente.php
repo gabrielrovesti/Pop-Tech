@@ -54,11 +54,11 @@
                 }
 
                 if(strlen($password)<4){
-                    array_push($errors,'<p class="message errorMsg">Inserire una password di almeno 4 caratteri.</p>');
+                    array_push($errors,'<p class="message errorMsg">Inserire una <span lang="en">password</span> di almeno 4 caratteri.</p>');
                 }
 
                 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                    array_push($errors,'<p class="message errorMsg">Inserire una email valida.</p>');
+                    array_push($errors,'<p class="message errorMsg">Inserire una <span lang="en">email</span> valida.</p>');
                 }
                 
 
