@@ -23,10 +23,11 @@
 
         $content = "<h1>Nuovo Utente</h1>";
 
-        $id    = '';
-        $nome  = '';
-        $email = '';
-        $admin = '';
+        $id        = '';
+        $nome      = '';
+        $email     = '';
+        $username  = '';
+        $admin     = '';
         $errorsStr = '';
 
         $connection = new DBAccess();
@@ -43,6 +44,7 @@
                 //Prelevamento dati
                 $nome     = sanitize($_POST['nome'],"");
                 $email    = sanitize($_POST['email'],"");
+                $username = sanitize($_POST['username'],"");
                 $password = sanitize($_POST['password'],"");
                 $admin    = intval(sanitize($_POST['admin'],""));
 
@@ -51,6 +53,14 @@
                 //Validazione dati
                 if(strlen($nome)<=1){
                     array_push($errors,'<p class="message errorMsg">Inserire un nome con almeno due caratteri.</p>');
+                }
+
+                if(strlen($nome)<=1){
+                    array_push($errors,'<p class="message errorMsg">Inserire un nome con almeno due caratteri.</p>');
+                }
+
+                if(!preg_match('/\w{4,}/',$username)){
+                    array_push($errors,'<p class="message errorMsg">Inserire un nome utente con almeno 4 lettere e/o numeri.</p>');
                 }
 
                 if(strlen($password)<4){
@@ -68,14 +78,14 @@
 
                         //Richiesta di modifica del prodotto
                         $id   = intval(sanitize($_POST['id'],""));
-                        $query = "UPDATE utente SET nome='$nome', email='', password='$encPassword', admin='$admin' WHERE id=$id";
+                        $query = "UPDATE utente SET nome='$nome', email='', password='$encPassword', username='$username', admin='$admin' WHERE id=$id;";
                         $action = "modificato";
                 
                     }else{
 
                         //Richiesta di creazione del prodotto
                         $id = '';
-                        $query = "INSERT INTO utente(nome,email,password,admin) VALUES ('$nome','$email','$encPassword',$admin);";
+                        $query = "INSERT INTO utente(nome,email,username,password,admin) VALUES ('$nome','$email','$username','$encPassword',$admin);";
 
                     }
 
@@ -98,6 +108,7 @@
                     $form = str_replace('{{id}}',$id,$form);
                     $form = str_replace('{{nome}}',$nome,$form);
                     $form = str_replace('{{email}}',$email,$form);
+                    $form = str_replace('{{username}}',$username,$form);
                     $form = str_replace('{{admin}}',($admin)?'checked=""':"",$form);
                     $form = str_replace('{{errors}}',$errorsStr,$form);
 
@@ -125,6 +136,7 @@
                         $nome  = $user['nome'];
                         $email = $user['email'];
                         $admin = $user['admin'];
+                        $username = $user['username'];
 
                     }else{
                         $content .= '<p class="message errorMsg">Utente non trovato.</p>';
@@ -135,6 +147,7 @@
                 $form = str_replace('{{id}}',$id,$form);
                 $form = str_replace('{{nome}}',$nome,$form);
                 $form = str_replace('{{email}}',$email,$form);
+                $form = str_replace('{{username}}',$username,$form);
                 $form = str_replace('{{admin}}',($admin)?'checked=""':"",$form);
                 $form = str_replace('{{errors}}',$errorsStr,$form);
 

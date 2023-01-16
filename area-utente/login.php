@@ -30,11 +30,11 @@
 
             $errors = [];
 
-            $email = sanitize($_POST['email'],"");
+            $username = sanitize($_POST['username'],"");
             $password = sanitize($_POST['password'],"");
 
-            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                array_push($errors,'<p class="message errorMsg">formato dell\'<span lang="en">email</span> non corretto</p>');
+            if(!preg_match('/\w{4,}/',$username)){
+                array_push($errors,'<p class="message errorMsg">Formato del nome utente non corretto</p>');
             }
 
             if(strlen($password)<4){ //"user" ha 4 caratteri
@@ -48,7 +48,7 @@
                 if($connection->open_connection()){
                     
                     //Cerca utente con quell'id
-                    $users = $connection->exec_select_query("SELECT id,admin,password FROM utente WHERE email='$email';");  
+                    $users = $connection->exec_select_query("SELECT id,admin,password FROM utente WHERE username='$username';");  
                     $connection->close_connection();
 
                     if(count($users)>0){ //Utente trovato

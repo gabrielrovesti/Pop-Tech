@@ -14,8 +14,9 @@
     $title = "Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: Profilo</p>';
 
-    $nome  = '';
-    $email = '';
+    $nome     = '';
+    $email    = '';
+    $username = '';
     
     $errorsStr = "";
     $errors    = [];
@@ -32,9 +33,10 @@
 
             //Prelevamento dati
             
-            $nome  = sanitize($_POST['nome'],"");
-            $email = sanitize($_POST['email'],"");
-            $password = sanitize($_POST['password'],"");
+            $nome            = sanitize($_POST['nome'],"");
+            $email           = sanitize($_POST['email'],"");
+            $username        = sanitize($_POST['username'],"");
+            $password        = sanitize($_POST['password'],"");
             $passwordConfirm = sanitize($_POST['passwordConfirm'],"");
             
             //Validazione dati
@@ -44,6 +46,10 @@
 
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                 array_push($errors,'<p class="message errorMsg">Inserire una <span lang="en">email</span> corretta.</p>');
+            }
+
+            if(!preg_match('/\w{4,}/',$username)){
+                array_push($errors,'<p class="message errorMsg">Inserire un nome utente con almeno 4 lettere e/o numeri.</p>');
             }
 
             if(strlen($password)<4){
@@ -57,11 +63,10 @@
             if(count($errors)==0){
 
                 $query = "";
-
-                //Richiesta di modifica
+                
                 $encPassword = password_hash($password,PASSWORD_BCRYPT);
 
-                $query = "INSERT INTO utente(nome,email,password,admin) VALUES('$nome','$email','$encPassword',0);";
+                $query = "INSERT INTO utente(nome,username,email,password,admin) VALUES('$nome','$username','$email','$encPassword',0);";
 
                 $queryOK = $connection->exec_alter_query($query);
 
@@ -81,6 +86,7 @@
                 $errorsStr .= '<ul>';
 
                 $form = str_replace('{{email}}',$_POST['email'],$form);
+                $form = str_replace('{{username}}',$_POST['username'],$form);
                 $form = str_replace('{{nome}}',$_POST['nome'],$form);
                             
                 $form = str_replace('{{errors}}',$errorsStr,$form);
@@ -93,6 +99,7 @@
 
             $form = str_replace('{{errors}}',$errorsStr,$form);
             $form = str_replace('{{email}}',"",$form);
+            $form = str_replace('{{username}}',"",$form);
             $form = str_replace('{{nome}}',"",$form);
 
             $content .= $form;

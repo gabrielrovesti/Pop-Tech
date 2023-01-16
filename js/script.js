@@ -117,15 +117,15 @@ function setContattiChecks(){
 function setAdminLoginChecks(){
 
     checks = {
-        email:{
-            message:"Inserire un indirizzo <span lang='en'>email</span> valido.",
+        username:{
+            message:"Formato del nome utente non corretto.",
             condition: function(str){
-                let expr = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                return expr.test(str.toLowerCase());
+                let expr = /\w{4,}/ ;
+                return expr.test(str);
             }
         },
         password:{
-            message:"Inserire una <span lang='en'>password</span> di almeno 5 caratteri.",
+            message:"Formato della <span lang='en'>password</span> non corretto.",
             condition: function(str){
                 return str.length>=5;
             }
@@ -186,7 +186,7 @@ function setAdminProdottoChecks(){
             }
         },
         prezzo:{
-            message:"Inserire un prezzo numerico maggiore di zero.",
+            message:"Inserire un prezzo numerico maggiore di 0.",
             condition: function(str){
                 return (!isNaN(parseFloat(str))) && parseFloat(str)>0;
             }
@@ -198,7 +198,7 @@ function setAdminProdottoChecks(){
 function setAdminCategoriaMarcaChecks(){
     checks = {
         nome:{
-            message:"Inserire un nome con almeno due caratteri.",
+            message:"Inserire un nome con almeno 2 caratteri.",
             condition: function(str){
                 return str.length>=2;
             }
@@ -210,7 +210,7 @@ function setAdminCategoriaMarcaChecks(){
             }
         },
         descrizione:{
-            message:"Inserire una descrizione di almeno 50 caratteri.",
+            message:"Inserire una descrizione di almeno cinquanta caratteri.",
             condition: function(str){
                 return str.length>=50;
             }
@@ -221,19 +221,26 @@ function setAdminCategoriaMarcaChecks(){
 function setAdminUtenteChecks(){
     checks = {
         nome:{
-            message:"Inserire un nome con almeno due caratteri.",
+            message:"Inserire un nome con almeno 2 caratteri.",
             condition: function(str){
                 return str.length>=2;
             }
         },
+        username:{
+            message:"Inserire un nome utente con almeno 4 lettere e/o numeri.",
+            condition: function(str){
+                let expr = /\w{4,}/ ;
+                return expr.test(str);
+            }
+        },
         password:{
-            message:"Inserire una <span lang='en'>password</span> con almeno quattro caratteri.",
+            message:"Inserire una <span lang='en'>password</span> con almeno 4 caratteri.",
             condition: function(str){
                 return str.length>=4;
             }
         },
         email:{
-            message:"Inserire un indirizzo <span lang='en'>email</span>valido.",
+            message:"Inserire un indirizzo <span lang='en'>email</span> valido.",
             condition: function(str){
                 let expr = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return expr.test(str.toLowerCase());
@@ -245,13 +252,13 @@ function setAdminUtenteChecks(){
 function setAdminFAQChecks(){
     checks = {
         domanda:{
-            message:"Inserire una domanda con almeno dieci caratteri.",
+            message:"Inserire una domanda con almeno 10 caratteri.",
             condition: function(str){
                 return str.length>=10;
             }
         },
         risposta:{
-            message:"Inserire una risposta con almeno dieci caratteri.",
+            message:"Inserire una risposta con almeno 10 caratteri.",
             condition: function(str){
                 return str.length>=10;
             }
@@ -264,15 +271,15 @@ function setAdminFAQChecks(){
 function setUserLoginChecks(){
 
     checks = {
-        email:{
-            message:"Inserire un indirizzo <span lang='en'>email</span> valido.",
+        username:{
+            message:"Formato del nome utente non corretto.",
             condition: function(str){
-                let expr = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                return expr.test(str.toLowerCase());
+                let expr = /\w{4,}/ ;
+                return expr.test(str);
             }
         },
         password:{
-            message:"Inserire una <span lang='en'>password</span> di almeno 4 caratteri.",
+            message:"Formato della <span lang='en'>password</span> non corretto.",
             condition: function(str){
                 return str.length>=4;
             }
@@ -284,13 +291,20 @@ function setUserLoginChecks(){
 function setUserProfiloChecks(){
     checks = {
         nome:{
-            message:"Inserire un nome con almeno due caratteri.",
+            message:"Inserire un nome con almeno 2 caratteri.",
             condition: function(str){
                 return str.length>=2;
             }
         },
+        username:{
+            message:"Inserire un nome utente con almeno 4 lettere e/o numeri.",
+            condition: function(str){
+                let expr = /\w{4,}/ ;
+                return expr.test(str);
+            }
+        },
         password:{
-            message:"Inserire una <span lang='en'>password</span> con almeno quattro caratteri.",
+            message:"Inserire una <span lang='en'>password</span> con almeno 4 caratteri.",
             condition: function(str){
                 return str.length>=4;
             }
@@ -319,19 +333,26 @@ function setUserRecensioneChecks(){
 function setUserRegistrazioneChecks(){
     checks = {
         nome:{
-            message:"Inserire un nome con almeno due caratteri.",
+            message:"Inserire un nome con almeno 2 caratteri.",
             condition: function(str){
                 return str.length>=2;
             }
         },
+        username:{
+            message:"Inserire un nome utente con almeno 4 lettere e/o numeri.",
+            condition: function(str){
+                let expr = /\w{4,}/ ;
+                return expr.test(str);
+            }
+        },
         password:{
-            message:"Inserire una <span lang='en'>password</span> con almeno quattro caratteri.",
+            message:"Inserire una <span lang='en'>password</span> con almeno 4 caratteri.",
             condition: function(str){
                 return str.length>=4;
             }
         },
         password:{
-            message:"Inserire una <span lang='en'>password</span> con almeno quattro caratteri.",
+            message:"Inserire una <span lang='en'>password</span> con almeno 4 caratteri.",
             condition: function(str){
                 return str.length>=4;
             }

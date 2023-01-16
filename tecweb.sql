@@ -228,6 +228,7 @@ DROP TABLE IF EXISTS `utente`;
 CREATE TABLE `utente` (
   `ID` int(10) UNSIGNED NOT NULL,
   `nome` varchar(200) NOT NULL,
+  `username` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
   `admin` tinyint(1) NOT NULL
@@ -237,10 +238,9 @@ CREATE TABLE `utente` (
 -- Dumping data for table `utente`
 --
 
-INSERT INTO `utente` (`ID`, `nome`, `email`, `password`, `admin`) VALUES
-(1, 'User', 'user@user.com', '$2y$10$ae/uFTI3KInYS3n8sBXVmuUw33/ex8VoLzt73dnWGJlN2Pa.K8s9y', 0),
-(2, 'Admin', 'admin@admin.com', '$2y$10$SFYKM6V9lhS7eWRuiRqWZu6IV43mEfcSGyVUhPM3GzRO9vWxQhwfG', 1),
-(3, 'User', 'user@user.com', '$2y$10$.TB8kRzHhCw5Fy4vlDaeZ.nRRmKJ.ruwiwdCNDeNodkSYlolIRCZO', 0);
+INSERT INTO `utente` (`ID`, `nome`,`username`, `email`, `password`, `admin`) VALUES
+(1, 'User','user', 'user@user.com', '$2y$10$ae/uFTI3KInYS3n8sBXVmuUw33/ex8VoLzt73dnWGJlN2Pa.K8s9y', 0),
+(2, 'Admin','user', 'admin@admin.com', '$2y$10$SFYKM6V9lhS7eWRuiRqWZu6IV43mEfcSGyVUhPM3GzRO9vWxQhwfG', 1);
 
 --
 -- Indexes for dumped tables

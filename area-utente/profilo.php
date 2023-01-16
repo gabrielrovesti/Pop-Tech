@@ -14,8 +14,9 @@
     $title = "Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: Area Utente &gt; Profilo</p>';
 
-    $nome  = '';
-    $email = '';
+    $nome     = '';
+    $email    = '';
+    $username = '';
     
     $errorsStr = "";
     $errors    = [];
@@ -34,8 +35,9 @@
             if(isset($_POST['submit'])){
                 //Invio del form e prelevamento dati
                 
-                $nome  = sanitize($_POST['nome'],"");
-                $email = sanitize($_POST['email'],"");
+                $nome     = sanitize($_POST['nome'],"");
+                $email    = sanitize($_POST['email'],"");
+                $username = sanitize($_POST['username'],"");
                 $password = sanitize($_POST['password'],"");
                 
                 //Validazione dati
@@ -45,6 +47,10 @@
 
                 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                     array_push($errors,'<p class="message errorMsg">Inserire una <span lang="en">email</span> corretta.</p>');
+                }
+
+                if(!preg_match('/\w{4,}/',$username)){
+                    array_push($errors,'<p class="message errorMsg">Inserire un nome utente con almeno 4 lettere e/o numeri.</p>');
                 }
 
                 if(strlen($password)<4){
@@ -57,7 +63,7 @@
                     //Richiesta di modifica
                     $encPassword = password_hash($password,PASSWORD_BCRYPT);
 
-                    $query = "UPDATE utente SET nome='$nome', email='$email', password='$encPassword' WHERE id=$userid;";
+                    $query = "UPDATE utente SET nome='$nome', email='$email', username='$username', password='$encPassword' WHERE id=$userid;";
 
                     $queryOK = $connection->exec_alter_query($query);
 
@@ -76,13 +82,14 @@
 
                     $form = str_replace('{{email}}',$_POST['email'],$form);
                     $form = str_replace('{{nome}}',$_POST['nome'],$form);
+                    $form = str_replace('{{username}}',$_POST['username'],$form);
                                 
                     $form = str_replace('{{errors}}',$errorsStr,$form);
 
                     $content .= $form;
                 }
             }else{
-                $users = $connection->exec_select_query('SELECT nome,email FROM utente WHERE id='.$userid.';');
+                $users = $connection->exec_select_query('SELECT nome,email,username FROM utente WHERE id='.$userid.';');
 
                 if(isset($users[0])){
 
@@ -90,6 +97,7 @@
 
                     $form = str_replace('{{errors}}',$errorsStr,$form);
                     $form = str_replace('{{email}}',$user['email'],$form);
+                    $form = str_replace('{{username}}',$user['username'],$form);
                     $form = str_replace('{{nome}}',$user['nome'],$form);
 
                 }
