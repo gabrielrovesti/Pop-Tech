@@ -1,5 +1,5 @@
-# PopTech
-Web Technologies Project at University of Padua, 2022/2023 taught by Prof. Gaggi
+# Pop Tech
+Progetto di Tecnologie Web per l'anno 2022/2023 per il corso della prof.ssa Gaggi, UniPD, Informatica
 
 ## Indicazione collegamento Tecweb disponibile al link:
 
