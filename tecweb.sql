@@ -240,7 +240,7 @@ CREATE TABLE `utente` (
 
 INSERT INTO `utente` (`ID`, `nome`,`username`, `email`, `password`, `admin`) VALUES
 (1, 'User','user', 'user@user.com', '$2y$10$ae/uFTI3KInYS3n8sBXVmuUw33/ex8VoLzt73dnWGJlN2Pa.K8s9y', 0),
-(2, 'Admin','user', 'admin@admin.com', '$2y$10$SFYKM6V9lhS7eWRuiRqWZu6IV43mEfcSGyVUhPM3GzRO9vWxQhwfG', 1);
+(2, 'Admin','admin', 'admin@admin.com', '$2y$10$SFYKM6V9lhS7eWRuiRqWZu6IV43mEfcSGyVUhPM3GzRO9vWxQhwfG', 1);
 
 --
 -- Indexes for dumped tables
