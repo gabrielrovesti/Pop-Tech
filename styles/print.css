@@ -8,6 +8,16 @@ body{
     font-family: "Times New Roman", serif;
 }
 
+/* Link interni non anchor*/
+a:not([href*="#"]):not([href*="http"]):after{ 
+    content: " ( http://tecweb.studenti.math.unipd.it/gmoretto/" attr(href) " )";
+}
+
+/* Link esterni*/
+a[href*="http"]:after{
+    content: " ( " attr(href) " )";
+}
+
 /* Header ========================= */
 
 header#header h1{
