@@ -42,9 +42,7 @@ function validateField(event){
                 event.target.nextSibling.remove();
             }
 
-            if(event.target.getAttribute('aria-alert')){//Togli aria-alert se già presente
-                event.target.setAttribute('aria-label','');
-            }
+            event.target.setAttribute('aria-invalid','true');
 
             //Crea tag <p> con il messaggio di errore
             let newElement = document.createElement('p');
@@ -66,6 +64,7 @@ function validateField(event){
                 if(event.target.nextSibling.tagName == 'P')
                   event.target.nextSibling.remove();
             }
+            event.target.setAttribute('aria-invalid','false');
             event.target.classList.remove('fieldError'); //Togli classe di errore dal campo
 
             event.target.parentNode.querySelector('input[type=submit]').removeAttribute('disabled');

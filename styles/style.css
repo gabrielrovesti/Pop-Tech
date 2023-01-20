@@ -384,6 +384,11 @@ a:visited, nav ul li a:visited{
     color:var(--linkvisitedcolor);
 }
 
+a:focus{
+    outline:0;
+    border:3px dashed var(--bordercolor);
+}
+
 a.button, input.button{
     border: 3px solid var(--bordercolor);
     padding: .5em 1em .5em 1em;
@@ -400,6 +405,10 @@ a.button, input.button{
 a.button:hover, input.button:hover{
     color: var(--linkbuttoncolor);
     background: linear-gradient(to bottom left, var(--hover1), var(--hover2));
+}
+
+a.button:focus{
+    border-style: dashed;
 }
 
 input.button:disabled{
