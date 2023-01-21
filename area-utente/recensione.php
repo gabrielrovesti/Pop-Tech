@@ -60,15 +60,15 @@
                 
                 //Validazione dati
                 if($utente==''){
-                    array_push($errors,'<p class="message errorMsg">Selezionare un utente.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Selezionare un utente.</p>');
                 }
 
                 if($prodotto==''){
-                    array_push($errors,'<p class="message errorMsg">Selezionare un utente.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Selezionare un utente.</p>');
                 }
 
                 if(strlen($contenuto)<10){
-                    array_push($errors,'<p class="message errorMsg">Inserire il contenuto della recesione, con almeno 10 caratteri.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire il contenuto della recesione, con almeno 10 caratteri.</p>');
                 }
                 
 
@@ -87,7 +87,7 @@
                     if($queryOK){
                         $content .= '<p class="message successMsg">Recensione salvata con successo</p>';
                     }else{
-                        $content .= '<p class="message errorMsg">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
+                        $content .= '<p class="message errorMsg" role="alert">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
                     }
 
                 }else{
@@ -165,7 +165,7 @@
                             
                         }
                     }else{
-                        $content .= '<p class="message errorMsg">Recensione non trovata.</p>';
+                        $content .= '<p class="message errorMsg" role="alert">Recensione non trovata.</p>';
                     }           
                 }   
             }

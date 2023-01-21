@@ -46,29 +46,29 @@
                 $email    = sanitize($_POST['email'],"");
                 $username = sanitize($_POST['username'],"");
                 $password = sanitize($_POST['password'],"");
-                $admin    = intval(sanitize($_POST['admin'],""));
+                $admin    = intval(sanitize($_POST['admin'] or 0,""));
 
                 $encPassword = password_hash($password,PASSWORD_BCRYPT);
 
                 //Validazione dati
                 if(strlen($nome)<=1){
-                    array_push($errors,'<p class="message errorMsg">Inserire un nome con almeno due caratteri.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire un nome con almeno due caratteri.</p>');
                 }
 
                 if(strlen($nome)<=1){
-                    array_push($errors,'<p class="message errorMsg">Inserire un nome con almeno due caratteri.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire un nome con almeno due caratteri.</p>');
                 }
 
                 if(!preg_match('/\w{4,}/',$username)){
-                    array_push($errors,'<p class="message errorMsg">Inserire un nome utente con almeno 4 lettere e/o numeri.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire un nome utente con almeno 4 lettere e/o numeri.</p>');
                 }
 
                 if(strlen($password)<4){
-                    array_push($errors,'<p class="message errorMsg">Inserire una <span lang="en">password</span> di almeno 4 caratteri.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire una <span lang="en">password</span> di almeno 4 caratteri.</p>');
                 }
 
                 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                    array_push($errors,'<p class="message errorMsg">Inserire una <span lang="en">email</span> valida.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire una <span lang="en">email</span> valida.</p>');
                 }
                 
 
@@ -94,7 +94,7 @@
                     if($queryOK){
                         $content .= '<p class="message successMsg" role="status">utente '.$action.' con successo</p>';
                     }else{
-                        $content .= '<p class="message errorMsg" role="status">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
+                        $content .= '<p class="message errorMsg" role="alert" role="status">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
                     }
 
                 }else{
@@ -139,7 +139,7 @@
                         $username = $user['username'];
 
                     }else{
-                        $content .= '<p class="message errorMsg">Utente non trovato.</p>';
+                        $content .= '<p class="message errorMsg" role="alert">Utente non trovato.</p>';
                     }           
 
                 }

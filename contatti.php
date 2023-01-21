@@ -109,7 +109,7 @@
     $menu = get_menu();
     $template = str_replace('{{menu}}',$menu,$template);
 
-    echo replace_in_page($template,$title,$pageID,$breadcrumbs,'keywords','descrizione',$content,'setContattiChecks();addFieldsEvent();addScrollEventListener();');
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs,'negozio fumetti,negozio manga, fumetti padova, action figures padova, negozio giochi da tavolo, videogiochi padova, gaming padova','Scopri il nostro negozio di Fumetti e Videogiochi di Padova. Chiamaci allo 049 123456 o vieni a trovarci in Via Trieste, 12.',$content,'setContattiChecks();addFieldsEvent();addScrollEventListener();');
 
 ?>
 

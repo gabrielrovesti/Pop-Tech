@@ -51,15 +51,15 @@
 
                 //Validazione dati
                 if(strlen($nome)<=1){
-                    array_push($errors,'<p class="message errorMsg">Inserire un nome con almeno due caratteri.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire un nome con almeno due caratteri.</p>');
                 }
 
                 if(strlen($descrizione)<50){
-                    array_push($errors,'<p class="message errorMsg">Inserire una descrizione con almeno 50 caratteri.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire una descrizione con almeno 50 caratteri.</p>');
                 }
 
                 if(strlen($keywords)<2){
-                    array_push($errors,'<p class="message errorMsg">Inserire delle keywords.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire delle keywords.</p>');
                 }
 
                 if(count($errors)==0){
@@ -83,7 +83,7 @@
                     if($queryOK){
                         $content .= '<p class="message successMsg" role="status">Categoria '.$action.' con successo</p>';
                     }else{
-                        $content .= '<p class="message errorMsg" role="status">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
+                        $content .= '<p class="message errorMsg" role="alert" role="status">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
                     }
 
                 }else{
@@ -128,7 +128,7 @@
                         $checked = ($category['inPrimaPagina']==1)?'checked':'';
 
                     }else{
-                        $content .= '<p class="message errorMsg">Categoria non trovata.</p>';
+                        $content .= '<p class="message errorMsg" role="alert">Categoria non trovata.</p>';
                     }           
 
                 }

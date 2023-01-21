@@ -54,11 +54,11 @@
 
                 //Validazione dati
                 if($utente==''){
-                    array_push($errors,'<p class="message errorMsg">Selezionare un utente.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Selezionare un utente.</p>');
                 }
 
                 if($prodotto==''){
-                    array_push($errors,'<p class="message errorMsg">Selezionare un utente.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Selezionare un utente.</p>');
                 }
 
                 
@@ -85,7 +85,7 @@
                     if($queryOK){
                         $content .= '<p class="message successMsg" role="status">Recensione '.$action.' con successo</p>';
                     }else{
-                        $content .= '<p class="message errorMsg" role="status">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
+                        $content .= '<p class="message errorMsg" role="alert" role="status">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
                     }
 
                 }else{
@@ -144,7 +144,7 @@
                         $punteggio = $review['punteggio'];
 
                     }else{
-                        $content .= '<p class="message errorMsg">Recensione non trovata.</p>';
+                        $content .= '<p class="message errorMsg" role="alert">Recensione non trovata.</p>';
                     }           
 
                 }

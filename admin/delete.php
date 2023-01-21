@@ -116,7 +116,7 @@
                     break;
 
                     default:
-                        $content = '<p class="message errorMsg">L\'indirizzo digitato non è corretto. Selezionare un elemento da eliminare dalla lista.</p>';
+                        $content = '<p class="message errorMsg" role="alert">L\'indirizzo digitato non è corretto. Selezionare un elemento da eliminare dalla lista.</p>';
                     break;
                 }
 
@@ -152,7 +152,7 @@
                         if($queryOK){
                             $content .= '<p class="message successMsg">Elemento eliminato con successo</p>';
                         }else{
-                            $content .= '<p class="message errorMsg">Eliminazione non riuscita.</p>';
+                            $content .= '<p class="message errorMsg" role="alert">Eliminazione non riuscita.</p>';
                         } 
                 
                     }else{
@@ -163,12 +163,12 @@
                     
 
             }else{
-                $content = '<p class="message errorMsg">L\'indirizzo digitato non è completo. Selezionare un elemento da eliminare dalla lista.</p>';
+                $content = '<p class="message errorMsg" role="alert">L\'indirizzo digitato non è completo. Selezionare un elemento da eliminare dalla lista.</p>';
             }
             $connection->close_connection();
 
         }else{
-            $content .= '<p class="message errorMsg">Errore nell\'eliminazione. Contatta il supporto tecnico.</p>';
+            $content .= '<p class="message errorMsg" role="alert">Errore nell\'eliminazione. Contatta il supporto tecnico.</p>';
         }      
 
     }

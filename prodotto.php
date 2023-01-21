@@ -27,7 +27,7 @@
 
                 $product = $products[0];
 
-                $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; <a href="prodotti.php">Prodotti</a> &gt; '.parse_lang($product['nome']).'</p> ';
+               
                 
                 $title = parse_lang($product['nome'],true) . ' - Pop Tech';
 
@@ -36,8 +36,14 @@
                 $categoria = "";
                 $categories = $connection->exec_select_query("SELECT nome FROM categoria WHERE id=".$product['categoria'].";");
                 if(isset($categories[0])){
+                   
                     $categoria = '<a href="categoria.php?id='.$product['categoria'].'">'.$categories[0]['nome'].'</a>';
+
+                    $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; <a href="prodotti.php">Prodotti</a> &gt; <a href="categoria.php?id='.$product['categoria'].'">'.parse_lang($categories[0]['nome']).'</a> &gt; '.parse_lang($product['nome']).'</p> ';
+                }else{
+                    $breadcrumbs = '<p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; <a href="prodotti.php">Prodotti</a> &gt; '.parse_lang($product['nome']).'</p> ';
                 }
+
 
                 $marca = "";
                 $brands = $connection->exec_select_query("SELECT nome FROM marca WHERE id=".$product['marca'].";");

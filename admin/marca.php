@@ -69,7 +69,7 @@
                     if($queryOK){
                         $content .= '<p class="message successMsg" role="status">Marca '.$action.' con successo</p>';
                     }else{
-                        $content .= '<p class="message errorMsg" role="status">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
+                        $content .= '<p class="message errorMsg" role="alert" role="status">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
                     }
 
                 }else{
@@ -108,7 +108,7 @@
                         $nome = $brand['nome'];
 
                     }else{
-                        $content .= '<p class="message errorMsg">Marca non trovata.</p>';
+                        $content .= '<p class="message errorMsg" role="alert">Marca non trovata.</p>';
                     }           
 
                 }

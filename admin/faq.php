@@ -47,10 +47,10 @@
 
                 //Validazione dati
                 if(strlen($domanda)<=10){
-                    array_push($errors,'<p class="message errorMsg">Inserire una domanda con almeno dieci caratteri.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire una domanda con almeno dieci caratteri.</p>');
                 }
                 if(strlen($risposta)<=10){
-                    array_push($errors,'<p class="message errorMsg">Inserire una risposta con almeno dieci caratteri.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire una risposta con almeno dieci caratteri.</p>');
                 }
 
                 if(count($errors)==0){
@@ -74,7 +74,7 @@
                     if($queryOK){
                         $content .= '<p class="message successMsg" role="status">FAQ '.$action.' con successo</p>';
                     }else{
-                        $content .= '<p class="message errorMsg" role="status">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
+                        $content .= '<p class="message errorMsg" role="alert" role="status">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
                     }
 
                 }else{
@@ -115,7 +115,7 @@
                         $risposta = $faq['risposta'];
 
                     }else{
-                        $content .= '<p class="message errorMsg">FAQ non trovata.</p>';
+                        $content .= '<p class="message errorMsg" role="alert">FAQ non trovata.</p>';
                     }
 
                 }

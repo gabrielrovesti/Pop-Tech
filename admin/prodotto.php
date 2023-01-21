@@ -103,7 +103,7 @@
                         if($immagine['name']!=''){
                             $path = upload_file($immagine);
                             if(!$path){
-                                $content .= '<p class="message errorMsg">Errore durante il caricamento dell\'immagine. Sono supportati file jpg,jpeg e png.</p>';
+                                $content .= '<p class="message errorMsg" role="alert">Errore durante il caricamento dell\'immagine. Sono supportati file jpg,jpeg e png.</p>';
                             }
                         }
 
@@ -119,7 +119,7 @@
                         if($path){              
                             $query = "INSERT INTO `prodotto`(`nome`, `immagine`, `keywords`, `descrizione`, `origine`, `marca`, `modello`, `dimensione`, `peso`, `categoria`, `prezzo`) VALUES ('$nome','$path','$keywords','$descrizione','$origine','$marca','$modello','$dimensione','$peso','$categoria','$prezzo')";
                         }else{
-                            $content .= '<p class="message errorMsg">Errore durante il caricamento dell\'immagine. Sono supportati file jpg,jpeg e png.</p>';
+                            $content .= '<p class="message errorMsg" role="alert">Errore durante il caricamento dell\'immagine. Sono supportati file jpg,jpeg e png.</p>';
                         }
                     }
 
@@ -131,7 +131,7 @@
                     if($queryOK){
                         $content .= '<p class="message successMsg">Prodotto '.$action.' con successo</p>';
                     }else{
-                        $content .= '<p class="message errorMsg">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
+                        $content .= '<p class="message errorMsg" role="alert">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
                     }
 
                 }else{
@@ -155,6 +155,8 @@
                     $form = str_replace('{{dimensione}}',$dimensione,$form);
                     $form = str_replace('{{peso}}',$peso,$form);
                     $form = str_replace('{{descrizione}}',$descrizione,$form);
+
+                    $form = str_replace('{{immagine}}','',$form);
 
                     $categories = $connection->exec_select_query('SELECT id,nome FROM categoria ORDER BY nome;');
                     $brands     = $connection->exec_select_query('SELECT id,nome FROM marca ORDER BY nome;');  
@@ -237,7 +239,7 @@
                         }
 
                     }else{
-                        $content .= '<p class="message errorMsg">Prodotto non trovato.</p>';
+                        $content .= '<p class="message errorMsg" role="alert">Prodotto non trovato.</p>';
                     }    
                     
                     $connection->close_connection();

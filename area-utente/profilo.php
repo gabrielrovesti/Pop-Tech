@@ -42,19 +42,19 @@
                 
                 //Validazione dati
                 if(strlen($nome)<2){
-                    array_push($errors,'<p class="message errorMsg">Inserire un nome con almeno 2 caratteri.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire un nome con almeno 2 caratteri.</p>');
                 }
 
                 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                    array_push($errors,'<p class="message errorMsg">Inserire una <span lang="en">email</span> corretta.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire una <span lang="en">email</span> corretta.</p>');
                 }
 
                 if(!preg_match('/\w{4,}/',$username)){
-                    array_push($errors,'<p class="message errorMsg">Inserire un nome utente con almeno 4 lettere e/o numeri.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire un nome utente con almeno 4 lettere e/o numeri.</p>');
                 }
 
                 if(strlen($password)<4){
-                    array_push($errors,'<p class="message errorMsg">Inserire una <span lang="en">password</span> con almeno 4 caretteri.</p>');
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire una <span lang="en">password</span> con almeno 4 caretteri.</p>');
                 }
 
                 if(count($errors)==0){
@@ -70,7 +70,7 @@
                     if($queryOK){
                         $content .= '<p class="message successMsg">Profilo salvato con successo</p>';
                     }else{
-                        $content .= '<p class="message errorMsg">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
+                        $content .= '<p class="message errorMsg" role="alert">Errore durante l\'inserimento. Contatta il supporto tecnico.</p>';
                     }
                 }else{
                     //Ritorna il form con i dati precompilati

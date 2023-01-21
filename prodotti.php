@@ -50,6 +50,6 @@
     $menu = get_menu();
     $template = str_replace('{{menu}}',$menu,$template);
     
-    echo replace_in_page($template,$title,$pageID,$breadcrumbs,'keywords','Descrizione prodotti',$content,'addScrollEventListener()');
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs,'fumetti, manga, action figures, giochi da tavolo, videogiochi, abbigliamento, abbigliamento gamer, gaming','Scopri i nostri prodotti dai Fumetti e i Manga ai Giochi da Tavolo, Videogiochi e molto altro ancora.',$content,'addScrollEventListener()');
 ?>
 

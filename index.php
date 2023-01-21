@@ -17,7 +17,7 @@
         <div id="homeBanner">
             <div id="slogans">
                 <ul>
-                    <li>Aperti dal 2000</li>
+                    <li>Aperti dal 2001</li>
                     <li>Edizioni Originali</li>
                     <li><span lang="en">Import USA</span> e Giappone</li>
                     <li>Taglie XL e più</li>
@@ -61,7 +61,7 @@
     $menu = get_menu();
     $template = str_replace('{{menu}}',$menu,$template);
 
-    echo replace_in_page($template,$title,$pageID,$breadcrumbs,'keywords','descrizione',$content,'addScrollEventListener()');
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs,'fumetti, negozio fumetti, action figures, giochi da tavolo, videogiochi, manga, abbigliamento, gaming, statuine','Il tuo negozio di Fumetti e Videogiochi a Padova. Edizioni Originali, import USA e Giappone, Taglie XL e più, vintage Italiano',$content,'addScrollEventListener()');
 
 ?>
 
