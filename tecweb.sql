@@ -215,8 +215,9 @@ CREATE TABLE `recensione` (
 --
 
 INSERT INTO `recensione` (`ID`, `prodotto`, `utente`, `contenuto`, `punteggio`) VALUES
-(1, 66, 1, 'Test recensione', '4.5'),
-(2, 66, 1, 'Aspernatur itaque commodi occaecati magnam deleniti. Nulla saepe velit natus magnam enim. Voluptatibus at expedita voluptas quam incidunt.', '2.0');
+(1, 66, 1, 'Gioco molto avvincente. Un classico gioco da tavolo per passare ore con amici.', '4.5'),
+(2, 79, 1, 'Classico e semplice ma troppo legato al caso per giocatori più esperti.', '2.0'),
+(3, 96, 1, '', '0');
 
 -- --------------------------------------------------------
 
