@@ -4,19 +4,24 @@
 
     {{errors}}
 
-    <label for="nome" class="formBig">Nome
-        <input type="text" id="nome" name="nome" value="{{nome}}" autocomplete="off" >
-    </label>
-    <label for="keywords" class="formBig">Keywords
-        <input type="text" id="keywords" name="keywords" value="{{keywords}}" autocomplete="off" >
-    </label>
-    <label for="descrizione" class="formBig">Descrizione
-        <textarea name="descrizione" id="descrizione" cols="30" rows="10" autocomplete="off">{{descrizione}}</textarea>
-    </label>
-    <label for="inPrimaPagina" class="checkbox">
-        <input type="checkbox" id="inPrimaPagina" name="inPrimaPagina" value="1" {{checked}}  >
-        In Prima Pagina
-    </label>
+    <fieldset>
+        <legend>Dati principali</legend>
+
+        <label for="nome" class="formBig">Nome
+            <input type="text" id="nome" name="nome" value="{{nome}}" autocomplete="off" >
+        </label>
+        <label for="keywords" class="formBig">Keywords
+            <input type="text" id="keywords" name="keywords" value="{{keywords}}" autocomplete="off" >
+        </label>
+        <label for="descrizione" class="formBig">Descrizione
+            <textarea name="descrizione" id="descrizione" cols="30" rows="10" autocomplete="off">{{descrizione}}</textarea>
+        </label>
+        <label for="inPrimaPagina" class="checkbox">
+            <input type="checkbox" id="inPrimaPagina" name="inPrimaPagina" value="1" {{checked}}  >
+            In Prima Pagina
+        </label>
+
+    </fieldset>
     
     <input type="submit" value="Salva" name="submit" class="btn btn-green" >
     <input type="reset" value="Reset" name="reset" class="btn btn-info"  >

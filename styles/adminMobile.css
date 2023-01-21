@@ -62,3 +62,10 @@ main h1{
 .formError, #contatti p.formError, .errorMsg{
     max-width: 100%;
 }
+
+/* Form ========================= */
+
+input, input.button{
+    /*rimozione effertti iOS*/
+    -webkit-appearance: none;
+}

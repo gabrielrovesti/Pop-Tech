@@ -15,7 +15,7 @@
     $title = "Pop Tech";
     $breadcrumbs = '<p>Ti trovi in: <a href="index.php">Le tue Recensioni</a> &gt; Visualizza Recensione</p>';
 
-    $utente = $_SESSION['user'];
+    $utente = '';
 
     $errorsStr = "";
 
@@ -25,7 +25,7 @@
 
     }else{
 
-
+        $utente = $_SESSION['user'];
         $content = "<h1>Nuova Recensione</h1>";
 
         $id         = '';
@@ -179,5 +179,5 @@
     $menu = get_user_menu();
     $template = str_replace('{{menu}}',$menu,$template);
     $template = str_replace('{{pageID}}',$pageID,$template);
-    echo replace_in_user_page($template,$title,$pageID,$breadcrumbs,$content,'setUserRecensioneChecks();addFieldsEvent();');
+    echo replace_in_user_page($template,$title,$pageID,$breadcrumbs,$content,'setUserRecensioneChecks();addFieldsEvent();setRangeListener();');
 ?>

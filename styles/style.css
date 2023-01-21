@@ -153,7 +153,25 @@ html,body{
         background-color: rgb(54, 54, 54);
     }
 
+    
+
 }
+
+
+/* Fix per Safari su MacOS
+    nel tema scuro la "linea" di input range non viene visualizzata
+*/
+@supports selector(:nth-child(1 of x)){
+    
+    @media (prefers-color-scheme: dark) {
+        input[type=range]::-webkit-slider-runnable-track {
+            background-color: var(--inputbordercolor);
+            border-radius: 1em;
+        }
+    }
+
+}
+
 
 body{
     max-width: 1920px;
@@ -385,7 +403,7 @@ a:visited, nav ul li a:visited{
 }
 
 a:focus{
-    outline:0;
+   
     border:3px dashed var(--bordercolor);
 }
 
@@ -407,7 +425,7 @@ a.button:hover, input.button:hover{
     background: linear-gradient(to bottom left, var(--hover1), var(--hover2));
 }
 
-a.button:focus{
+.button:focus{
     border-style: dashed;
 }
 
@@ -430,7 +448,9 @@ a.button:visited:hover{
 
 input.button{
     margin-top: 1em;
+    -webkit-appearance: none;
 }
+
 
 /* Main Content ========================= */
 
@@ -606,7 +626,7 @@ main h2{
     overflow: hidden;
 }
 
-#data input[type=text], #data input[type=password], #data input[type=email], #data textarea{
+#data input[type=text], #data input[type=password], #data input[type=range], #data input[type=email], #data textarea{
     padding: 0.5em;
     margin: auto;
     display: block;
@@ -614,7 +634,9 @@ main h2{
 }
 
 #data label{
+    display: inline-block;
     padding: 0.5em;
+    margin: 0.5em;
     margin: auto;
 }
 

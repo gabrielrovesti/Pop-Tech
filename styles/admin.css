@@ -266,7 +266,7 @@ label{
     display: inline-block;
 }
 
-input[type=text],input[type=password],select,textarea{
+input[type=text],input[type=range],input[type=password],select,textarea{
     display: block;
     padding: 0.5em;
     border-radius: 0.3em;
@@ -280,6 +280,7 @@ input[type=submit],input[type=reset]{
     border: 1px solid var(--inputborder);
 
 }
+
 
 .formBig{
     display: block;

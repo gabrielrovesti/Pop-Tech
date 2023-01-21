@@ -4,6 +4,18 @@ function toggleMobileMenu(){
     document.querySelector("nav#menu").classList.toggle("show");
 }
 
+//
+function setRangeListener(){
+    let range = document.querySelector('input[type="range"]');
+    range.addEventListener('change',showRangeValue);
+}
+
+function showRangeValue(event){
+    let id = event.target.getAttribute('id');
+    document.querySelector('label[for="'+id+'"] span#value').innerHTML = event.target.value;
+}
+
+
 var checks = {};
 
 //Aggiungi l'evento onBlur agli elementi del form

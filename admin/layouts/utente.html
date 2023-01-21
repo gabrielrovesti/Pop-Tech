@@ -4,25 +4,32 @@
     
         {{errors}}
         
-        <label for="nome" class="formBig">Nome
-            <input type="text" id="nome" name="nome" value="{{nome}}" autocomplete="off">
-        </label>
-    
-        <label for="email" class="formBig" lang="en">Email
-            <input type="text" id="email" name="email" value="{{email}}" autocomplete="off">
-        </label>
+        <fieldset>
+            <legend>Dati principali</legend>
+            <label for="nome" class="formBig">Nome
+                <input type="text" id="nome" name="nome" value="{{nome}}" autocomplete="off">
+            </label>
+        
+            <label for="email" class="formBig" lang="en">Email
+                <input type="text" id="email" name="email" value="{{email}}" autocomplete="off">
+            </label>
 
-        <label for="username" class="formBig">Nome Utente
-            <input type="text" id="username" name="username" value="{{username}}" autocomplete="off">
-        </label>
-    
-        <label for="password" class="formBig" lang="en">Password
-            <input type="password" id="password" name="password" value="" autocomplete="off">
-        </label>
-    
-        <label for="admin" class="checkbox">
-            <input type="checkbox" id="admin" name="admin" value="1" {{admin}} > Utente Amministratore      
-        </label>
+            <label for="username" class="formBig">Nome Utente
+                <input type="text" id="username" name="username" value="{{username}}" autocomplete="off">
+            </label>
+        
+            <label for="password" class="formBig" lang="en">Password
+                <input type="password" id="password" name="password" value="" autocomplete="off">
+            </label>
+
+        </fieldset>
+        
+        <fieldset>
+            <legend>Area amministrativa</legend>
+            <label for="admin" class="checkbox">
+                <input type="checkbox" id="admin" name="admin" value="1" {{admin}} > Utente Amministratore      
+            </label>
+        </fieldset>
         
         <input type="submit" value="Salva" name="submit"  class="btn btn-green">
         <input type="reset" value="Reset" name="reset"  class="btn btn-info" >

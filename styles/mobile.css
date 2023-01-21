@@ -15,6 +15,7 @@
 /* Tema scuro ========================= */
 
 @media (prefers-color-scheme: dark) {
+    
     :root{
 
         --chiSiamoGrad1Stop1: #c0610e;
@@ -32,7 +33,14 @@
 
     }
 
+
+    /* Rimozione Fix per Safari su MacOS */
+    input[type=range]::-webkit-slider-runnable-track {
+        background-color: transparent;
+    }
+
 }
+
 
 /* Mobile Menu Button ========================= */
 
@@ -337,3 +345,4 @@ th[data-title]:before, td[data-title]:before{
     margin: 0em;
     padding: 0.5em;
 }
+
