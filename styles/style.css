@@ -158,8 +158,11 @@ html,body{
 }
 
 
-/* Fix per Safari su MacOS
+/* 
+    Fix per Safari su MacOS
     nel tema scuro la "linea" di input range non viene visualizzata
+    da errore su validatore CSS W3C perchè la regola è supportata solamente da Safari
+    se il browser non la supporta la regola viene ignorata
 */
 @supports selector(:nth-child(1 of x)){
     
