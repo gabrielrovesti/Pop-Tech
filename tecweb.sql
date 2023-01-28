@@ -1,15 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Jan 04, 2023 at 03:18 PM
--- Server version: 5.7.34
--- PHP Version: 8.0.8
+-- Host: 127.0.0.1
+-- Creato il: Gen 28, 2023 alle 15:54
+-- Versione del server: 10.4.27-MariaDB
+-- Versione PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `poptech`
@@ -18,20 +24,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categoria`
+-- Struttura della tabella `categoria`
 --
 
-DROP TABLE IF EXISTS `categoria`;
 CREATE TABLE `categoria` (
   `ID` int(11) UNSIGNED NOT NULL,
   `nome` varchar(100) NOT NULL,
   `inPrimaPagina` tinyint(1) NOT NULL,
   `keywords` varchar(500) NOT NULL,
   `descrizione` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `categoria`
+-- Dump dei dati per la tabella `categoria`
 --
 
 INSERT INTO `categoria` (`ID`, `nome`, `inPrimaPagina`, `keywords`, `descrizione`) VALUES
@@ -45,18 +50,17 @@ INSERT INTO `categoria` (`ID`, `nome`, `inPrimaPagina`, `keywords`, `descrizione
 -- --------------------------------------------------------
 
 --
--- Table structure for table `faq`
+-- Struttura della tabella `faq`
 --
 
-DROP TABLE IF EXISTS `faq`;
 CREATE TABLE `faq` (
   `ID` int(10) UNSIGNED NOT NULL,
   `domanda` text NOT NULL,
   `risposta` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `faq`
+-- Dump dei dati per la tabella `faq`
 --
 
 INSERT INTO `faq` (`ID`, `domanda`, `risposta`) VALUES
@@ -67,17 +71,16 @@ INSERT INTO `faq` (`ID`, `domanda`, `risposta`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `marca`
+-- Struttura della tabella `marca`
 --
 
-DROP TABLE IF EXISTS `marca`;
 CREATE TABLE `marca` (
   `ID` int(11) UNSIGNED NOT NULL,
   `nome` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `marca`
+-- Dump dei dati per la tabella `marca`
 --
 
 INSERT INTO `marca` (`ID`, `nome`) VALUES
@@ -110,10 +113,9 @@ INSERT INTO `marca` (`ID`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prodotto`
+-- Struttura della tabella `prodotto`
 --
 
-DROP TABLE IF EXISTS `prodotto`;
 CREATE TABLE `prodotto` (
   `ID` int(10) UNSIGNED NOT NULL,
   `nome` varchar(400) NOT NULL,
@@ -127,10 +129,10 @@ CREATE TABLE `prodotto` (
   `peso` varchar(100) DEFAULT NULL,
   `categoria` int(10) UNSIGNED NOT NULL,
   `prezzo` decimal(5,2) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `prodotto`
+-- Dump dei dati per la tabella `prodotto`
 --
 
 INSERT INTO `prodotto` (`ID`, `nome`, `immagine`, `keywords`, `descrizione`, `origine`, `marca`, `modello`, `dimensione`, `peso`, `categoria`, `prezzo`) VALUES
@@ -141,7 +143,7 @@ INSERT INTO `prodotto` (`ID`, `nome`, `immagine`, `keywords`, `descrizione`, `or
 (5, '[en]Funko Pop[/en] 125 - Unipd [en]Students Collection[/en] Erica Cavaliere', 'uploads/erica-cavaliere-funko-pop.png', 'unipd, tecnologie web, web development, universit&agrave; degli studi di padova, studente, studentessa, edizione limitata', '[en]Funko Pop[/en] 125 Collezione Unipd [en]Students[/en].\r\nStatuina della studente Erica Cavaliere.\r\n[en]Funko POP[/en] è il vincitore del premio [en]Toy of the Year[/en] e [en]People\'s Choice[/en] 2018', 'Giappone', 1, '10125', '&lrm;6 x 5.5 x 9.5 _cm|centimetri_', '102_g|grammi_', 4, '20.00'),
 (6, '[en]Funko Pop[/en] 126 - Unipd [en]Students Collection[/en] Giulio Moretto', 'uploads/giulio-moretto-funko-pop.png', 'unipd, tecnologie web, web development, universit&agrave; degli studi di padova, studente, edizione limitata', '[en]Funko Pop[/en] 126 Collezione Unipd [en]Students[/en].\r\nStatuina dello studente Giulio Moretto.\r\n[en]Funko POP[/en] è il vincitore del premio [en]Toy of the Year[/en] e [en]People\'s Choice[/en] 2018', 'Giappone', 1, '10125', '&lrm;6 x 5.5 x 9.5 _cm|centimetri_', '102_g|grammi_', 4, '20.00'),
 (7, '[en]One Piece[/en] Figura [ja]Anime[/ja] [en]Luffy &amp; Shanks[/en]', 'uploads/one-piece-luffy-shanks.jpg', 'one piece, luffy, shanks, action figure one piece, statuina one piece, straw hat, cappello di paglia', '[en]Action Figure[/en] tratta dall\'[ja]anime[/ja] [en]One Piece[/en] dei personaggi [en]Luffy & Shanks[/en] mentre [en]Shanks[/en] dona il suo cappello a [en]Luffy[/en].', 'Cina', 2, 'OPLS12', 'Altezza 18_cm|centimetri_', '150_g|grammi_', 4, '19.99'),
-(8, 'Statuina [en]Batman Multiverse Three Jokers[/en]', 'uploads/batman-action-figure.jpg', 'batman, batman multiverse, dc comics, action figure, statuina, originale', 'Figura in scala da 7 pollici incredibilmente dettagliata basata sul multiverso DC.\r\nProgettato con [en]Ultra Articulation[\en] con fino a 22 parti mobili per una gamma completa di posa e gioco.\r\nBatman è basato sul suo look in Batman: Three Jokers Comics.\r\nBatman include un lanciatore e una base.', 'Cina', 3, 'TM30137', '&lrm;5.08 x 2.54 x 17.78 _cm|centimetri_', '310_g|grammi_', 4, '29.99'),
+(8, 'Statuina [en]Batman Multiverse Three Jokers[/en]', 'uploads/batman-action-figure.jpg', 'batman, batman multiverse, dc comics, action figure, statuina, originale', 'Figura in scala da 7 pollici incredibilmente dettagliata basata sul multiverso DC.\r\nProgettato con [en]Ultra Articulation[en] con fino a 22 parti mobili per una gamma completa di posa e gioco.\r\nBatman è basato sul suo look in Batman: Three Jokers Comics.\r\nBatman include un lanciatore e una base.', 'Cina', 3, 'TM30137', '&lrm;5.08 x 2.54 x 17.78 _cm|centimetri_', '310_g|grammi_', 4, '29.99'),
 (10, 'Ritorno al Futuro [en]Doc Brown Ultimate 7 Action Figure[/en]', 'uploads/doc-brown-action-figure.jpg', 'back to the future, ritorno al futuro, doc brown, action figure, action figure doc brown', 'Figura in scala del personaggio [en]Doc Brown[/en] nell\'anno 1955. \r\nCon disegni chiavi inglese e due tipi di orologio.', 'Cina', 4, '53614', '&lrm;27.51 x 15.9 x 6.5  _cm|centimetri_', '308.44_g|grammi_', 4, '44.50'),
 (11, 'La saga del gran demone Piccolo. [en]Dragon Ball full color[/en] (Vol. 3)', 'uploads/dragon-ball-manga.jpg', 'fumetti dragon ball, dragon ball, dragonball, manga dragon ball, manga dragonball, akira toryama, star comics, dragon ball italiano, manga italiani', 'Un\'edizione completamente a colori del capolavoro del maestro [ja]Toriyama[/ja]! \r\nUna pubblicazione divisa per saghe, lanciata in Giappone dalla casa editrice [ja]Shueisha[/ja], ora finalmente disponibile anche per i lettori italiani!', 'Giappone', 5, '8822611438', '11.2 x 1.5 x 17.1 _cm|centimetri_', '280_g|grammi_', 1, '6.56'),
 (12, '[en]One piece[/en]. [en]New edition[/en] (Vol. 30)', 'uploads/one-piece-manga.jpg', 'one piece, manga one piece, one piece volume 30, one piece 30, one piece italiano', '[en]Big Mom[/en], una temibile ed estremamente affamata signora della guerra pirata, si abbatte su [en]Luffy[/en] e il suo equipaggio in cerca di torta nuziale e vendetta. \r\n[en]Luffy[/en] si scontra con il figlio goloso [ja]Katakuri[/ja] mentre l\'equipaggio di Cappello di paglia combatte per proteggere la loro nave e le loro vite.', 'Giappone', 5, '8864202161', '11.4 x 1.7 x 17 _cm|centimetri_', '240_g|grammi_', 1, '4.30'),
@@ -193,39 +195,39 @@ INSERT INTO `prodotto` (`ID`, `nome`, `immagine`, `keywords`, `descrizione`, `or
 (94, '[en]Splatoon[/en] 3 per Nintendo [en]Switch[/en]', 'uploads/splatoon-3.jpg', 'splatoon, splatoon 3, nintendo, nintendo switch, switch', 'In questo nuovo capitolo della serie [en]Splatoon[/en], i giocatori si lasceranno Coloropoli alle spalle per trasferirsi in una nuova area: Splattonia. \r\n[en]Splatoon[/en] 3 introduce diverse novità, come l\'anti, motivo: personaggio sul lato', 'USA', 18, 'CL-DBZ-1-GO3', '17 x 10.5 x 1.2 _cm|centimetri_', '100_g|grammi_', 3, '19.99'),
 (95, 'Ritorno al Futuro [en]Marty Mcfly Ultimate 7 Action Figure[/en]', 'uploads/marty-mcfly-action-figure.jpg', 'back to the future, ritorno al futuro, marty mc fly, action figure, action figure marty mcfly', 'Figura in scala del personaggio [en]Marty McFly[/en] nell\'anno 1985. \r\nCon chitarra elettrica, [en]skateboard[/en], videocamera, occhiali da sole e zaino.', 'Cina', 4, '53600', '7.19 x 5.13 x 18.01 _cm|centimetri_', '272,6_g|grammi_', 4, '44.50'),
 (96, '[ja]Muten Roshi[/ja] [en]Trucker cap Dragon Ball[/en] Z', 'uploads/dragon-ball-berretto-1.jpg', 'dragonball, dragon ball, cappello, cappellodragon ball,cappello dragonball, berretto dragon ball, berretto dragonball, muten roshi', 'Cappello da baseball con licenza ufficiale [en]Dragon Ball[/en] Z\r\nToppa Super [ja]Saiyan Goku[/ja] sul davanti, motivo: personaggio sul lato', 'USA', 18, 'CL-DBZ-1-GO3', 'Taglia Unica', '100_g|grammi_', 5, '19.99'),
-(97, '[ja]Saiyan Goku[/ja] [en]Trucker cap Dragon Ball[/en] Z', 'uploads/dragon-ball-berretto-2.jpg', 'dragonball, dragon ball, cappello, cappellodragon ball,cappello dragonball, berretto dragon ball, berretto dragonball, goku', 'Cappello da baseball con licenza ufficiale [en]Dragon Ball[/en] Z\r\nToppa [ja]Muten Roshi[/ja] sul davanti, motivo: personaggio sul lato', 'USA', 18, 'CL-DBZ-2-GO3', 'Taglia unica', '100_g|grammi_', 5, '19.99');
+(97, '[ja]Saiyan Goku[/ja] [en]Trucker cap Dragon Ball[/en] Z', 'uploads/dragon-ball-berretto-2.jpg', 'dragonball, dragon ball, cappello, cappellodragon ball,cappello dragonball, berretto dragon ball, berretto dragonball, goku', 'Cappello da baseball con licenza ufficiale [en]Dragon Ball[/en] Z\r\nToppa [ja]Muten Roshi[/ja] sul davanti, motivo: personaggio sul lato', 'USA', 18, 'CL-DBZ-2-GO3', 'Taglia unica', '100_g|grammi_', 5, '19.99'),
+(98, 'Funko Pop 122 - Unipd Collection Andrea Simion', 'uploads/andrea-simion-funko-pop.png', 'unipd, laboratorio, tecnico, universit&agrave; degli studi di padova, edizione limitata', '[en]Funko Pop[/en] 122 Collezione Unipd. \r\nStatuina del tecnico Andrea Simion.\r\n[en]Funko POP[/en] è il vincitore del premio [en]Toy of the Year[/en] e [en]People\'s Choice[/en] 2018', 'Giappone', 1, '10122', '&lrm;6 x 5.5 x 9.5 _cm|centimetri_', '102_g|grammi_', 4, '20.00'),
+(99, 'Funko Pop 127 - Unipd Collection Mirko Franco', 'uploads/mirko-franco-funko-pop.png', 'unipd, tecnologie web, web development, dottorando, universit&agrave; degli studi di padova, edizione limitata', '[en]Funko Pop[/en] 127 Collezione Unipd. \r\nStatuina del dottorando Mirko Franco.\r\n[en]Funko POP[/en] è il vincitore del premio [en]Toy of the Year[/en] e [en]People\'s Choice[/en] 2018', 'Giappone', 1, '10127', '&lrm;6 x 5.5 x 9.5 _cm|centimetri_', '102_g|grammi_', 4, '20.00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `recensione`
+-- Struttura della tabella `recensione`
 --
 
-DROP TABLE IF EXISTS `recensione`;
 CREATE TABLE `recensione` (
   `ID` int(11) UNSIGNED NOT NULL,
   `prodotto` int(10) UNSIGNED NOT NULL,
   `utente` int(10) UNSIGNED NOT NULL,
-  `contenuto` text,
-  `punteggio` decimal(2,1) UNSIGNED NOT NULL DEFAULT '0.0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `contenuto` text DEFAULT NULL,
+  `punteggio` decimal(2,1) UNSIGNED NOT NULL DEFAULT 0.0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `recensione`
+-- Dump dei dati per la tabella `recensione`
 --
 
 INSERT INTO `recensione` (`ID`, `prodotto`, `utente`, `contenuto`, `punteggio`) VALUES
 (1, 66, 1, 'Gioco molto avvincente. Un classico gioco da tavolo per passare ore con amici.', '4.5'),
 (2, 79, 1, 'Classico e semplice ma troppo legato al caso per giocatori più esperti.', '2.0'),
-(3, 96, 1, '', '0');
+(3, 96, 1, '', '0.0');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `utente`
+-- Struttura della tabella `utente`
 --
 
-DROP TABLE IF EXISTS `utente`;
 CREATE TABLE `utente` (
   `ID` int(10) UNSIGNED NOT NULL,
   `nome` varchar(200) NOT NULL,
@@ -233,40 +235,40 @@ CREATE TABLE `utente` (
   `email` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
   `admin` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `utente`
+-- Dump dei dati per la tabella `utente`
 --
 
-INSERT INTO `utente` (`ID`, `nome`,`username`, `email`, `password`, `admin`) VALUES
-(1, 'User','user', 'user@user.com', '$2y$10$ae/uFTI3KInYS3n8sBXVmuUw33/ex8VoLzt73dnWGJlN2Pa.K8s9y', 0),
-(2, 'Admin','admin', 'admin@admin.com', '$2y$10$SFYKM6V9lhS7eWRuiRqWZu6IV43mEfcSGyVUhPM3GzRO9vWxQhwfG', 1);
+INSERT INTO `utente` (`ID`, `nome`, `username`, `email`, `password`, `admin`) VALUES
+(1, 'User', 'user', 'user@user.com', '$2y$10$ae/uFTI3KInYS3n8sBXVmuUw33/ex8VoLzt73dnWGJlN2Pa.K8s9y', 0),
+(2, 'Admin', 'admin', 'admin@admin.com', '$2y$10$SFYKM6V9lhS7eWRuiRqWZu6IV43mEfcSGyVUhPM3GzRO9vWxQhwfG', 1);
 
 --
--- Indexes for dumped tables
+-- Indici per le tabelle scaricate
 --
 
 --
--- Indexes for table `categoria`
+-- Indici per le tabelle `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `faq`
+-- Indici per le tabelle `faq`
 --
 ALTER TABLE `faq`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `marca`
+-- Indici per le tabelle `marca`
 --
 ALTER TABLE `marca`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `prodotto`
+-- Indici per le tabelle `prodotto`
 --
 ALTER TABLE `prodotto`
   ADD PRIMARY KEY (`ID`),
@@ -274,7 +276,7 @@ ALTER TABLE `prodotto`
   ADD KEY `categoria` (`categoria`);
 
 --
--- Indexes for table `recensione`
+-- Indici per le tabelle `recensione`
 --
 ALTER TABLE `recensione`
   ADD PRIMARY KEY (`ID`),
@@ -282,66 +284,70 @@ ALTER TABLE `recensione`
   ADD KEY `prodotto` (`prodotto`);
 
 --
--- Indexes for table `utente`
+-- Indici per le tabelle `utente`
 --
 ALTER TABLE `utente`
   ADD PRIMARY KEY (`ID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT per le tabelle scaricate
 --
 
 --
--- AUTO_INCREMENT for table `categoria`
+-- AUTO_INCREMENT per la tabella `categoria`
 --
 ALTER TABLE `categoria`
   MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `faq`
+-- AUTO_INCREMENT per la tabella `faq`
 --
 ALTER TABLE `faq`
   MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `marca`
+-- AUTO_INCREMENT per la tabella `marca`
 --
 ALTER TABLE `marca`
   MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `prodotto`
+-- AUTO_INCREMENT per la tabella `prodotto`
 --
 ALTER TABLE `prodotto`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
--- AUTO_INCREMENT for table `recensione`
+-- AUTO_INCREMENT per la tabella `recensione`
 --
 ALTER TABLE `recensione`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `utente`
+-- AUTO_INCREMENT per la tabella `utente`
 --
 ALTER TABLE `utente`
   MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- Limiti per le tabelle scaricate
 --
 
 --
--- Constraints for table `prodotto`
+-- Limiti per la tabella `prodotto`
 --
 ALTER TABLE `prodotto`
   ADD CONSTRAINT `categoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `marca` FOREIGN KEY (`marca`) REFERENCES `marca` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `recensione`
+-- Limiti per la tabella `recensione`
 --
 ALTER TABLE `recensione`
   ADD CONSTRAINT `prodotto` FOREIGN KEY (`prodotto`) REFERENCES `prodotto` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `utente` FOREIGN KEY (`utente`) REFERENCES `utente` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
