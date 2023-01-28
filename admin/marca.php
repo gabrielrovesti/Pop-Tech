@@ -44,7 +44,7 @@
 
                 //Validazione dati
                 if(strlen($nome)<=1){
-                    array_push($errors,'<p class="message successMsg">Inserire un nome con almeno due caratteri.</p>');
+                    array_push($errors,'<p class="message errorMsg">Inserire un nome con almeno due caratteri.</p>');
                 }
 
                 if(count($errors)==0){

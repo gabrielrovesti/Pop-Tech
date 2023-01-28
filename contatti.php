@@ -18,7 +18,7 @@
     //Validazione form
     $form_messages = '';
     $allowed_tags = '<em><strong><h1><h2><h3><h4><h5><h6>';
-    $result = true;
+    $result = false;
 
     $nome      = "";
     $telefono  = "";
@@ -69,29 +69,28 @@
             $form_messages .= '<p class="formError">Il campo messaggio non può essere vuoto</p>';
         }
 
-        if(strlen($messaggio) == 0){
-            $form_messages .= '<p class="formError">Il campo messaggio non può essere vuoto</p>';
-        }
 
         if($privacy!=1){
-            $form_messages .= '<p>Per cortesia accettare la <span lang="en">Privacy Policy</span> per spedire il messaggio.</p>';
+            $form_messages .= '<p class="formError">Per cortesia accettare la <span lang="en">Privacy Policy</span> per spedire il messaggio.</p>';
         }
 
         // Se non ci sono errori, si inviano i dati correttamente
         if(strlen($form_messages) == 0){
-            $result = true; //Simulazione di invio della mail di contatto
-        }
+            
+            $result = true; //Simulazione di invio della mail di contatto per esempio mail("info@comics.it","Invio richiesta",...)
 
-        if($result){
+            if($result){
 
-            $form_messages .= '<p class="formSuccess" role="status">Il messaggio è stato inviato correttamente</p>';
-            $nome      = "";
-            $telefono  = "";
-            $email     = "";
-            $messaggio = "";
+                $form_messages .= '<p class="formSuccess" role="status">Il messaggio è stato inviato correttamente</p>';
+                $nome      = "";
+                $telefono  = "";
+                $email     = "";
+                $messaggio = "";
 
-        }else{
-            $form_messages .= '<p class="formError" role="status">Abbiamo un problema con l\'invio; riprova più tardi</p>';
+            }else{
+                $form_messages .= '<p class="formError" role="status">Abbiamo un problema con l\'invio; riprova più tardi</p>';
+            }
+
         }
 
     }

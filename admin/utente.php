@@ -45,8 +45,11 @@
                 $nome     = sanitize($_POST['nome'],"");
                 $email    = sanitize($_POST['email'],"");
                 $username = sanitize($_POST['username'],"");
-                $password = sanitize($_POST['password'],"");
-                $admin    = intval(sanitize($_POST['admin'] or 0,""));
+                $password = sanitize($_POST['password'] ,"");
+                if(isset($_POST['admin']))
+                    $admin    = intval(sanitize($_POST['admin'],""));
+                else
+                    $admin = 0;
 
                 $encPassword = password_hash($password,PASSWORD_BCRYPT);
 

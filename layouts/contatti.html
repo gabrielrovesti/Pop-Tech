@@ -7,18 +7,18 @@
 
         <form action="contatti.php" method="POST">
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required="required" value="{{nome}}" autocomplete="name">
+            <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome"  value="{{nome}}" autocomplete="name">
                                 
             <label for="email" lang="en">Email</label>
-            <input type="email" id="email" name="email" placeholder="Inserire la tua email" required="required" value="{{email}}" autocomplete="email">
+            <input type="email" id="email" name="email" placeholder="Inserire la tua email"  value="{{email}}" autocomplete="email">
             
             <label for="telefono">Telefono</label>
             <input type="tel" id="telefono" name="telefono" placeholder="Inserisci il tuo telefono" value="{{telefono}}" autocomplete="tel">
         
             <label for="messaggio">Messaggio</label>
-            <textarea id="messaggio" name="messaggio" placeholder="Inserisci qui il tuo messaggio" required="required" autocomplete="off">{{messaggio}}</textarea>
+            <textarea id="messaggio" name="messaggio" placeholder="Inserisci qui il tuo messaggio"  autocomplete="off">{{messaggio}}</textarea>
 
-            <label for="privacypolicy"><input type="checkbox" id="privacypolicy" name="privacy" value="1" required="required">Accetta la nostra <a href="privacy.html" target="_blank"><span lang="en">Privacy Policy</span></a></label>
+            <label for="privacypolicy"><input type="checkbox" id="privacypolicy" name="privacy" value="1" >Accetta la nostra <a href="privacy.html" target="_blank"><span lang="en">Privacy Policy</span></a></label>
 
             <input type="submit" name="submit" value="Invia" class="button">
             <input type="submit" name="reset" value="Cancella" class="button">

@@ -52,42 +52,42 @@
 
                 //Validazione dati
                 if(strlen($nome)<=4){
-                    array_push($errors,"Inserire un nome con almeno 5 caratteri.");
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire un nome con almeno 5 caratteri.</p>');
                 }
 
                 if(strlen($categoria)==0){
-                    array_push($errors,"Scegliere una categoria.");
+                    array_push($errors,'<p class="message errorMsg" role="alert">Scegliere una categoria.</p>');
                 }
 
                 if(strlen($origine)==0){
-                    array_push($errors,"Inserire una nazione di origine.");
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire una nazione di origine.</p>');
                 }
 
                 if(strlen($marca)==0){
-                    array_push($errors,"Scegliere una marca.");
+                    array_push($errors,'<p class="message errorMsg" role="alert">Scegliere una marca.</p>');
                 }
 
                 if(strlen($modello)<=1){
-                    array_push($errors,"Inserire un modello di almeno 2 cifre.");
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire un modello di almeno 2 cifre.</p>');
                 }
 
                 if(strlen($descrizione)<=9){
-                    array_push($errors,"Inserire una descrizione con almeno 10 caratteri.");
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire una descrizione con almeno 10 caratteri.</p>');
                 }
 
                 if($prezzo<=0){
-                    array_push($errors,"Inserire un prezzo maggiore di zero.");
+                    array_push($errors,'<p class="message errorMsg" role="alert">Inserire un prezzo maggiore di zero.</p>');
                 }
 
                 if(  $immagine['name']=="" && (!isset($_POST['id']) || intval($_POST['id'])==0) ){
                     //Immagine necessaria per l'inserimento
-                    array_push($errors,"Immagine richiesta per l'inserimento di un nuovo prodotto.");
+                    array_push($errors,'<p class="message errorMsg" role="alert">Immagine richiesta per l\'inserimento di un nuovo prodotto.</p>');
                 }
 
                 if( $immagine['name']!=""){
-                    //Il true nella chiamata fa in maniera tale che faccia solo i test senza salvare l'immagine
+                    // Il true nella chiamata fa in maniera tale che faccia solo i test senza salvare l'immagine
                     if(!upload_file($immagine,true)){
-                        array_push($errors,"Sono supportati solamente file immagine di tipo jpg, jpeg e png.");
+                        array_push($errors,'<p class="message errorMsg" role="alert">Sono supportati solamente file immagine di tipo jpg, jpeg e png.</p>');
                     }
                 }
 

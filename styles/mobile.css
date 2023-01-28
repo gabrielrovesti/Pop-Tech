@@ -119,11 +119,11 @@ main#content h1{
 
 #homePage #homeBanner div{
     width: 100%;
+    justify-content: center;
 }
 
 #homePage #homeBanner{
     text-align: center;
-    /*background-color: beige;*/
 }
 
 #homePage #homeBanner ul{

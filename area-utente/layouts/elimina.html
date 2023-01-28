@@ -1,0 +1,14 @@
+<div id="deleteForm">
+
+    {{errors}}
+    <p>Confermare l'eliminazione della recensione per il prodotto {{prodotto}}?</p>
+
+    <form action="delete.php" method="post">
+
+        <input type="hidden" name="id" value="{{id}}">
+
+        <input type="submit" name="submit" value="Elimina"  class="button" >
+        <a href="index.php" class="button">Annulla</a>
+
+    </form>
+</div>

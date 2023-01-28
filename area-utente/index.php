@@ -42,6 +42,7 @@
                         $content .= '<a href="recensione.php?id='.$review['id'].'" class="button" title="Inserisci recensione di '.parse_lang($review['product'],true).'">Inserisci</a>';
                     else
                     $content .= '<a href="recensione.php?id='.$review['id'].'" class="button" title="Vedi recensione di '.parse_lang($review['product'],true).'">Vedi</a>';
+                    $content .= '<a href="delete.php?id='.$review['id'].'" class="button" title="Elimina recensione di '.parse_lang($review['product'],true).'">Elimina</a>';
                 $content .= '</div>';
 
             }

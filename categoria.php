@@ -61,5 +61,5 @@
     $menu = get_menu();
     $template = str_replace('{{menu}}',$menu,$template);
 
-    echo replace_in_page($template,$title,$pageID,$breadcrumbs,$keywords,$descrizione,$content,'addScrollEventListener()');
+    echo replace_in_page($template,$title,$pageID,$breadcrumbs,html_entity_decode($keywords),$descrizione,$content,'addScrollEventListener()');
 ?>

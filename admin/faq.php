@@ -86,8 +86,9 @@
                     $errorsStr .= '<ul>';
 
                     $form = str_replace('{{id}}',$id,$form);
-                    $form = str_replace('{{domnda}}',$domanda,$form);
+                    $form = str_replace('{{domanda}}',$domanda,$form);
                     $form = str_replace('{{risposta}}',$risposta,$form);
+                    $form = str_replace('{{errors}}',$errorsStr,$form);
 
                     $content .= $form;
 

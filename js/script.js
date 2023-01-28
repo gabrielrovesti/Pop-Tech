@@ -44,14 +44,27 @@ function validateField(event){
 
     let name = event.target.getAttribute('name');
     let value = event.target.value; //cerca nell'array dei controlli se esiste una regola per quel campo
+    let aboveField = event.target.getAttribute("data-above") || 0;
 
     if(checks[name]){
 
         if(!checks[name].condition(value)){  //non passa il test
 
-            if(event.target.nextSibling){ //Togli il tag p di errore se già presente
-              if(event.target.nextSibling.tagName == 'P')
-                event.target.nextSibling.remove();
+            
+            //Togli il tag p di errore se già presente
+            if(!aboveField){
+
+                if(event.target.nextSibling){ 
+                    if(event.target.nextSibling.tagName == 'P')
+                      event.target.nextSibling.remove();
+                }
+
+            }else{
+                
+                if(event.target.previousSibling){
+                    if(event.target.previousSibling.tagName == 'P')
+                    event.target.previousSibling.remove();
+                }
             }
 
             event.target.setAttribute('aria-invalid','true');
@@ -65,10 +78,11 @@ function validateField(event){
             event.target.classList.add('fieldError');
 
             //Inserisci il messaggio errore
-            event.target.parentNode.insertBefore(newElement, event.target.nextSibling);
-
-            event.target.parentNode.querySelector('input[type=submit]').setAttribute('disabled','disabled');
-
+            if(!aboveField){
+                event.target.parentNode.insertBefore(newElement, event.target.nextSibling);
+            }else{
+                event.target.parentNode.insertBefore(newElement, event.target.previousSibling);
+            }
 
         }else{
             //Controllo passato
@@ -78,8 +92,6 @@ function validateField(event){
             }
             event.target.setAttribute('aria-invalid','false');
             event.target.classList.remove('fieldError'); //Togli classe di errore dal campo
-
-            event.target.parentNode.querySelector('input[type=submit]').removeAttribute('disabled');
         }
     }
 }

@@ -54,7 +54,7 @@ html,body{
 }
 
 body{
-    max-width: 1920px;
+    max-width: 1024px;
     margin: auto;
     padding: 0em;
     font-family: 'Montserrat',Arial, Helvetica, sans-serif;
@@ -341,7 +341,7 @@ form ul li{
 .fieldError, input[type="text"].fieldError, .fieldError, input[type="password"].fieldError, input[type="email"].fieldError, input[type="tel"].fieldError, textarea.fieldError{
     color: rgb(105, 0, 0);
     /*Placeholder solution -> Seguo la larghezza degli errori o gli input si spostano a lato*/
-    width: 100%;
+    max-width: 90%;
     border-color: var(--errorbordercolor);
 }
 
