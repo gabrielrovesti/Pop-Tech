@@ -179,7 +179,7 @@ html,body{
 
 
 body{
-    max-width: 1024px;
+    max-width: 1200px;
     margin: auto;
     font-family: 'Montserrat',Arial, Helvetica, sans-serif;
     background-color: var(--bgcolor);
@@ -1072,7 +1072,7 @@ form ul li{
     margin-left: 0.5em;
 }
 
-/* Pagina 404 ========================= */
+/* Pagine errori 404 e 500 ========================= */
 
 #page404 footer,#page500 footer{
    clear: left;
@@ -1093,6 +1093,7 @@ form ul li{
 }
 
 #page404 ul li{
+    display: inline-block;
     list-style: none;
     margin-top: 0.5em;
 }
@@ -1191,11 +1192,12 @@ form ul li{
     margin-right: 2em;
 }
 
-/* Pulsante torna in cima alla pagina */
+/* Pulsante torna in cima alla pagina ========================= */
+
 #goUpButtton{
     position: fixed;
     right: 0.5em;
-    bottom: 1em;
+    bottom: 2.5em;
     display: none;
 }
 #goUpButtton.show{

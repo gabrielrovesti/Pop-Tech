@@ -160,6 +160,11 @@ function get_short_product_text($text){
         return parse_lang($text);
     else{
 
+        //Sottostringa fino a $limit o spazio 
+        $spacePos = strpos($text, ' ', $limit);
+        if($spacePos)
+            $shortText = substr($text,0,$spacePos);
+        else
         $shortText = substr($text,0,$limit);
 
         $openMatches = [];

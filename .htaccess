@@ -1,2 +1,4 @@
-ErrorDocument 404 http://localhost/poptech/404.html
-ErrorDocument 500 http://localhost/poptech/500.html
+
+ErrorDocument 404 /gmoretto/404.html
+ErrorDocument 500 /gmoretto/500.html
+
