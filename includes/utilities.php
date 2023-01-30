@@ -4,8 +4,11 @@ use DB\DBAccess;
 
 require_once('connection.php');
 
+define("ROOT_FOLDER","/poptech/");
+
+
 /*
-    Rimpiazza i placeholder del template html
+    Rimpiazza i placeholder del template html del sito
 */
 function replace_in_page(String $html, String $title, String $id, String $breadcrumbs, String $keywords, String $description, String $content, String $onload = ''){
 
@@ -29,7 +32,11 @@ function replace_in_page(String $html, String $title, String $id, String $breadc
 
     return $html;
 }
-/*Senza keywords e descrizione per pagine utente e replicare struttura menù*/
+
+/*
+    Rimpiazza i placeholder del template html dell'area utente
+    Senza keywords e descrizione
+*/
 function replace_in_user_page(String $html, String $title, String $id, String $breadcrumbs, String $content, String $onload = ''){
 
     //Header presente in ogni pagina
@@ -105,8 +112,8 @@ function get_menu(){
     // Numero dei link da mostrare (grandezza array)
     $nLinks = count($links);
 
-    //Togliere dall'url restituito da PHP -- cambierà in base all'hosting (probilmente non sará necessario in fase di consegna)
-    $strToRemove = "/poptech/";
+    //Togliere dall'url restituito da PHP -- cambierà in base all'hosting 
+    $strToRemove = ROOT_FOLDER;
     $currentPage = str_replace($strToRemove,"",$_SERVER['REQUEST_URI']); 
 
     for($i=0;$i<$nLinks;$i++){
@@ -142,6 +149,9 @@ function get_product_tile($product, $category=false){
     
 }
 
+/*
+    Restituisce il testo usato nel blocco prodotto in productRow 
+*/
 function get_short_product_text($text){
 
     $limit = 150;
@@ -222,8 +232,8 @@ function get_admin_menu(){
     // Numero dei link da mostrare (grandezza array)
     $nLinks = count($links);
 
-    //Togliere dall'url restituito da PHP -- cambierà in base all'hosting (probilmente non sará necessario in fase di consegna)
-    $strToRemove = "/poptech/admin/";
+    //Togliere dall'url restituito da PHP -- cambierà in base all'hosting 
+    $strToRemove = ROOT_FOLDER."admin/";
     $currentPage = str_replace($strToRemove,"",$_SERVER['REQUEST_URI']);
 
     for($i=0;$i<$nLinks;$i++){
@@ -291,6 +301,9 @@ function upload_file($field,$testOnly=false){
 
 }
 
+/* 
+    Crea immagine miniatura dato file caricato
+*/
 function createThumbnail($file){
 
     $w = 300;
@@ -374,6 +387,9 @@ function isLoggedIn(bool $isAdmin=false){
 
 }
 
+/*
+    Mostra errore di mancata autenticazione
+*/
 function getAdminLoggedOutError(){
     return '<h1>Area riservata</h1>
     <p class="message errorMsg" role="alert">Attenzione: non disponi dei privilegi necessari per accede a questa pagina.</p>';
@@ -383,9 +399,8 @@ function getAdminLoggedOutError(){
 // Funzioni per l'area utente
 // -----------------------------------
 
-
 /* 
-    Rimpiazza {{menu}} con il menú amministratore in base alla pagina in cui si trova l'amministratore
+    Rimpiazza {{menu}} con il menú amministratore in base alla pagina in cui si trova l'utente
 */
 function get_user_menu(){
 
@@ -402,8 +417,8 @@ function get_user_menu(){
     // Numero dei link da mostrare (grandezza array)
     $nLinks = count($links);
 
-    //Togliere dall'url restituito da PHP -- cambierà in base all'hosting (probilmente non sará necessario in fase di consegna)
-    $strToRemove = "/poptech/area-utente/";
+    //Togliere dall'url restituito da PHP -- cambierà in base all'hosting 
+    $strToRemove = ROOT_FOLDER."area-utente/";
     $currentPage = str_replace($strToRemove,'',$_SERVER['REQUEST_URI']);
 
     if(isLoggedIn()){
