@@ -67,6 +67,13 @@ header#header h1{
     font-size: 5em;
 }
 
+/* Footer ========================= */
+
+footer{
+    justify-content: center;    
+}
+
+
 
 /* Menu ========================= */
 

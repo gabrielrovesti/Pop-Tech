@@ -248,7 +248,7 @@ nav#breadcrumbs::before{
 
 footer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;    
     flex-wrap: wrap;
     margin: 0.5em;
@@ -257,6 +257,23 @@ footer{
     margin-top: auto;
     border: 3px solid var(--bordercolor);
 }
+
+footer span.centered_links, footer span.other_links{
+    /*Have this span separated from the others to be able to center the links*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer span.centered_links div{
+    text-align: center;
+}
+
+footer span.centered_links div a{
+    margin: 0.4em;
+}
+
 
 /* Utilities ========================= */
 
