@@ -44,7 +44,7 @@
                     case 'prodotto':
                         
                         $typeText = "del prodotto";
-                        $backLink = "prodotti.php";
+                        $backLink = "index.php";
                         $products = $connection->exec_select_query('SELECT id, nome FROM prodotto WHERE id='.$id.';');
                         if(isset($products[0])){
                             $product = $products[0];

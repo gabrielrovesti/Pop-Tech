@@ -49,7 +49,6 @@ function validateField(event){
     if(checks[name]){
 
         if(!checks[name].condition(value)){  //non passa il test
-
             
             //Togli il tag p di errore se già presente
             if(!aboveField){
@@ -63,7 +62,7 @@ function validateField(event){
                 
                 if(event.target.previousSibling){
                     if(event.target.previousSibling.tagName == 'P')
-                    event.target.previousSibling.remove();
+                        event.target.previousSibling.remove();
                 }
             }
 
@@ -81,7 +80,7 @@ function validateField(event){
             if(!aboveField){
                 event.target.parentNode.insertBefore(newElement, event.target.nextSibling);
             }else{
-                event.target.parentNode.insertBefore(newElement, event.target.previousSibling);
+                event.target.parentNode.insertBefore(newElement, event.target);
             }
 
         }else{
@@ -89,6 +88,9 @@ function validateField(event){
             if(event.target.nextSibling){ //Togli il tag p di errore se già presente
                 if(event.target.nextSibling.tagName == 'P')
                   event.target.nextSibling.remove();
+                
+                if(event.target.previousSibling.tagName == 'P')
+                  event.target.previousSibling.remove();
             }
             event.target.setAttribute('aria-invalid','false');
             event.target.classList.remove('fieldError'); //Togli classe di errore dal campo
