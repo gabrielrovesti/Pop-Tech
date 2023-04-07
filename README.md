@@ -1,5 +1,8 @@
 # Pop Tech
-Progetto di Tecnologie Web per l'anno 2022/2023 per il corso della prof.ssa Gaggi, UniPD, Informatica
+<ol>
+<li> Progetto di Tecnologie Web per l'anno 2022/2023 per il corso della prof.ssa Gaggi, UniPD, Informatica. </li>
+<li> Voto: 29.5/30 (con 2 punti bonus 30 e lode) </li>
+<li> Secondo posto al Concorso Accattivante e Accessibile 2022/2023 </li>
 
 ## Indicazione collegamento Tecweb disponibile al link:
 
