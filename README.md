@@ -3,6 +3,8 @@
 <li> Progetto di Tecnologie Web per l'anno 2022/2023 per il corso della prof.ssa Gaggi, UniPD, Informatica. </li>
 <li> Voto: 29.5/30 (con 2 punti bonus 30 e lode) </li>
 <li> Secondo posto al Concorso Accattivante e Accessibile 2022/2023 </li>
+<li> Svolto principalmente dai primi 3 componenti listati nei commit (il quarto non faceva nulla e siamo rimasti in 3) </li>
+</ol>
 
 ## Indicazione collegamento Tecweb disponibile al link:
 
