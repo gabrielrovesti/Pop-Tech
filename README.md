@@ -6,15 +6,11 @@
 <li> Svolto principalmente dai primi 3 componenti listati nei commit (il quarto non faceva nulla e siamo rimasti in 3) </li>
 </ol>
 
-## Indicazione collegamento Tecweb disponibile al link:
+## Documentazione
 
-https://docs.google.com/document/d/1ujVBFSKjLlNxy4Gqv3hF6krkaI-_Z7zm/edit 
+All'interno di questa stessa repo sono archiviati i file utili a livello informativo/pratico di gestione del progetto.
 
-## Documentazione disponibile su Google Drive al link:
-
-https://drive.google.com/drive/folders/1FS94n1iyw7iEUqW0HgsJ9iBf5w9uaIvi?usp=sharing
-
-## Mockup Figma disponibile al link:
+## Mockup Figma
 
 https://www.figma.com/file/VKGBmJToHccll3PvxvOG05/TechWeb?node-id=0%3A1&t=BvfcF5MTfd44gOxZ-0
 
