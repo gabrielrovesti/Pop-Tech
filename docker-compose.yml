@@ -1,0 +1,28 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: poptech-db
+    environment:
+      MYSQL_DATABASE: poptech
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./tecweb.sql:/docker-entrypoint-initdb.d/tecweb.sql:ro
+    ports:
+      - "3306:3306"
+
+  web:
+    build: .
+    container_name: poptech-web
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: poptech
+      DB_USER: root
+      DB_PASS: root
+    ports:
+      - "8080:80"
+
+volumes:
+  db_data:

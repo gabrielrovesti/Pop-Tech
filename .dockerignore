@@ -1,0 +1,9 @@
+.git
+.gitignore
+.gitattributes
+.vscode
+node_modules
+npm-debug.log
+docker-compose.override.yml
+*.zip
+*.log

@@ -2,18 +2,24 @@
 namespace DB;
 
 class DBAccess{
-   
-    private const HOST_DB = "127.0.0.1";
-    private const DATABASE_NAME = "poptech";
-    private const USERNAME = "root";
-    private const PASSWORD = "root";
+    private string $host;
+    private string $database;
+    private string $username;
+    private string $password;
     private $connection;
+
+    public function __construct(){
+        $this->host = getenv('DB_HOST') ?: '127.0.0.1';
+        $this->database = getenv('DB_NAME') ?: 'poptech';
+        $this->username = getenv('DB_USER') ?: 'root';
+        $this->password = getenv('DB_PASS') ?: 'root';
+    }
 
     public function open_connection(){
 
         mysqli_report(MYSQLI_REPORT_ERROR);
 
-        $this->connection = mysqli_connect(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DATABASE_NAME);
+        $this->connection = mysqli_connect($this->host, $this->username, $this->password, $this->database);
 
         if(mysqli_connect_errno()) {
             echo "Errore di connessione al database: " . mysqli_connect_error();
